@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased;
+  }
+
+  /* Headings use Montserrat */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Focus visible styles for accessibility */
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+
+  /* Safe area padding for mobile */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Text gradient */
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-orange-1 to-orange-2 bg-clip-text text-transparent;
+  }
+}
+
+/* Floating decorative animations */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(5px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(247, 147, 30, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(247, 147, 30, 0.5);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 12s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Disable animations for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-slide-up,
+  .animate-pulse-glow {
+    animation: none;
+  }
+}
+
+/* Section dividers - subtle */
+section + section {
+  border-top: 1px solid rgba(232, 232, 232, 0.5);
+}
+
+/* Icon hover animation inside group (Card) */
+.group:hover .group-icon {
+  transform: scale(1.15);
+}
+
+.group-icon {
+  transition: transform 0.3s ease-out;
+}
+
+/* Orange accent bar for cards */
+.card-accent-left {
+  border-left: 4px solid #F7931E;
+}
+
+.card-accent-top {
+  border-top: 4px solid #F7931E;
+}

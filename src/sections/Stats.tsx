@@ -32,9 +32,9 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="bg-orange-1 py-12 lg:py-16">
+    <section className="bg-orange-1 py-10 lg:py-12">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -45,19 +45,19 @@ export function Stats() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
-                  <Icon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-white flex items-center justify-center shadow-md">
+                  <Icon className="w-7 h-7 text-orange-1" />
                 </div>
-                <div className="text-4xl lg:text-6xl font-heading font-black text-white mb-2">
+                <div className="text-4xl lg:text-6xl font-heading font-black text-text-primary mb-2">
                   <AnimatedCounter
                     end={stat.value}
                     prefix={stat.prefix}
                     suffix={stat.suffix}
                   />
                 </div>
-                <div className="text-white/90 text-lg font-medium">
+                <div className="text-text-primary text-lg font-medium">
                   {stat.label}
                 </div>
               </motion.div>

@@ -59,11 +59,11 @@ function FAQItem({
       viewport={{ once: true }}
       variants={fadeInUp}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="border-2 border-orange-4 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
+      className="border-2 border-orange-1 rounded-2xl overflow-hidden bg-white shadow-sm hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-5 lg:p-6 text-left hover:bg-orange-5 transition-colors"
+        className="w-full flex items-center justify-between p-4 lg:p-5 text-left hover:bg-white transition-colors"
         aria-expanded={isOpen}
       >
         <span className="font-bold text-text-primary text-body lg:text-lg pr-4">
@@ -82,7 +82,7 @@ function FAQItem({
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-5 pb-5 lg:px-6 lg:pb-6">
+            <div className="px-4 pb-4 lg:px-5 lg:pb-5">
               <p className="text-text-secondary text-body">{item.answer}</p>
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ function FAQItem({
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-white py-16 lg:py-24">
+    <section id="faq" className="bg-white py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -102,7 +102,7 @@ export function FAQ() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           Часто задаваемые вопросы
         </motion.h2>

@@ -20,18 +20,18 @@ module.exports = {
     extend: {
       colors: {
         bg: "#FFFFFF",
-        "bg-secondary": "#FFF8F0",
-        "bg-accent": "#FFF3E0",
+        "bg-secondary": "#FFFFFF",
+        "bg-accent": "#FFA700",
         "text-primary": "#1A1A1A",
         "text-secondary": "#333333",
         "text-muted": "#666666",
 
         orange: {
-          1: "#F7931E",
-          2: "#FF8C00",
-          3: "#FFAD33",
-          4: "#FFE4C4",
-          5: "#FFF3E0",
+          1: "#FFA700",
+          2: "#E58A00",
+          3: "#FFA700",
+          4: "#FFA700",
+          5: "#FFA700",
         },
 
         card: {
@@ -40,7 +40,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        heading: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        heading: ["Times New Roman", "Times", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       fontSize: {
@@ -57,10 +57,10 @@ module.exports = {
       },
       boxShadow: {
         card: "0 8px 30px rgba(0, 0, 0, 0.12)",
-        "card-hover": "0 16px 40px rgba(247, 147, 30, 0.2)",
-        button: "0 4px 15px rgba(247, 147, 30, 0.4)",
-        "button-hover": "0 6px 25px rgba(247, 147, 30, 0.5)",
-        "soft-glow": "0 0 40px rgba(247, 147, 30, 0.25)",
+        "card-hover": "0 16px 40px rgba(255, 167, 0, 0.22)",
+        button: "0 4px 15px rgba(255, 167, 0, 0.4)",
+        "button-hover": "0 6px 25px rgba(255, 167, 0, 0.5)",
+        "soft-glow": "0 0 40px rgba(255, 167, 0, 0.28)",
       },
       backdropBlur: {
         xs: "2px",

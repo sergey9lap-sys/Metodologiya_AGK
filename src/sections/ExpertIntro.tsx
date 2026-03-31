@@ -22,7 +22,7 @@ const fadeInUp = {
 
 export function ExpertIntro() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -30,12 +30,12 @@ export function ExpertIntro() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           Об авторе программы
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Expert Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -44,7 +44,7 @@ export function ExpertIntro() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex justify-center lg:justify-start"
           >
-            <div className="relative w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[380px] lg:h-[480px] rounded-2xl overflow-hidden shadow-card border-4 border-orange-1">
+            <div className="relative w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[380px] lg:h-[480px] rounded-2xl overflow-hidden shadow-card border-4 border-orange-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
               <Image
                 src="/expert.png"
                 alt="Александра Горева-Куртышева"
@@ -62,14 +62,14 @@ export function ExpertIntro() {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="space-y-5"
           >
             <h3 className="font-heading font-bold text-2xl lg:text-3xl text-text-primary">
               Александра Горева-Куртышева
             </h3>
 
             {/* Credentials list */}
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {credentials.map((item, index) => (
                 <motion.li
                   key={index}

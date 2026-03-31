@@ -47,7 +47,7 @@ const formats = [
 
 export function NichesAndFormats() {
   return (
-    <section className="bg-orange-5 py-16 lg:py-24">
+    <section className="bg-[#FFA700] py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -55,12 +55,12 @@ export function NichesAndFormats() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           К нам приходят ученики из всех ниш
         </motion.h2>
 
-        <div className="space-y-10">
+        <div className="space-y-7 lg:space-y-8">
           {/* Niches */}
           <motion.div
             initial="hidden"
@@ -73,7 +73,7 @@ export function NichesAndFormats() {
               {niches.map((niche, index) => (
                 <div
                   key={index}
-                  className="px-5 py-2.5 bg-orange-1 text-white rounded-full text-sm lg:text-base font-bold shadow-md hover:bg-orange-2 hover:scale-105 transition-all cursor-default"
+                  className="px-5 py-2.5 bg-white border-2 border-orange-1 text-text-primary rounded-full text-sm lg:text-base font-semibold shadow-md hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02] transition-all cursor-default"
                 >
                   {niche}
                 </div>
@@ -105,7 +105,7 @@ export function NichesAndFormats() {
               {formats.map((format, index) => (
                 <div
                   key={index}
-                  className="px-5 py-2.5 bg-white border-2 border-orange-1 text-text-primary rounded-full text-sm lg:text-base font-bold shadow-sm hover:bg-orange-4 transition-all cursor-default"
+                  className="px-5 py-2.5 bg-white border-2 border-orange-1 text-text-primary rounded-full text-sm lg:text-base font-semibold shadow-sm hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02] transition-all cursor-default"
                 >
                   {format}
                 </div>

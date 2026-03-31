@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { Header } from "@/components/Header";
@@ -8,13 +8,6 @@ const inter = Inter({
   subsets: ["latin", "cyrillic"],
   display: "swap",
   variable: "--font-inter",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin", "cyrillic"],
-  display: "swap",
-  variable: "--font-montserrat",
-  weight: ["600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "МЕТОДОЛОГИЯ — курс от Александры Горевой-Куртышевой",
     description:
-      "Создай востребованный продукт и стань Учителем с большой буквы. Старт 20 января 2026.",
+      "Создай востребованный продукт и стань Учителем с большой буквы. Старт 18 мая 2026.",
     type: "website",
     locale: "ru_RU",
     siteName: "МЕТОДОЛОГИЯ",
@@ -44,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} ${montserrat.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         <Header />
         {children}
         <StickyMobileCTA />

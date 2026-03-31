@@ -23,9 +23,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           "bg-white",
           "border",
           "shadow-card",
-          "p-6 lg:p-8",
+          "p-5 lg:p-6",
           "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out",
-          "motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-card-hover",
+          "motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-card-hover motion-safe:hover:border-orange-1/60",
           variantStyles[variant],
           className
         )}

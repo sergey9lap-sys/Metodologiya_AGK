@@ -43,7 +43,7 @@ const cards = [
 
 export function ForWhom() {
   return (
-    <section id="about" className="bg-white py-16 lg:py-24">
+    <section id="about" className="bg-white py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -51,12 +51,12 @@ export function ForWhom() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           Для кого этот курс
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {cards.map((card, index) => {
             const Icon = card.icon;
             return (

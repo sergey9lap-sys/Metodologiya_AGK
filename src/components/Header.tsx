@@ -45,7 +45,7 @@ export function Header() {
         {/* Logo */}
         <a
           href="#"
-          className="font-heading font-extrabold text-[20px] lg:text-[24px] text-orange-1 tracking-tight uppercase"
+          className="font-sans font-extrabold text-[20px] lg:text-[24px] text-orange-1 tracking-tight uppercase"
         >
           МЕТОДОЛОГИЯ
         </a>
@@ -56,7 +56,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-text-secondary hover:text-orange-1 transition-colors text-sm font-semibold"
+              className="text-text-secondary hover:text-orange-1 hover:-translate-y-0.5 transition-all text-sm font-semibold"
             >
               {link.label}
             </a>
@@ -97,7 +97,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-text-secondary hover:text-orange-1 transition-colors text-lg font-semibold"
+                  className="text-text-secondary hover:text-orange-1 hover:scale-105 transition-all text-lg font-semibold"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

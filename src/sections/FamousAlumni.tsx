@@ -10,7 +10,7 @@ const fadeInUp = {
 
 const alumni = [
   {
-    name: "Наталья Крупенко",
+    name: "Наталья Хруленко",
     role: "Директор СБЕР-университета",
     initials: "НК",
   },
@@ -25,7 +25,7 @@ const alumni = [
     initials: "ГШ",
   },
   {
-    name: "Игорь Рыбов",
+    name: "Игорь Рызов",
     role: "Эксперт в области наставничества",
     initials: "ИР",
   },
@@ -33,7 +33,7 @@ const alumni = [
 
 export function FamousAlumni() {
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section className="bg-white py-12 lg:py-14">
       <Container>
         <motion.h2
           initial="hidden"
@@ -41,12 +41,12 @@ export function FamousAlumni() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-4xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-4xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           Нас рекомендуют известные выпускники
         </motion.h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {alumni.map((person, index) => (
             <motion.div
               key={index}
@@ -55,9 +55,9 @@ export function FamousAlumni() {
               viewport={{ once: true }}
               variants={fadeInUp}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              className="text-center transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-24 h-24 lg:w-28 lg:h-28 mx-auto mb-4 rounded-full bg-orange-1 flex items-center justify-center shadow-lg">
+              <div className="w-24 h-24 lg:w-28 lg:h-28 mx-auto mb-4 rounded-full bg-orange-1 flex items-center justify-center shadow-lg transition-all duration-300 hover:shadow-card-hover hover:scale-105">
                 <span className="text-white text-2xl lg:text-3xl font-heading font-black">
                   {person.initials}
                 </span>

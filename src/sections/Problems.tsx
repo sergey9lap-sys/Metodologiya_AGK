@@ -42,7 +42,7 @@ const problemGroups = [
 
 export function Problems() {
   return (
-    <section className="bg-orange-5 py-16 lg:py-24">
+    <section className="bg-[#FFA700] py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -60,12 +60,12 @@ export function Problems() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-text-secondary text-lg lg:text-xl text-center mb-12 lg:mb-16 max-w-2xl mx-auto font-medium"
+          className="text-text-secondary text-lg lg:text-xl text-center mb-8 lg:mb-10 max-w-2xl mx-auto font-medium"
         >
           тех, кто не знаком с методологией
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {problemGroups.map((group, groupIndex) => (
             <motion.div
               key={groupIndex}
@@ -76,8 +76,8 @@ export function Problems() {
               transition={{ duration: 0.5, delay: groupIndex * 0.15 }}
             >
               <Card className="h-full card-accent-top">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="p-2.5 rounded-xl bg-orange-1 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2.5 rounded-xl bg-orange-1 shadow-md transition-transform duration-300 group-hover:scale-110">
                     <AlertCircle className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-text-primary">

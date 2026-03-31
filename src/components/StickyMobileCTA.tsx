@@ -23,9 +23,9 @@ export function StickyMobileCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 pb-safe bg-white/95 backdrop-blur-xl border-t-2 border-orange-4 lg:hidden z-40 motion-safe:animate-slide-up shadow-xl">
+    <div className="fixed bottom-0 left-0 right-0 p-4 pb-safe bg-white/95 backdrop-blur-xl border-t-2 border-orange-1 lg:hidden z-40 motion-safe:animate-slide-up shadow-xl">
       <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2 text-orange-1 text-xs font-semibold">
+        <div className="flex items-center gap-2 text-orange-1 text-xs font-semibold bg-orange-1/10 px-3 py-2 rounded-full">
           <Users className="w-4 h-4" />
           <span>12 мест</span>
         </div>

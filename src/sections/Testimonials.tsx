@@ -58,7 +58,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -66,12 +66,12 @@ export function Testimonials() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           Результаты наших выпускников
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((item, index) => (
             <motion.div
               key={index}
@@ -82,8 +82,8 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Card className="h-full">
-                <div className="space-y-4">
-                  <Quote className="w-10 h-10 text-orange-1" />
+                <div className="space-y-3">
+                  <Quote className="w-10 h-10 text-orange-1 transition-transform duration-300 group-hover:scale-110" />
 
                   {/* Before */}
                   <p className="text-text-muted text-sm">
@@ -100,12 +100,12 @@ export function Testimonials() {
 
                   {/* Highlight badge */}
                   {item.highlight && (
-                    <div className="inline-block px-3 py-1.5 bg-orange-1 text-white text-sm font-bold rounded-lg">
+                    <div className="inline-block px-3 py-1.5 bg-orange-1 text-white text-sm font-bold rounded-lg shadow-md transition-all duration-300 group-hover:scale-105">
                       {item.highlight}
                     </div>
                   )}
 
-                  <div className="pt-4 border-t-2 border-orange-4">
+                  <div className="pt-3 border-t-2 border-orange-1">
                     <p className="text-text-primary font-bold">
                       {item.name}
                     </p>
@@ -124,7 +124,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 text-center"
+          className="mt-8 lg:mt-10 text-center"
         >
           <a href="#pricing">
             <Button variant="primary" size="lg">

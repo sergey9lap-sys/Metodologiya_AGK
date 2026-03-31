@@ -14,20 +14,20 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-gradient-to-r from-orange-1 to-orange-2",
     "text-white font-bold",
     "shadow-button",
-    "motion-safe:hover:shadow-button-hover motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.02]",
+    "motion-safe:hover:shadow-button-hover motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.03] motion-safe:hover:brightness-105",
     "motion-safe:active:translate-y-0 motion-safe:active:scale-100",
     "motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out"
   ),
   secondary: cn(
     "border-2 border-orange-1",
     "bg-white text-orange-1 font-bold",
-    "motion-safe:hover:bg-orange-5 motion-safe:hover:-translate-y-0.5",
+    "motion-safe:hover:bg-orange-1 motion-safe:hover:text-white motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-button",
     "motion-safe:active:translate-y-0",
     "motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out"
   ),
   ghost: cn(
     "text-text-secondary font-semibold",
-    "motion-safe:hover:text-orange-1 motion-safe:hover:bg-orange-5",
+    "motion-safe:hover:text-orange-1",
     "motion-safe:transition-colors motion-safe:duration-200"
   ),
 };

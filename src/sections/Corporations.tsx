@@ -28,7 +28,7 @@ const corporations = [
 
 export function Corporations() {
   return (
-    <section className="bg-orange-5 py-12 lg:py-16">
+    <section className="bg-[#FFA700] py-10 lg:py-12">
       <Container>
         <motion.div
           initial="hidden"
@@ -36,11 +36,11 @@ export function Corporations() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 lg:mb-10"
+          className="text-center mb-6 lg:mb-8"
         >
           <p className="text-text-primary text-lg lg:text-xl font-semibold max-w-3xl mx-auto">
             В курсе применяются образовательные техники и методики, апробированные{" "}
-            <span className="text-orange-1 font-bold">
+            <span className="font-bold underline decoration-text-primary/40 underline-offset-4">
               в крупнейших корпорациях
             </span>
           </p>
@@ -57,7 +57,7 @@ export function Corporations() {
           {corporations.map((name, index) => (
             <div
               key={index}
-              className="px-5 py-3 bg-white border-2 border-orange-4 rounded-xl text-text-primary text-sm lg:text-base font-bold shadow-sm hover:border-orange-1 hover:shadow-md transition-all"
+              className="px-5 py-3 bg-white border-2 border-orange-1 rounded-xl text-text-primary text-sm lg:text-base font-bold shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] transition-all"
             >
               {name}
             </div>

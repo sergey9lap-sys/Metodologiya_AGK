@@ -1,5 +1,5 @@
-export const COURSE_START_DATE = "20 января 2026";
-export const COURSE_START_DATE_RAW = "2026-01-20T10:00:00";
+export const COURSE_START_DATE = "18 мая 2026";
+export const COURSE_START_DATE_RAW = "2026-05-18T10:00:00";
 
 export const PRICING = {
   course: {

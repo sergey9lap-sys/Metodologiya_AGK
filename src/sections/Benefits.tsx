@@ -36,7 +36,7 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -44,12 +44,12 @@ export function Benefits() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-12 lg:mb-16 uppercase"
+          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
         >
           Знание основ МЕТОДОЛОГИИ
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
@@ -86,16 +86,16 @@ export function Benefits() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 max-w-3xl mx-auto"
+          className="mt-8 lg:mt-10 max-w-3xl mx-auto"
         >
-          <div className="p-6 lg:p-8 rounded-2xl bg-orange-1 text-center shadow-card">
-            <p className="text-white text-lg lg:text-xl font-bold mb-6">
+          <div className="p-5 lg:p-6 rounded-2xl bg-orange-1 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+            <p className="text-white text-lg lg:text-xl font-bold mb-4">
               Вы научитесь доводить до результата минимум{" "}
-              <span className="text-orange-4">98% учеников</span>{" "}
+              <span className="underline decoration-white/70 underline-offset-4">98% учеников</span>{" "}
               своего курса
             </p>
             <a href="#pricing">
-              <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-orange-4">
+              <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-white hover:text-orange-1">
                 Получить эти навыки
               </Button>
             </a>

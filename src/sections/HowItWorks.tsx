@@ -30,7 +30,7 @@ const features = [
 
 export function HowItWorks() {
   return (
-    <section id="program" className="bg-orange-1 py-16 lg:py-24">
+    <section id="program" className="bg-orange-1 py-12 lg:py-16">
       <Container>
         <motion.div
           initial="hidden"
@@ -38,18 +38,18 @@ export function HowItWorks() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-8 lg:mb-10"
         >
-          <h2 className="font-heading font-black text-3xl lg:text-5xl text-white mb-4 uppercase">
+          <h2 className="font-heading font-black text-3xl lg:text-5xl text-text-primary mb-4 uppercase">
             Как мы обеспечиваем результат
           </h2>
-          <p className="text-white/90 text-lg lg:text-xl max-w-3xl mx-auto">
+          <p className="text-text-primary text-lg lg:text-xl max-w-3xl mx-auto">
             В курсе используется инновационная пошаговая система создания
             образовательных продуктов
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -62,10 +62,10 @@ export function HowItWorks() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="h-full text-center bg-white">
-                  <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-orange-1 flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-orange-1 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-heading font-bold text-xl text-text-primary mb-3">
+                  <h3 className="font-heading font-bold text-xl text-text-primary mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-text-secondary text-body">

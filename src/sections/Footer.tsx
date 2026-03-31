@@ -10,19 +10,19 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-text-primary py-10 lg:py-14">
+    <footer className="bg-text-primary py-8 lg:py-10">
       <Container>
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-4 lg:gap-5">
           {/* Logo */}
           <a
             href="#"
-            className="font-heading font-black text-2xl text-orange-1 uppercase tracking-tight"
+            className="font-sans font-black text-2xl text-orange-1 uppercase tracking-tight"
           >
             МЕТОДОЛОГИЯ
           </a>
 
           {/* Navigation */}
-          <nav className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap justify-center gap-4 lg:gap-5">
             {footerLinks.map((link) => (
               <a
                 key={link.href}

@@ -11,7 +11,7 @@
     @apply bg-bg text-text-primary font-sans antialiased;
   }
 
-  /* Headings use Montserrat */
+  /* Headings use Times New Roman */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
@@ -80,10 +80,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(247, 147, 30, 0.3);
+    box-shadow: 0 0 20px rgba(255, 167, 0, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(247, 147, 30, 0.5);
+    box-shadow: 0 0 40px rgba(255, 167, 0, 0.5);
   }
 }
 
@@ -129,9 +129,9 @@ section + section {
 
 /* Orange accent bar for cards */
 .card-accent-left {
-  border-left: 4px solid #F7931E;
+  border-left: 4px solid #FFA700;
 }
 
 .card-accent-top {
-  border-top: 4px solid #F7931E;
+  border-top: 4px solid #FFA700;
 }

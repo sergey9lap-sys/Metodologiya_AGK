@@ -12,7 +12,7 @@ const fadeInUp = {
 
 export function ContactCTA() {
   return (
-    <section id="contact" className="bg-orange-1 py-16 lg:py-24">
+    <section id="contact" className="bg-orange-1 py-12 lg:py-16">
       <Container>
         <motion.div
           initial="hidden"
@@ -20,27 +20,27 @@ export function ContactCTA() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto text-center space-y-6"
+          className="max-w-2xl mx-auto text-center space-y-5"
         >
-          <div className="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center shadow-lg">
+          <div className="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover">
             <MessageCircle className="w-10 h-10 text-orange-1" />
           </div>
 
-          <h2 className="font-heading font-black text-3xl lg:text-5xl text-white uppercase">
+          <h2 className="font-heading font-black text-3xl lg:text-5xl text-text-primary uppercase">
             Остались вопросы?
           </h2>
 
-          <p className="text-white/90 text-lg lg:text-xl">
+          <p className="text-text-primary text-lg lg:text-xl">
             Свяжитесь с нами, и мы поможем подобрать оптимальный вариант обучения
           </p>
 
-          <div className="pt-4">
+          <div className="pt-2">
             <a
               href={process.env.NEXT_PUBLIC_TG_SUPPORT_URL || "#"}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-orange-4">
+              <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-white hover:text-orange-1">
                 Оставить заявку
               </Button>
             </a>

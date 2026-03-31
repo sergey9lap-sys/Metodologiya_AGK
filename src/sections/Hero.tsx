@@ -44,7 +44,7 @@ export function Hero() {
               </h1>
               <p className="text-xl lg:text-2xl text-text-primary font-bold">
                 Создай востребованный продукт и стань{" "}
-                <span className="text-orange-1">Учителем с большой буквы</span>
+                <span>Учителем с большой буквы</span>
               </p>
               <p className="text-text-secondary text-lg lg:text-xl max-w-2xl mx-auto">
                 Научитесь доводить до результата минимум 98% учеников за счёт

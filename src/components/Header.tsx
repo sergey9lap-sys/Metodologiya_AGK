@@ -9,7 +9,7 @@ const navLinks = [
   { label: "О курсе", href: "#about" },
   { label: "Программа", href: "#program" },
   { label: "Тарифы", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Вопросы", href: "#faq" },
 ];
 
 export function Header() {

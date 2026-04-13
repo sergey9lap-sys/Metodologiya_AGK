@@ -38,7 +38,7 @@ export function NichesAndFormats() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-5xl"
+          className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-4xl"
         >
           Методология усиливает не один продукт, а всю систему
         </motion.h2>
@@ -72,7 +72,7 @@ export function NichesAndFormats() {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center font-heading text-2xl font-black uppercase text-text-primary lg:text-4xl"
+            className="text-center font-heading text-2xl font-black uppercase text-text-primary lg:text-3xl"
           >
             И во что это вырастает
           </motion.p>

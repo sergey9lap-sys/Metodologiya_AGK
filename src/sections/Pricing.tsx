@@ -98,7 +98,7 @@ export function Pricing() {
           transition={{ duration: 0.5 }}
           className="mb-8 text-center lg:mb-10"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
             Тарифы
           </h2>
           <p className="text-lg font-medium text-text-primary">Старт: {COURSE_START_DATE}</p>

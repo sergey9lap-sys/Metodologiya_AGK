@@ -31,10 +31,10 @@ export function EntrepreneurResults() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-5xl text-center"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black leading-tight text-text-primary lg:text-5xl">
+          <h2 className="mb-4 font-heading text-3xl font-black leading-tight text-text-primary lg:text-4xl">
             Предприниматель без методологии — как генерал без карты
           </h2>
-          <p className="text-base italic text-text-secondary lg:text-xl">
+          <p className="text-body italic text-text-secondary">
             Методология — прокачка системного мышления. Наводит порядок в
             процессах, команде и продуктах.
           </p>
@@ -48,7 +48,7 @@ export function EntrepreneurResults() {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:p-8"
         >
-          <p className="mb-5 text-xl font-bold text-text-primary lg:text-2xl">
+          <p className="mb-5 text-lg font-bold text-text-primary lg:text-xl">
             Методология решает запросы:
           </p>
 
@@ -84,7 +84,7 @@ export function EntrepreneurResults() {
             <div className="rounded-2xl bg-orange-1 p-4 shadow-sm lg:p-5">
               <div className="flex items-start gap-3">
                 <Users className="mt-0.5 h-5 w-5 flex-shrink-0 text-white" />
-                <p className="text-lg font-bold leading-relaxed text-white lg:text-xl">
+                <p className="text-body font-bold leading-relaxed text-white">
                   В тарифе «ВИП» вы можете подключить к обучению свою команду (1+2),
                   чтобы внедрять методологию синхронно.
                 </p>
@@ -92,7 +92,7 @@ export function EntrepreneurResults() {
             </div>
 
             <div className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm lg:p-5">
-              <p className="text-lg leading-relaxed text-text-primary lg:text-xl">
+              <p className="text-body leading-relaxed text-text-primary">
                 Вы научитесь проектировать образовательные продукты и продуктовые
                 линейки, которые влияют на мышление людей и приносят устойчивый результат:
                 от базовой структуры до стратегической архитектуры.

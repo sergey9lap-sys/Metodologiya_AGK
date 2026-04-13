@@ -56,10 +56,10 @@ export function MethodologistCareer() {
           className="rounded-[28px] bg-white p-6 shadow-card lg:p-8"
         >
           <div className="mx-auto mb-6 max-w-5xl text-center lg:mb-7">
-            <h2 className="mb-3 font-heading text-3xl font-black leading-tight text-text-primary lg:text-5xl">
+            <h2 className="mb-3 font-heading text-3xl font-black leading-tight text-text-primary lg:text-4xl">
               Методолог — профессия №1 в EdTech 2026
             </h2>
-            <p className="text-base italic text-text-secondary lg:text-xl">
+            <p className="text-body italic text-text-secondary">
               Вы научитесь проектировать образовательные продукты для экспертов и
               бизнеса. Старт в профессии — с первого месяца после обучения.
             </p>
@@ -88,7 +88,7 @@ export function MethodologistCareer() {
           </div>
 
           <div>
-            <p className="mb-5 text-xl font-bold text-text-primary lg:text-2xl">
+            <p className="mb-5 text-lg font-bold text-text-primary lg:text-xl">
               Методология решает запросы:
             </p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -122,7 +122,7 @@ export function MethodologistCareer() {
         >
           <div className="space-y-5">
             <div>
-              <p className="mb-4 text-xl font-semibold text-text-primary lg:text-2xl">
+              <p className="mb-4 text-lg font-semibold text-text-primary lg:text-xl">
                 Где работают выпускники-методологи:
               </p>
               <div className="flex flex-wrap gap-3">
@@ -140,7 +140,7 @@ export function MethodologistCareer() {
             <div className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm lg:p-5">
               <div className="flex items-start gap-3">
                 <Quote className="mt-1 h-7 w-7 flex-shrink-0 text-orange-1" />
-                <p className="text-lg leading-relaxed text-text-primary lg:text-xl">
+                <p className="text-body leading-relaxed text-text-primary">
                   «Анастасия Ланговая: запустила свой мастермайнд, создала 4 продукта,
                   заработала около 300 000 рублей, окупила курс до его завершения»
                 </p>

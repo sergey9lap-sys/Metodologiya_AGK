@@ -45,7 +45,7 @@ export function ContactCTA() {
                 <span>Служба заботы</span>
               </div>
 
-              <h2 className="font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+              <h2 className="font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
                 Присоединяйтесь к курсу «Методология»
               </h2>
 

@@ -56,10 +56,10 @@ export function Testimonials() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
             Выпускники выходят не с теорией, а с результатом
           </h2>
-          <p className="text-lg text-text-secondary lg:text-xl">
+          <p className="text-body text-text-secondary">
             На курсе рождаются не абстрактные знания, а реальные продукты,
             решения, новые запуски и сильные кейсы.
           </p>

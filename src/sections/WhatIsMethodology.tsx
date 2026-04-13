@@ -40,7 +40,7 @@ export function WhatIsMethodology() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
             Что такое методология
           </h2>
           <p className="text-lg text-text-primary lg:text-xl">

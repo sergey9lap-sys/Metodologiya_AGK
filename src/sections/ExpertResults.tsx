@@ -38,10 +38,10 @@ export function ExpertResults() {
           className="space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8"
         >
           <div className="mx-auto max-w-5xl text-center">
-            <h2 className="mb-4 font-heading text-3xl font-black leading-tight text-text-primary lg:text-5xl">
+            <h2 className="mb-4 font-heading text-2xl font-black leading-tight text-text-primary lg:text-4xl">
               Вы — эксперт. Ваши знания стоят миллионы. Но без методологии они так и останутся в вашей голове
             </h2>
-            <p className="mx-auto max-w-4xl text-base italic text-text-secondary lg:text-xl">
+            <p className="mx-auto max-w-4xl text-body italic text-text-secondary">
               Курс «Методология» превращает хаос вашей экспертизы в продукт,
               который ученики проходят до конца и приводят друзей.
             </p>
@@ -64,7 +64,7 @@ export function ExpertResults() {
                 >
                   <div className="flex items-start gap-3">
                     <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-orange-1" />
-                    <p className="text-body italic leading-relaxed text-text-primary lg:text-lg">
+                    <p className="text-body italic leading-relaxed text-text-primary">
                       {item}
                     </p>
                   </div>
@@ -83,7 +83,7 @@ export function ExpertResults() {
           className="mx-auto max-w-6xl space-y-5 rounded-[28px] bg-[#FFA700] p-5 shadow-card lg:p-6"
         >
           <div className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm lg:p-5">
-            <p className="text-lg italic leading-relaxed text-text-primary lg:text-xl">
+            <p className="text-body italic leading-relaxed text-text-primary">
               Вы выходите с курса с готовым продуктом: курс/тренинг/мастермайнд/наставничество, который:
             </p>
 
@@ -99,7 +99,7 @@ export function ExpertResults() {
                   className="flex items-start gap-3"
                 >
                   <span className="mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-orange-1" />
-                  <p className="text-body italic text-text-primary lg:text-lg">
+                  <p className="text-body italic text-text-primary">
                     {item}
                   </p>
                 </motion.div>
@@ -109,7 +109,7 @@ export function ExpertResults() {
             <div className="rounded-xl bg-orange-1 px-4 py-4 shadow-md">
               <div className="flex items-start gap-3">
                 <Sparkles className="mt-0.5 h-5 w-5 flex-shrink-0 text-white" />
-                <p className="text-lg italic font-semibold leading-relaxed text-white lg:text-xl">
+                <p className="text-body italic font-semibold leading-relaxed text-white">
                   и сформированной продуктовой линейкой (3-4 тариф), в которой
                   клиенты развиваются, покупая все ваши продукты
                 </p>
@@ -122,7 +122,7 @@ export function ExpertResults() {
               <div className="flex items-start gap-3">
                 <Quote className="mt-1 h-7 w-7 flex-shrink-0 text-orange-1" />
                 <div>
-                  <p className="text-lg leading-relaxed text-text-primary lg:text-xl">
+                  <p className="text-body leading-relaxed text-text-primary">
                     «Константин Воробьёв, основатель школы плавания: разработал
                     онлайн-курс и заработал на нём около 2 000 000 рублей»
                   </p>

@@ -149,7 +149,7 @@ export function Hero() {
                       </p>
                     </div>
 
-                    <div className="rounded-2xl border-2 border-orange-1 bg-white text-left shadow-sm">
+                    <div className="relative rounded-2xl border-2 border-orange-1 bg-white text-left shadow-sm">
                       <button
                         type="button"
                         onClick={() => setIsFactsOpen((prev) => !prev)}
@@ -169,13 +169,13 @@ export function Hero() {
                       <AnimatePresence>
                         {isFactsOpen && (
                           <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25, ease: "easeInOut" }}
-                            className="overflow-hidden"
+                            initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="absolute left-[calc(100%+14px)] top-1/2 z-20 w-[320px] -translate-y-1/2 rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-card"
                           >
-                            <div className="space-y-3 px-4 pb-4">
+                            <div className="space-y-3">
                               {authorFacts.map((fact) => (
                                 <div key={fact} className="flex items-start gap-3">
                                   <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-orange-1" />

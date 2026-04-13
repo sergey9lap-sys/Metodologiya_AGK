@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Zap, Users, List, Package } from "lucide-react";
+import { ArrowRight, Briefcase, GraduationCap, Lightbulb, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -13,24 +13,24 @@ const fadeInUp = {
 
 const benefits = [
   {
-    icon: Zap,
-    title: "Быстрая сборка продукта",
-    text: "Помогает собрать основу любого продукта всего за несколько часов",
+    icon: GraduationCap,
+    title: "Для экспертов",
+    text: "Поймёте, как упаковать свой большой опыт в понятную и сильную образовательную систему.",
+  },
+  {
+    icon: Briefcase,
+    title: "Для предпринимателей",
+    text: "Соберёте продуктовую линейку, которая не зависит от одного продукта и помогает масштабироваться.",
   },
   {
     icon: Users,
-    title: "Продуктивные отношения",
-    text: "Учит выстраивать продуктивные отношения с командой и клиентами без потерь времени",
+    title: "Для команд",
+    text: "Разберётесь, как делегировать проверку домашних заданий и сопровождение учеников без потери качества.",
   },
   {
-    icon: List,
-    title: "Структурирование мероприятий",
-    text: "Учит составлять структуру любых мероприятий от живых выступлений до мастер-классов",
-  },
-  {
-    icon: Package,
-    title: "Упаковка знаний",
-    text: "Позволяет ёмко упаковывать ваши знания в продукт и доносить их до аудитории",
+    icon: Lightbulb,
+    title: "Для роста результата",
+    text: "Сделаете обучение более ясным, а путь ученика — более сильным и предсказуемым по итогам.",
   },
 ];
 
@@ -38,23 +38,29 @@ export function Benefits() {
   return (
     <section className="bg-white py-12 lg:py-16">
       <Container>
-        <motion.h2
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
+          className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          Знание основ МЕТОДОЛОГИИ
-        </motion.h2>
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+            Что меняется после внедрения методологии
+          </h2>
+          <p className="text-lg text-text-secondary lg:text-xl">
+            Методология помогает не просто “сделать курс”, а выстроить понятную
+            систему продукта, команды и результата.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <motion.div
-                key={index}
+                key={benefit.title}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -62,41 +68,43 @@ export function Benefits() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 rounded-xl bg-orange-1 group-icon shadow-md">
-                      <Icon className="w-6 h-6 text-white" />
+                  <div className="mb-4 flex items-center gap-4">
+                    <div className="group-icon rounded-xl bg-orange-1 p-3 shadow-md">
+                      <Icon className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="font-heading font-bold text-lg text-text-primary">
+                    <h3 className="font-heading text-lg font-bold text-text-primary">
                       {benefit.title}
                     </h3>
                   </div>
-                  <p className="text-text-secondary text-body">
-                    {benefit.text}
-                  </p>
+                  <p className="text-body text-text-secondary">{benefit.text}</p>
                 </Card>
               </motion.div>
             );
           })}
         </div>
 
-        {/* Bottom highlight */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8 lg:mt-10 max-w-3xl mx-auto"
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="mx-auto mt-8 max-w-4xl lg:mt-10"
         >
-          <div className="p-5 lg:p-6 rounded-2xl bg-orange-1 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-            <p className="text-white text-lg lg:text-xl font-bold mb-4">
-              Вы научитесь доводить до результата минимум{" "}
-              <span className="underline decoration-white/70 underline-offset-4">98% учеников</span>{" "}
-              своего курса
+          <div className="rounded-2xl bg-orange-1 p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:p-6">
+            <p className="text-lg font-bold text-white lg:text-xl">
+              Нижняя логика всего курса остаётся прежней: вы учитесь собирать
+              продукт так, чтобы ученики доходили до результата, а не терялись в
+              хаосе материала.
             </p>
-            <a href="#pricing">
+            <p className="mt-3 font-semibold text-text-primary">
+              Ключевой вывод: сильная методология усиливает и продукт, и продажи,
+              и путь ученика внутри обучения.
+            </p>
+            <a href="#pricing" className="mt-5 inline-flex">
               <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-white hover:text-orange-1">
-                Получить эти навыки
+                Смотреть тарифы
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
           </div>

@@ -6,13 +6,13 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 
 const credentials = [
-  "EdTech предприниматель, основатель крупнейшей школы по методологии, методического агентства и тренингового центра",
-  "Генеральный продюсер и архитектор СБЕР Акселератора 360 на 40 000 предпринимателей",
-  "3 высших образования в сфере педагогики и обучения, выпускница Сколково",
-  "С 2009 года в бизнес-обучении / с 2020 года в онлайне",
-  "Консультант и тренер СБЕР, РОСНЕФТЬ, Норникель, Нестле, X5, Вкусвилл и др.",
-  "Вице-президент Ассоциации Спикеров СНГ",
-  "5 премий за вклад в образование, победа в номинации «Лучшая школа методологии» 2024-2025",
+  "EdTech-предприниматель, основатель крупнейшей школы по методологии и методического агентства.",
+  "Генеральный продюсер и архитектор СБЕР Акселератора 360 на 40 000 предпринимателей.",
+  "3 высших образования в сфере педагогики и обучения, выпускница Сколково.",
+  "С 2009 года в бизнес-обучении, с 2020 года в онлайн-образовании.",
+  "Консультант и тренер СБЕР, РОСНЕФТЬ, Норникель, Nestle, X5, ВкусВилл и других компаний.",
+  "Вице-президент Ассоциации Спикеров СНГ.",
+  "5 премий за вклад в образование и победа в номинации «Лучшая школа методологии».",
 ];
 
 const fadeInUp = {
@@ -30,13 +30,12 @@ export function ExpertIntro() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
+          className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-5xl"
         >
-          Об авторе программы
+          Кто ведёт курс
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-          {/* Expert Photo */}
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -44,7 +43,7 @@ export function ExpertIntro() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex justify-center lg:justify-start"
           >
-            <div className="relative w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] lg:w-[380px] lg:h-[480px] rounded-2xl overflow-hidden shadow-card border-4 border-orange-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+            <div className="relative h-[350px] w-[280px] overflow-hidden rounded-2xl border-4 border-orange-1 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:h-[400px] sm:w-[320px] lg:h-[480px] lg:w-[380px]">
               <Image
                 src="/expert.png"
                 alt="Александра Горева-Куртышева"
@@ -55,7 +54,6 @@ export function ExpertIntro() {
             </div>
           </motion.div>
 
-          {/* Content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -64,15 +62,14 @@ export function ExpertIntro() {
             transition={{ duration: 0.5 }}
             className="space-y-5"
           >
-            <h3 className="font-heading font-bold text-2xl lg:text-3xl text-text-primary">
+            <h3 className="font-heading text-2xl font-bold text-text-primary lg:text-3xl">
               Александра Горева-Куртышева
             </h3>
 
-            {/* Credentials list */}
             <ul className="space-y-3">
               {credentials.map((item, index) => (
                 <motion.li
-                  key={index}
+                  key={item}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -80,10 +77,8 @@ export function ExpertIntro() {
                   transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
                   className="flex items-start gap-3"
                 >
-                  <Star className="w-5 h-5 text-orange-1 flex-shrink-0 mt-0.5 fill-orange-1" />
-                  <span className="text-text-secondary text-body">
-                    {item}
-                  </span>
+                  <Star className="mt-0.5 h-5 w-5 flex-shrink-0 fill-orange-1 text-orange-1" />
+                  <span className="text-body text-text-secondary">{item}</span>
                 </motion.li>
               ))}
             </ul>

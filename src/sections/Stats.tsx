@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { motion } from "framer-motion";
-import { BookOpen, Globe, Target } from "lucide-react";
+import { Award, BookOpen, Globe, Target } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -28,13 +28,18 @@ const stats = [
     suffix: "-100%",
     icon: Target,
   },
+  {
+    value: 5,
+    label: "премий за вклад в образование",
+    icon: Award,
+  },
 ];
 
 export function Stats() {
   return (
     <section className="bg-orange-1 py-10 lg:py-12">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 lg:gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (

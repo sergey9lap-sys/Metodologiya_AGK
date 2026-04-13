@@ -9,45 +9,28 @@ const fadeInUp = {
 };
 
 const niches = [
-  "маркетинг / SMM",
-  "личный бренд",
-  "продюссирование",
-  "таргет и реклама",
-  "инвестиции",
-  "недвижимость",
-  "бухгалтерия и финансы",
-  "продажи",
-  "менеджмент",
-  "психология / коучинг",
-  "бизнес-консалтинг",
-  "педагогика",
-  "медицина",
-  "йога / фитнес / спорт",
-  "нутрициология",
-  "дизайн и архитектура",
+  "мастермайнды",
+  "тренинги",
+  "стратегические сессии",
+  "мастер-группы",
+  "курсы",
+  "интенсивы",
+  "наставничество",
+  "вебинары",
 ];
 
-const formats = [
-  "подкасты",
-  "марафоны",
-  "разборы",
-  "личные консультации",
-  "челленджи",
-  "наставничество",
-  "лекции",
-  "мастер-классы",
-  "сообщество",
-  "курсы",
-  "ВИП-сопровождение",
-  "интенсивы",
-  "ретриты",
-  "клуб",
-  "вебинары",
+const systems = [
+  "эко-системы продуктов",
+  "самостоятельный отдел продукта",
+  "структура сопровождения учеников",
+  "сильная продуктовая линейка",
+  "понятный путь клиента",
+  "рост качества без хаоса",
 ];
 
 export function NichesAndFormats() {
   return (
-    <section className="bg-[#FFA700] py-12 lg:py-16">
+    <section className="bg-white py-12 lg:py-16">
       <Container>
         <motion.h2
           initial="hidden"
@@ -55,13 +38,12 @@ export function NichesAndFormats() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
+          className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-5xl"
         >
-          К нам приходят ученики из всех ниш
+          Методология усиливает не один продукт, а всю систему
         </motion.h2>
 
         <div className="space-y-7 lg:space-y-8">
-          {/* Niches */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -69,31 +51,32 @@ export function NichesAndFormats() {
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
+            <p className="mb-4 text-center text-lg font-semibold text-text-primary lg:text-xl">
+              Что можно усиливать с её помощью
+            </p>
             <div className="flex flex-wrap justify-center gap-3 lg:gap-4">
-              {niches.map((niche, index) => (
+              {niches.map((item) => (
                 <div
-                  key={index}
-                  className="px-5 py-2.5 bg-white border-2 border-orange-1 text-text-primary rounded-full text-sm lg:text-base font-semibold shadow-md hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02] transition-all cursor-default"
+                  key={item}
+                  className="cursor-default rounded-full border-2 border-orange-1 bg-orange-1 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg lg:text-base"
                 >
-                  {niche}
+                  {item}
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Divider text */}
           <motion.p
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center text-2xl lg:text-4xl font-heading font-black text-text-primary uppercase"
+            className="text-center font-heading text-2xl font-black uppercase text-text-primary lg:text-4xl"
           >
-            И создают
+            И во что это вырастает
           </motion.p>
 
-          {/* Formats */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -102,12 +85,12 @@ export function NichesAndFormats() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="flex flex-wrap justify-center gap-3 lg:gap-4">
-              {formats.map((format, index) => (
+              {systems.map((item) => (
                 <div
-                  key={index}
-                  className="px-5 py-2.5 bg-white border-2 border-orange-1 text-text-primary rounded-full text-sm lg:text-base font-semibold shadow-sm hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02] transition-all cursor-default"
+                  key={item}
+                  className="cursor-default rounded-full border-2 border-orange-1 bg-orange-1 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg lg:text-base"
                 >
-                  {format}
+                  {item}
                 </div>
               ))}
             </div>

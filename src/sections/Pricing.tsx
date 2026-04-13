@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Check, Star, Gift, Shield, Users } from "lucide-react";
+import { Check, Star, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { COURSE_START_DATE } from "@/lib/constants";
 
@@ -21,13 +21,10 @@ const tariffs = [
     priceInstallment: 64900,
     spotsLeft: null,
     features: [
-      "Прорабатывание курса",
-      "Уроки в записи и домашке",
+      "Проработка курса и его структуры",
+      "Уроки в записи и домашние задания",
       "3 практические онлайн-сессии с Александрой",
       "Проверка домашних заданий и обратная связь от кураторов",
-      "Обучающие продукты и конспекты на примере базовой методологии",
-      "Формирование продукта и проработка структуры на основе базовой методологии",
-      "Итоговая проверка на выходе",
       "Доступ к материалам курса 60 дней",
       "Подключение к общему чату",
     ],
@@ -41,39 +38,31 @@ const tariffs = [
     priceInstallment: 114900,
     spotsLeft: null,
     features: [
-      "Прорабатывание курса",
-      "Уроки в записи и домашке",
+      "Всё из базового тарифа",
       "6 практических онлайн-сессий с Александрой",
-      "Обратная связь от кураторов, наставников + интервизоры",
-      "Формирование подробного продукта с детальной проработкой практических и контрольных мероприятий",
-      "Защита проекта с наставником + сертификат (5 модулей)",
-      "Доступ к материалам курса 60 дней",
+      "Обратная связь от кураторов и наставников",
+      "Подробная проработка практических и контрольных мероприятий",
+      "Защита проекта с наставником",
       "Доступ к интеллект-картам курса",
       "Возможность получить индивидуальный диплом",
-      "Возможность претендовать на сотрудничество с командой Александры",
-      "Для лучших — приглашение на личный курс Александры со скидкой",
     ],
     highlighted: false,
   },
   {
     name: "МАСТЕР",
     duration: "8 недель",
-    format: "Наставники + личная защита с Александрой",
+    format: "Наставники + личная защита",
     priceNow: 154900,
     priceInstallment: 179900,
     spotsLeft: 5,
     features: [
-      "Прорабатывание курса",
-      "Уроки в записи и домашке",
+      "Всё из тарифа ОПТИМАЛЬНЫЙ",
       "8 практических онлайн-сессий с Александрой",
-      "Обратная связь от кураторов и наставников + Александра лично курирует в чате",
-      "Стратегическое наставничество (построение продуктовой линейки + 4 шаг)",
-      "Разборы и предзащиты с Александрой",
-      "Итоговая защита проекта лично с Александрой",
-      "Доступ к материалам курса 60 дней + продлеваемость",
-      "Возможность получить индивидуальный диплом",
-      "Возможность претендовать на сотрудничество с командой Александры",
-      "Для лучших — приглашение на личный курс Александры со скидкой",
+      "Стратегическое наставничество по продуктовой линейке",
+      "Предзащиты и разборы",
+      "Итоговая защита проекта",
+      "Продлеваемый доступ к материалам",
+      "Приоритет на дальнейшее сотрудничество",
     ],
     highlighted: true,
   },
@@ -85,13 +74,13 @@ const tariffs = [
     priceInstallment: 400000,
     spotsLeft: 3,
     features: [
-      "Всё из тарифа МАСТЕР +",
-      "Две персональные стратегические сессии с Александрой (финансы + стратегия запуска)",
-      "ВИП-наставник с персональным чатом",
-      "Возможность переключиться в обучение «Сила слова»",
-      "Личная рекомендация от Александры для лучших выпускников",
-      "По окончании — индивидуальная консультация в приватном чате с Александрой",
-      "Доступ к материалам курса без ограничений",
+      "Всё из тарифа МАСТЕР",
+      "Две персональные стратегические сессии",
+      "Персональный ВИП-наставник",
+      "Личное сопровождение в приватном чате",
+      "Финальная индивидуальная консультация",
+      "Безлимитный доступ к материалам",
+      "Подключение команды в зависимости от формата",
     ],
     highlighted: false,
   },
@@ -107,18 +96,18 @@ export function Pricing() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 lg:mb-10"
+          className="mb-8 text-center lg:mb-10"
         >
-          <h2 className="font-heading font-black text-3xl lg:text-5xl text-text-primary mb-4 uppercase">
-            Выбери свой тариф
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+            Тарифы
           </h2>
-          <p className="text-text-primary font-medium text-lg">Старт: {COURSE_START_DATE}</p>
+          <p className="text-lg font-medium text-text-primary">Старт: {COURSE_START_DATE}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">
           {tariffs.map((tariff, index) => (
             <motion.div
-              key={index}
+              key={tariff.name}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -127,64 +116,54 @@ export function Pricing() {
             >
               <Card
                 variant={tariff.highlighted ? "accent" : "default"}
-                className={`h-full relative ${tariff.highlighted ? "ring-2 ring-orange-1 scale-[1.02]" : ""}`}
+                className={`relative h-full ${tariff.highlighted ? "scale-[1.02] ring-2 ring-orange-1" : ""}`}
               >
                 {tariff.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-orange-1 text-white text-sm font-bold rounded-full flex items-center gap-2 shadow-lg">
-                    <Star className="w-4 h-4 fill-white" />
-                    Популярный
+                  <div className="absolute -top-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-orange-1 px-5 py-2 text-sm font-bold text-white shadow-lg">
+                    <Star className="h-4 w-4 fill-white" />
+                    Рекомендуем
                   </div>
                 )}
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-heading font-black text-xl lg:text-2xl text-text-primary mb-1">
+                    <h3 className="mb-1 font-heading text-xl font-black text-text-primary lg:text-2xl">
                       {tariff.name}
                     </h3>
-                    <p className="text-orange-1 font-bold text-lg">
-                      {tariff.duration}
-                    </p>
+                    <p className="text-lg font-bold text-orange-1">{tariff.duration}</p>
                   </div>
 
-                  {/* Prices */}
-                  <div className="space-y-2 pb-3 border-b-2 border-orange-1">
+                  <div className="space-y-2 border-b-2 border-orange-1 pb-3">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl lg:text-4xl font-heading font-black text-text-primary">
+                      <span className="font-heading text-3xl font-black text-text-primary lg:text-4xl">
                         {tariff.priceNow.toLocaleString("ru-RU")} ₽
                       </span>
                     </div>
-                    <p className="text-sm text-text-muted">
-                      при оплате сразу
-                    </p>
+                    <p className="text-sm text-text-muted">при оплате сразу</p>
                     <div className="flex items-center gap-2 pt-1">
-                      <span className="text-text-secondary font-semibold">
+                      <span className="font-semibold text-text-secondary">
                         или {tariff.priceInstallment.toLocaleString("ru-RU")} ₽
                       </span>
                       <span className="text-xs text-text-muted">в рассрочку</span>
                     </div>
                   </div>
 
-                  {/* Scarcity indicator */}
                   {tariff.spotsLeft && (
-                    <div className="flex items-center gap-2 px-3 py-2 bg-orange-1 border border-orange-1 rounded-lg text-white text-sm font-bold shadow-md animate-pulse-glow">
-                      <Users className="w-4 h-4" />
+                    <div className="animate-pulse-glow flex items-center gap-2 rounded-lg border border-orange-1 bg-orange-1 px-3 py-2 text-sm font-bold text-white shadow-md">
+                      <Users className="h-4 w-4" />
                       <span>Осталось {tariff.spotsLeft} мест</span>
                     </div>
                   )}
 
-                  <p className="text-text-secondary font-medium">
-                    {tariff.format}
-                  </p>
+                  <p className="font-medium text-text-secondary">{tariff.format}</p>
 
-                  <div className="space-y-2.5 max-h-[280px] overflow-y-auto pr-2">
-                    {tariff.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-orange-1 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Check className="w-2.5 h-2.5 text-white" />
+                  <div className="max-h-[280px] space-y-2.5 overflow-y-auto pr-2">
+                    {tariff.features.map((feature) => (
+                      <div key={feature} className="flex items-start gap-2.5">
+                        <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-orange-1">
+                          <Check className="h-2.5 w-2.5 text-white" />
                         </div>
-                        <span className="text-text-secondary text-sm">
-                          {feature}
-                        </span>
+                        <span className="text-sm text-text-secondary">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -204,66 +183,6 @@ export function Pricing() {
             </motion.div>
           ))}
         </div>
-
-        {/* Grant Program Banner */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8 lg:mt-10 max-w-3xl mx-auto"
-        >
-          <div className="p-5 lg:p-6 rounded-2xl bg-white border-2 border-orange-1 flex flex-col md:flex-row items-center gap-4 md:gap-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 rounded-full bg-orange-1 flex items-center justify-center shadow-md">
-                <Gift className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <div className="text-center md:text-left flex-1">
-              <h4 className="font-heading font-bold text-xl text-text-primary mb-2">
-                Грантовая программа
-              </h4>
-              <p className="text-text-secondary text-body">
-                Мы поддерживаем молодых специалистов и экспертов с
-                социально-значимыми проектами. Вы можете получить частичную
-                финансовую субсидию на обучение.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <a href="#contact">
-                <Button variant="secondary" size="sm" className="bg-white text-orange-1 border-white hover:bg-white hover:text-orange-1">
-                  Узнать подробнее
-                </Button>
-              </a>
-            </div>
-          </div>
-        </motion.div>
-        {/* Guarantee Banner */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-6 lg:mt-8 max-w-3xl mx-auto"
-        >
-          <div className="p-4 lg:p-5 rounded-2xl bg-white border-2 border-orange-1 flex items-center gap-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 rounded-full bg-orange-1 flex items-center justify-center">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-text-primary mb-1">
-                Гарантия результата
-              </h4>
-              <p className="text-text-secondary text-sm">
-                Если после прохождения курса вы не получите результат — мы вернём деньги или предоставим дополнительное обучение бесплатно
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

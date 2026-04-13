@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 const fadeInUp = {
@@ -12,34 +12,34 @@ const fadeInUp = {
 
 const faqItems = [
   {
-    question: "Для кого подходит этот курс?",
+    question: "У меня нет команды. Я смогу внедрить это один?",
     answer:
-      "Курс подходит для начинающих и действующих методологов, экспертов, предпринимателей, продюсеров и проджект-менеджеров, которые хотят создавать сильные образовательные продукты и системно управлять процессом обучения.",
+      "Да. Методология нужна не только большим школам и командам. Вы сможете собрать сильную основу продукта самостоятельно, а уже потом масштабировать её вместе с командой.",
   },
   {
-    question: "Нужен ли опыт в методологии?",
+    question: "У меня уже есть курс. Мне это подходит?",
     answer:
-      "Нет, опыт не обязателен. Курс построен так, чтобы дать фундаментальные знания с нуля. Если у вас уже есть опыт — вы сможете систематизировать его и выйти на новый уровень.",
+      "Да. Курс помогает не только запускать новое, но и усиливать уже существующие продукты: пересобрать структуру, путь ученика, задания, практику и логику результата.",
   },
   {
-    question: "Какой формат обучения?",
+    question: "А если у меня ещё нет флагмана или продукта?",
     answer:
-      "Обучение проходит онлайн. Вас ждут видеоуроки, живые встречи с Александрой, домашние задания с обратной связью и доступ в закрытое комьюнити методологов.",
+      "Тоже подходит. Методология как раз помогает создать понятную основу для сильного продукта, а не пытаться сначала “придумать всё на ощущениях”.",
   },
   {
-    question: "Сколько длится курс?",
+    question: "Сколько времени нужно на прохождение?",
     answer:
-      "Длительность зависит от выбранного тарифа: от 3 недель (Базовый) до 10 недель (ВИП). Оставьте заявку, и мы поможем выбрать оптимальный вариант.",
+      "Это зависит от тарифа и вашей скорости внедрения. Базовый путь можно пройти быстрее, а старшие тарифы дают больше сопровождения, практики и глубины.",
   },
   {
-    question: "Будет ли обратная связь?",
+    question: "Есть ли рассрочка?",
     answer:
-      "Да, обратная связь — важная часть обучения. Вы будете получать фидбэк по домашним заданиям, а также сможете задавать вопросы на живых встречах с Александрой.",
+      "Да, для тарифов предусмотрены варианты оплаты в рассрочку. Точную схему поможет подобрать служба заботы.",
   },
   {
-    question: "Выдаётся ли сертификат?",
+    question: "Можно ли сделать возврат, если мне не подойдёт?",
     answer:
-      "Да, после успешного завершения курса вы получите сертификат от Академии Наставничества, Менторинга и Методологии.",
+      "Условия возврата регулируются действующей офертой. Финальные юридические детали остаются в футере сайта, как и в текущей версии страницы.",
   },
 ];
 
@@ -59,18 +59,22 @@ function FAQItem({
       viewport={{ once: true }}
       variants={fadeInUp}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="border-2 border-orange-1 rounded-2xl overflow-hidden bg-white shadow-sm hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300"
+      className="overflow-hidden rounded-2xl border-2 border-orange-1 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 lg:p-5 text-left hover:bg-white transition-colors"
+        className="w-full text-left"
         aria-expanded={isOpen}
       >
-        <span className="font-bold text-text-primary text-body lg:text-lg pr-4">
-          {item.question}
-        </span>
-        <div className={`w-8 h-8 rounded-full bg-orange-1 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-          <ChevronDown className="w-5 h-5 text-white" />
+        <div className="flex items-center justify-between p-4 lg:p-5">
+          <span className="pr-4 text-body font-bold text-text-primary lg:text-lg">
+            {item.question}
+          </span>
+          <div
+            className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-orange-1 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          >
+            <ChevronDown className="h-5 w-5 text-white" />
+          </div>
         </div>
       </button>
       <AnimatePresence>
@@ -83,7 +87,7 @@ function FAQItem({
             className="overflow-hidden"
           >
             <div className="px-4 pb-4 lg:px-5 lg:pb-5">
-              <p className="text-text-secondary text-body">{item.answer}</p>
+              <p className="text-body text-text-secondary">{item.answer}</p>
             </div>
           </motion.div>
         )}
@@ -102,14 +106,14 @@ export function FAQ() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
+          className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-5xl"
         >
-          Часто задаваемые вопросы
+          Ответы на вопросы, которые вы нам точно зададите
         </motion.h2>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="mx-auto max-w-3xl space-y-4">
           {faqItems.map((item, index) => (
-            <FAQItem key={index} item={item} index={index} />
+            <FAQItem key={item.question} item={item} index={index} />
           ))}
         </div>
       </Container>

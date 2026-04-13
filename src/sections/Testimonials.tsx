@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Quote, ArrowRight } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -13,46 +13,34 @@ const fadeInUp = {
 
 const testimonials = [
   {
+    name: "Константин Воробьёв",
+    role: "основатель школы плавания",
+    result: "Разработал онлайн-курс и заработал на нём около 2 000 000 рублей.",
+  },
+  {
+    name: "Анастасия Ланговая",
+    role: "эксперт",
+    result: "Запустила свой мастермайнд, создала 4 продукта и окупила курс до его завершения.",
+  },
+  {
     name: "Мария Макош",
-    role: "Руководитель, методолог",
-    before: "Работала методологом без системы",
-    result: "Провела 20 стратегических сессий, получила предложение выступить в ТПП г. Серпухов",
-    highlight: null,
-  },
-  {
-    name: "Татьяна Сивкова",
-    role: "Владелица школы вязания",
-    before: "Вела школу вязания без методологии",
-    result: "Усовершенствовала курсы в школе вязания",
-    highlight: "400 000+ ₽",
-  },
-  {
-    name: "Константин Воробьев",
-    role: "Тренер по плаванию",
-    before: "Оффлайн тренер без онлайн-продуктов",
-    result: "Разработал онлайн-курс по плаванию",
-    highlight: "2 000 000 ₽",
-  },
-  {
-    name: "Анна Алексеева",
-    role: "Преподаватель английского языка",
-    before: "Преподавала без собственного курса",
-    result: "Создала с нуля свой курс, разработала и провела 4 вебинара",
-    highlight: null,
+    role: "методолог, руководитель",
+    result: "Провела стратегические сессии, усилила экспертную упаковку и получила новые профессиональные приглашения.",
   },
   {
     name: "Дарья Кривоженко",
-    role: "Директор по продуктам, «Белка.Дизайн»",
-    before: "Хотела запустить курсы по нейросетям",
-    result: "Разработала 3 курса по нейросетям",
-    highlight: "2 765 348 ₽",
+    role: "директор по продуктам",
+    result: "Собрала новые образовательные продукты и масштабировала направление на основе методологической системы.",
+  },
+  {
+    name: "Анна Алексеева",
+    role: "преподаватель английского",
+    result: "Создала собственный курс и провела серию вебинаров уже во время обучения.",
   },
   {
     name: "Олеся Пильжис",
-    role: "Специалист, ОАО РЖД",
-    before: "Нужен был курс повышения квалификации",
-    result: "Разработала курс повышения квалификации, одобренный руководством",
-    highlight: null,
+    role: "специалист корпоративного обучения",
+    result: "Разработала курс повышения квалификации, который одобрили внутри компании.",
   },
 ];
 
@@ -60,56 +48,42 @@ export function Testimonials() {
   return (
     <section className="bg-white py-12 lg:py-16">
       <Container>
-        <motion.h2
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-black text-3xl lg:text-5xl text-text-primary text-center mb-8 lg:mb-10 uppercase"
+          className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          Результаты наших выпускников
-        </motion.h2>
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-5xl">
+            Выпускники выходят не с теорией, а с результатом
+          </h2>
+          <p className="text-lg text-text-secondary lg:text-xl">
+            На курсе рождаются не абстрактные знания, а реальные продукты,
+            решения, новые запуски и сильные кейсы.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.name}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
-              <Card className="h-full">
-                <div className="space-y-3">
-                  <Quote className="w-10 h-10 text-orange-1 transition-transform duration-300 group-hover:scale-110" />
-
-                  {/* Before */}
-                  <p className="text-text-muted text-sm">
-                    <span className="font-semibold">До:</span> {item.before}
+              <Card className="h-full border-2 border-orange-1">
+                <div className="space-y-4">
+                  <Quote className="h-10 w-10 text-orange-1 transition-transform duration-300 group-hover:scale-110" />
+                  <p className="text-body font-semibold leading-relaxed text-text-primary">
+                    {item.result}
                   </p>
-
-                  {/* After/Result */}
-                  <div className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-orange-1 flex-shrink-0 mt-0.5" />
-                    <p className="text-text-primary text-body leading-relaxed font-semibold">
-                      {item.result}
-                    </p>
-                  </div>
-
-                  {/* Highlight badge */}
-                  {item.highlight && (
-                    <div className="inline-block px-3 py-1.5 bg-orange-1 text-white text-sm font-bold rounded-lg shadow-md transition-all duration-300 group-hover:scale-105">
-                      {item.highlight}
-                    </div>
-                  )}
-
-                  <div className="pt-3 border-t-2 border-orange-1">
-                    <p className="text-text-primary font-bold">
-                      {item.name}
-                    </p>
-                    <p className="text-orange-1 text-sm font-medium">{item.role}</p>
+                  <div className="border-t-2 border-orange-1 pt-3">
+                    <p className="font-bold text-text-primary">{item.name}</p>
+                    <p className="text-sm font-medium text-orange-1">{item.role}</p>
                   </div>
                 </div>
               </Card>
@@ -117,18 +91,18 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* CTA after testimonials */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8 lg:mt-10 text-center"
+          className="mt-8 text-center lg:mt-10"
         >
           <a href="#pricing">
             <Button variant="primary" size="lg">
-              Хочу такие же результаты
+              Смотреть тарифы
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </a>
         </motion.div>

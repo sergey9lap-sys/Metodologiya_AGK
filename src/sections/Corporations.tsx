@@ -9,21 +9,18 @@ const fadeInUp = {
 };
 
 const corporations = [
-  "Tele2",
+  "СБЕР",
+  "РОСНЕФТЬ",
+  "Норникель",
+  "X5 Group",
   "ВкусВилл",
+  "Nestle",
+  "Tele2",
   "РЖД",
   "Western Union",
-  "L'Oréal",
-  "Райффайзен Банк",
+  "Альфа-Банк",
   "ВТБ",
-  "Норникель",
-  "Эльдорадо",
-  "Роснефть",
-  "X5 Group",
-  "Альфа Банк",
-  "ЕВРАЗ",
-  "Сбер",
-  "Nestlé",
+  "L'Oréal",
 ];
 
 export function Corporations() {
@@ -36,13 +33,11 @@ export function Corporations() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="text-center mb-6 lg:mb-8"
+          className="text-center"
         >
-          <p className="text-text-primary text-lg lg:text-xl font-semibold max-w-3xl mx-auto">
-            В курсе применяются образовательные техники и методики, апробированные{" "}
-            <span className="font-bold underline decoration-text-primary/40 underline-offset-4">
-              в крупнейших корпорациях
-            </span>
+          <p className="mx-auto mb-6 max-w-4xl text-lg font-semibold text-text-primary lg:text-xl">
+            Методология Александры выросла из практики с экспертами,
+            предпринимателями и крупнейшими компаниями рынка.
           </p>
         </motion.div>
 
@@ -51,13 +46,13 @@ export function Corporations() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-wrap justify-center gap-3 lg:gap-4"
         >
           {corporations.map((name, index) => (
             <div
               key={index}
-              className="px-5 py-3 bg-white border-2 border-orange-1 rounded-xl text-text-primary text-sm lg:text-base font-bold shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] transition-all"
+              className="rounded-xl border-2 border-orange-1 bg-white px-5 py-3 text-sm font-bold text-text-primary shadow-sm transition-all hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg lg:text-base"
             >
               {name}
             </div>

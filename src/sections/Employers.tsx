@@ -10,8 +10,8 @@ const fadeInUp = {
 
 const employers = [
   "Skyeng",
+  "СБЕР Университет",
   "РЖД",
-  "Сбер",
   "ВКонтакте",
   "Skillbox",
   "Нетология",
@@ -29,9 +29,9 @@ export function Employers() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="font-heading font-bold text-2xl lg:text-3xl text-text-primary text-center mb-6 uppercase"
+          className="mb-6 text-center font-heading text-2xl font-bold uppercase text-text-primary lg:text-3xl"
         >
-          Наши выпускники работают в:
+          Наши выпускники работают и внедряют методологию в:
         </motion.h3>
 
         <motion.div
@@ -42,10 +42,10 @@ export function Employers() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-wrap justify-center gap-3 lg:gap-4"
         >
-          {employers.map((name, index) => (
+          {employers.map((name) => (
             <div
-              key={index}
-              className="px-6 py-3 bg-white border-2 border-orange-1 rounded-xl text-text-primary text-base lg:text-lg font-bold shadow-md hover:shadow-lg hover:-translate-y-1 hover:scale-[1.03] transition-all"
+              key={name}
+              className="rounded-xl border-2 border-orange-1 bg-white px-6 py-3 text-base font-bold text-text-primary shadow-md transition-all hover:-translate-y-1 hover:scale-[1.03] hover:shadow-lg lg:text-lg"
             >
               {name}
             </div>

@@ -55,6 +55,8 @@ const alumni = [
     initials: "НК",
     name: "Наталья Хруленко",
     role: "Директор СБЕР-университета",
+    photo: "/images/Наталья Хруленко.jpg",
+    photoClassName: "object-[38%_50%]",
   },
   {
     initials: "МА",
@@ -67,6 +69,7 @@ const alumni = [
     initials: "ГШ",
     name: "Галина Шевченко",
     role: "Продюсер форума Леонида Агутина",
+    photo: "/images/Галина шевченко.jpg",
   },
   {
     initials: "ИР",
@@ -154,7 +157,9 @@ export function FamousAlumni() {
                     alt={person.name}
                     width={180}
                     height={180}
-                    className="h-full w-full object-cover"
+                    className={`h-full w-full object-cover ${
+                      person.photoClassName ?? ""
+                    }`}
                     loading="lazy"
                   />
                 ) : (

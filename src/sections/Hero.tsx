@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { COURSE_START_DATE, COURSE_START_DATE_RAW } from "@/lib/constants";
-import { Award, Calendar, ChevronDown, ShieldCheck, Users } from "lucide-react";
+import { Award, Calendar, ChevronDown, Users } from "lucide-react";
 
 const authorFacts = [
   "EdTech-предприниматель, основатель крупнейшей школы по методологии и методического агентства.",
@@ -99,16 +99,6 @@ export function Hero() {
               >
                 <Users className="h-4 w-4" />
                 <span>Осталось 12 мест на поток</span>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.45 }}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-dashed border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-text-primary shadow-sm"
-              >
-                <ShieldCheck className="h-4 w-4 text-orange-1" />
-                <span>Проверено GetCourse</span>
               </motion.div>
             </div>
 

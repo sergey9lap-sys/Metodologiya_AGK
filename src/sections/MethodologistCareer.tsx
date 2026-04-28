@@ -1,8 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { ArrowRight, Briefcase, CheckSquare2, CircleDollarSign, Quote, Target } from "lucide-react";
+import { Briefcase, CheckSquare2, CircleDollarSign, Target } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -32,15 +31,6 @@ const requests = [
   "Не понимаю, как построить эксперту продуктовую линейку.",
   "Не понимаю, как «распаковать» эксперта и собрать его знания в востребованный продукт.",
   "Экспертам выстраиваю продукты и продуктовые линейки, а себе не получается.",
-];
-
-const employers = [
-  "Skyeng",
-  "Skillbox",
-  "Нетология",
-  "Julia Marketing",
-  "Академия переговоров Игоря Рызова",
-  "MIRA SCHOOL",
 ];
 
 export function MethodologistCareer() {
@@ -108,52 +98,6 @@ export function MethodologistCareer() {
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="rounded-[28px] bg-white p-6 shadow-card lg:p-8"
-        >
-          <div className="space-y-5">
-            <div>
-              <p className="mb-4 text-lg font-semibold text-text-primary lg:text-xl">
-                Где работают выпускники-методологи:
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {employers.map((name) => (
-                  <div
-                    key={name}
-                    className="rounded-xl border-2 border-orange-1 bg-orange-1 px-4 py-2 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md lg:text-base"
-                  >
-                    {name}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm lg:p-5">
-              <div className="flex items-start gap-3">
-                <Quote className="mt-1 h-7 w-7 flex-shrink-0 text-white" />
-                <p className="text-body leading-relaxed text-white">
-                  «Анастасия Ланговая: запустила свой мастермайнд, создала 4 продукта,
-                  заработала около 300 000 рублей, окупила курс до его завершения»
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-1 text-center">
-              <a href="#pricing">
-                <Button variant="primary" size="lg" className="min-w-[280px] max-w-full">
-                  Пройти курс и получить востребованную профессию
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
             </div>
           </div>
         </motion.div>

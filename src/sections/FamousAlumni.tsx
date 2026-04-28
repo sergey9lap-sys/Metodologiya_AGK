@@ -48,6 +48,24 @@ const employers = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Color_No-BG.svg/250px-Logo_Color_No-BG.svg.png",
     logoClassName: "h-10 max-w-[112px]",
   },
+  {
+    name: "Julia Marketing",
+    logo: "https://optim.tildacdn.com/tild3334-6534-4864-a436-366139663866/-/resize/313x/-/format/webp/2.png.webp",
+    logoClassName: "h-10 max-w-[132px]",
+    showLabel: true,
+  },
+  {
+    name: "Академия переговоров Игоря Рызова",
+    logo: "https://static.tildacdn.com/tild3338-3363-4339-b362-343265616431/image_19_2.svg",
+    logoClassName: "h-10 max-w-[148px]",
+    showLabel: true,
+  },
+  {
+    name: "MIRA SCHOOL",
+    logo: "https://optim.tildacdn.com/tild6138-6533-4562-a565-636130656563/-/resize/111x/-/format/webp/744650.png.webp",
+    logoClassName: "h-10 max-w-[96px]",
+    showLabel: true,
+  },
 ];
 
 const alumni = [
@@ -105,19 +123,26 @@ export function FamousAlumni() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
-                className="flex min-h-[64px] min-w-[128px] items-center justify-center px-4 py-2 text-base font-bold text-text-primary transition-all hover:-translate-y-1 lg:text-lg"
+                className="flex min-h-[76px] min-w-[128px] items-center justify-center px-4 py-2 text-base font-bold text-text-primary transition-all hover:-translate-y-1 lg:text-lg"
               >
                 {employer.logo ? (
-                  <Image
-                    src={employer.logo}
-                    alt={employer.name}
-                    width={180}
-                    height={72}
-                    className={`object-contain drop-shadow-sm ${
-                      employer.logoClassName ?? "h-6 max-w-[120px]"
-                    }`}
-                    loading="lazy"
-                  />
+                  <div className="flex flex-col items-center gap-1.5">
+                    <Image
+                      src={employer.logo}
+                      alt={employer.name}
+                      width={180}
+                      height={72}
+                      className={`object-contain drop-shadow-sm ${
+                        employer.logoClassName ?? "h-6 max-w-[120px]"
+                      }`}
+                      loading="lazy"
+                    />
+                    {employer.showLabel && (
+                      <span className="max-w-[160px] text-center text-xs font-bold leading-tight text-text-primary">
+                        {employer.name}
+                      </span>
+                    )}
+                  </div>
                 ) : (
                   employer.name
                 )}

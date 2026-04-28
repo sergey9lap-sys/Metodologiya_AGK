@@ -67,16 +67,16 @@ export function Benefits() {
                 variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full">
+                <Card className="h-full border-orange-1 bg-orange-1 shadow-card-hover">
                   <div className="mb-4 flex items-center gap-4">
-                    <div className="group-icon rounded-xl bg-orange-1 p-3 shadow-md">
-                      <Icon className="h-6 w-6 text-white" />
+                    <div className="group-icon rounded-xl bg-white p-3 shadow-md">
+                      <Icon className="h-6 w-6 text-orange-1" />
                     </div>
-                    <h3 className="font-heading text-lg font-bold text-text-primary">
+                    <h3 className="font-heading text-lg font-bold text-white">
                       {benefit.title}
                     </h3>
                   </div>
-                  <p className="text-body text-text-secondary">{benefit.text}</p>
+                  <p className="text-body text-white/90">{benefit.text}</p>
                 </Card>
               </motion.div>
             );

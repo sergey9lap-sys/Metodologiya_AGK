@@ -96,7 +96,7 @@ function FAQItem({
       viewport={{ once: true }}
       variants={fadeInUp}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="overflow-hidden rounded-2xl border-2 border-orange-1 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+      className="overflow-hidden rounded-2xl border-2 border-orange-1 bg-orange-1 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -104,13 +104,13 @@ function FAQItem({
         aria-expanded={isOpen}
       >
         <div className="flex items-center justify-between p-4 lg:p-5">
-          <span className="pr-4 text-body font-bold text-text-primary lg:text-lg">
+          <span className="pr-4 text-body font-bold text-white lg:text-lg">
             {item.question}
           </span>
           <div
-            className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-orange-1 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
           >
-            <ChevronDown className="h-5 w-5 text-white" />
+            <ChevronDown className="h-5 w-5 text-orange-1" />
           </div>
         </div>
       </button>
@@ -123,7 +123,7 @@ function FAQItem({
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-4 pb-4 lg:px-5 lg:pb-5">
+            <div className="mx-3 mb-3 rounded-xl bg-white px-4 py-4 lg:mx-4 lg:mb-4 lg:px-5 lg:py-5">
               <p className="text-body text-text-secondary">{item.answer}</p>
             </div>
           </motion.div>

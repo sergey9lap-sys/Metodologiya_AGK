@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import { GetCourseQualityBadge } from "@/components/GetCourseQualityBadge";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { Header } from "@/components/Header";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans`}>
         <Header />
         {children}
+        <GetCourseQualityBadge />
         <StickyMobileCTA />
       </body>
     </html>

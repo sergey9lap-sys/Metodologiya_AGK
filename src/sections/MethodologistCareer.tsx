@@ -76,11 +76,11 @@ export function MethodologistCareer() {
                   viewport={{ once: true }}
                   variants={fadeInUp}
                   transition={{ duration: 0.4, delay: index * 0.06 }}
-                  className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm"
+                  className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
                 >
                   <div className="flex items-start gap-3">
-                    <Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-orange-1" />
-                    <p className="text-body font-semibold text-text-primary">{item.text}</p>
+                    <Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-white" />
+                    <p className="text-body font-semibold text-white">{item.text}</p>
                   </div>
                 </motion.div>
               );
@@ -100,11 +100,11 @@ export function MethodologistCareer() {
                   viewport={{ once: true }}
                   variants={fadeInUp}
                   transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
-                className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
                   <div className="flex items-start gap-3">
-                    <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-orange-1" />
-                    <p className="text-body leading-relaxed text-text-primary">{item}</p>
+                    <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
+                    <p className="text-body leading-relaxed text-white">{item}</p>
                   </div>
                 </motion.div>
               ))}
@@ -129,7 +129,7 @@ export function MethodologistCareer() {
                 {employers.map((name) => (
                   <div
                     key={name}
-                    className="rounded-xl border-2 border-orange-1 bg-white px-4 py-2 text-sm font-bold text-text-primary shadow-sm lg:text-base"
+                    className="rounded-xl border-2 border-orange-1 bg-orange-1 px-4 py-2 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md lg:text-base"
                   >
                     {name}
                   </div>
@@ -137,10 +137,10 @@ export function MethodologistCareer() {
               </div>
             </div>
 
-            <div className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm lg:p-5">
+            <div className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm lg:p-5">
               <div className="flex items-start gap-3">
-                <Quote className="mt-1 h-7 w-7 flex-shrink-0 text-orange-1" />
-                <p className="text-body leading-relaxed text-text-primary">
+                <Quote className="mt-1 h-7 w-7 flex-shrink-0 text-white" />
+                <p className="text-body leading-relaxed text-white">
                   «Анастасия Ланговая: запустила свой мастермайнд, создала 4 продукта,
                   заработала около 300 000 рублей, окупила курс до его завершения»
                 </p>

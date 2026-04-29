@@ -3,6 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -38,8 +39,16 @@ const myths = [
 
 export function Myths() {
   return (
-    <section className="bg-[#FFA700] py-12 lg:py-16">
-      <Container>
+    <section className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
+      <Image
+        src="/background/10 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="(min-width: 1024px) 56vw, 115vw"
+        className="pointer-events-none absolute inset-y-0 left-[-18%] z-0 h-full w-[118%] select-none object-cover object-left opacity-[0.22] grayscale [mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.65)_66%,transparent_100%)] lg:left-0 lg:w-[58%] lg:opacity-[0.42] [-webkit-mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.65)_66%,transparent_100%)]"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

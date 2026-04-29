@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -46,8 +47,16 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="bg-white py-12 lg:py-16">
-      <Container>
+    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+      <Image
+        src="/background/13 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover opacity-[0.18] grayscale [mask-image:linear-gradient(to_bottom,black_60%,rgba(0,0,0,0.8)_88%,transparent_100%)] lg:opacity-[0.32] [-webkit-mask-image:linear-gradient(to_bottom,black_60%,rgba(0,0,0,0.8)_88%,transparent_100%)]"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

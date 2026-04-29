@@ -3,6 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Briefcase, CheckSquare2, CircleDollarSign, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -35,8 +36,17 @@ const requests = [
 
 export function MethodologistCareer() {
   return (
-    <section id="methodologist-career" className="bg-[#FFA700] py-10 lg:py-12">
-      <Container className="space-y-6 lg:space-y-8">
+    <section id="methodologist-career" className="relative overflow-hidden bg-[#FFA700] py-10 lg:py-12">
+      <Image
+        src="/background/8 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        width={1040}
+        height={1320}
+        sizes="(min-width: 1024px) 40vw, 105vw"
+        className="pointer-events-none absolute right-[-45%] top-1/2 z-0 w-[105%] max-w-[560px] -translate-y-1/2 select-none object-contain opacity-[0.28] brightness-[1.08] contrast-[1.18] [mask-image:linear-gradient(to_left,black_88%,transparent_100%)] lg:right-[-1%] lg:w-[42%] lg:opacity-[0.62] [-webkit-mask-image:linear-gradient(to_left,black_88%,transparent_100%)]"
+      />
+      <Container className="relative z-20 space-y-6 lg:space-y-8">
         <motion.div
           initial="hidden"
           whileInView="visible"

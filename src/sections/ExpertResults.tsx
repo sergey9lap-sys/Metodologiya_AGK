@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, CheckSquare2, Quote, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -27,49 +28,63 @@ const outcomes = [
 
 export function ExpertResults() {
   return (
-    <section id="expert-results" className="bg-white py-10 lg:py-12">
-      <Container className="space-y-8 lg:space-y-10">
+    <section id="expert-results" className="relative overflow-hidden bg-white py-10 lg:py-12">
+      <Container className="relative z-20 space-y-8 lg:space-y-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8"
+          className="relative overflow-hidden space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8"
         >
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="mb-4 font-heading text-2xl font-black leading-tight text-text-primary lg:text-4xl">
-              Вы — эксперт. Ваши знания стоят миллионы. Но без методологии они так и останутся в вашей голове
-            </h2>
-            <p className="mx-auto max-w-4xl text-body italic text-text-secondary">
-              Курс «Методология» превращает хаос вашей экспертизы в продукт,
-              который ученики проходят до конца и приводят друзей.
-            </p>
-          </div>
+          <Image
+            src="/background/7 блок.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="(min-width: 1024px) 1184px, 100vw"
+            className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover opacity-[0.30] grayscale-[10%] lg:opacity-[0.44]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-10 bg-[#FFA700]/34"
+          />
+          <div className="relative z-20 space-y-6 lg:space-y-7">
+            <div className="mx-auto max-w-5xl text-center">
+              <h2 className="mb-4 font-heading text-2xl font-black leading-tight text-text-primary lg:text-4xl">
+                Вы — эксперт. Ваши знания стоят миллионы. Но без методологии они так и останутся в вашей голове
+              </h2>
+              <p className="mx-auto max-w-4xl text-body italic text-text-secondary">
+                Курс «Методология» превращает хаос вашей экспертизы в продукт,
+                который ученики проходят до конца и приводят друзей.
+              </p>
+            </div>
 
-          <div className="mx-auto max-w-6xl">
-            <p className="mb-5 text-xl font-bold text-text-primary lg:text-2xl">
-              Методология решает запросы:
-            </p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {requests.map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.45, delay: index * 0.05 }}
-                  className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-                >
-                  <div className="flex items-start gap-3">
-                    <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-orange-1" />
-                    <p className="text-body italic leading-relaxed text-text-primary">
-                      {item}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="mx-auto max-w-6xl">
+              <p className="mb-5 text-xl font-bold text-text-primary lg:text-2xl">
+                Методология решает запросы:
+              </p>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {requests.map((item, index) => (
+                  <motion.div
+                    key={item}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeInUp}
+                    transition={{ duration: 0.45, delay: index * 0.05 }}
+                    className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                  >
+                    <div className="flex items-start gap-3">
+                      <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-orange-1" />
+                      <p className="text-body italic leading-relaxed text-text-primary">
+                        {item}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

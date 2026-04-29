@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { motion } from "framer-motion";
 import { Award, BookOpen, Globe, Target } from "lucide-react";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -37,8 +38,20 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="bg-orange-1 py-10 lg:py-12">
-      <Container>
+    <section className="relative overflow-hidden bg-orange-1 py-10 lg:py-12">
+      <Image
+        src="/background/2 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover opacity-[0.40] brightness-[1.04] contrast-[1.18] lg:opacity-[0.58]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-orange-1/38 lg:bg-orange-1/30"
+      />
+      <Container className="relative z-20">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 lg:gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;

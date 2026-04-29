@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Compass, Puzzle, Route } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -30,8 +31,17 @@ const cards = [
 
 export function WhatIsMethodology() {
   return (
-    <section className="bg-[#FFA700] py-12 lg:py-16">
-      <Container>
+    <section className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
+      <Image
+        src="/background/4 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        width={1120}
+        height={900}
+        sizes="(min-width: 1024px) 42vw, 110vw"
+        className="pointer-events-none absolute right-[-45%] top-1/2 z-0 w-[110%] max-w-[560px] -translate-y-1/2 select-none object-cover opacity-[0.14] grayscale-[20%] [mask-image:linear-gradient(to_left,black_58%,transparent_100%)] lg:right-[-6%] lg:w-[42%] lg:opacity-[0.24] [-webkit-mask-image:linear-gradient(to_left,black_58%,transparent_100%)]"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

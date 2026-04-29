@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { BookOpen, Layers3, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -30,8 +31,20 @@ const modules = [
 
 export function HowItWorks() {
   return (
-    <section id="program" className="bg-orange-1 py-12 lg:py-16">
-      <Container>
+    <section id="program" className="relative overflow-hidden bg-orange-1 py-12 lg:py-16">
+      <Image
+        src="/background/14 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover opacity-[0.20] grayscale-[20%] lg:opacity-[0.34]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-orange-1/45"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

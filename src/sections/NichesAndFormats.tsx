@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -30,8 +31,17 @@ const systems = [
 
 export function NichesAndFormats() {
   return (
-    <section className="bg-white py-12 lg:py-16">
-      <Container>
+    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+      <Image
+        src="/background/11 блок.jpg"
+        alt=""
+        aria-hidden="true"
+        width={920}
+        height={1220}
+        sizes="(min-width: 1024px) 38vw, 92vw"
+        className="pointer-events-none absolute left-[-38%] top-[52%] z-0 w-[92%] max-w-[500px] -translate-y-1/2 select-none object-contain opacity-[0.26] contrast-[1.08] [mask-image:linear-gradient(to_right,black_80%,transparent_100%)] lg:left-[-2%] lg:top-1/2 lg:w-[38%] lg:opacity-[0.50] [-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)]"
+      />
+      <Container className="relative z-20">
         <motion.h2
           initial="hidden"
           whileInView="visible"

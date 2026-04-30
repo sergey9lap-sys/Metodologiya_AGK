@@ -46,7 +46,7 @@ export function Myths() {
         aria-hidden="true"
         fill
         sizes="(min-width: 1024px) 56vw, 115vw"
-        className="pointer-events-none absolute inset-y-0 left-[-18%] z-0 h-full w-[118%] select-none object-cover object-left opacity-[0.22] grayscale [mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.65)_66%,transparent_100%)] lg:left-0 lg:w-[58%] lg:opacity-[0.42] [-webkit-mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.65)_66%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.18] grayscale [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.88)_76%,transparent_100%)] lg:inset-y-0 lg:left-0 lg:w-[58%] lg:object-left lg:opacity-[0.42] lg:[mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.65)_66%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.88)_76%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_0%,black_48%,rgba(0,0,0,0.65)_66%,transparent_100%)]"
       />
       <Container className="relative z-20">
         <motion.div

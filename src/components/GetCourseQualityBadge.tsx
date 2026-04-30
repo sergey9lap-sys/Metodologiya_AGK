@@ -6,7 +6,7 @@ const badgeMarkup = `
       right: -292px !important;
       top: 177px !important;
       transition: 0.5s ease-in-out !important;
-      z-index: 999 !important;
+      z-index: 30 !important;
     }
     .show.gc-qualityreestr-school {
       right: -195px !important;
@@ -22,7 +22,7 @@ const badgeMarkup = `
       }
       .gc-qualityreestr-school {
         right: -221px !important;
-        top: 96px !important;
+        top: 112px !important;
       }
       .show.gc-qualityreestr-school {
         right: -148px !important;

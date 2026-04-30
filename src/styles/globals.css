@@ -11,6 +11,13 @@
     @apply bg-bg text-text-primary font-sans antialiased;
   }
 
+  @media (max-width: 1023px) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  }
+
   /* Headings use Times New Roman */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;

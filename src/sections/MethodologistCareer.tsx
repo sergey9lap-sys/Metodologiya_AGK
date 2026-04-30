@@ -43,8 +43,8 @@ export function MethodologistCareer() {
         aria-hidden="true"
         width={1040}
         height={1320}
-        sizes="(min-width: 1024px) 40vw, 105vw"
-        className="pointer-events-none absolute right-[-45%] top-1/2 z-0 w-[105%] max-w-[560px] -translate-y-1/2 select-none object-contain opacity-[0.28] brightness-[1.08] contrast-[1.18] [mask-image:linear-gradient(to_left,black_88%,transparent_100%)] lg:right-[-1%] lg:w-[42%] lg:opacity-[0.62] [-webkit-mask-image:linear-gradient(to_left,black_88%,transparent_100%)]"
+        sizes="(min-width: 1024px) 40vw, 100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.20] brightness-[1.08] contrast-[1.18] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_76%,transparent_100%)] lg:inset-auto lg:right-[-1%] lg:top-1/2 lg:h-auto lg:w-[42%] lg:max-w-[560px] lg:-translate-y-1/2 lg:object-contain lg:opacity-[0.62] lg:[mask-image:linear-gradient(to_left,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_76%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_88%,transparent_100%)]"
       />
       <Container className="relative z-20 space-y-6 lg:space-y-8">
         <motion.div

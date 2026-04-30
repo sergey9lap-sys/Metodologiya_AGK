@@ -38,8 +38,8 @@ export function WhatIsMethodology() {
         aria-hidden="true"
         width={1120}
         height={900}
-        sizes="(min-width: 1024px) 42vw, 110vw"
-        className="pointer-events-none absolute right-[-45%] top-1/2 z-0 w-[110%] max-w-[560px] -translate-y-1/2 select-none object-cover opacity-[0.14] grayscale-[20%] [mask-image:linear-gradient(to_left,black_58%,transparent_100%)] lg:right-[-6%] lg:w-[42%] lg:opacity-[0.24] [-webkit-mask-image:linear-gradient(to_left,black_58%,transparent_100%)]"
+        sizes="(min-width: 1024px) 42vw, 100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.12] grayscale-[20%] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_68%,transparent_100%)] lg:inset-auto lg:right-[-6%] lg:top-1/2 lg:h-auto lg:w-[42%] lg:max-w-[560px] lg:-translate-y-1/2 lg:opacity-[0.24] lg:[mask-image:linear-gradient(to_left,black_58%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_68%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_58%,transparent_100%)]"
       />
       <Container className="relative z-20">
         <motion.div

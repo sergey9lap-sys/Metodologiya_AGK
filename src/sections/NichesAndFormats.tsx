@@ -60,8 +60,8 @@ export function NichesAndFormats() {
         aria-hidden="true"
         width={920}
         height={1220}
-        sizes="(min-width: 1024px) 38vw, 92vw"
-        className="pointer-events-none absolute left-[-38%] top-[52%] z-0 w-[92%] max-w-[500px] -translate-y-1/2 select-none object-contain opacity-[0.26] contrast-[1.08] [mask-image:linear-gradient(to_right,black_80%,transparent_100%)] lg:left-[-2%] lg:top-1/2 lg:w-[38%] lg:opacity-[0.50] [-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)]"
+        sizes="(min-width: 1024px) 38vw, 100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.16] contrast-[1.08] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.84)_72%,transparent_100%)] lg:inset-auto lg:left-[-2%] lg:top-1/2 lg:h-auto lg:w-[38%] lg:max-w-[500px] lg:-translate-y-1/2 lg:object-contain lg:opacity-[0.50] lg:[mask-image:linear-gradient(to_right,black_80%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.84)_72%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)]"
       />
       <Container className="relative z-20">
         <motion.h2

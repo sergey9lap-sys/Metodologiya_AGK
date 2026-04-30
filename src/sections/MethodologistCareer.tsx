@@ -44,7 +44,7 @@ export function MethodologistCareer() {
         width={1040}
         height={1320}
         sizes="(min-width: 1024px) 40vw, 100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.20] brightness-[1.08] contrast-[1.18] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_76%,transparent_100%)] lg:inset-auto lg:right-[-1%] lg:top-1/2 lg:h-auto lg:w-[42%] lg:max-w-[560px] lg:-translate-y-1/2 lg:object-contain lg:opacity-[0.62] lg:[mask-image:linear-gradient(to_left,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_76%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_88%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-[82%_center] opacity-[0.38] brightness-[1.08] contrast-[1.18] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.95)_82%,transparent_100%)] lg:inset-auto lg:right-[-1%] lg:top-1/2 lg:h-auto lg:w-[42%] lg:max-w-[560px] lg:-translate-y-1/2 lg:object-contain lg:object-center lg:opacity-[0.62] lg:[mask-image:linear-gradient(to_left,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.95)_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_88%,transparent_100%)]"
       />
       <Container className="relative z-20 space-y-6 lg:space-y-8">
         <motion.div
@@ -53,7 +53,7 @@ export function MethodologistCareer() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="rounded-[28px] bg-white p-6 shadow-card lg:p-8"
+          className="rounded-[28px] bg-white/90 p-6 shadow-card backdrop-blur-[2px] lg:bg-white lg:p-8"
         >
           <div className="mx-auto mb-6 max-w-5xl text-center lg:mb-7">
             <h2 className="mb-3 font-heading text-3xl font-black leading-tight text-text-primary lg:text-4xl">

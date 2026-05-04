@@ -69,7 +69,7 @@ const faqItems: { question: string; answer: ReactNode }[] = [
       <>
         Да, возврат возможен согласно условиям{" "}
         <a
-          href="https://agkedu.getcourse.ru/oferta_club"
+          href="https://agkedu.getcourse.ru/oferta_methodology"
           target="_blank"
           rel="noopener noreferrer"
           className="font-semibold text-orange-1 underline underline-offset-4"

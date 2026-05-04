@@ -96,7 +96,7 @@ export function ContactCTA() {
                 </div>
                 <p className="text-sm text-text-secondary">
                   Внизу страницы доступны оферта, политика конфиденциальности и
-                  все основные реквизиты Академии.
+                  основные данные Академии.
                 </p>
               </div>
 

@@ -13,24 +13,30 @@ const fadeInUp = {
 const salaryItems = [
   {
     icon: Briefcase,
-    text: "Начинающий методолог: 50 000 - 80 000 ₽ за проект",
+    title: "Начинающий методолог",
+    amount: "50 000 - 80 000 ₽",
+    caption: "за проект",
   },
   {
     icon: Target,
-    text: "ТОП-методолог: от 150 000 ₽ за проект",
+    title: "ТОП-методолог",
+    amount: "от 150 000 ₽",
+    caption: "за проект",
   },
   {
     icon: CircleDollarSign,
-    text: "Директор по продукту: 220 000 - 350 000 ₽",
+    title: "Директор по продукту",
+    amount: "220 000 - 350 000 ₽",
+    caption: "в месяц",
   },
 ];
 
 const requests = [
-  "Не знаю, как зайти в первый проект, а вдруг у меня не получится.",
-  "Работаю в «рабском» режиме, делаю всё за эксперта.",
-  "Зависаю в операционке и не расту как специалист.",
   "Не понимаю, как построить эксперту продуктовую линейку.",
   "Не понимаю, как «распаковать» эксперта и собрать его знания в востребованный продукт.",
+  "Зависаю в операционке и не расту как специалист.",
+  "Не знаю, как зайти в первый проект, а вдруг у меня не получится.",
+  "Работаю в «рабском» режиме, делаю всё за эксперта.",
   "Экспертам выстраиваю продукты и продуктовые линейки, а себе не получается.",
 ];
 
@@ -70,17 +76,26 @@ export function MethodologistCareer() {
               const Icon = item.icon;
               return (
                 <motion.div
-                  key={item.text}
+                  key={item.title}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                   transition={{ duration: 0.4, delay: index * 0.06 }}
-                  className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                  className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
                 >
                   <div className="flex items-start gap-3">
-                    <Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-white" />
-                    <p className="text-body font-semibold text-white">{item.text}</p>
+                    <Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-orange-1" />
+                    <p className="text-body font-semibold leading-snug text-text-primary">
+                      {item.title}:<br />
+                      <span className="font-heading text-2xl font-black leading-tight text-orange-1">
+                        {item.amount}
+                      </span>
+                      <br />
+                      <span className="text-sm font-medium text-text-secondary">
+                        {item.caption}
+                      </span>
+                    </p>
                   </div>
                 </motion.div>
               );

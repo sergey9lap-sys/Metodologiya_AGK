@@ -103,13 +103,8 @@ export function Benefits() {
         >
           <div className="rounded-2xl bg-orange-1 p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:p-6">
             <p className="text-lg font-bold text-white lg:text-xl">
-              Нижняя логика всего курса остаётся прежней: вы учитесь собирать
-              продукт так, чтобы ученики доходили до результата, а не терялись в
-              хаосе материала.
-            </p>
-            <p className="mt-3 font-semibold text-text-primary">
-              Ключевой вывод: сильная методология усиливает и продукт, и продажи,
-              и путь ученика внутри обучения.
+              Вы учитесь собирать продукт так, чтобы ученики доходили до
+              результата, а не терялись в хаосе материала.
             </p>
             <a href="#pricing" className="mt-5 inline-flex">
               <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-white hover:text-orange-1">

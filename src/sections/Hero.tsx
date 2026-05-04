@@ -40,28 +40,40 @@ export function Hero() {
       </div>
 
       <Container>
-        <div className="grid min-h-[72vh] items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+        <div className="grid min-h-[72vh] items-center gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="space-y-5 text-center lg:space-y-6"
+            className="space-y-5 text-left lg:space-y-6"
           >
             <div className="space-y-4 lg:space-y-5">
-              <div className="mx-auto flex justify-center">
+              <div className="flex justify-start">
                 <Image
                   src="/images/Без фона-2.png"
                   alt="Академия методологии Александры Горевой-Куртышевой"
                   width={240}
                   height={157}
-                  className="h-auto w-[150px] select-none object-contain sm:w-[180px] lg:w-[220px]"
+                  className="h-auto w-[92px] select-none object-contain sm:w-[112px] lg:w-[132px]"
                   priority
                 />
               </div>
 
-              <div className="inline-flex items-center gap-3 rounded-full border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-orange-1 shadow-sm">
-                <Award className="h-4 w-4" />
-                <span>Легендарный курс Академии Александры Горевой-Куртышевой</span>
+              <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <div className="inline-flex max-w-full items-center gap-3 rounded-full border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-orange-1 shadow-sm">
+                  <Award className="h-4 w-4 flex-shrink-0" />
+                  <span>Легендарный курс Академии Александры Горевой-Куртышевой</span>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="inline-flex max-w-full items-center gap-3 rounded-xl border-2 border-orange-1 bg-orange-1 px-5 py-2.5 font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  <Calendar className="h-5 w-5 flex-shrink-0 text-white" />
+                  <span>Старт 16-го потока: {COURSE_START_DATE}</span>
+                </motion.div>
               </div>
 
               <h1 className="font-heading text-5xl font-black leading-tight tracking-tight text-text-primary uppercase md:text-7xl lg:text-8xl">
@@ -69,63 +81,53 @@ export function Hero() {
                 <span className="text-gradient-orange">ОЛОГИЯ</span>
               </h1>
 
-              <p className="mx-auto max-w-3xl text-xl font-bold text-text-primary lg:text-2xl">
+              <p className="max-w-3xl text-xl font-bold text-text-primary lg:text-2xl">
                 Пошаговая система создания онлайн-курсов и продуктовых линеек для
                 экспертов и предпринимателей
               </p>
 
-              <p className="mx-auto max-w-3xl text-lg text-text-secondary lg:text-xl">
+              <p className="max-w-3xl text-lg text-text-secondary lg:text-xl">
                 Чтобы ваши курсы покупали, проходили до результата и
                 рекомендовали другим.
               </p>
             </div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="inline-flex items-center gap-3 rounded-xl border-2 border-orange-1 bg-orange-1 px-6 py-3 font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <Calendar className="h-5 w-5 text-white" />
-              <span>Старт 16-го потока: {COURSE_START_DATE}</span>
-            </motion.div>
-
-            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="space-y-3"
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.34 }}
+              className="pt-1"
             >
-              <p className="text-sm font-semibold uppercase tracking-wide text-text-secondary">
-                До старта осталось:
-              </p>
-              <CountdownTimer targetDate={COURSE_START_DATE_RAW} />
+              <a href="#pricing">
+                <Button variant="primary" size="lg" className="w-full max-w-[360px] sm:w-[360px]">
+                  Иду на курс
+                </Button>
+              </a>
             </motion.div>
 
-            <div className="flex flex-col items-center gap-3 pt-2 sm:flex-row sm:flex-wrap sm:justify-center">
+            <div className="flex flex-col items-start gap-4 pt-1 lg:flex-row lg:items-end">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="space-y-3"
+              >
+                <p className="text-sm font-semibold uppercase tracking-wide text-text-secondary">
+                  До старта осталось:
+                </p>
+                <CountdownTimer targetDate={COURSE_START_DATE_RAW} />
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-orange-1 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                className="mb-1 inline-flex items-center gap-2 rounded-full border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-orange-1 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <Users className="h-4 w-4" />
                 <span>Осталось 12 мест на поток</span>
               </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-              className="pt-2"
-            >
-              <a href="#pricing">
-                <Button variant="primary" size="lg">
-                  Иду на курс
-                </Button>
-              </a>
-            </motion.div>
           </motion.div>
 
           <motion.div
@@ -175,7 +177,7 @@ export function Hero() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 8, scale: 0.98 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="absolute left-[calc(100%+14px)] top-1/2 z-20 w-[320px] -translate-y-1/2 rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-card"
+                            className="relative z-20 mt-2 w-full rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-card lg:absolute lg:right-0 lg:top-[calc(100%+12px)] lg:mt-0 lg:w-[320px]"
                           >
                             <div className="space-y-3">
                               {authorFacts.map((fact) => (

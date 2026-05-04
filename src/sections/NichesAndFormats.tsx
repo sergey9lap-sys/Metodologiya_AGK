@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import { useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -11,14 +11,14 @@ const fadeInUp = {
 };
 
 const niches = [
-  "мастермайнды",
-  "тренинги",
-  "стратегические сессии",
-  "мастер-группы",
-  "курсы",
-  "интенсивы",
-  "наставничество",
-  "вебинары",
+  { label: "мастермайнды", x: 210, y: 98, fromX: -130, fromY: -60, rotate: -9 },
+  { label: "тренинги", x: 420, y: 70, fromX: -25, fromY: -130, rotate: 7 },
+  { label: "стратегические сессии", x: 610, y: 96, fromX: 95, fromY: -95, rotate: -6 },
+  { label: "мастер-группы", x: 790, y: 172, fromX: 150, fromY: -20, rotate: 8 },
+  { label: "курсы", x: 790, y: 348, fromX: 140, fromY: 80, rotate: -7 },
+  { label: "интенсивы", x: 610, y: 426, fromX: 60, fromY: 135, rotate: 9 },
+  { label: "наставничество", x: 390, y: 438, fromX: -55, fromY: 140, rotate: -8 },
+  { label: "вебинары", x: 205, y: 338, fromX: -150, fromY: 90, rotate: 6 },
 ];
 
 const systems = [
@@ -30,15 +30,13 @@ const systems = [
   "рост качества без хаоса",
 ];
 
-const nichePositions = [
-  { rotate: "-1.8deg", mobileRotate: "-0.4deg", y: "0px" },
-  { rotate: "1.2deg", mobileRotate: "0.3deg", y: "10px" },
-  { rotate: "-0.8deg", mobileRotate: "-0.2deg", y: "-4px" },
-  { rotate: "1.7deg", mobileRotate: "0.4deg", y: "6px" },
-  { rotate: "-1.4deg", mobileRotate: "-0.3deg", y: "12px" },
-  { rotate: "0.9deg", mobileRotate: "0.2deg", y: "-2px" },
-  { rotate: "-1.1deg", mobileRotate: "-0.3deg", y: "7px" },
-  { rotate: "1.5deg", mobileRotate: "0.4deg", y: "1px" },
+const systemConnectorTargets = [
+  { x: 166, y: 190 },
+  { x: 500, y: 190 },
+  { x: 834, y: 190 },
+  { x: 166, y: 282 },
+  { x: 500, y: 282 },
+  { x: 834, y: 282 },
 ];
 
 const chipEntrance = {
@@ -52,8 +50,11 @@ const resultEntrance = {
 };
 
 export function NichesAndFormats() {
+  const [activeModule, setActiveModule] = useState<number | null>(null);
+  const [activeResult, setActiveResult] = useState<number | null>(null);
+
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
       <Image
         src="/background/11 блок.jpg"
         alt=""
@@ -61,114 +62,248 @@ export function NichesAndFormats() {
         width={920}
         height={1220}
         sizes="(min-width: 1024px) 38vw, 100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.16] contrast-[1.08] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.84)_72%,transparent_100%)] lg:inset-auto lg:left-[-2%] lg:top-1/2 lg:h-auto lg:w-[38%] lg:max-w-[500px] lg:-translate-y-1/2 lg:object-contain lg:opacity-[0.50] lg:[mask-image:linear-gradient(to_right,black_80%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.84)_72%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_80%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.08] contrast-[1.08] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.78)_72%,transparent_100%)] lg:inset-auto lg:left-[-5%] lg:top-1/2 lg:h-auto lg:w-[36%] lg:max-w-[470px] lg:-translate-y-1/2 lg:object-contain lg:opacity-[0.28] lg:[mask-image:linear-gradient(to_right,black_66%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.78)_72%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_66%,transparent_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/80 to-transparent"
       />
       <Container className="relative z-20">
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5 }}
-          className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-4xl"
-        >
-          Методология усиливает не один продукт, а всю систему
-        </motion.h2>
+        <div className="mx-auto max-w-5xl text-center">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+            className="font-heading text-3xl font-black uppercase leading-tight text-text-primary lg:text-4xl"
+          >
+            Методология усиливает не один продукт, а всю систему
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mx-auto mt-4 max-w-3xl text-lg font-semibold text-text-secondary lg:text-xl"
+          >
+            Разрозненные форматы собираются в понятную продуктовую архитектуру
+          </motion.p>
+        </div>
 
-        <div className="space-y-8 lg:space-y-10">
-          <div>
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
+        <div className="mt-9 lg:mt-12">
+          <div className="lg:hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 18, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-5 text-center text-lg font-semibold text-text-primary lg:mb-7 lg:text-xl"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-orange-1 text-center font-heading text-lg font-black text-white shadow-[0_0_45px_rgba(255,167,0,0.42)]"
             >
-              Что можно усиливать с её помощью
-            </motion.p>
-
-            <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-3 px-1 lg:gap-x-4 lg:gap-y-5">
-              {niches.map((item, index) => {
-                const position = nichePositions[index % nichePositions.length];
-
-                return (
-                  <motion.div
-                    key={item}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={chipEntrance}
-                    transition={{
-                      duration: 0.55,
-                      ease: "easeOut",
-                      delay: index * 0.07,
-                    }}
-                  >
-                    <div
-                      style={
-                        {
-                          "--chip-rotate": position.rotate,
-                          "--chip-rotate-mobile": position.mobileRotate,
-                          "--chip-y": position.y,
-                        } as CSSProperties
-                      }
-                      className="cursor-default rounded-full bg-[#D98A00] px-[22px] py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out translate-y-[var(--chip-y)] rotate-[var(--chip-rotate-mobile)] hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_16px_35px_rgba(217,138,0,0.25)] lg:rotate-[var(--chip-rotate)] lg:text-base"
-                    >
-                      {item}
-                    </div>
-                  </motion.div>
-                );
-              })}
+              Методология
+            </motion.div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {niches.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={chipEntrance}
+                  transition={{
+                    duration: 0.55,
+                    ease: "easeOut",
+                    delay: index * 0.06,
+                  }}
+                  className="rounded-[20px] border border-[rgba(191,129,35,0.18)] bg-[#FFF9EF] px-5 py-4 text-center text-sm font-semibold text-text-primary shadow-[0_14px_40px_rgba(40,25,10,0.08)]"
+                >
+                  {item.label}
+                </motion.div>
+              ))}
             </div>
           </div>
 
-          <div className="relative mx-auto flex max-w-2xl flex-col items-center py-1 lg:py-2">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative mx-auto hidden h-[520px] max-w-5xl lg:block"
+          >
             <div
               aria-hidden="true"
-              className="absolute top-1/2 h-36 w-36 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(217,138,0,0.18),transparent_68%)]"
+              className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.20),transparent_66%)]"
             />
-            <motion.div
+            <svg
               aria-hidden="true"
-              initial={{ scaleY: 0, opacity: 0 }}
-              whileInView={{ scaleY: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.62 }}
-              className="relative h-24 w-px origin-top bg-gradient-to-b from-orange-1/20 via-orange-1 to-orange-1/20 lg:h-28"
-            />
-            <motion.div
-              aria-hidden="true"
-              initial={{ opacity: 0, y: -4 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 1.12 }}
-              className="relative mt-[-2px] h-0 w-0 border-x-[7px] border-t-[10px] border-x-transparent border-t-orange-1/70"
-            />
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.82 }}
-              className="relative mt-5 max-w-[520px] text-center text-lg font-semibold leading-relaxed text-text-primary lg:text-xl"
+              viewBox="0 0 1000 520"
+              className="absolute inset-0 h-full w-full"
             >
-              Методология связывает разрозненные форматы в понятную систему
-            </motion.p>
-          </div>
+              {niches.map((item, index) => (
+                <motion.line
+                  key={item.label}
+                  x1="500"
+                  y1="260"
+                  x2={item.x}
+                  y2={item.y}
+                  stroke={
+                    activeModule === index
+                      ? "rgba(255, 167, 0, 0.82)"
+                      : "rgba(191, 129, 35, 0.35)"
+                  }
+                  strokeWidth={activeModule === index ? 2.2 : 1.2}
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.62,
+                    ease: "easeInOut",
+                    delay: 0.62 + index * 0.04,
+                  }}
+                />
+              ))}
+            </svg>
 
-          <div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.76, y: 12 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.62, ease: "easeOut", delay: 0.42 }}
+              className="absolute left-1/2 top-1/2 z-20 flex h-44 w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/80 bg-[linear-gradient(135deg,#FFA700,#E58A00)] px-5 text-center font-heading text-2xl font-black leading-none text-white shadow-[0_0_70px_rgba(255,167,0,0.48)]"
+            >
+              Методология
+            </motion.div>
+
+            {niches.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{
+                  opacity: 0,
+                  x: item.fromX,
+                  y: item.fromY,
+                  rotate: item.rotate,
+                  scale: 0.92,
+                }}
+                whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.72,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: index * 0.075,
+                }}
+                whileHover={{
+                  scale: 1.03,
+                  y: -6,
+                  transition: { type: "spring", stiffness: 260, damping: 18 },
+                }}
+                onMouseEnter={() => setActiveModule(index)}
+                onMouseLeave={() => setActiveModule(null)}
+                style={{
+                  left: `${item.x / 10}%`,
+                  top: `${item.y / 5.2}%`,
+                }}
+                className="group absolute z-10 flex min-h-[72px] w-[176px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center rounded-[22px] border border-[rgba(191,129,35,0.18)] bg-[#FFF9EF] px-5 py-4 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_14px_40px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/60 hover:shadow-[0_18px_48px_rgba(255,167,0,0.22)]"
+              >
+                <span className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-orange-1/0 transition-colors duration-300 group-hover:bg-orange-1" />
+                {item.label}
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <div className="relative mt-9 lg:-mt-8">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none mx-auto hidden h-[146px] max-w-5xl lg:block"
+            >
+              <svg viewBox="0 0 1000 320" className="h-full w-full overflow-visible">
+                <defs>
+                  <filter id="flow-glow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <motion.line
+                  x1="500"
+                  y1="0"
+                  x2="500"
+                  y2="112"
+                  stroke="rgba(191, 129, 35, 0.38)"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.72, ease: "easeInOut", delay: 1.0 }}
+                />
+                {[34, 72, 110].map((cy, index) => (
+                  <motion.circle
+                    key={cy}
+                    cx="500"
+                    cy={cy}
+                    r={index === 2 ? 5 : 3.5}
+                    fill={index === 2 ? "#FFA700" : "#FFF9EF"}
+                    stroke="#FFA700"
+                    strokeWidth="1.5"
+                    initial={{ opacity: 0, scale: 0.4 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: 1.18 + index * 0.12 }}
+                  />
+                ))}
+                <motion.path
+                  d="M 486 120 L 500 138 L 514 120"
+                  fill="none"
+                  stroke="#FFA700"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  filter="url(#flow-glow)"
+                  initial={{ opacity: 0, y: -6 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: 1.5 }}
+                />
+                {systemConnectorTargets.map((target, index) => (
+                  <motion.path
+                    key={`${target.x}-${target.y}`}
+                    d={`M 500 112 C 500 150, ${target.x} 145, ${target.x} ${target.y}`}
+                    fill="none"
+                    stroke={
+                      activeResult === index
+                        ? "rgba(255, 167, 0, 0.88)"
+                        : "rgba(191, 129, 35, 0.26)"
+                    }
+                    strokeWidth={activeResult === index ? 2.1 : 1.15}
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    whileInView={{ pathLength: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.58,
+                      ease: "easeInOut",
+                      delay: 1.56 + index * 0.06,
+                    }}
+                  />
+                ))}
+              </svg>
+            </div>
+
             <motion.p
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.95 }}
-              className="mb-5 text-center font-heading text-2xl font-black uppercase text-text-primary lg:mb-7 lg:text-3xl"
+              transition={{ duration: 0.5, delay: 1.52 }}
+              className="mb-5 text-center font-heading text-xl font-black text-text-primary lg:mb-7 lg:text-2xl"
             >
               И во что это вырастает
             </motion.p>
 
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            <div className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
               {systems.map((item, index) => (
                 <motion.div
                   key={item}
@@ -179,15 +314,19 @@ export function NichesAndFormats() {
                   transition={{
                     duration: 0.55,
                     ease: "easeOut",
-                    delay: 1.12 + index * 0.08,
+                    delay: 1.16 + index * 0.08,
                   }}
                   whileHover={{
                     y: -4,
                     scale: 1.03,
-                    boxShadow: "0 16px 35px rgba(217, 138, 0, 0.25)",
+                    boxShadow: "0 18px 48px rgba(255, 167, 0, 0.20)",
                   }}
-                  className="flex min-h-[58px] cursor-default items-center justify-center rounded-[20px] bg-[linear-gradient(135deg,#D98A00,#F2A51A)] px-6 py-3.5 text-center text-sm font-semibold leading-snug text-white shadow-[0_12px_30px_rgba(217,138,0,0.18)] lg:text-base"
+                  onMouseEnter={() => setActiveResult(index)}
+                  onMouseLeave={() => setActiveResult(null)}
+                  className="group relative flex min-h-[76px] cursor-default items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(191,129,35,0.22)] bg-[#FFF9EF] px-6 py-4 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_14px_40px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/70 lg:text-base"
                 >
+                  <span className="absolute left-1/2 top-0 h-1.5 w-16 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-28" />
+                  <span className="absolute left-1/2 top-3 h-2 w-2 -translate-x-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)]" />
                   {item}
                 </motion.div>
               ))}

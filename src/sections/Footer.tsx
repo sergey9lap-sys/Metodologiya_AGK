@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { MessageCircle, MessagesSquare, Phone, Send } from "lucide-react";
 
 const footerLinks = [
   { label: "О курсе", href: "#about" },
@@ -11,23 +12,34 @@ const footerLinks = [
 const legalLinks = [
   {
     label: "Договор-оферта",
-    href: "https://agkedu.getcourse.ru/oferta_club",
+    href: "https://agkedu.getcourse.ru/oferta_methodology",
   },
   {
     label: "Политика конфиденциальности",
     href: "https://agkedu.ru/personaldata",
+  }
+];
+
+const contactLinks = [
+  {
+    label: "+7 (989) 542-15-60",
+    href: "tel:+79895421560",
+    icon: Phone,
   },
   {
-    label: "Телеграм службы заботы",
+    label: "Telegram",
     href: process.env.NEXT_PUBLIC_TG_SUPPORT_URL || "#",
+    icon: Send,
   },
   {
-    label: "Макс службы заботы",
+    label: "MAX",
     href: process.env.NEXT_PUBLIC_MAX_SUPPORT_URL || "#",
+    icon: MessagesSquare,
   },
   {
-    label: "ВКонтакте службы заботы",
+    label: "ВКонтакте",
     href: process.env.NEXT_PUBLIC_VK_SUPPORT_URL || "#",
+    icon: MessageCircle,
   },
 ];
 
@@ -44,14 +56,13 @@ export function Footer() {
               МЕТОДОЛОГИЯ
             </a>
             <p className="text-white/70 text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
-              Академия Наставничества, Менторинга и Методологии. Обучение, поддержка
-              и сопровождение экспертов и предпринимателей в сфере образовательных продуктов.
+              Академия Методологии. Обучение, поддержка и сопровождение экспертов
+              и предпринимателей в сфере образовательных продуктов.
             </p>
             <div className="text-white/70 text-sm leading-relaxed space-y-1">
               <p>Индивидуальный предприниматель</p>
               <p>Горева-Куртышева Александра Александровна</p>
               <p>ИНН: 246212538610</p>
-              <p>Эл. почта: info@agkedu.com</p>
             </div>
           </div>
 
@@ -76,11 +87,22 @@ export function Footer() {
             <h3 className="font-heading font-bold text-2xl text-white uppercase">
               Контакты
             </h3>
-            <div className="text-white/70 text-sm leading-relaxed space-y-1">
-              <p>Банк: ООО «Банк Точка»</p>
-              <p>БИК: 044 525 104</p>
-              <p>Р/с: 4080 2810 4065 0000 0883</p>
-              <p>Корсчёт: 3010 1810 7453 7452 5104</p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+              {contactLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-semibold text-white/80 transition-all hover:-translate-y-0.5 hover:border-orange-1 hover:text-orange-1 lg:justify-start"
+                  >
+                    <Icon className="h-4 w-4 flex-shrink-0" />
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
             </div>
             <div className="flex flex-col gap-3">
               {legalLinks.map((link) => (
@@ -100,7 +122,7 @@ export function Footer() {
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col lg:flex-row items-center justify-between gap-4">
           <p className="text-white/50 text-sm text-center lg:text-left">
-            &copy; 2026 Академия Наставничества, Менторинга и Методологии. Все права защищены.
+            &copy; 2026 Академия Методологии. Все права защищены.
           </p>
           <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
             {footerLinks.map((link) => (

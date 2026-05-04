@@ -13,58 +13,56 @@ const employers = [
   {
     name: "Skyeng",
     logo: "https://static.tildacdn.com/tild3637-6462-4164-b534-383836373235/skyeng-logo-light.svg",
-    logoClassName: "h-9 max-w-[150px]",
-  },
-  {
-    name: "РЖД",
-    logo: "https://logo-teka.com/wp-content/uploads/2025/07/rzd-logo.png",
-    logoClassName: "h-7 max-w-[120px]",
-  },
-  {
-    name: "Сбер",
-    logo: "https://optim.tildacdn.com/tild3031-3333-4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
-    logoClassName: "h-9 max-w-[128px]",
-  },
-  {
-    name: "ВКонтакте",
-    logo: "https://logo-teka.com/wp-content/uploads/2025/06/vk-logo.png",
-    logoClassName: "h-7 max-w-[132px]",
-  },
-  {
-    name: "Skillbox",
-    logo: "https://static.tildacdn.com/tild3437-6632-4734-b838-323663306461/skillbox.svg",
-  },
-  {
-    name: "Нетология",
-    logo: "https://static.tildacdn.com/tild6230-3633-4137-a566-653531656136/image_19.svg",
-  },
-  {
-    name: "Avito",
-    logo: "https://logo-teka.com/wp-content/uploads/2025/06/avito-logo.png",
-    logoClassName: "h-7 max-w-[112px]",
-  },
-  {
-    name: "МГТУ им. Баумана",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Color_No-BG.svg/250px-Logo_Color_No-BG.svg.png",
-    logoClassName: "h-10 max-w-[112px]",
+    logoClassName: "h-11 max-w-[190px]",
+    description: "Школа английского языка",
   },
   {
     name: "Julia Marketing",
     logo: "https://optim.tildacdn.com/tild3334-6534-4864-a436-366139663866/-/resize/313x/-/format/webp/2.png.webp",
-    logoClassName: "h-10 max-w-[132px]",
-    showLabel: true,
+    logoClassName: "h-14 max-w-[190px]",
+    description: "Julia Marketing Юлии Родочинской",
+  },
+  {
+    name: "AZARENOK PRO",
+    logo: "https://static.tildacdn.com/tild6131-3665-4561-b530-373038373432/logo-red.svg",
+    logoClassName: "h-20 max-w-[150px]",
+    description: "Марии Азаренок",
+  },
+  {
+    name: "Масштаб",
+    logo: "https://optim.tildacdn.com/tild3830-6264-4363-a639-313464633231/-/resize/219x/-/format/webp/___2.jpg.webp",
+    logoClassName: "h-20 max-w-[150px]",
+    description: "Продюсерский центр",
+  },
+  {
+    name: "Skillbox",
+    logo: "https://static.tildacdn.com/tild3437-6632-4734-b838-323663306461/skillbox.svg",
+    logoClassName: "h-12 max-w-[190px]",
+    description: "Образовательная платформа",
+  },
+  {
+    name: "Нетология",
+    logo: "https://static.tildacdn.com/tild6230-3633-4137-a566-653531656136/image_19.svg",
+    logoClassName: "h-10 max-w-[190px]",
+    description: "Образовательная платформа",
   },
   {
     name: "Академия переговоров Игоря Рызова",
     logo: "https://static.tildacdn.com/tild3338-3363-4339-b362-343265616431/image_19_2.svg",
-    logoClassName: "h-10 max-w-[148px]",
-    showLabel: true,
+    logoClassName: "h-14 max-w-[190px]",
+    description: "Академия переговоров",
   },
   {
     name: "MIRA SCHOOL",
     logo: "https://optim.tildacdn.com/tild6138-6533-4562-a565-636130656563/-/resize/111x/-/format/webp/744650.png.webp",
-    logoClassName: "h-10 max-w-[96px]",
-    showLabel: true,
+    logoClassName: "h-14 max-w-[110px]",
+    description: "Онлайн-школа маркетинга",
+  },
+  {
+    name: "МИИН",
+    logo: "https://static.tildacdn.com/tild3036-3737-4366-b037-656433626266/image_19_1.svg",
+    logoClassName: "h-16 max-w-[150px]",
+    description: "Институт нутрициологии",
   },
 ];
 
@@ -99,9 +97,14 @@ const alumni = [
 ];
 
 export function FamousAlumni() {
+  const employerRows = [
+    [...employers, ...employers],
+    [...employers.slice(4), ...employers.slice(0, 4), ...employers.slice(4), ...employers.slice(0, 4)],
+  ];
+
   return (
     <section className="bg-white py-12 lg:py-14">
-      <div className="bg-[#FFA700] py-10 lg:py-12">
+      <div className="overflow-hidden bg-[#FFA700] py-10 lg:py-12">
         <Container>
           <motion.h2
             initial="hidden"
@@ -109,47 +112,69 @@ export function FamousAlumni() {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5 }}
-            className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-4xl"
+            className="mb-3 text-center font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl"
           >
-            Наши выпускники работают в:
+            Выпускники-методологи Александры работают в:
           </motion.h2>
+          <p className="mx-auto mb-8 max-w-3xl text-center text-base font-medium text-text-secondary lg:mb-10 lg:text-lg">
+            Наши ученики применяют методологию в онлайн-школах, образовательных
+            платформах, продюсерских центрах и собственных проектах.
+          </p>
+        </Container>
 
-          <div className="flex flex-wrap justify-center gap-3 lg:gap-4">
-            {employers.map((employer, index) => (
+        <div className="space-y-4">
+          {employerRows.map((rowItems, row) => (
+            <div
+              key={row}
+            className="group relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+            >
+              <div
+                className={`flex min-w-max gap-4 px-2 ${
+                  row === 0 ? "animate-marquee-left" : "animate-marquee-right"
+                } group-hover:[animation-play-state:paused]`}
+              >
+                {rowItems.map((employer, index) => (
               <motion.div
-                key={employer.name}
+                key={`${row}-${employer.name}-${index}`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
-                className="flex min-h-[76px] min-w-[128px] items-center justify-center px-4 py-2 text-base font-bold text-text-primary transition-all hover:-translate-y-1 lg:text-lg"
+                    className="flex min-h-[124px] w-[260px] flex-shrink-0 items-center justify-center px-6 py-4 text-base font-bold text-text-primary transition-all duration-300 hover:-translate-y-2 hover:scale-[1.05] lg:w-[300px]"
               >
                 {employer.logo ? (
-                  <div className="flex flex-col items-center gap-1.5">
+                  <div className="flex flex-col items-center gap-3">
                     <Image
                       src={employer.logo}
                       alt={employer.name}
-                      width={180}
-                      height={72}
+                          width={220}
+                          height={88}
                       className={`object-contain drop-shadow-sm ${
-                        employer.logoClassName ?? "h-6 max-w-[120px]"
+                            employer.logoClassName
                       }`}
                       loading="lazy"
                     />
-                    {employer.showLabel && (
-                      <span className="max-w-[160px] text-center text-xs font-bold leading-tight text-text-primary">
-                        {employer.name}
-                      </span>
-                    )}
+                    <span className="max-w-[220px] text-center text-sm font-semibold leading-tight text-text-primary">
+                      {employer.description}
+                    </span>
                   </div>
                 ) : (
-                  employer.name
+                  <div className="flex flex-col items-center gap-2 text-center">
+                    <span className="font-heading text-3xl font-black uppercase leading-none text-text-primary">
+                      {employer.name}
+                    </span>
+                    <span className="max-w-[220px] text-xs font-semibold leading-tight text-text-secondary">
+                      {employer.description}
+                    </span>
+                  </div>
                 )}
               </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
+          ))}
           </div>
-        </Container>
       </div>
 
       <Container className="pt-12 lg:pt-14">

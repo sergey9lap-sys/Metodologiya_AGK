@@ -1,10 +1,10 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useState } from "react";
-import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -137,17 +137,10 @@ function FAQItem({
 export function FAQ() {
   return (
     <section id="faq" className="relative overflow-hidden bg-white py-12 lg:py-16">
-      <Image
-        src="/background/19 блок.jpg"
-        alt=""
-        aria-hidden="true"
-        fill
-        sizes="100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover opacity-[0.26] contrast-[1.08] lg:opacity-[0.40]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 bg-white/62 lg:bg-white/56"
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:31:18.jpg"
+        variant="light"
+        position="object-center"
       />
       <Container className="relative z-20">
         <motion.h2

@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -103,9 +104,14 @@ export function FamousAlumni() {
   ];
 
   return (
-    <section className="bg-white py-12 lg:py-14">
-      <div className="overflow-hidden bg-[#FFA700] py-10 lg:py-12">
-        <Container>
+    <section className="overflow-hidden bg-white py-12 lg:py-14">
+      <div className="relative overflow-hidden bg-black py-10 lg:py-12">
+        <SectionBackground
+          src="/background/IMAGE 2026-05-05 01:30:29.jpg"
+          variant="orange"
+          position="object-bottom"
+        />
+        <Container className="relative z-20">
           <motion.h2
             initial="hidden"
             whileInView="visible"
@@ -122,7 +128,7 @@ export function FamousAlumni() {
           </p>
         </Container>
 
-        <div className="space-y-4">
+        <div className="relative z-20 space-y-4">
           {employerRows.map((rowItems, row) => (
             <div
               key={row}

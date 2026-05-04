@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { MessageCircle, MessagesSquare, Phone, Send } from "lucide-react";
 
 const footerLinks = [
@@ -45,8 +46,13 @@ const contactLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-text-primary py-10 lg:py-12">
-      <Container>
+    <footer className="relative overflow-hidden bg-text-primary py-10 lg:py-12">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:07.jpg"
+        variant="dark"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr_1fr] gap-8 lg:gap-10">
           <div className="space-y-4 text-center lg:text-left">
             <a

@@ -3,9 +3,9 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { SectionBackground } from "@/components/SectionBackground";
 import { ArrowRight, Briefcase, GraduationCap, Lightbulb, Users } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -37,15 +37,11 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
-      <Image
-        src="/background/5 блок.jpg"
-        alt=""
-        aria-hidden="true"
-        width={1440}
-        height={960}
-        sizes="(min-width: 1024px) 60vw, 120vw"
-        className="pointer-events-none absolute left-1/2 top-[55%] z-0 w-[145%] max-w-[880px] -translate-x-1/2 -translate-y-1/2 select-none object-contain opacity-[0.32] brightness-[1.06] contrast-[1.08] [mask-image:radial-gradient(circle,black_66%,transparent_90%)] lg:top-1/2 lg:w-[76%] lg:opacity-[0.48] [-webkit-mask-image:radial-gradient(circle,black_66%,transparent_90%)]"
+    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:31:01.jpg"
+        variant="light"
+        position="object-center"
       />
       <Container className="relative z-20">
         <motion.div

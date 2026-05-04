@@ -1,8 +1,8 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 
 const fadeInUp = {
@@ -39,11 +39,6 @@ const systemConnectorTargets = [
   { x: 834, y: 282 },
 ];
 
-const chipEntrance = {
-  hidden: { opacity: 0, y: 18, scale: 0.96 },
-  visible: { opacity: 1, y: 0, scale: 1 },
-};
-
 const resultEntrance = {
   hidden: { opacity: 0, y: 20, scale: 0.98 },
   visible: { opacity: 1, y: 0, scale: 1 },
@@ -55,14 +50,10 @@ export function NichesAndFormats() {
 
   return (
     <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
-      <Image
-        src="/background/11 блок.jpg"
-        alt=""
-        aria-hidden="true"
-        width={920}
-        height={1220}
-        sizes="(min-width: 1024px) 38vw, 100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.08] contrast-[1.08] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.78)_72%,transparent_100%)] lg:inset-auto lg:left-[-5%] lg:top-1/2 lg:h-auto lg:w-[36%] lg:max-w-[470px] lg:-translate-y-1/2 lg:object-contain lg:opacity-[0.28] lg:[mask-image:linear-gradient(to_right,black_66%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.78)_72%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,black_66%,transparent_100%)]"
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:59.jpg"
+        variant="light"
+        position="object-center"
       />
       <div
         aria-hidden="true"
@@ -95,32 +86,89 @@ export function NichesAndFormats() {
         <div className="mt-9 lg:mt-12">
           <div className="lg:hidden">
             <motion.div
-              initial={{ opacity: 0, y: 18, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-orange-1 text-center font-heading text-lg font-black text-white shadow-[0_0_45px_rgba(255,167,0,0.42)]"
+              className="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-orange-1 px-4 text-center font-heading text-xl font-black leading-none text-white shadow-[0_0_52px_rgba(255,167,0,0.42)] min-[430px]:h-[150px] min-[430px]:w-[150px]"
             >
               Методология
             </motion.div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+            <div className="relative mx-auto mt-7 max-w-[430px] pb-1">
+              <motion.div
+                aria-hidden="true"
+                initial={{ opacity: 0, scaleY: 0 }}
+                whileInView={{ opacity: 1, scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.58, ease: "easeInOut", delay: 0.82 }}
+                className="absolute left-1/2 top-[-28px] bottom-5 z-0 w-px origin-top -translate-x-1/2 bg-[rgba(191,129,35,0.32)]"
+              />
+              <motion.div
+                aria-hidden="true"
+                initial={{ opacity: 0, y: -8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: 1.08 }}
+                className="absolute left-1/2 top-[-35px] z-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.6)]"
+              />
+
+              <div className="relative z-10 space-y-3.5">
               {niches.map((item, index) => (
-                <motion.div
+                <div
                   key={item.label}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={chipEntrance}
-                  transition={{
-                    duration: 0.55,
-                    ease: "easeOut",
-                    delay: index * 0.06,
-                  }}
-                  className="rounded-[20px] border border-[rgba(191,129,35,0.18)] bg-[#FFF9EF] px-5 py-4 text-center text-sm font-semibold text-text-primary shadow-[0_14px_40px_rgba(40,25,10,0.08)]"
+                  className={`relative flex ${
+                    index % 2 === 0 ? "justify-start pr-8" : "justify-end pl-8"
+                  }`}
                 >
-                  {item.label}
-                </motion.div>
+                  <motion.span
+                    aria-hidden="true"
+                    initial={{ opacity: 0, scale: 0.45 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.28,
+                      ease: "easeOut",
+                      delay: 0.76 + index * 0.08,
+                    }}
+                    className="absolute left-1/2 top-1/2 z-20 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)]"
+                  />
+                  <motion.span
+                    aria-hidden="true"
+                    initial={{ opacity: 0, scaleX: 0 }}
+                    whileInView={{ opacity: 1, scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.32,
+                      ease: "easeOut",
+                      delay: 0.86 + index * 0.08,
+                    }}
+                    className={`absolute top-1/2 z-0 h-px origin-center bg-[rgba(191,129,35,0.32)] ${
+                      index % 2 === 0
+                        ? "left-[28%] right-1/2"
+                        : "left-1/2 right-[28%]"
+                    }`}
+                  />
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 24,
+                      x: index % 2 === 0 ? -16 : 16,
+                    }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 0.18 + index * 0.075,
+                    }}
+                    className="relative z-10 flex min-h-[58px] w-[78%] items-center justify-center rounded-[20px] border border-[rgba(191,129,35,0.18)] bg-[#FFF9EF] px-4 py-3 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)]"
+                  >
+                    {item.label}
+                  </motion.div>
+                </div>
               ))}
+              </div>
             </div>
           </div>
 
@@ -303,33 +351,79 @@ export function NichesAndFormats() {
               И во что это вырастает
             </motion.p>
 
-            <div className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-              {systems.map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={resultEntrance}
-                  transition={{
-                    duration: 0.55,
-                    ease: "easeOut",
-                    delay: 1.16 + index * 0.08,
-                  }}
-                  whileHover={{
-                    y: -4,
-                    scale: 1.03,
-                    boxShadow: "0 18px 48px rgba(255, 167, 0, 0.20)",
-                  }}
-                  onMouseEnter={() => setActiveResult(index)}
-                  onMouseLeave={() => setActiveResult(null)}
-                  className="group relative flex min-h-[76px] cursor-default items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(191,129,35,0.22)] bg-[#FFF9EF] px-6 py-4 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_14px_40px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/70 lg:text-base"
-                >
-                  <span className="absolute left-1/2 top-0 h-1.5 w-16 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-28" />
-                  <span className="absolute left-1/2 top-3 h-2 w-2 -translate-x-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)]" />
-                  {item}
-                </motion.div>
-              ))}
+            <div className="relative z-10 mx-auto max-w-[430px] lg:max-w-5xl">
+              <motion.div
+                aria-hidden="true"
+                initial={{ opacity: 0, scaleY: 0 }}
+                whileInView={{ opacity: 1, scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.68, ease: "easeInOut", delay: 1.0 }}
+                className="absolute left-1/2 top-[-18px] bottom-4 z-0 w-px origin-top -translate-x-1/2 bg-[rgba(191,129,35,0.32)] lg:hidden"
+              />
+              <div className="relative z-10 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
+                {systems.map((item, index) => {
+                  const isLeft = index % 2 === 0;
+
+                  return (
+                    <div
+                      key={item}
+                      className={`relative flex lg:block ${
+                        isLeft ? "justify-start pr-8" : "justify-end pl-8"
+                      } lg:p-0`}
+                    >
+                      <motion.span
+                        aria-hidden="true"
+                        initial={{ opacity: 0, scale: 0.4 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.28,
+                          ease: "easeOut",
+                          delay: 1.2 + index * 0.08,
+                        }}
+                        className="absolute left-1/2 top-1/2 z-20 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_20px_rgba(255,167,0,0.62)] lg:hidden"
+                      />
+                      <motion.span
+                        aria-hidden="true"
+                        initial={{ opacity: 0, scaleX: 0 }}
+                        whileInView={{ opacity: 1, scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.34,
+                          ease: "easeOut",
+                          delay: 1.26 + index * 0.08,
+                        }}
+                        className={`absolute top-1/2 z-0 h-px bg-[rgba(191,129,35,0.32)] lg:hidden ${
+                          isLeft ? "left-[30%] right-1/2" : "left-1/2 right-[30%]"
+                        }`}
+                      />
+                      <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={resultEntrance}
+                        transition={{
+                          duration: 0.5,
+                          ease: "easeOut",
+                          delay: 1.16 + index * 0.08,
+                        }}
+                        whileHover={{
+                          y: -4,
+                          scale: 1.03,
+                          boxShadow: "0 18px 48px rgba(255, 167, 0, 0.20)",
+                        }}
+                        onMouseEnter={() => setActiveResult(index)}
+                        onMouseLeave={() => setActiveResult(null)}
+                        className="group relative flex min-h-[62px] w-[82%] cursor-default items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(191,129,35,0.22)] bg-[#FFF9EF] px-4 py-3 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)] transition-colors duration-300 hover:border-orange-1/70 lg:min-h-[76px] lg:w-auto lg:px-6 lg:py-4 lg:text-base lg:shadow-[0_14px_40px_rgba(40,25,10,0.08)]"
+                      >
+                        <span className="absolute left-1/2 top-0 h-1.5 w-14 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-24 lg:w-16 lg:group-hover:w-28" />
+                        <span className="absolute left-1/2 top-3 hidden h-2 w-2 -translate-x-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)] lg:block" />
+                        {item}
+                      </motion.div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

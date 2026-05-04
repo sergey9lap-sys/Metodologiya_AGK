@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
+import { SectionBackground } from "@/components/SectionBackground";
 import { BookOpen, Layers3, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -30,8 +31,13 @@ const modules = [
 
 export function HowItWorks() {
   return (
-    <section id="program" className="bg-orange-1 py-12 lg:py-16">
-      <Container>
+    <section id="program" className="relative overflow-hidden bg-black py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:27.jpg"
+        variant="orange"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

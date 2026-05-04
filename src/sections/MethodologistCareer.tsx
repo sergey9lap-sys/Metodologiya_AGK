@@ -1,9 +1,9 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { Briefcase, CheckSquare2, CircleDollarSign, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -43,14 +43,10 @@ const requests = [
 export function MethodologistCareer() {
   return (
     <section id="methodologist-career" className="relative overflow-hidden bg-[#FFA700] py-10 lg:py-12">
-      <Image
-        src="/background/8 блок.jpg"
-        alt=""
-        aria-hidden="true"
-        width={1040}
-        height={1320}
-        sizes="(min-width: 1024px) 40vw, 100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-[82%_center] opacity-[0.38] brightness-[1.08] contrast-[1.18] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.95)_82%,transparent_100%)] lg:inset-auto lg:right-[-1%] lg:top-1/2 lg:h-auto lg:w-[42%] lg:max-w-[560px] lg:-translate-y-1/2 lg:object-contain lg:object-center lg:opacity-[0.62] lg:[mask-image:linear-gradient(to_left,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.95)_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_88%,transparent_100%)]"
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:31.jpg"
+        variant="orange"
+        position="object-bottom"
       />
       <Container className="relative z-20 space-y-6 lg:space-y-8">
         <motion.div

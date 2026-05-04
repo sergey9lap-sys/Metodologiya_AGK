@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -74,12 +75,17 @@ const corporations = [
 
 export function Corporations() {
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-14">
+    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-14">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:31:18.jpg"
+        variant="light"
+        position="object-center"
+      />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.18),transparent_68%)] blur-sm"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-20 h-[360px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.18),transparent_68%)] blur-sm"
       />
-      <Container>
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

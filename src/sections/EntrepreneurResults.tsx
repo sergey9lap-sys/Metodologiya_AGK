@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { SectionBackground } from "@/components/SectionBackground";
 import { ArrowRight, CheckSquare2, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -21,8 +22,13 @@ const items = [
 
 export function EntrepreneurResults() {
   return (
-    <section id="entrepreneur-results" className="bg-white py-10 lg:py-12">
-      <Container className="space-y-6 lg:space-y-8">
+    <section id="entrepreneur-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:47.jpg"
+        variant="light"
+        position="object-center"
+      />
+      <Container className="relative z-20 space-y-6 lg:space-y-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -46,13 +52,18 @@ export function EntrepreneurResults() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:p-8"
+          className="relative overflow-hidden rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:p-8"
         >
-          <p className="mb-5 text-lg font-bold text-text-primary lg:text-xl">
+          <SectionBackground
+            src="/background/IMAGE 2026-05-05 01:30:40.jpg"
+            variant="orange"
+            position="object-bottom"
+          />
+          <p className="relative z-20 mb-5 text-lg font-bold text-text-primary lg:text-xl">
             Методология решает запросы:
           </p>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="relative z-20 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {items.map((item, index) => (
               <motion.div
                 key={item}

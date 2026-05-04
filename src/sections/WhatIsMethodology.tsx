@@ -2,9 +2,9 @@
 
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
+import { SectionBackground } from "@/components/SectionBackground";
 import { Compass, Puzzle, Route } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -31,15 +31,11 @@ const cards = [
 
 export function WhatIsMethodology() {
   return (
-    <section className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
-      <Image
-        src="/background/4 блок.jpg"
-        alt=""
-        aria-hidden="true"
-        width={1120}
-        height={900}
-        sizes="(min-width: 1024px) 42vw, 100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center opacity-[0.12] grayscale-[20%] [mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_68%,transparent_100%)] lg:inset-auto lg:right-[-6%] lg:top-1/2 lg:h-auto lg:w-[42%] lg:max-w-[560px] lg:-translate-y-1/2 lg:opacity-[0.24] lg:[mask-image:linear-gradient(to_left,black_58%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,rgba(0,0,0,0.9)_68%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_left,black_58%,transparent_100%)]"
+    <section className="relative overflow-hidden bg-black py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:17.jpg"
+        variant="orange"
+        position="object-center"
       />
       <Container className="relative z-20">
         <motion.div

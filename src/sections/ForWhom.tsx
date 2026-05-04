@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
+import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
 import { Briefcase, Building2, Lightbulb, Sparkles } from "lucide-react";
 
@@ -43,8 +44,13 @@ const cards = [
 
 export function ForWhom() {
   return (
-    <section id="about" className="bg-[#FFA700] py-12 lg:py-16">
-      <Container>
+    <section id="about" className="relative overflow-hidden bg-black py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:19.jpg"
+        variant="orange"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

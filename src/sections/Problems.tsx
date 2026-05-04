@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
+import { SectionBackground } from "@/components/SectionBackground";
 import { AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -42,8 +43,13 @@ const problemGroups = [
 
 export function Problems() {
   return (
-    <section className="bg-[#FFA700] py-12 lg:py-16">
-      <Container>
+    <section className="relative overflow-hidden bg-black py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:22.jpg"
+        variant="orange"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
         <motion.h2
           initial="hidden"
           whileInView="visible"

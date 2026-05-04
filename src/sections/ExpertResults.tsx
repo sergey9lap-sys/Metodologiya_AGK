@@ -2,9 +2,9 @@
 
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { SectionBackground } from "@/components/SectionBackground";
 import { ArrowRight, CheckSquare2, Quote, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -28,7 +28,12 @@ const outcomes = [
 
 export function ExpertResults() {
   return (
-    <section id="expert-results" className="relative overflow-hidden bg-white py-10 lg:py-12">
+    <section id="expert-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:31:01.jpg"
+        variant="light"
+        position="object-center"
+      />
       <Container className="relative z-20 space-y-8 lg:space-y-10">
         <motion.div
           initial="hidden"
@@ -38,17 +43,10 @@ export function ExpertResults() {
           transition={{ duration: 0.5 }}
           className="relative overflow-hidden space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8"
         >
-          <Image
-            src="/background/7 блок.jpg"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="(min-width: 1024px) 1184px, 100vw"
-            className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover opacity-[0.30] grayscale-[10%] lg:opacity-[0.44]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-[#FFA700]/34"
+          <SectionBackground
+            src="/background/IMAGE 2026-05-05 01:30:38.jpg"
+            variant="orange"
+            position="object-bottom"
           />
           <div className="relative z-20 space-y-6 lg:space-y-7">
             <div className="mx-auto max-w-5xl text-center">

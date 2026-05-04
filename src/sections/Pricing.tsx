@@ -3,6 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { SectionBackground } from "@/components/SectionBackground";
 import { ArrowRight, Check, Star, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { COURSE_START_DATE } from "@/lib/constants";
@@ -92,8 +93,13 @@ const tariffs = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-[#FFA700] py-12 lg:py-16">
-      <Container>
+    <section id="pricing" className="relative overflow-hidden bg-black py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:29.jpg"
+        variant="orange"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

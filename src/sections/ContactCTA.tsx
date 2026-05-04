@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { SectionBackground } from "@/components/SectionBackground";
 import { FileText, MessageCircle, Send, MessagesSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -13,8 +14,13 @@ const fadeInUp = {
 
 export function ContactCTA() {
   return (
-    <section id="contact" className="bg-orange-1 py-12 lg:py-16">
-      <Container>
+    <section id="contact" className="relative overflow-hidden bg-black py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:42.jpg"
+        variant="orange"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
         <motion.div
           initial="hidden"
           whileInView="visible"

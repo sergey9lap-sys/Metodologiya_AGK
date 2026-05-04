@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
+import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image from "next/image";
@@ -22,8 +23,13 @@ const fadeInUp = {
 
 export function ExpertIntro() {
   return (
-    <section className="bg-white py-12 lg:py-16">
-      <Container>
+    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:31:12.jpg"
+        variant="light"
+        position="object-center"
+      />
+      <Container className="relative z-20">
         <motion.h2
           initial="hidden"
           whileInView="visible"

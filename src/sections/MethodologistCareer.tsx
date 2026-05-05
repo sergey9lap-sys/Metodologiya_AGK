@@ -27,7 +27,7 @@ const salaryItems = [
     icon: CircleDollarSign,
     title: "Директор по продукту",
     amount: "220 000 - 350 000 ₽",
-    caption: "в месяц",
+    caption: "за проект",
   },
 ];
 

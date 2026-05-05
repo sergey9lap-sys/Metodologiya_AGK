@@ -11,6 +11,10 @@ const footerLinks = [
 
 const legalLinks = [
   {
+    label: "Лицензия",
+    href: "https://islod.obrnadzor.gov.ru/rlic/details/6009a6d6-0d6f-7d9f-197f-9f9286292347/",
+  },
+  {
     label: "Договор-оферта",
     href: "https://agkedu.getcourse.ru/oferta_methodology",
   },
@@ -99,7 +103,7 @@ export function Footer() {
                     className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-semibold text-white/80 transition-all hover:-translate-y-0.5 hover:border-orange-1 hover:text-orange-1 lg:justify-start"
                   >
                     <Icon className="h-4 w-4 flex-shrink-0" />
-                    <span>{link.label}</span>
+                    <span className="whitespace-nowrap">{link.label}</span>
                   </a>
                 );
               })}

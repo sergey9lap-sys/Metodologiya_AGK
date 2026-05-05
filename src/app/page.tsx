@@ -3,7 +3,6 @@ import { Corporations } from "@/sections/Corporations";
 import { ForWhom } from "@/sections/ForWhom";
 import { WhatIsMethodology } from "@/sections/WhatIsMethodology";
 import { HowItWorks } from "@/sections/HowItWorks";
-import { Benefits } from "@/sections/Benefits";
 import { Problems } from "@/sections/Problems";
 import { Testimonials } from "@/sections/Testimonials";
 import { FamousAlumni } from "@/sections/FamousAlumni";
@@ -25,7 +24,6 @@ export default function Home() {
       <Hero />
       <Corporations />
       <WhatIsMethodology />
-      <Benefits />
       <InlineCTA text="Забронировать место" />
       <ForWhom />
       <ExpertResults />

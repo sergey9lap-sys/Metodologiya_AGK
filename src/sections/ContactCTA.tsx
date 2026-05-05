@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionBackground } from "@/components/SectionBackground";
-import { FileText, MessageCircle, Send, MessagesSquare } from "lucide-react";
+import { ExternalLink, FileText, MessageCircle, Send, MessagesSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -104,6 +104,15 @@ export function ContactCTA() {
                   Внизу страницы доступны оферта, политика конфиденциальности и
                   основные данные Академии.
                 </p>
+                <a
+                  href="https://islod.obrnadzor.gov.ru/rlic/details/6009a6d6-0d6f-7d9f-197f-9f9286292347/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-orange-1 transition-colors hover:text-orange-2"
+                >
+                  Проверить лицензию в реестре
+                  <ExternalLink className="h-4 w-4" />
+                </a>
               </div>
 
               <p className="text-sm text-text-primary/80 lg:text-base">

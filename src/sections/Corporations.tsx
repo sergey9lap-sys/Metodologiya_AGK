@@ -29,7 +29,7 @@ const corporations = [
   {
     name: "X5 Group",
     logo: "https://optim.tildacdn.com/tild3536-3065-4064-b433-653566333831/-/resize/192x/-/format/webp/image_2.png.webp",
-    logoClassName: "h-12 max-w-[170px]",
+    logoClassName: "h-20 max-w-[220px] scale-125",
   },
   {
     name: "ВкусВилл",
@@ -105,7 +105,7 @@ export function Corporations() {
             {[...corporations, ...corporations].map((company, index) => (
               <div
                 key={`${company.name}-${index}`}
-                className="flex h-[104px] w-[240px] flex-shrink-0 items-center justify-center lg:w-[280px]"
+                className="flex h-[112px] w-[240px] flex-shrink-0 items-center justify-center lg:w-[280px]"
               >
                 <Image
                   src={company.logo}

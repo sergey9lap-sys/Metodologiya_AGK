@@ -58,7 +58,7 @@ export function Hero() {
               <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <div className="inline-flex max-w-full items-center gap-3 rounded-full border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-orange-1 shadow-sm">
                   <Award className="h-4 w-4 flex-shrink-0" />
-                  <span>Легендарный курс Академии Александры Горевой-Куртышевой</span>
+                  <span>Легендарный курс Академии методологии Александры Горевой-Куртышевой</span>
                 </div>
 
                 <motion.div

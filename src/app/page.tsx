@@ -17,7 +17,6 @@ import { ExpertResults } from "@/sections/ExpertResults";
 import { MethodologistCareer } from "@/sections/MethodologistCareer";
 import { EntrepreneurResults } from "@/sections/EntrepreneurResults";
 import { Myths } from "@/sections/Myths";
-import { InlineCTA } from "@/sections/InlineCTA";
 
 export default function Home() {
   return (
@@ -25,26 +24,21 @@ export default function Home() {
       <Hero />
       <Corporations />
       <WhatIsMethodology />
-      <InlineCTA text="Забронировать место" />
       <ForWhom />
       <ExpertResults />
       <MethodologistCareer />
-      <InlineCTA text="Зарегистрироваться" />
       <EntrepreneurResults />
       <Myths />
       <NichesAndFormats />
-      <InlineCTA text="Оставить заявку" />
       <Problems />
       <Testimonials />
       <HowItWorks />
       <Pricing />
       <PaymentOptions />
-      <InlineCTA text="Присоединиться к обучению" />
       <ExpertIntro />
       <FamousAlumni />
       <FAQ />
       <ContactCTA />
-      <InlineCTA text="Присоединиться к обучению" />
       <Footer />
     </main>
   );

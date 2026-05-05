@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionBackground } from "@/components/SectionBackground";
-import { Compass, Puzzle, Route } from "lucide-react";
+import { ArrowRight, Compass, Puzzle, Route } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -83,6 +83,23 @@ export function WhatIsMethodology() {
             );
           })}
         </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mt-8 flex justify-center"
+        >
+          <a
+            href="#pricing"
+            className="inline-flex min-h-[60px] w-full max-w-[340px] items-center justify-center gap-3 rounded-2xl border-2 border-white bg-white px-8 py-4 text-center text-lg font-bold tracking-wide text-orange-1 shadow-[0_14px_34px_rgba(126,74,0,0.18)] transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_44px_rgba(126,74,0,0.24)] sm:w-auto"
+          >
+            Забронировать место
+            <ArrowRight className="h-5 w-5 flex-shrink-0" />
+          </a>
+        </motion.div>
       </Container>
     </section>
   );

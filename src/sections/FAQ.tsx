@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { SectionBackground } from "@/components/SectionBackground";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 
@@ -159,6 +159,23 @@ export function FAQ() {
             <FAQItem key={item.question} item={item} index={index} />
           ))}
         </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 flex justify-center"
+        >
+          <a
+            href="#pricing"
+            className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-1 to-orange-2 px-8 py-4 text-center text-lg font-bold tracking-wide text-white shadow-button transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-105 hover:shadow-button-hover sm:w-auto"
+          >
+            Присоединиться к обучению
+            <ArrowRight className="h-5 w-5 flex-shrink-0" />
+          </a>
+        </motion.div>
       </Container>
     </section>
   );

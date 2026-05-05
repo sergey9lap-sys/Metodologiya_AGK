@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
-import { CreditCard, Landmark, ShieldCheck, WalletCards } from "lucide-react";
+import { ArrowRight, CreditCard, Landmark, ShieldCheck, WalletCards } from "lucide-react";
 import Image from "next/image";
 
 const fadeInUp = {
@@ -12,11 +12,26 @@ const fadeInUp = {
 };
 
 const instantPayments = [
-  { name: "Банковская карта", label: "Visa / Mastercard / Мир" },
-  { name: "Я Pay", label: "картой любого банка" },
-  { name: "SberPay", label: "быстрая оплата" },
-  { name: "GetCourse", label: "защищенная платежная форма" },
-  { name: "Альфа-Банк", label: "оплата через банк" },
+  {
+    name: "Банковская карта",
+    label: "Visa / Mastercard / Мир",
+    logo: "https://agkedu.getcourse.ru/saas/images/gcpay-ru.png",
+  },
+  {
+    name: "Yandex Pay",
+    label: "картой любого банка",
+    logo: "https://agkedu.getcourse.ru/img/payments/ya_pay_2026.png",
+  },
+  {
+    name: "SberPay",
+    label: "быстрая оплата",
+    logo: "https://agkedu.getcourse.ru/img/payments/new_sber_logo.png?v=1",
+  },
+  {
+    name: "AlphaPay",
+    label: "оплата через Альфа-Банк",
+    logo: "https://agkedu.getcourse.ru/img/payments/new_alpha_logo.png?v=1",
+  },
 ];
 
 const installmentOptions = [
@@ -103,7 +118,7 @@ export function PaymentOptions() {
             </p>
           </div>
 
-          <div className="mt-7 grid grid-cols-2 gap-3 md:grid-cols-5">
+          <div className="mt-7 grid grid-cols-2 gap-3 md:grid-cols-4">
             {instantPayments.map((payment, index) => (
               <motion.div
                 key={payment.name}
@@ -111,8 +126,18 @@ export function PaymentOptions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.42, delay: 0.14 + index * 0.06 }}
-                className="flex min-h-[92px] flex-col items-center justify-center rounded-2xl border border-white/80 bg-white px-3 py-4 text-center shadow-[0_12px_30px_rgba(40,25,10,0.12)]"
+                className="flex min-h-[112px] flex-col items-center justify-center rounded-2xl border border-white/80 bg-white px-3 py-4 text-center shadow-[0_12px_30px_rgba(40,25,10,0.12)]"
               >
+                <div className="mb-3 flex h-12 items-center justify-center">
+                  <Image
+                    src={payment.logo}
+                    alt={payment.name}
+                    width={176}
+                    height={54}
+                    className="max-h-12 w-auto rounded-xl object-contain"
+                    loading="lazy"
+                  />
+                </div>
                 <p className="text-sm font-bold leading-tight text-text-primary">
                   {payment.name}
                 </p>
@@ -191,6 +216,16 @@ export function PaymentOptions() {
             Точные условия зависят от выбранного тарифа и платежного партнера.
             Служба заботы подскажет доступные варианты перед оформлением.
           </p>
+
+          <div className="mt-7 flex justify-center">
+            <a
+              href="#pricing"
+              className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-2xl border-2 border-white bg-white px-8 py-4 text-center text-lg font-bold tracking-wide text-orange-1 shadow-[0_14px_34px_rgba(126,74,0,0.18)] transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_44px_rgba(126,74,0,0.24)] sm:w-auto"
+            >
+              Присоединиться к обучению
+              <ArrowRight className="h-5 w-5 flex-shrink-0" />
+            </a>
+          </div>
         </motion.div>
       </Container>
     </section>

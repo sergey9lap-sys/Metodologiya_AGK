@@ -54,10 +54,10 @@ export function Myths() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-white lg:text-4xl">
             Почему вы до сих пор не внедрили методологию
           </h2>
-          <p className="text-lg text-text-primary lg:text-xl">
+          <p className="text-lg text-white/90 lg:text-xl">
             Чаще всего мешают не факты, а мифы и возражения, которые держат
             эксперта или предпринимателя в старой модели.
           </p>

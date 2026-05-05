@@ -54,7 +54,7 @@ export function EntrepreneurResults() {
             variant="orange"
             position="object-[center_40%]"
           />
-          <p className="relative z-20 mb-5 text-lg font-bold text-text-primary lg:text-xl">
+          <p className="relative z-20 mb-5 text-center text-lg font-bold text-white lg:text-xl">
             Методология решает запросы:
           </p>
 

@@ -59,10 +59,10 @@ export function ForWhom() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-white lg:text-4xl">
             Кому подходит курс
           </h2>
-          <p className="text-lg text-text-primary lg:text-xl">
+          <p className="text-lg text-white/90 lg:text-xl">
             Методология нужна не только школам и не только “людям из образования”.
             Она нужна всем, кто строит продукт и отвечает за результат ученика.
           </p>

@@ -49,17 +49,17 @@ export function ExpertResults() {
           />
           <div className="relative z-20 space-y-6 lg:space-y-7">
             <div className="mx-auto max-w-5xl text-center">
-              <h2 className="mb-4 font-heading text-2xl font-black leading-tight text-text-primary lg:text-4xl">
+              <h2 className="mb-4 font-heading text-2xl font-black leading-tight text-white lg:text-4xl">
                 Вы — эксперт. Ваши знания стоят миллионы. Но без методологии они так и останутся в вашей голове
               </h2>
-              <p className="mx-auto max-w-4xl text-body italic text-text-secondary">
+              <p className="mx-auto max-w-4xl text-body italic text-white/90">
                 Курс «Методология» превращает хаос вашей экспертизы в продукт,
                 который ученики проходят до конца и приводят друзей.
               </p>
             </div>
 
             <div className="mx-auto max-w-6xl">
-              <p className="mb-5 text-xl font-bold text-text-primary lg:text-2xl">
+              <p className="mb-5 text-center text-xl font-bold text-white lg:text-2xl">
                 Методология решает запросы:
               </p>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">

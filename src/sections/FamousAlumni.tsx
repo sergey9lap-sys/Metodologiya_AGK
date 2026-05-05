@@ -118,11 +118,11 @@ export function FamousAlumni() {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.5 }}
-            className="mb-3 text-center font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl"
+            className="mb-3 text-center font-heading text-3xl font-black uppercase text-white lg:text-4xl"
           >
             Выпускники-методологи Александры работают в:
           </motion.h2>
-          <p className="mx-auto mb-8 max-w-3xl text-center text-base font-medium text-text-secondary lg:mb-10 lg:text-lg">
+          <p className="mx-auto mb-8 max-w-3xl text-center text-base font-medium text-white/90 lg:mb-10 lg:text-lg">
             Наши ученики применяют методологию в онлайн-школах, образовательных
             платформах, продюсерских центрах и собственных проектах.
           </p>

@@ -56,7 +56,7 @@ export function Problems() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="mb-4 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-6 lg:text-4xl"
+          className="mb-4 text-center font-heading text-3xl font-black uppercase text-white lg:mb-6 lg:text-4xl"
         >
           Распространённые ошибки
         </motion.h2>
@@ -66,7 +66,7 @@ export function Problems() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-8 max-w-2xl text-center text-lg font-medium text-text-secondary lg:mb-10 lg:text-xl"
+          className="mx-auto mb-8 max-w-2xl text-center text-lg font-medium text-white/90 lg:mb-10 lg:text-xl"
         >
           тех, кто пока не выстроил методологию продукта и обучения
         </motion.p>

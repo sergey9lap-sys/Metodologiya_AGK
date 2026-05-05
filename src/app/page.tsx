@@ -7,6 +7,7 @@ import { Problems } from "@/sections/Problems";
 import { Testimonials } from "@/sections/Testimonials";
 import { FamousAlumni } from "@/sections/FamousAlumni";
 import { Pricing } from "@/sections/Pricing";
+import { PaymentOptions } from "@/sections/PaymentOptions";
 import { FAQ } from "@/sections/FAQ";
 import { ContactCTA } from "@/sections/ContactCTA";
 import { Footer } from "@/sections/Footer";
@@ -37,6 +38,7 @@ export default function Home() {
       <Testimonials />
       <HowItWorks />
       <Pricing />
+      <PaymentOptions />
       <InlineCTA text="Присоединиться к обучению" />
       <ExpertIntro />
       <FamousAlumni />

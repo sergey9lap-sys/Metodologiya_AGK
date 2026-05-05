@@ -69,31 +69,116 @@ const employers = [
 
 const alumni = [
   {
-    initials: "НК",
-    name: "Наталья Хруленко",
-    role: "Директор СБЕР-университета",
-    photo: "/images/Наталья Хруленко.jpg",
-    photoClassName: "object-[38%_50%]",
+    initials: "ИА",
+    name: "Ирина Мамаклаб Акопян",
+    handle: "@irina_mamaclub",
+    audience: "3 млн подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6137-6334-4062-a665-316461636530/-/resize/180x/-/format/webp/image_26.png.webp",
   },
   {
     initials: "МА",
     name: "Мария Азарёнок",
-    role: "Бренд-стратег, бизнес-спикер",
+    handle: "@azarenok",
+    audience: "130 тыс. подписчиков",
     photo:
       "https://optim.tildacdn.com/tild6366-3030-4439-b731-666261313761/-/resize/180x/-/format/webp/image_26_1.png.webp",
   },
   {
-    initials: "ГШ",
-    name: "Галина Шевченко",
-    role: "Продюсер форума Леонида Агутина",
-    photo: "/images/Галина шевченко.jpg",
+    initials: "ЛЯ",
+    name: "Лейли Ялунина",
+    handle: "@leyli_yalunina",
+    audience: "131 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6632-3633-4366-a439-356432323432/-/resize/180x/-/format/webp/image_21.png.webp",
+  },
+  {
+    initials: "НГ",
+    name: "Ната Гончар",
+    handle: "@ryzov_igor",
+    audience: "166 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild3236-6230-4531-b637-326334326337/-/resize/180x/-/format/webp/image_27_1.png.webp",
   },
   {
     initials: "ИР",
     name: "Игорь Рызов",
-    role: "Эксперт в области наставничества",
+    handle: "@ryzov_igor",
+    audience: "286 тыс. подписчиков",
     photo:
       "https://optim.tildacdn.com/tild3533-6634-4361-b834-646231626263/-/cover/180x180/center/center/-/format/webp/photo.png.webp",
+  },
+  {
+    initials: "НЗ",
+    name: "Натэла Зубченко",
+    handle: "@natelazub",
+    audience: "50,4 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6438-3665-4438-a136-313230303136/-/resize/180x/-/format/webp/image_22_1.png.webp",
+  },
+  {
+    initials: "ЕП",
+    name: "Евгения Павловская",
+    handle: "@pavlovskaia_evgeniya",
+    audience: "145 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild3966-3364-4135-b635-396462393934/-/resize/180x/-/format/webp/Gfdkjdcrfz.png.webp",
+  },
+  {
+    initials: "ЮС",
+    name: "Юлия Столярова",
+    handle: "@stolyarovajulia",
+    audience: "389 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6638-3862-4435-a535-636532376434/-/resize/180x/-/format/webp/image_28.png.webp",
+  },
+  {
+    initials: "ТМ",
+    name: "Татьяна Маричева",
+    handle: "@marichevva",
+    audience: "202 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild3230-3635-4133-a134-383435643933/-/resize/180x/-/format/webp/image_23.png.webp",
+  },
+  {
+    initials: "МЛ",
+    name: "Мила Литвинская",
+    handle: "@mila_litvinskaya",
+    audience: "271 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild3839-6365-4736-b462-353361356161/-/resize/180x/-/format/webp/image_23_1.png.webp",
+  },
+  {
+    initials: "ВБ",
+    name: "Владислав Бермуда",
+    handle: "@vlad.bermuda",
+    audience: "102 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6262-6635-4434-b264-336662633036/-/resize/180x/-/format/webp/image_27.png.webp",
+  },
+  {
+    initials: "ГМ",
+    name: "Галина Мельникова",
+    handle: "@galya.melnikova",
+    audience: "155 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6365-3063-4666-a230-343239373539/-/resize/180x/-/format/webp/image_27_3.png.webp",
+  },
+  {
+    initials: "ИН",
+    name: "Игорь Новокриницкий",
+    handle: "@massagist_novokrinitskii",
+    audience: "1,5 млн подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild6262-3438-4039-b265-396239393532/-/resize/180x/-/format/webp/image_29.png.webp",
+  },
+  {
+    initials: "ОС",
+    name: "Ольга Савонина",
+    handle: "@doctor_savonina",
+    audience: "111 тыс. подписчиков",
+    photo:
+      "https://optim.tildacdn.com/tild3664-6535-4366-b030-386139626362/-/resize/180x/-/format/webp/image_27_2.png.webp",
   },
 ];
 
@@ -158,10 +243,10 @@ export function FamousAlumni() {
           transition={{ duration: 0.5 }}
           className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-4xl"
         >
-          Нас рекомендуют известные выпускники
+          Александра работала с:
         </motion.h2>
 
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
+        <div className="grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {alumni.map((person, index) => (
             <motion.div
               key={person.name}
@@ -170,18 +255,16 @@ export function FamousAlumni() {
               viewport={{ once: true }}
               variants={fadeInUp}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="text-center transition-all duration-300 hover:-translate-y-1"
+              className="rounded-[22px] border border-orange-1/12 bg-white/86 px-3 py-5 text-center shadow-[0_12px_30px_rgba(40,25,10,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-card-hover"
             >
-              <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
+              <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-[#FFF9EF] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
                 {person.photo ? (
                   <Image
                     src={person.photo}
                     alt={person.name}
                     width={180}
                     height={180}
-                    className={`h-full w-full object-cover ${
-                      person.photoClassName ?? ""
-                    }`}
+                    className="h-full w-full object-cover"
                     loading="lazy"
                   />
                 ) : (
@@ -190,10 +273,13 @@ export function FamousAlumni() {
                   </span>
                 )}
               </div>
-              <h3 className="text-base font-bold text-text-primary lg:text-lg">
+              <h3 className="text-sm font-bold leading-tight text-text-primary lg:text-base">
                 {person.name}
               </h3>
-              <p className="mt-1 text-sm font-medium text-orange-1">{person.role}</p>
+              <p className="mt-2 text-sm font-medium text-orange-1">{person.handle}</p>
+              <p className="mt-2 text-sm italic text-text-secondary">
+                {person.audience}
+              </p>
             </motion.div>
           ))}
         </div>

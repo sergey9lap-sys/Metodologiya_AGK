@@ -3,51 +3,71 @@
 import { Container } from "@/components/ui/Container";
 import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
-const niches = [
-  { label: "мастермайнды", x: 210, y: 98, fromX: -130, fromY: -60, rotate: -9 },
-  { label: "тренинги", x: 420, y: 70, fromX: -25, fromY: -130, rotate: 7 },
-  { label: "стратегические сессии", x: 610, y: 96, fromX: 95, fromY: -95, rotate: -6 },
-  { label: "мастер-группы", x: 790, y: 172, fromX: 150, fromY: -20, rotate: 8 },
-  { label: "курсы", x: 790, y: 348, fromX: 140, fromY: 80, rotate: -7 },
-  { label: "интенсивы", x: 610, y: 426, fromX: 60, fromY: 135, rotate: 9 },
-  { label: "наставничество", x: 390, y: 438, fromX: -55, fromY: 140, rotate: -8 },
-  { label: "вебинары", x: 205, y: 338, fromX: -150, fromY: 90, rotate: 6 },
+const productColumns = [
+  {
+    title: "Точки входа",
+    products: ["Вебинары", "Интенсивы"],
+  },
+  {
+    title: "Повышение",
+    products: ["Мастермайнды", "Тренинги", "Мастер-классы"],
+  },
+  {
+    title: "Генератор",
+    products: ["Курсы", "Наставничество"],
+  },
+  {
+    title: "Мечта",
+    products: ["Мастер-группы", "Стратегические сессии"],
+  },
 ];
 
-const systems = [
-  "эко-системы продуктов",
-  "самостоятельный отдел продукта",
-  "структура сопровождения учеников",
-  "сильная продуктовая линейка",
-  "понятный путь клиента",
-  "рост качества без хаоса",
+const resultCards = [
+  "Сильная продуктовая линейка",
+  "Понятный путь клиента",
+  "Экосистема продуктов",
+  "Самостоятельная система продукта",
+  "Структура сопровождения учеников",
+  "Рост качества без хаоса",
 ];
 
-const systemConnectorTargets = [
-  { x: 166, y: 190 },
-  { x: 500, y: 190 },
-  { x: 834, y: 190 },
-  { x: 166, y: 282 },
-  { x: 500, y: 282 },
-  { x: 834, y: 282 },
+const matrixHeaders = [
+  { title: "Точки входа", x: 125 },
+  { title: "Повышение", x: 375 },
+  { title: "Генератор", x: 625 },
+  { title: "Мечта", x: 875 },
 ];
 
-const resultEntrance = {
-  hidden: { opacity: 0, y: 20, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1 },
-};
+const matrixNodes = [
+  { label: "Вебинары", x: 125, y: 190, delay: 0.18 },
+  { label: "Интенсивы", x: 125, y: 300, delay: 0.26 },
+  { label: "Мастермайнды", x: 375, y: 130, delay: 0.38 },
+  { label: "Тренинги", x: 375, y: 220, delay: 0.46 },
+  { label: "Мастер-классы", x: 375, y: 310, delay: 0.54 },
+  { label: "Курсы", x: 625, y: 180, delay: 0.68 },
+  { label: "Наставничество", x: 625, y: 285, delay: 0.76 },
+  { label: "Мастер-группы", x: 875, y: 155, delay: 0.9 },
+  { label: "Стратегические сессии", x: 875, y: 280, delay: 0.98 },
+];
+
+const matrixPaths = [
+  "M 205 190 C 260 160, 295 140, 290 130",
+  "M 205 300 C 260 272, 300 235, 290 220",
+  "M 205 300 C 260 312, 300 315, 290 310",
+  "M 460 130 C 520 140, 548 168, 540 180",
+  "M 460 220 C 515 210, 548 190, 540 180",
+  "M 460 310 C 520 305, 548 292, 540 285",
+  "M 710 180 C 765 165, 790 156, 790 155",
+  "M 710 285 C 765 282, 790 280, 790 280",
+];
 
 export function NichesAndFormats() {
-  const [activeModule, setActiveModule] = useState<number | null>(null);
-  const [activeResult, setActiveResult] = useState<number | null>(null);
-
   return (
     <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
       <SectionBackground
@@ -79,97 +99,64 @@ export function NichesAndFormats() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mx-auto mt-4 max-w-3xl text-lg font-semibold text-text-secondary lg:text-xl"
           >
-            Разрозненные форматы собираются в понятную продуктовую архитектуру
+            Разрозненные форматы собираются в понятную продуктовую линейку
           </motion.p>
         </div>
 
         <div className="mt-9 lg:mt-12">
           <div className="lg:hidden">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-orange-1 px-4 text-center font-heading text-xl font-black leading-none text-white shadow-[0_0_52px_rgba(255,167,0,0.42)] min-[430px]:h-[150px] min-[430px]:w-[150px]"
-            >
-              Методология
-            </motion.div>
-
-            <div className="relative mx-auto mt-7 max-w-[430px] pb-1">
+            <div className="relative mx-auto max-w-[440px]">
               <motion.div
                 aria-hidden="true"
                 initial={{ opacity: 0, scaleY: 0 }}
                 whileInView={{ opacity: 1, scaleY: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.58, ease: "easeInOut", delay: 0.82 }}
-                className="absolute left-1/2 top-[-28px] bottom-5 z-0 w-px origin-top -translate-x-1/2 bg-[rgba(191,129,35,0.32)]"
-              />
-              <motion.div
-                aria-hidden="true"
-                initial={{ opacity: 0, y: -8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: 1.08 }}
-                className="absolute left-1/2 top-[-35px] z-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.6)]"
+                transition={{ duration: 0.72, ease: "easeInOut", delay: 0.28 }}
+                className="absolute left-5 top-8 bottom-8 z-0 w-px origin-top bg-[rgba(191,129,35,0.34)]"
               />
 
-              <div className="relative z-10 space-y-3.5">
-              {niches.map((item, index) => (
-                <div
-                  key={item.label}
-                  className={`relative flex ${
-                    index % 2 === 0 ? "justify-start pr-8" : "justify-end pl-8"
-                  }`}
-                >
-                  <motion.span
-                    aria-hidden="true"
-                    initial={{ opacity: 0, scale: 0.45 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.28,
-                      ease: "easeOut",
-                      delay: 0.76 + index * 0.08,
-                    }}
-                    className={`absolute top-1/2 z-20 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)] ${
-                      index % 2 === 0 ? "right-2" : "left-2"
-                    }`}
-                  />
-                  <motion.span
-                    aria-hidden="true"
-                    initial={{ opacity: 0, scaleX: 0 }}
-                    whileInView={{ opacity: 1, scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.32,
-                      ease: "easeOut",
-                      delay: 0.86 + index * 0.08,
-                    }}
-                    className={`absolute top-1/2 z-0 h-px origin-center bg-[rgba(191,129,35,0.32)] ${
-                      index % 2 === 0
-                        ? "left-1/2 right-3"
-                        : "left-3 right-1/2"
-                    }`}
-                  />
+              <div className="relative z-10 space-y-4">
+                {productColumns.map((column, columnIndex) => (
                   <motion.div
-                    initial={{
-                      opacity: 0,
-                      y: 24,
-                      x: index % 2 === 0 ? -16 : 16,
-                    }}
-                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    key={column.title}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                      duration: 0.5,
+                      duration: 0.48,
                       ease: "easeOut",
-                      delay: 0.18 + index * 0.075,
+                      delay: columnIndex * 0.08,
                     }}
-                    className="relative z-10 flex min-h-[58px] w-[78%] items-center justify-center rounded-[20px] border border-[rgba(191,129,35,0.18)] bg-[#FFF9EF] px-4 py-3 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)]"
+                    className="relative rounded-[22px] border border-[rgba(191,129,35,0.2)] bg-white/88 p-4 shadow-[0_14px_36px_rgba(40,25,10,0.08)] backdrop-blur-sm"
                   >
-                    {item.label}
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(255,167,0,0.24)]">
+                        {columnIndex + 1}
+                      </span>
+                      <h3 className="font-heading text-xl font-black uppercase leading-tight text-text-primary">
+                        {column.title}
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2">
+                      {column.products.map((product, productIndex) => (
+                        <motion.div
+                          key={product}
+                          initial={{ opacity: 0, x: -18, scale: 0.96 }}
+                          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.42,
+                            ease: "easeOut",
+                            delay: 0.16 + columnIndex * 0.1 + productIndex * 0.05,
+                          }}
+                          className="flex min-h-[54px] items-center justify-center rounded-2xl border border-orange-1/18 bg-[#FFF9EF] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-sm"
+                        >
+                          {product}
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
-                </div>
-              ))}
+                ))}
               </div>
             </div>
           </div>
@@ -177,257 +164,195 @@ export function NichesAndFormats() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="relative mx-auto hidden h-[520px] max-w-5xl lg:block"
+            viewport={{ once: true, amount: 0.35 }}
+            className="relative hidden lg:block"
           >
-            <div
-              aria-hidden="true"
-              className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.20),transparent_66%)]"
-            />
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 1000 520"
-              className="absolute inset-0 h-full w-full"
-            >
-              {niches.map((item, index) => (
-                <motion.line
-                  key={item.label}
-                  x1="500"
-                  y1="260"
-                  x2={item.x}
-                  y2={item.y}
-                  stroke={
-                    activeModule === index
-                      ? "rgba(255, 167, 0, 0.82)"
-                      : "rgba(191, 129, 35, 0.35)"
-                  }
-                  strokeWidth={activeModule === index ? 2.2 : 1.2}
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  whileInView={{ pathLength: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.62,
-                    ease: "easeInOut",
-                    delay: 0.62 + index * 0.04,
-                  }}
-                />
-              ))}
-            </svg>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.76, y: 12 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.62, ease: "easeOut", delay: 0.42 }}
-              className="absolute left-1/2 top-1/2 z-20 flex h-44 w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/80 bg-[linear-gradient(135deg,#FFA700,#E58A00)] px-5 text-center font-heading text-2xl font-black leading-none text-white shadow-[0_0_70px_rgba(255,167,0,0.48)]"
-            >
-              Методология
-            </motion.div>
-
-            {niches.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{
-                  opacity: 0,
-                  x: item.fromX,
-                  y: item.fromY,
-                  rotate: item.rotate,
-                  scale: 0.92,
-                }}
-                whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.72,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: index * 0.075,
-                }}
-                whileHover={{
-                  scale: 1.03,
-                  y: -6,
-                  transition: { type: "spring", stiffness: 260, damping: 18 },
-                }}
-                onMouseEnter={() => setActiveModule(index)}
-                onMouseLeave={() => setActiveModule(null)}
-                style={{
-                  left: `${item.x / 10}%`,
-                  top: `${item.y / 5.2}%`,
-                }}
-                className="group absolute z-10 flex min-h-[72px] w-[176px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center rounded-[22px] border border-[rgba(191,129,35,0.18)] bg-[#FFF9EF] px-5 py-4 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_14px_40px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/60 hover:shadow-[0_18px_48px_rgba(255,167,0,0.22)]"
+            <div className="relative mx-auto h-[520px] max-w-6xl overflow-hidden rounded-[30px] border border-white/70 bg-white/48 shadow-[0_20px_60px_rgba(40,25,10,0.08)] backdrop-blur-[2px]">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[360px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.18),transparent_68%)] blur-sm"
+              />
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 1000 420"
+                className="pointer-events-none absolute inset-0 z-0 h-full w-full overflow-visible"
               >
-                <span className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-orange-1/0 transition-colors duration-300 group-hover:bg-orange-1" />
-                {item.label}
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <div className="relative mt-9 lg:-mt-8">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none mx-auto hidden h-[146px] max-w-5xl lg:block"
-            >
-              <svg viewBox="0 0 1000 320" className="h-full w-full overflow-visible">
                 <defs>
-                  <filter id="flow-glow" x="-40%" y="-40%" width="180%" height="180%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
+                  <marker
+                    id="product-matrix-arrow"
+                    viewBox="0 0 12 12"
+                    refX="10"
+                    refY="6"
+                    markerWidth="8"
+                    markerHeight="8"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M 1 1 L 11 6 L 1 11 z" fill="#FFA700" />
+                  </marker>
+                  <filter id="product-matrix-glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
                     <feMerge>
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </filter>
                 </defs>
-                <motion.line
-                  x1="500"
-                  y1="0"
-                  x2="500"
-                  y2="112"
-                  stroke="rgba(191, 129, 35, 0.38)"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  whileInView={{ pathLength: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.72, ease: "easeInOut", delay: 1.0 }}
-                />
-                {[34, 72, 110].map((cy, index) => (
-                  <motion.circle
-                    key={cy}
-                    cx="500"
-                    cy={cy}
-                    r={index === 2 ? 5 : 3.5}
-                    fill={index === 2 ? "#FFA700" : "#FFF9EF"}
-                    stroke="#FFA700"
-                    strokeWidth="1.5"
-                    initial={{ opacity: 0, scale: 0.4 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: 1.18 + index * 0.12 }}
+
+                {[125, 375, 625, 875].map((x) => (
+                  <line
+                    key={x}
+                    x1={x}
+                    y1="76"
+                    x2={x}
+                    y2="372"
+                    stroke="rgba(191,129,35,0.18)"
+                    strokeDasharray="8 10"
+                    strokeWidth="1"
                   />
                 ))}
-                <motion.path
-                  d="M 486 120 L 500 138 L 514 120"
-                  fill="none"
-                  stroke="#FFA700"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  filter="url(#flow-glow)"
-                  initial={{ opacity: 0, y: -6 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: 1.5 }}
-                />
-                {systemConnectorTargets.map((target, index) => (
+                {[128, 215, 304].map((y) => (
+                  <line
+                    key={y}
+                    x1="72"
+                    y1={y}
+                    x2="928"
+                    y2={y}
+                    stroke="rgba(191,129,35,0.12)"
+                    strokeDasharray="6 12"
+                    strokeWidth="1"
+                  />
+                ))}
+
+                {matrixPaths.map((path, index) => (
                   <motion.path
-                    key={`${target.x}-${target.y}`}
-                    d={`M 500 112 C 500 150, ${target.x} 145, ${target.x} ${target.y}`}
+                    key={path}
+                    d={path}
                     fill="none"
-                    stroke={
-                      activeResult === index
-                        ? "rgba(255, 167, 0, 0.88)"
-                        : "rgba(191, 129, 35, 0.26)"
-                    }
-                    strokeWidth={activeResult === index ? 2.1 : 1.15}
+                    stroke="rgba(255,167,0,0.88)"
+                    strokeWidth="2.2"
                     strokeLinecap="round"
+                    markerEnd="url(#product-matrix-arrow)"
+                    filter="url(#product-matrix-glow)"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{
-                      duration: 0.58,
+                      duration: 0.5,
                       ease: "easeInOut",
-                      delay: 1.56 + index * 0.06,
+                      delay: 1.02 + index * 0.08,
                     }}
                   />
                 ))}
               </svg>
-            </div>
 
+              {matrixHeaders.map((header, index) => (
+                <motion.div
+                  key={header.title}
+                  initial={{ opacity: 0, y: -10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.42,
+                    ease: "easeOut",
+                    delay: index * 0.08,
+                  }}
+                  style={{ left: `${header.x / 10}%` }}
+                  className="absolute top-9 z-20 flex w-[190px] -translate-x-1/2 flex-col items-center text-center"
+                >
+                  <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(255,167,0,0.26)]">
+                    {index + 1}
+                  </span>
+                  <h3 className="font-heading text-lg font-black uppercase leading-tight text-text-primary">
+                    {header.title}
+                  </h3>
+                </motion.div>
+              ))}
+
+              {matrixNodes.map((node, index) => (
+                <motion.div
+                  key={node.label}
+                  initial={{ opacity: 0, x: -32, y: 12, scale: 0.94 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: node.delay,
+                  }}
+                  whileHover={{
+                    y: -5,
+                    scale: 1.04,
+                    transition: { type: "spring", stiffness: 260, damping: 18 },
+                  }}
+                  style={{
+                    left: `${node.x / 10}%`,
+                    top: `${node.y / 4.2}%`,
+                  }}
+                  className="group absolute z-10 flex min-h-[68px] w-[180px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center rounded-[20px] border border-orange-1/24 bg-[#FFF9EF] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/70 hover:shadow-[0_18px_48px_rgba(255,167,0,0.22)]"
+                >
+                  <span className="absolute left-1/2 top-0 h-1 w-12 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-20" />
+                  <span className="absolute -left-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.5)]" />
+                  <span className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.5)]" />
+                  {node.label}
+                </motion.div>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.82 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, ease: "easeOut", delay: 1.72 }}
+                className="absolute bottom-8 left-1/2 z-20 flex min-h-[72px] w-[260px] -translate-x-1/2 items-center justify-center rounded-full border border-white/80 bg-[linear-gradient(135deg,#FFA700,#E58A00)] px-8 text-center font-heading text-2xl font-black leading-none text-white shadow-[0_0_58px_rgba(255,167,0,0.42)]"
+              >
+                Методология
+              </motion.div>
+            </div>
+          </motion.div>
+
+          <div className="relative mx-auto mt-8 max-w-6xl lg:mt-10">
             <motion.p
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 1.52 }}
+              transition={{ duration: 0.5, delay: 1.26 }}
               className="mb-5 text-center font-heading text-xl font-black text-text-primary lg:mb-7 lg:text-2xl"
             >
               И во что это вырастает
             </motion.p>
 
-            <div className="relative z-10 mx-auto max-w-[430px] lg:max-w-5xl">
-              <motion.div
-                aria-hidden="true"
-                initial={{ opacity: 0, scaleY: 0 }}
-                whileInView={{ opacity: 1, scaleY: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.68, ease: "easeInOut", delay: 1.0 }}
-                className="absolute left-1/2 top-[-18px] bottom-4 z-0 w-px origin-top -translate-x-1/2 bg-[rgba(191,129,35,0.32)] lg:hidden"
-              />
-              <div className="relative z-10 grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
-                {systems.map((item, index) => {
-                  const isLeft = index % 2 === 0;
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+              {resultCards.map((item, index) => {
+                const fromLeft = index % 2 === 0;
 
-                  return (
-                    <div
-                      key={item}
-                      className={`relative flex lg:block ${
-                        isLeft ? "justify-start pr-8" : "justify-end pl-8"
-                      } lg:p-0`}
-                    >
-                      <motion.span
-                        aria-hidden="true"
-                        initial={{ opacity: 0, scale: 0.4 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 0.28,
-                          ease: "easeOut",
-                          delay: 1.2 + index * 0.08,
-                        }}
-                        className={`absolute top-1/2 z-20 h-3 w-3 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_20px_rgba(255,167,0,0.62)] lg:hidden ${
-                          isLeft ? "right-2" : "left-2"
-                        }`}
-                      />
-                      <motion.span
-                        aria-hidden="true"
-                        initial={{ opacity: 0, scaleX: 0 }}
-                        whileInView={{ opacity: 1, scaleX: 1 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 0.34,
-                          ease: "easeOut",
-                          delay: 1.26 + index * 0.08,
-                        }}
-                        className={`absolute top-1/2 z-0 h-px bg-[rgba(191,129,35,0.32)] lg:hidden ${
-                          isLeft ? "left-1/2 right-3" : "left-3 right-1/2"
-                        }`}
-                      />
-                      <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={resultEntrance}
-                        transition={{
-                          duration: 0.5,
-                          ease: "easeOut",
-                          delay: 1.16 + index * 0.08,
-                        }}
-                        whileHover={{
-                          y: -4,
-                          scale: 1.03,
-                          boxShadow: "0 18px 48px rgba(255, 167, 0, 0.20)",
-                        }}
-                        onMouseEnter={() => setActiveResult(index)}
-                        onMouseLeave={() => setActiveResult(null)}
-                        className="group relative flex min-h-[62px] w-[82%] cursor-default items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(191,129,35,0.22)] bg-[#FFF9EF] px-4 py-3 text-center text-sm font-semibold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)] transition-colors duration-300 hover:border-orange-1/70 lg:min-h-[76px] lg:w-auto lg:px-6 lg:py-4 lg:text-base lg:shadow-[0_14px_40px_rgba(40,25,10,0.08)]"
-                      >
-                        <span className="absolute left-1/2 top-0 h-1.5 w-14 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-24 lg:w-16 lg:group-hover:w-28" />
-                        <span className="absolute left-1/2 top-3 hidden h-2 w-2 -translate-x-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)] lg:block" />
-                        {item}
-                      </motion.div>
-                    </div>
-                  );
-                })}
-              </div>
+                return (
+                  <motion.div
+                    key={item}
+                    initial={{
+                      opacity: 0,
+                      x: fromLeft ? -38 : 38,
+                      y: 12,
+                      scale: 0.98,
+                    }}
+                    whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 1.34 + index * 0.08,
+                    }}
+                    whileHover={{
+                      y: -4,
+                      scale: 1.02,
+                      boxShadow: "0 18px 48px rgba(255, 167, 0, 0.20)",
+                    }}
+                    className="group relative flex min-h-[76px] items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(191,129,35,0.22)] bg-[#FFF9EF] px-5 py-4 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)] transition-colors duration-300 hover:border-orange-1/70 lg:text-base"
+                  >
+                    <span className="absolute left-1/2 top-0 h-1.5 w-14 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-24" />
+                    {item}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>

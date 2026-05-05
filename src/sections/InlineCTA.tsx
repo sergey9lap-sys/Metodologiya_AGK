@@ -10,7 +10,7 @@ type InlineCTAProps = {
 
 export function InlineCTA({ text }: InlineCTAProps) {
   return (
-    <section className="bg-[#F8F5EF] py-6 lg:py-8">
+    <section className="bg-[#FFA700] py-6 lg:py-8">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -21,7 +21,7 @@ export function InlineCTA({ text }: InlineCTAProps) {
         >
           <a
             href="#pricing"
-            className="inline-flex min-h-[60px] w-full max-w-[420px] items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-1 to-orange-2 px-8 py-4 text-center text-lg font-bold tracking-wide text-white shadow-button transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-105 hover:shadow-button-hover sm:w-auto"
+            className="inline-flex min-h-[60px] w-full max-w-[420px] items-center justify-center gap-3 rounded-2xl border-2 border-white bg-white px-8 py-4 text-center text-lg font-bold tracking-wide text-orange-1 shadow-[0_14px_34px_rgba(126,74,0,0.18)] transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white hover:text-orange-1 hover:shadow-[0_18px_44px_rgba(126,74,0,0.24)] sm:w-auto"
           >
             {text}
             <ArrowRight className="h-5 w-5 flex-shrink-0" />

@@ -91,7 +91,7 @@ export function Footer() {
             <h3 className="font-heading font-bold text-2xl text-white uppercase">
               Контакты
             </h3>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-4 lg:grid-cols-2">
               {contactLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -100,10 +100,10 @@ export function Footer() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-semibold text-white/80 transition-all hover:-translate-y-0.5 hover:border-orange-1 hover:text-orange-1 lg:justify-start"
+                    className="min-w-0 overflow-hidden flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2.5 py-3 text-[13px] font-semibold text-white/80 transition-all hover:-translate-y-0.5 hover:border-orange-1 hover:text-orange-1 sm:text-sm lg:justify-start"
                   >
                     <Icon className="h-4 w-4 flex-shrink-0" />
-                    <span className="whitespace-nowrap">{link.label}</span>
+                    <span className="min-w-0 whitespace-nowrap">{link.label}</span>
                   </a>
                 );
               })}

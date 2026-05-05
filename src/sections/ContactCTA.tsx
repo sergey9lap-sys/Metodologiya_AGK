@@ -95,7 +95,12 @@ export function ContactCTA() {
                 </a>
               </div>
 
-              <div className="rounded-2xl border-2 border-white/80 bg-white p-4 shadow-sm">
+              <a
+                href="https://islod.obrnadzor.gov.ru/rlic/details/6009a6d6-0d6f-7d9f-197f-9f9286292347/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl border-2 border-white/80 bg-white p-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-orange-1 hover:shadow-card"
+              >
                 <div className="mb-2 flex items-center gap-2">
                   <FileText className="h-5 w-5 text-orange-1" />
                   <p className="font-bold text-text-primary">Лицензия и документы</p>
@@ -104,16 +109,11 @@ export function ContactCTA() {
                   Внизу страницы доступны оферта, политика конфиденциальности и
                   основные данные Академии.
                 </p>
-                <a
-                  href="https://islod.obrnadzor.gov.ru/rlic/details/6009a6d6-0d6f-7d9f-197f-9f9286292347/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-orange-1 transition-colors hover:text-orange-2"
-                >
+                <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-orange-1 transition-colors">
                   Проверить лицензию в реестре
                   <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
+                </span>
+              </a>
 
               <p className="text-sm text-text-primary/80 lg:text-base">
                 Обычно отвечаем быстро в рабочее время и помогаем довести вопрос до результата.

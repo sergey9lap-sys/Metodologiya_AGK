@@ -10,12 +10,11 @@ import { Award, BookOpen, Calendar, ChevronDown, Globe, Target, X } from "lucide
 import Image from "next/image";
 
 const authorFacts = [
-  "EdTech-предприниматель, основатель крупнейшей школы по методологии и методического агентства.",
+  "EdTech предприниматель, основатель самой крупной онлайн-школы по методологии.",
   "Архитектор и генеральный продюсер крупнейшего акселератора для предпринимателей Бизнес 360 в Сбере (40 000 участников).",
-  "3 высших образования в сфере педагогики и обучения, выпускница Сколково.",
-  "Консультант и тренер СБЕР, РОСНЕФТЬ, Норникель, Nestle, X5, ВкусВилл и других компаний.",
-  "Вице-президент Ассоциации Спикеров СНГ.",
-  "5 премий за вклад в образование и победа в номинации «Лучшая школа методологии».",
+  "Более 40 000 учеников из 50 стран.",
+  "5 премий за вклад в образование.",
+  "Конверсии в кейс студентов флагманских программ более 98%.",
 ];
 
 const heroStats = [
@@ -154,7 +153,7 @@ export function Hero() {
                   priority
                 />
                 <div className="absolute inset-x-0 bottom-0 rounded-b-[24px] bg-gradient-to-t from-black/78 via-black/34 to-transparent px-5 pb-5 pt-28 text-center">
-                  <h2 className="font-heading text-2xl font-bold leading-tight text-white">
+                  <h2 className="mx-auto max-w-[360px] font-heading text-xl font-bold leading-tight text-white xl:text-2xl">
                     Александра Горева-Куртышева
                   </h2>
                   <p className="mx-auto mt-2 max-w-[270px] text-sm leading-relaxed text-white/86">

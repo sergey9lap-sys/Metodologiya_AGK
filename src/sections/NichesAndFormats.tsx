@@ -131,7 +131,9 @@ export function NichesAndFormats() {
                       ease: "easeOut",
                       delay: 0.76 + index * 0.08,
                     }}
-                    className="absolute left-1/2 top-1/2 z-20 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)]"
+                    className={`absolute top-1/2 z-20 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.55)] ${
+                      index % 2 === 0 ? "right-2" : "left-2"
+                    }`}
                   />
                   <motion.span
                     aria-hidden="true"
@@ -145,8 +147,8 @@ export function NichesAndFormats() {
                     }}
                     className={`absolute top-1/2 z-0 h-px origin-center bg-[rgba(191,129,35,0.32)] ${
                       index % 2 === 0
-                        ? "left-[28%] right-1/2"
-                        : "left-1/2 right-[28%]"
+                        ? "left-1/2 right-3"
+                        : "left-3 right-1/2"
                     }`}
                   />
                   <motion.div
@@ -381,7 +383,9 @@ export function NichesAndFormats() {
                           ease: "easeOut",
                           delay: 1.2 + index * 0.08,
                         }}
-                        className="absolute left-1/2 top-1/2 z-20 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_20px_rgba(255,167,0,0.62)] lg:hidden"
+                        className={`absolute top-1/2 z-20 h-3 w-3 -translate-y-1/2 rounded-full bg-orange-1 shadow-[0_0_20px_rgba(255,167,0,0.62)] lg:hidden ${
+                          isLeft ? "right-2" : "left-2"
+                        }`}
                       />
                       <motion.span
                         aria-hidden="true"
@@ -394,7 +398,7 @@ export function NichesAndFormats() {
                           delay: 1.26 + index * 0.08,
                         }}
                         className={`absolute top-1/2 z-0 h-px bg-[rgba(191,129,35,0.32)] lg:hidden ${
-                          isLeft ? "left-[30%] right-1/2" : "left-1/2 right-[30%]"
+                          isLeft ? "left-1/2 right-3" : "left-3 right-1/2"
                         }`}
                       />
                       <motion.div

@@ -125,6 +125,14 @@ export function Footer() {
             &copy; 2026 Академия Методологии. Все права защищены.
           </p>
           <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
+            <a
+              href="https://t.me/lp_sergey"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-white/70 transition-colors hover:text-orange-1"
+            >
+              Разработка сайтов
+            </a>
             {footerLinks.map((link) => (
               <a
                 key={link.href}

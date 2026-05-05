@@ -12,9 +12,10 @@ interface TimeLeft {
 
 interface CountdownTimerProps {
   targetDate: string;
+  compact?: boolean;
 }
 
-export function CountdownTimer({ targetDate }: CountdownTimerProps) {
+export function CountdownTimer({ targetDate, compact = false }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -57,7 +58,7 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-2 sm:gap-4">
+    <div className={`flex items-center justify-center ${compact ? "gap-1.5 sm:gap-2" : "gap-2 sm:gap-4"}`}>
       {timeUnits.map((unit, index) => (
         <motion.div
           key={unit.label}
@@ -66,12 +67,16 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
           transition={{ duration: 0.3, delay: index * 0.1 }}
           className="flex flex-col items-center"
         >
-          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-orange-1 rounded-xl flex items-center justify-center shadow-lg">
-            <span className="text-white text-xl sm:text-2xl font-heading font-black">
+          <div
+            className={`flex items-center justify-center rounded-xl bg-orange-1 shadow-lg ${
+              compact ? "h-10 w-10 sm:h-11 sm:w-11" : "h-14 w-14 sm:h-16 sm:w-16"
+            }`}
+          >
+            <span className={`font-heading font-black text-white ${compact ? "text-base sm:text-lg" : "text-xl sm:text-2xl"}`}>
               {unit.value.toString().padStart(2, "0")}
             </span>
           </div>
-          <span className="text-xs sm:text-sm text-text-muted mt-1 font-medium">
+          <span className={`${compact ? "mt-0.5 text-[10px] sm:text-xs" : "mt-1 text-xs sm:text-sm"} font-medium text-text-muted`}>
             {unit.label}
           </span>
         </motion.div>

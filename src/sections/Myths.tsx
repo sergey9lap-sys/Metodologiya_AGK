@@ -1,7 +1,6 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
 
@@ -34,6 +33,16 @@ const myths = [
   {
     myth: "Методология - дорого.",
     truth: "Стоимость ошибки при создании курса на глаз часто выше в разы, чем стоимость обучения на сильной системе.",
+  },
+  {
+    myth: "У меня уже есть курс, зачем?",
+    truth:
+      "90% курсов — это просто набор записей. Методология пересобирает продукт так, что ученики доходят до результата",
+  },
+  {
+    myth: "Я и так всё знаю, мне это не нужно",
+    truth:
+      "Если бы знали — уже сделали. Проблема не в знаниях, а в отсутствии системы",
   },
 ];
 
@@ -73,10 +82,35 @@ export function Myths() {
               variants={fadeInUp}
               transition={{ duration: 0.45, delay: index * 0.06 }}
             >
-              <Card className="h-full">
-                <p className="mb-3 text-lg font-bold text-text-primary">{item.myth}</p>
-                <p className="text-body text-text-secondary">{item.truth}</p>
-              </Card>
+              <div className="h-full rounded-2xl border border-orange-1/18 bg-[#FFF9EF] p-5 shadow-[0_14px_34px_rgba(40,25,10,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-[0_18px_42px_rgba(255,167,0,0.16)] lg:p-6">
+                <div className="mb-5">
+                  <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-neutral-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+                    <span aria-hidden="true">×</span>
+                    Миф
+                  </div>
+                  <p className="text-lg font-bold leading-snug text-text-primary">
+                    {item.myth}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-orange-1/22 bg-orange-1/8 p-4 shadow-sm">
+                  <div className="flex gap-4">
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 h-auto w-1 flex-shrink-0 rounded-full bg-orange-1"
+                    />
+                    <div>
+                      <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-orange-1 px-3 py-1 text-xs font-black uppercase tracking-wide text-white">
+                        <span aria-hidden="true">✓</span>
+                        Правда
+                      </div>
+                      <p className="text-body font-medium leading-relaxed text-text-primary">
+                        {item.truth}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

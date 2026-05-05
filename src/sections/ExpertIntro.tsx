@@ -23,7 +23,7 @@ const fadeInUp = {
 
 export function ExpertIntro() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
+    <section id="author" className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:31:12.jpg"
         variant="light"

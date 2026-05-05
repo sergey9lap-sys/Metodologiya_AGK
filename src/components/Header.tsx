@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "О курсе", href: "#about" },
+  { label: "Автор программы", href: "#author" },
+  { label: "Для кого", href: "#about" },
   { label: "Программа", href: "#program" },
   { label: "Тарифы", href: "#pricing" },
   { label: "Вопросы", href: "#faq" },
@@ -45,13 +48,22 @@ export function Header() {
         {/* Logo */}
         <a
           href="#"
-          className="font-sans font-extrabold text-[20px] lg:text-[24px] text-orange-1 tracking-tight uppercase"
+          className="flex items-center gap-3 font-sans text-[20px] font-extrabold uppercase tracking-tight text-orange-1 lg:text-[24px]"
         >
-          МЕТОДОЛОГИЯ
+          <Image
+            src="/images/Без фона-2.png"
+            alt=""
+            aria-hidden="true"
+            width={52}
+            height={34}
+            className="h-auto w-9 object-contain lg:w-11"
+            priority
+          />
+          <span>МЕТОДОЛОГИЯ</span>
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}

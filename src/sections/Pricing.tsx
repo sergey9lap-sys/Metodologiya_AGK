@@ -108,7 +108,7 @@ export function Pricing() {
           <p className="text-lg font-medium text-text-primary">Старт: {COURSE_START_DATE}</p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {tariffs.map((tariff, index) => (
             <motion.div
               key={tariff.name}
@@ -121,7 +121,7 @@ export function Pricing() {
               <Card
                 variant={tariff.highlighted ? "accent" : "default"}
                 className={`relative h-full overflow-hidden border-white/80 bg-white/96 p-0 ${
-                  tariff.highlighted ? "scale-[1.02] ring-2 ring-orange-1" : ""
+                  tariff.highlighted ? "ring-2 ring-orange-1" : ""
                 }`}
               >
                 <div
@@ -129,59 +129,59 @@ export function Pricing() {
                   className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-orange-1/12 blur-2xl"
                 />
                 {tariff.highlighted && (
-                  <div className="absolute right-5 top-5 z-10 flex items-center gap-2 rounded-full bg-orange-1 px-4 py-2 text-xs font-bold text-white shadow-lg">
-                    <Star className="h-4 w-4 fill-white" />
+                  <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-orange-1 px-3 py-1.5 text-[11px] font-bold text-white shadow-lg">
+                    <Star className="h-3.5 w-3.5 fill-white" />
                     Рекомендуем
                   </div>
                 )}
 
                 <div className="relative flex h-full flex-col">
-                  <div className="border-b border-orange-1/20 bg-[linear-gradient(135deg,#fff,#FFF4D1)] px-5 py-5 lg:px-6">
-                    <p className="mb-2 text-sm font-black uppercase tracking-wide text-orange-1">
+                  <div className="border-b border-orange-1/20 bg-[linear-gradient(135deg,#fff,#FFF4D1)] px-4 py-4">
+                    <p className="mb-2 text-xs font-black uppercase tracking-wide text-orange-1">
                       {tariff.number}
                     </p>
-                    <h3 className="font-heading text-2xl font-black text-text-primary lg:text-3xl">
+                    <h3 className="font-heading text-2xl font-black leading-none text-text-primary">
                       {tariff.name}
                     </h3>
-                    <p className="mt-1 text-base font-bold text-orange-1">{tariff.duration}</p>
-                    <p className="mt-3 text-sm font-semibold text-text-secondary">
+                    <p className="mt-2 text-sm font-bold text-orange-1">{tariff.duration}</p>
+                    <p className="mt-3 min-h-[40px] text-xs font-semibold leading-snug text-text-secondary">
                       {tariff.format}
                     </p>
-                    <div className="mt-5 flex items-end justify-between gap-4">
-                      <span className="font-heading text-4xl font-black leading-none text-text-primary lg:text-5xl">
+                    <div className="mt-4 flex items-end justify-between gap-3">
+                      <span className="font-heading text-3xl font-black leading-none text-text-primary xl:text-[34px]">
                         {tariff.price.toLocaleString("ru-RU")} ₽
                       </span>
                     </div>
                   </div>
 
-                  <div className="flex flex-1 flex-col px-5 py-5 lg:px-6">
+                  <div className="flex flex-1 flex-col px-4 py-4">
                     {tariff.spotsLeft && (
-                      <div className="animate-pulse-glow mb-4 flex items-center gap-2 rounded-xl border border-orange-1 bg-orange-1 px-3 py-2 text-sm font-bold text-white shadow-md">
-                        <Users className="h-4 w-4" />
+                      <div className="animate-pulse-glow mb-3 flex items-center gap-2 rounded-xl border border-orange-1 bg-orange-1 px-3 py-2 text-xs font-bold text-white shadow-md">
+                        <Users className="h-3.5 w-3.5" />
                         <span>Осталось {tariff.spotsLeft} мест</span>
                       </div>
                     )}
 
-                    <div className="min-h-[308px] flex-1 space-y-3 lg:min-h-[336px]">
+                    <div className="flex-1 space-y-2.5">
                       {tariff.features.map((feature) => (
-                        <div key={feature} className="flex items-start gap-3">
-                          <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-orange-1">
-                            <Check className="h-3 w-3 text-white" />
+                        <div key={feature} className="flex items-start gap-2.5">
+                          <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-orange-1">
+                            <Check className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-sm leading-relaxed text-text-secondary">
+                          <span className="text-xs leading-snug text-text-secondary">
                             {feature}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    <a href="#contact" className="mt-auto block pt-6">
+                    <a href="#contact" className="mt-auto block pt-5">
                       <Button
                         variant="primary"
-                        className="group w-full shadow-[0_10px_28px_rgba(255,167,0,0.34)]"
+                        className="group w-full px-3 text-sm shadow-[0_10px_28px_rgba(255,167,0,0.34)]"
                       >
-                        Записаться на курс
-                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        Записаться
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </a>
                   </div>

@@ -98,11 +98,6 @@ const alumni = [
 ];
 
 export function FamousAlumni() {
-  const employerRows = [
-    [...employers, ...employers],
-    [...employers.slice(4), ...employers.slice(0, 4), ...employers.slice(4), ...employers.slice(0, 4)],
-  ];
-
   return (
     <section className="overflow-hidden bg-white py-12 lg:py-14">
       <div className="relative overflow-hidden bg-black py-10 lg:py-12">
@@ -128,59 +123,30 @@ export function FamousAlumni() {
           </p>
         </Container>
 
-        <div className="relative z-20 space-y-4">
-          {employerRows.map((rowItems, row) => (
-            <div
-              key={row}
-            className="group relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
-            >
+        <Container className="relative z-20">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+            {employers.map((employer) => (
               <div
-                className={`flex min-w-max gap-4 px-2 ${
-                  row === 0 ? "animate-marquee-left" : "animate-marquee-right"
-                } group-hover:[animation-play-state:paused]`}
+                key={employer.name}
+                className="flex min-h-[128px] items-center justify-center px-3 py-3 text-base font-bold text-text-primary"
               >
-                {rowItems.map((employer, index) => (
-              <motion.div
-                key={`${row}-${employer.name}-${index}`}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
-                    className="flex min-h-[124px] w-[260px] flex-shrink-0 items-center justify-center px-6 py-4 text-base font-bold text-text-primary transition-all duration-300 hover:-translate-y-2 hover:scale-[1.05] lg:w-[300px]"
-              >
-                {employer.logo ? (
-                  <div className="flex flex-col items-center gap-3">
-                    <Image
-                      src={employer.logo}
-                      alt={employer.name}
-                          width={220}
-                          height={88}
-                      className={`object-contain drop-shadow-sm ${
-                            employer.logoClassName
-                      }`}
-                      loading="lazy"
-                    />
-                    <span className="max-w-[220px] text-center text-sm font-semibold leading-tight text-text-primary">
-                      {employer.description}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="flex flex-col items-center gap-2 text-center">
-                    <span className="font-heading text-3xl font-black uppercase leading-none text-text-primary">
-                      {employer.name}
-                    </span>
-                    <span className="max-w-[220px] text-xs font-semibold leading-tight text-text-secondary">
-                      {employer.description}
-                    </span>
-                  </div>
-                )}
-              </motion.div>
-                ))}
+                <div className="flex flex-col items-center gap-3">
+                  <Image
+                    src={employer.logo}
+                    alt={employer.name}
+                    width={220}
+                    height={88}
+                    className={`object-contain drop-shadow-sm ${employer.logoClassName}`}
+                    loading="lazy"
+                  />
+                  <span className="max-w-[220px] text-center text-sm font-semibold leading-tight text-white/90">
+                    {employer.description}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
+        </Container>
       </div>
 
       <Container className="pt-12 lg:pt-14">

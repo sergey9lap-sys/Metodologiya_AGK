@@ -1,100 +1,71 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { SectionBackground } from "@/components/SectionBackground";
-import { motion } from "framer-motion";
 import { Award, BookOpen, Globe, Target } from "lucide-react";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const stats = [
   {
     value: 15,
     label: "потоков курса",
     icon: BookOpen,
-    tone: "from-white/96 to-white/78",
-    tilt: "-rotate-1 lg:translate-y-2",
   },
   {
     value: 40000,
     label: "выпускников из 50 стран",
     prefix: ">",
     icon: Globe,
-    tone: "from-white/90 to-white/72",
-    tilt: "rotate-[0.7deg]",
   },
   {
     value: 98,
     label: "учеников с результатом",
     suffix: "-100%",
     icon: Target,
-    tone: "from-white/96 to-white/76",
-    tilt: "-rotate-[0.6deg] lg:translate-y-3",
   },
   {
     value: 5,
     label: "премий за вклад в образование",
     icon: Award,
-    tone: "from-white/92 to-white/74",
-    tilt: "rotate-1",
   },
 ];
 
+const formatStatValue = (stat: (typeof stats)[number]) => {
+  const value = stat.value >= 1000 ? stat.value.toLocaleString("ru-RU") : stat.value.toString();
+  return `${stat.prefix ?? ""}${value}${stat.suffix ?? ""}`;
+};
+
 export function Stats() {
   return (
-    <section className="relative overflow-hidden bg-black py-10 lg:py-12">
+    <section className="relative -mt-px overflow-hidden bg-black py-4 lg:py-5">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:15.jpg"
         variant="orange"
         position="object-bottom"
       />
       <Container className="relative z-20">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 lg:gap-5">
+        <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 lg:gap-3">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{
-                  y: -12,
-                  rotate: 0,
-                  scale: 1.035,
-                  transition: { type: "spring", stiffness: 260, damping: 18 },
-                }}
-                className={`group relative overflow-hidden rounded-[28px] border border-white/70 bg-gradient-to-br ${stat.tone} px-5 py-6 text-center shadow-[0_18px_45px_rgba(126,74,0,0.16)] backdrop-blur-md ${stat.tilt}`}
+                className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/92 px-3 py-3 text-center shadow-[0_10px_26px_rgba(126,74,0,0.12)] backdrop-blur-md lg:px-4 lg:py-4"
               >
-                <div
-                  aria-hidden="true"
-                  className="animate-stat-shine pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                />
                 <div
                   aria-hidden="true"
                   className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-gradient-to-r from-transparent via-orange-1 to-transparent"
                 />
-                <div className="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-1 text-white shadow-[0_12px_28px_rgba(255,167,0,0.34)] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
-                  <Icon className="w-7 h-7" />
+                <div className="relative mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-xl bg-orange-1 text-white shadow-[0_8px_18px_rgba(255,167,0,0.24)] lg:h-10 lg:w-10">
+                  <Icon className="h-5 w-5" />
                 </div>
-                <div className="relative mb-2 font-heading text-5xl font-black leading-none text-text-primary lg:text-6xl">
-                  <AnimatedCounter
-                    end={stat.value}
-                    prefix={stat.prefix}
-                    suffix={stat.suffix}
-                  />
+                <div className="relative mb-1 font-heading text-3xl font-black leading-none text-text-primary lg:text-4xl">
+                  {formatStatValue(stat)}
                 </div>
-                <div className="relative mx-auto mb-3 h-px w-16 bg-orange-1/60 transition-all duration-300 group-hover:w-24" />
-                <div className="relative text-base font-semibold leading-snug text-text-primary lg:text-lg">
+                <div className="relative mx-auto mb-1.5 h-px w-10 bg-orange-1/50" />
+                <div className="relative text-xs font-semibold leading-snug text-text-primary lg:text-sm">
                   {stat.label}
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

@@ -23,11 +23,6 @@ const items = [
 export function EntrepreneurResults() {
   return (
     <section id="entrepreneur-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
-      <SectionBackground
-        src="/background/IMAGE 2026-05-05 01:30:47.jpg"
-        variant="light"
-        position="object-center"
-      />
       <Container className="relative z-20 space-y-6 lg:space-y-8">
         <motion.div
           initial="hidden"
@@ -57,7 +52,7 @@ export function EntrepreneurResults() {
           <SectionBackground
             src="/background/IMAGE 2026-05-05 01:30:40.jpg"
             variant="orange"
-            position="object-bottom"
+            position="object-[center_40%]"
           />
           <p className="relative z-20 mb-5 text-lg font-bold text-text-primary lg:text-xl">
             Методология решает запросы:

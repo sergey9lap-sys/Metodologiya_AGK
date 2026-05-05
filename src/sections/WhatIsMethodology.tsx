@@ -33,9 +33,9 @@ export function WhatIsMethodology() {
   return (
     <section className="relative overflow-hidden bg-black py-12 lg:py-16">
       <SectionBackground
-        src="/background/IMAGE 2026-05-05 01:30:17.jpg"
+        src="/background/IMAGE 2026-05-05 01:30:27.jpg"
         variant="orange"
-        position="object-center"
+        position="object-bottom"
       />
       <Container className="relative z-20">
         <motion.div

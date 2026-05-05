@@ -46,7 +46,7 @@ export function ForWhom() {
   return (
     <section id="about" className="relative overflow-hidden bg-black py-12 lg:py-16">
       <SectionBackground
-        src="/background/IMAGE 2026-05-05 01:30:19.jpg"
+        src="/background/IMAGE 2026-05-05 01:30:31.jpg"
         variant="orange"
         position="object-bottom"
       />

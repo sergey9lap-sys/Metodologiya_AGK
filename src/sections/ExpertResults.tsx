@@ -29,11 +29,6 @@ const outcomes = [
 export function ExpertResults() {
   return (
     <section id="expert-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
-      <SectionBackground
-        src="/background/IMAGE 2026-05-05 01:31:01.jpg"
-        variant="light"
-        position="object-center"
-      />
       <Container className="relative z-20 space-y-8 lg:space-y-10">
         <motion.div
           initial="hidden"
@@ -46,7 +41,11 @@ export function ExpertResults() {
           <SectionBackground
             src="/background/IMAGE 2026-05-05 01:30:38.jpg"
             variant="orange"
-            position="object-bottom"
+            position="object-[center_56%]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-[#C77E00] via-[#C77E00] to-[#C77E00]/0"
           />
           <div className="relative z-20 space-y-6 lg:space-y-7">
             <div className="mx-auto max-w-5xl text-center">
@@ -85,6 +84,10 @@ export function ExpertResults() {
               </div>
             </div>
           </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-7 rounded-b-[28px] bg-[#C77E00]"
+          />
         </motion.div>
 
         <motion.div

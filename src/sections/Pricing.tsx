@@ -122,7 +122,7 @@ export function Pricing() {
                 variant="default"
                 className={`relative h-full overflow-hidden p-0 ${
                   tariff.highlighted
-                    ? "scale-[1.03] border-2 border-[#D63800] bg-[#D63800] text-white shadow-[0_18px_46px_rgba(0,0,0,0.16)] hover:border-[#D63800] hover:shadow-[0_18px_46px_rgba(0,0,0,0.16)]"
+                    ? "scale-[1.03] border-2 border-[#D63800] bg-[linear-gradient(145deg,rgba(214,56,0,0.92),rgba(214,56,0,0.82)_58%,rgba(255,158,15,0.68))] text-white shadow-[0_18px_46px_rgba(0,0,0,0.14)] backdrop-blur-sm hover:border-[#D63800] hover:shadow-[0_18px_46px_rgba(0,0,0,0.14)]"
                     : "border-white/80 bg-white/96"
                 }`}
               >
@@ -133,8 +133,24 @@ export function Pricing() {
                   }`}
                 />
                 {tariff.highlighted && (
-                  <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-[#FFF7E6] px-3 py-1.5 text-[11px] font-bold text-[#D63800] shadow-lg">
-                    <Star className="h-3.5 w-3.5 fill-[#D63800]" />
+                  <>
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -left-14 top-24 h-40 w-40 rounded-full bg-white/14 blur-3xl"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.20)_34%,transparent_58%)]"
+                    />
+                  </>
+                )}
+                {tariff.highlighted && (
+                  <div className="absolute right-2 top-2 z-10 flex items-center gap-1.5 rounded-full border border-white/50 bg-[#7D0000] px-2.5 py-1.5 pl-1.5 text-[10px] font-black uppercase tracking-wide text-white shadow-[0_10px_24px_rgba(125,0,0,0.38)] ring-2 ring-[#FFF7E6]/75">
+                    <span className="relative flex h-5.5 w-5.5 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_25%,#FFFFFF_0%,#FFE7A8_32%,#FF9E0F_72%,#D63800_100%)] shadow-[0_0_18px_rgba(255,231,168,0.9)]">
+                      <span className="absolute inset-0 rounded-full bg-white/30 blur-[1px]" />
+                      <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
+                      <Star className="relative h-3 w-3 fill-white text-white drop-shadow-sm" />
+                    </span>
                     Рекомендуем
                   </div>
                 )}

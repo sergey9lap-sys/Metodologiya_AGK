@@ -366,7 +366,7 @@ export function NichesAndFormats() {
             >
               <a
                 href="#pricing"
-                className="inline-flex min-h-[60px] w-full max-w-[320px] items-center justify-center gap-3 rounded-2xl border-2 border-orange-1 bg-orange-1 px-8 py-4 text-center text-lg font-bold tracking-wide text-white shadow-button transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-105 hover:shadow-button-hover sm:w-auto"
+                className="inline-flex min-h-[60px] w-full max-w-[320px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto"
               >
                 Оставить заявку
                 <ArrowRight className="h-5 w-5 flex-shrink-0" />

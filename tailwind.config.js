@@ -58,8 +58,8 @@ module.exports = {
       boxShadow: {
         card: "0 8px 30px rgba(0, 0, 0, 0.12)",
         "card-hover": "0 16px 40px rgba(255, 167, 0, 0.22)",
-        button: "0 4px 15px rgba(255, 167, 0, 0.4)",
-        "button-hover": "0 6px 25px rgba(255, 167, 0, 0.5)",
+        button: "0 6px 20px rgba(125, 0, 0, 0.25)",
+        "button-hover": "0 8px 24px rgba(125, 0, 0, 0.32)",
         "soft-glow": "0 0 40px rgba(255, 167, 0, 0.28)",
       },
       backdropBlur: {

@@ -148,7 +148,7 @@ export function ExpertResults() {
 
             <div className="pt-1 text-center">
               <a href="#pricing">
-                <Button variant="secondary" size="lg" className="min-w-[280px] max-w-full border-white bg-white text-orange-1 shadow-[0_14px_34px_rgba(126,74,0,0.18)] hover:bg-white hover:text-orange-1">
+                <Button variant="primary" size="lg" className="min-w-[280px] max-w-full">
                   Пройти курс и создать свой продукт
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

@@ -66,7 +66,7 @@ export function ContactCTA() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="secondary" size="lg" className="w-full border-white bg-white text-orange-1 hover:bg-white hover:text-orange-1">
+                  <Button variant="primary" size="lg" className="w-full">
                     <MessagesSquare className="mr-2 h-5 w-5" />
                     Макс
                   </Button>
@@ -77,7 +77,7 @@ export function ContactCTA() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="secondary" size="lg" className="w-full border-white bg-white text-orange-1 hover:bg-white hover:text-orange-1">
+                  <Button variant="primary" size="lg" className="w-full">
                     <Send className="mr-2 h-5 w-5" />
                     Телеграм
                   </Button>
@@ -88,7 +88,7 @@ export function ContactCTA() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="secondary" size="lg" className="w-full border-white bg-white text-orange-1 hover:bg-white hover:text-orange-1">
+                  <Button variant="primary" size="lg" className="w-full">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     ВКонтакте
                   </Button>

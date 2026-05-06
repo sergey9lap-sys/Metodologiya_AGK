@@ -119,36 +119,68 @@ export function Pricing() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card
-                variant={tariff.highlighted ? "accent" : "default"}
-                className={`relative h-full overflow-hidden border-white/80 bg-white/96 p-0 ${
-                  tariff.highlighted ? "ring-2 ring-orange-1" : ""
+                variant="default"
+                className={`relative h-full overflow-hidden p-0 ${
+                  tariff.highlighted
+                    ? "scale-[1.03] border-2 border-[#D63800] bg-[#D63800] text-white shadow-[0_18px_46px_rgba(0,0,0,0.16)] hover:border-[#D63800] hover:shadow-[0_18px_46px_rgba(0,0,0,0.16)]"
+                    : "border-white/80 bg-white/96"
                 }`}
               >
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-orange-1/12 blur-2xl"
+                  className={`pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full blur-2xl ${
+                    tariff.highlighted ? "bg-white/12" : "bg-orange-1/12"
+                  }`}
                 />
                 {tariff.highlighted && (
-                  <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-orange-1 px-3 py-1.5 text-[11px] font-bold text-white shadow-lg">
-                    <Star className="h-3.5 w-3.5 fill-white" />
+                  <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-[#FFF7E6] px-3 py-1.5 text-[11px] font-bold text-[#D63800] shadow-lg">
+                    <Star className="h-3.5 w-3.5 fill-[#D63800]" />
                     Рекомендуем
                   </div>
                 )}
 
                 <div className="relative flex h-full flex-col">
-                  <div className="border-b border-orange-1/20 bg-[linear-gradient(135deg,#fff,#FFF4D1)] px-4 py-4">
-                    <p className="mb-2 text-xs font-black uppercase tracking-wide text-orange-1">
+                  <div
+                    className={`border-b px-4 py-4 ${
+                      tariff.highlighted
+                        ? "border-white/18 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,247,230,0.04))]"
+                        : "border-orange-1/20 bg-[linear-gradient(135deg,#fff,#FFF4D1)]"
+                    }`}
+                  >
+                    <p
+                      className={`mb-2 text-xs font-black uppercase tracking-wide ${
+                        tariff.highlighted ? "text-white/82" : "text-orange-1"
+                      }`}
+                    >
                       {tariff.number}
                     </p>
-                    <h3 className="font-heading text-2xl font-black leading-none text-text-primary">
+                    <h3
+                      className={`font-heading text-2xl font-black leading-none ${
+                        tariff.highlighted ? "text-[#FFF7E6]" : "text-text-primary"
+                      }`}
+                    >
                       {tariff.name}
                     </h3>
-                    <p className="mt-2 text-sm font-bold text-orange-1">{tariff.duration}</p>
-                    <p className="mt-3 min-h-[40px] text-xs font-semibold leading-snug text-text-secondary">
+                    <p
+                      className={`mt-2 text-sm font-bold ${
+                        tariff.highlighted ? "text-white/86" : "text-orange-1"
+                      }`}
+                    >
+                      {tariff.duration}
+                    </p>
+                    <p
+                      className={`mt-3 min-h-[40px] text-xs font-semibold leading-snug ${
+                        tariff.highlighted ? "text-white/78" : "text-text-secondary"
+                      }`}
+                    >
                       {tariff.format}
                     </p>
                     <div className="mt-4 flex items-end justify-between gap-3">
-                      <span className="font-heading text-3xl font-black leading-none text-text-primary xl:text-[34px]">
+                      <span
+                        className={`font-heading text-3xl font-black leading-none xl:text-[34px] ${
+                          tariff.highlighted ? "text-white" : "text-text-primary"
+                        }`}
+                      >
                         {tariff.price.toLocaleString("ru-RU")} ₽
                       </span>
                     </div>
@@ -156,7 +188,13 @@ export function Pricing() {
 
                   <div className="flex flex-1 flex-col px-4 py-4">
                     {tariff.spotsLeft && (
-                      <div className="animate-pulse-glow mb-3 flex items-center gap-2 rounded-xl border border-orange-1 bg-orange-1 px-3 py-2 text-xs font-bold text-white shadow-md">
+                      <div
+                        className={`animate-pulse-glow mb-3 flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-bold text-white shadow-md ${
+                          tariff.highlighted
+                            ? "border border-white/22 bg-white/12"
+                            : "border border-orange-1 bg-orange-1"
+                        }`}
+                      >
                         <Users className="h-3.5 w-3.5" />
                         <span>Осталось {tariff.spotsLeft} мест</span>
                       </div>
@@ -165,10 +203,22 @@ export function Pricing() {
                     <div className="flex-1 space-y-2.5">
                       {tariff.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2.5">
-                          <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-orange-1">
-                            <Check className="h-2.5 w-2.5 text-white" />
+                          <div
+                            className={`mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ${
+                              tariff.highlighted ? "bg-[#FFF7E6]" : "bg-orange-1"
+                            }`}
+                          >
+                            <Check
+                              className={`h-2.5 w-2.5 ${
+                                tariff.highlighted ? "text-[#D63800]" : "text-white"
+                              }`}
+                            />
                           </div>
-                          <span className="text-xs leading-snug text-text-secondary">
+                          <span
+                            className={`text-xs leading-snug ${
+                              tariff.highlighted ? "text-white/82" : "text-text-secondary"
+                            }`}
+                          >
                             {feature}
                           </span>
                         </div>
@@ -178,7 +228,7 @@ export function Pricing() {
                     <a href="#contact" className="mt-auto block pt-5">
                       <Button
                         variant="primary"
-                        className="group w-full px-3 text-sm shadow-[0_10px_28px_rgba(255,167,0,0.34)]"
+                        className="group w-full px-3 text-sm"
                       >
                         Записаться
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

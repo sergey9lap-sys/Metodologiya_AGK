@@ -11,19 +11,19 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: cn(
-    "bg-gradient-to-r from-orange-1 to-orange-2",
-    "text-white font-bold",
-    "shadow-button",
-    "motion-safe:hover:shadow-button-hover motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.03] motion-safe:hover:brightness-105",
+    "bg-[#7D0000]",
+    "text-white font-semibold uppercase",
+    "shadow-[0_6px_20px_rgba(125,0,0,0.25)]",
+    "motion-safe:hover:bg-[#5E0000] motion-safe:hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] motion-safe:hover:-translate-y-0.5",
     "motion-safe:active:translate-y-0 motion-safe:active:scale-100",
-    "motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out"
+    "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),
   secondary: cn(
-    "border-2 border-orange-1",
-    "bg-white text-orange-1 font-bold",
-    "motion-safe:hover:bg-orange-1 motion-safe:hover:text-white motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-button",
+    "border-2 border-[#7D0000]",
+    "bg-white text-[#7D0000] font-semibold uppercase",
+    "motion-safe:hover:bg-[#7D0000] motion-safe:hover:text-white motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_6px_20px_rgba(125,0,0,0.25)]",
     "motion-safe:active:translate-y-0",
-    "motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out"
+    "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),
   ghost: cn(
     "text-text-secondary font-semibold",
@@ -33,9 +33,9 @@ const variantStyles: Record<ButtonVariant, string> = {
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  default: "px-8 py-4 text-base",
-  lg: "px-10 py-5 text-lg",
-  sm: "px-6 py-3 text-sm",
+  default: "px-9 py-[18px] text-base",
+  lg: "px-11 py-5 text-lg",
+  sm: "px-7 py-3.5 text-sm",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -45,7 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           "inline-flex items-center justify-center",
-          "rounded-xl font-bold tracking-wide",
+          "rounded-[12px] font-semibold tracking-wide",
           "focus-ring",
           variantStyles[variant],
           sizeStyles[size],

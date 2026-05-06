@@ -45,7 +45,7 @@ export function Hero() {
         <div className="absolute bottom-40 left-5 h-32 w-32 rounded-full bg-gradient-to-br from-orange-2 to-orange-3 opacity-15 blur-2xl animate-float-slower" />
       </div>
 
-      <Container>
+      <Container className="px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-7 lg:min-h-[560px] lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_430px] xl:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -55,23 +55,23 @@ export function Hero() {
           >
             <div className="space-y-3 lg:space-y-4">
               <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                <div className="inline-flex max-w-full items-center gap-3 rounded-full border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold text-orange-1 shadow-sm">
+                <div className="inline-flex max-w-full items-center gap-3 rounded-[22px] border-2 border-orange-1 bg-white px-4 py-2 text-sm font-semibold leading-snug text-orange-1 shadow-sm sm:rounded-full">
                   <Award className="h-4 w-4 flex-shrink-0" />
-                  <span>Легендарный курс Академии методологии Александры Горевой-Куртышевой</span>
+                  <span className="min-w-0 break-words">Легендарный курс Академии методологии Александры Горевой-Куртышевой</span>
                 </div>
 
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="inline-flex max-w-full items-center gap-3 rounded-xl border-2 border-orange-1 bg-orange-1 px-5 py-2.5 font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                  className="inline-flex max-w-full items-center gap-3 rounded-xl border-2 border-orange-1 bg-orange-1 px-5 py-2.5 font-bold leading-snug text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <Calendar className="h-5 w-5 flex-shrink-0 text-white" />
-                  <span>Старт 16-го потока: {COURSE_START_DATE}</span>
+                  <span className="min-w-0 break-words">Старт 16-го потока: {COURSE_START_DATE}</span>
                 </motion.div>
               </div>
 
-              <h1 className="font-heading text-5xl font-black leading-tight tracking-tight text-text-primary uppercase md:text-7xl lg:text-8xl">
+              <h1 className="font-heading text-[40px] font-black leading-[0.95] tracking-tight text-text-primary uppercase sm:text-5xl md:text-7xl lg:text-8xl">
                 МЕТОД
                 <span className="text-gradient-orange">ОЛОГИЯ</span>
               </h1>

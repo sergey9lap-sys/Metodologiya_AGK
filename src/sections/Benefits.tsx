@@ -103,7 +103,7 @@ export function Benefits() {
               результата, а не терялись в хаосе материала.
             </p>
             <a href="#pricing" className="mt-5 inline-flex">
-              <Button variant="secondary" size="lg" className="bg-white text-orange-1 border-white hover:bg-white hover:text-orange-1">
+              <Button variant="primary" size="lg">
                 Смотреть тарифы
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

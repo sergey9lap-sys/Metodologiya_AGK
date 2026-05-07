@@ -146,7 +146,7 @@ export function Hero() {
             <div className="relative overflow-visible rounded-[30px] border-2 border-orange-1 bg-white/90 p-3 shadow-card backdrop-blur-sm">
               <div className="relative min-h-[575px] rounded-[24px] bg-[#FFF6DF] shadow-sm xl:min-h-[600px]">
                 <Image
-                  src="/images/1 блок.jpg"
+                  src="/images/blok-1.jpg"
                   alt="Александра Горева-Куртышева"
                   fill
                   className="rounded-[24px] object-cover object-top"

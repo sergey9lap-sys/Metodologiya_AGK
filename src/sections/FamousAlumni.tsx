@@ -192,7 +192,7 @@ const alumni = [
     name: "Максим Батырев",
     handle: "Instagram",
     audience: "178 тыс. подписчиков",
-    photo: "/images/Максим Батырев.jpg",
+    photo: "/images/maksim-batyrev.jpg",
   },
 ];
 
@@ -202,28 +202,28 @@ const additionalAlumni = [
     name: "Михаил Гребенюк",
     handle: "Instagram",
     audience: "683 тыс. подписчиков",
-    photo: "/images/Михаил Гребенюк.jpg",
+    photo: "/images/mikhail-grebenyuk.jpg",
   },
   {
     initials: "АС",
     name: "Артем Сенаторов",
     handle: "Instagram",
     audience: "1,4 млн подписчиков",
-    photo: "/images/Аретм Сенаторов.jpg",
+    photo: "/images/artem-senatorov.jpg",
   },
   {
     initials: "ЕП",
     name: "Егор Пыриков",
     handle: "Instagram",
     audience: "120 тыс. подписчиков",
-    photo: "/images/Егор Пыриков.jpg",
+    photo: "/images/egor-pyrikov.jpg",
   },
   {
     initials: "РГ",
     name: "Радислав Гандапас",
     handle: "Instagram",
     audience: "775 тыс. подписчиков",
-    photo: "/images/Радсилав Гандапас.jpg",
+    photo: "/images/radislav-gandapas.jpg",
   },
 ];
 

@@ -44,7 +44,6 @@ const tariffs = [
       "5 практических Zoom-сессий с Александрой",
       "Индивидуальная и групповая работа с наставниками в подгруппах",
       "Подробный план продукта и фиксация практических заданий",
-      "Проработка контрольных мероприятий на хакатоне",
       "Защита проекта с наставником",
       "Доступ к материалам курса 60 дней",
     ],
@@ -92,7 +91,12 @@ const tariffs = [
 
 const TELEGRAM_MANAGER_URL = "https://t.me/lp_sergey";
 
-export function Pricing() {
+type PricingProps = {
+  title?: string;
+  showStartDate?: boolean;
+};
+
+export function Pricing({ title = "Тарифы", showStartDate = true }: PricingProps) {
   return (
     <section id="pricing" className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
       <Container className="relative z-20">
@@ -105,9 +109,11 @@ export function Pricing() {
           className="mb-8 text-center lg:mb-10"
         >
           <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
-            Тарифы
+            {title}
           </h2>
-          <p className="text-lg font-medium text-text-primary">Старт: {COURSE_START_DATE}</p>
+          {showStartDate && (
+            <p className="text-lg font-medium text-text-primary">Старт: {COURSE_START_DATE}</p>
+          )}
         </motion.div>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -287,7 +293,10 @@ export function Pricing() {
               <div className="font-heading text-4xl font-black leading-none text-[#7D0000]">
                 18 000 ₽
               </div>
-              <a href="#contact" className="w-full md:w-auto">
+              <a
+                href="https://agkedu.getcourse.ru/pl/lite/widget/editor?id=1600692"
+                className="w-full md:w-auto"
+              >
                 <Button
                   variant="primary"
                   className="group w-full whitespace-nowrap px-6 text-sm md:w-auto"

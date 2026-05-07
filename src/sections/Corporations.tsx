@@ -53,7 +53,7 @@ const corporations = [
   },
   {
     name: "Western Union",
-    logo: "/images/WU_BIG.png",
+    logo: "/images/wu-big.png",
     logoClassName: "h-12 max-w-[200px]",
   },
   {

@@ -51,7 +51,7 @@ export function Header() {
           className="flex items-center gap-3 font-sans text-[20px] font-extrabold uppercase tracking-tight text-orange-1 lg:text-[24px]"
         >
           <Image
-            src="/images/Без фона-2.png"
+            src="/images/bez-fona-2.png"
             alt=""
             aria-hidden="true"
             width={52}

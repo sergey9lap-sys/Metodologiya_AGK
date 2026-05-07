@@ -89,7 +89,10 @@ const tariffs = [
   },
 ];
 
-const TELEGRAM_MANAGER_URL = "https://t.me/lp_sergey";
+const TELEGRAM_MANAGER_URL = "https://agkedu.getcourse.ru/tg_subscribe";
+const PRODUCT_STRATEGY_WIDGET_ID = "d7af9504f428c8cbb9a0df1f3d5779968cf691d2";
+const PRODUCT_STRATEGY_WIDGET_SRC =
+  "https://agkedu.getcourse.ru/pl/lite/widget/script?id=1600692";
 
 type PricingProps = {
   title?: string;
@@ -293,18 +296,12 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
               <div className="font-heading text-4xl font-black leading-none text-[#7D0000]">
                 18 000 ₽
               </div>
-              <a
-                href="https://agkedu.getcourse.ru/pl/lite/widget/editor?id=1600692"
-                className="w-full md:w-auto"
-              >
-                <Button
-                  variant="primary"
-                  className="group w-full whitespace-nowrap px-6 text-sm md:w-auto"
-                >
-                  Оставить заявку
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
+              <div className="getcourse-product-strategy-widget w-full md:w-auto">
+                <script
+                  id={PRODUCT_STRATEGY_WIDGET_ID}
+                  src={PRODUCT_STRATEGY_WIDGET_SRC}
+                />
+              </div>
             </div>
           </div>
         </motion.div>

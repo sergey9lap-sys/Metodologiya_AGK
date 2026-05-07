@@ -12,6 +12,12 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const supportLinks = {
+  max: "https://agkedu.getcourse.ru/max_subscribe",
+  telegram: "https://agkedu.getcourse.ru/tg_subscribe",
+  vk: "https://agkedu.getcourse.ru/vk_subscribe",
+};
+
 export function ContactCTA() {
   return (
     <section id="contact" className="relative overflow-hidden bg-black py-12 lg:py-16">
@@ -62,7 +68,7 @@ export function ContactCTA() {
 
               <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-3">
                 <a
-                  href={process.env.NEXT_PUBLIC_MAX_SUPPORT_URL || "#"}
+                  href={supportLinks.max}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -73,7 +79,7 @@ export function ContactCTA() {
                 </a>
 
                 <a
-                  href={process.env.NEXT_PUBLIC_TG_SUPPORT_URL || "#"}
+                  href={supportLinks.telegram}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -84,7 +90,7 @@ export function ContactCTA() {
                 </a>
 
                 <a
-                  href={process.env.NEXT_PUBLIC_VK_SUPPORT_URL || "#"}
+                  href={supportLinks.vk}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

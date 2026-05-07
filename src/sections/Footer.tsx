@@ -32,17 +32,17 @@ const contactLinks = [
   },
   {
     label: "Telegram",
-    href: process.env.NEXT_PUBLIC_TG_SUPPORT_URL || "#",
+    href: "https://agkedu.getcourse.ru/tg_subscribe",
     icon: Send,
   },
   {
     label: "MAX",
-    href: process.env.NEXT_PUBLIC_MAX_SUPPORT_URL || "#",
+    href: "https://agkedu.getcourse.ru/max_subscribe",
     icon: MessagesSquare,
   },
   {
     label: "ВКонтакте",
-    href: process.env.NEXT_PUBLIC_VK_SUPPORT_URL || "#",
+    href: "https://agkedu.getcourse.ru/vk_subscribe",
     icon: MessageCircle,
   },
 ];

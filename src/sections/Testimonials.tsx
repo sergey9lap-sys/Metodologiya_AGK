@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionBackground } from "@/components/SectionBackground";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -14,34 +15,46 @@ const fadeInUp = {
 
 const testimonials = [
   {
-    name: "Константин Воробьёв",
-    role: "основатель школы плавания",
-    result: "Разработал онлайн-курс и заработал на нём около 2 000 000 рублей.",
+    name: "Надежда Логинова",
+    role: "автор программы «Геном успеха», наставник",
+    image: "/images/nadezhda-loginova.jpg",
+    result:
+      "Пришла с запросом доработать программу и выйти в масштаб. После курса — 100% учеников дошли до конца, все вышли с результатами и оставили отзывы. Финансовый результат — 205 000 ₽.",
   },
   {
-    name: "Анастасия Ланговая",
-    role: "эксперт",
-    result: "Запустила свой мастермайнд, создала 4 продукта и окупила курс до его завершения.",
-  },
-  {
-    name: "Мария Макош",
-    role: "методолог, руководитель",
-    result: "Провела стратегические сессии, усилила экспертную упаковку и получила новые профессиональные приглашения.",
+    name: "Екатерина Заушицына",
+    role: "методолог, кандидат тех. наук",
+    image: "/images/ekaterina-zaushitsyna.jpg",
+    result:
+      "Разобралась в форматах продуктов и выстроила продуктовую воронку. Собрала собственный продукт, к которому не могла приступить 3 года. Финансовый результат — 451 000 ₽.",
   },
   {
     name: "Дарья Кривоженко",
-    role: "директор по продуктам",
-    result: "Собрала новые образовательные продукты и масштабировала направление на основе методологической системы.",
+    role: "директор по продуктам, методолог",
+    image: "/images/darya-krivozhenko.jpg",
+    result:
+      "Выстроила продуктовую линейку, усилила курс Нейросети 2.0, запустила марафон, упаковала мастер-класс, прогрев и допродажи. Финансовый результат запуска — 2 765 348 ₽.",
   },
   {
-    name: "Анна Алексеева",
-    role: "преподаватель английского",
-    result: "Создала собственный курс и провела серию вебинаров уже во время обучения.",
+    name: "Алие Насурова",
+    role: "нейронутрициолог, фудхакер",
+    image: "/images/alie-nasurova.jpg",
+    result:
+      "Повысила чек в 2 раза. Еще до завершения обучения получила предложение поработать методологом для коллеги-нутрициолога и стать куратором федерального проекта.",
   },
   {
-    name: "Олеся Пильжис",
-    role: "специалист корпоративного обучения",
-    result: "Разработала курс повышения квалификации, который одобрили внутри компании.",
+    name: "Диана Семенычева",
+    role: "лингвокоуч, AI-архитектор обучения",
+    image: "/images/diana-semenecheva.jpg",
+    result:
+      "Создала две новые продуктовые линейки, запустила продажи интенсивной программы, получила запросы на премиальную личную работу. Финансовый результат — 550 000 ₽.",
+  },
+  {
+    name: "Алиса Задорожная",
+    role: "фасилитатор, экс-маркетинг директор Яндекс Дзена",
+    image: "/images/alisa-zadorozhnaya.jpg",
+    result:
+      "Методологически проработала курс «Навыкология», улучшила лекции, домашние задания, геймификацию и запустила второй поток на 45 участников.",
   },
 ];
 
@@ -82,12 +95,20 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Card className="h-full border-2 border-orange-1">
-                <div className="space-y-4">
-                  <Quote className="h-10 w-10 text-orange-1 transition-transform duration-300 group-hover:scale-110" />
-                  <p className="text-body font-semibold leading-relaxed text-text-primary">
+                <div className="flex h-full flex-col">
+                  <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-orange-1 shadow-soft transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="mt-4 text-body font-semibold leading-relaxed text-text-primary">
                     {item.result}
                   </p>
-                  <div className="border-t-2 border-orange-1 pt-3">
+                  <div className="mt-auto min-h-[76px] border-t-2 border-orange-1 pt-3">
                     <p className="font-bold text-text-primary">{item.name}</p>
                     <p className="text-sm font-medium text-orange-1">{item.role}</p>
                   </div>

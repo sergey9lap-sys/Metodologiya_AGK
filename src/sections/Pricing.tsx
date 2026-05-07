@@ -19,7 +19,8 @@ const tariffs = [
     name: "БАЗОВЫЙ",
     duration: "3 недели",
     format: "Стартовая сборка продукта с поддержкой",
-    price: 69900,
+    price: 59900,
+    oldPrice: 69900,
     spotsLeft: null,
     widgetId: "954167",
     features: [
@@ -39,7 +40,8 @@ const tariffs = [
     name: "ОПТИМАЛЬНЫЙ",
     duration: "5 недель",
     format: "Больше практики и защита проекта",
-    price: 124900,
+    price: 109900,
+    oldPrice: 124900,
     spotsLeft: null,
     widgetId: "954169",
     features: [
@@ -57,7 +59,8 @@ const tariffs = [
     name: "МАСТЕР",
     duration: "2 месяца",
     format: "Стратегия линейки и разборы проекта",
-    price: 194900,
+    price: 169900,
+    oldPrice: 194900,
     spotsLeft: 5,
     widgetId: "954170",
     features: [
@@ -76,7 +79,8 @@ const tariffs = [
     name: "ВИП",
     duration: "3 месяца",
     format: "Персональная стратегия с Александрой",
-    price: 400000,
+    price: 350000,
+    oldPrice: 400000,
     spotsLeft: 3,
     widgetId: "1477920",
     features: [
@@ -242,13 +246,20 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                     >
                       {tariff.format}
                     </p>
-                    <div className="mt-4 flex items-end justify-between gap-3">
+                    <div className="mt-4 flex flex-wrap items-end gap-x-3 gap-y-1">
                       <span
                         className={`font-heading text-3xl font-black leading-none xl:text-[34px] ${
                           tariff.highlighted ? "text-white" : "text-text-primary"
                         }`}
                       >
                         {tariff.price.toLocaleString("ru-RU")} ₽
+                      </span>
+                      <span
+                        className={`text-base font-bold leading-none line-through decoration-2 ${
+                          tariff.highlighted ? "text-white/62" : "text-text-secondary/70"
+                        }`}
+                      >
+                        {tariff.oldPrice.toLocaleString("ru-RU")} ₽
                       </span>
                     </div>
                   </div>

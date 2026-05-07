@@ -11,6 +11,7 @@ import { PaymentOptions } from "@/sections/PaymentOptions";
 import { FAQ } from "@/sections/FAQ";
 import { ContactCTA } from "@/sections/ContactCTA";
 import { Footer } from "@/sections/Footer";
+import { CourseSchedule } from "@/sections/CourseSchedule";
 import { ExpertIntro } from "@/sections/ExpertIntro";
 import { NichesAndFormats } from "@/sections/NichesAndFormats";
 import { ExpertResults } from "@/sections/ExpertResults";
@@ -34,6 +35,7 @@ export default function Home() {
       <Problems />
       <Testimonials />
       <HowItWorks />
+      <CourseSchedule />
       <Pricing />
       <PaymentOptions />
       <ExpertIntro />

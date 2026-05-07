@@ -3,12 +3,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionBackground } from "@/components/SectionBackground";
 import { Briefcase, CheckSquare2, CircleDollarSign, Target } from "lucide-react";
-import { motion } from "framer-motion";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const salaryItems = [
   {
@@ -49,14 +43,7 @@ export function MethodologistCareer() {
         position="object-bottom"
       />
       <Container className="relative z-20 space-y-6 lg:space-y-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5 }}
-          className="rounded-[28px] bg-white/90 p-6 shadow-card backdrop-blur-[2px] lg:bg-white lg:p-8"
-        >
+        <div className="rounded-[28px] bg-white/90 p-6 shadow-card backdrop-blur-[2px] lg:bg-white lg:p-8">
           <div className="mx-auto mb-6 max-w-5xl text-center lg:mb-7">
             <h2 className="mb-3 font-heading text-3xl font-black leading-tight text-text-primary lg:text-4xl">
               Методолог — профессия №1 в EdTech 2026
@@ -68,17 +55,12 @@ export function MethodologistCareer() {
           </div>
 
           <div className="mb-6 grid grid-cols-1 gap-4 lg:mb-7 lg:grid-cols-3">
-            {salaryItems.map((item, index) => {
+            {salaryItems.map((item) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <div
                   key={item.title}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.4, delay: index * 0.06 }}
-                  className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                  className="rounded-2xl border-2 border-orange-1 bg-white p-4 shadow-sm"
                 >
                   <div className="flex items-start gap-3">
                     <Icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-orange-1" />
@@ -93,7 +75,7 @@ export function MethodologistCareer() {
                       </span>
                     </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -103,25 +85,20 @@ export function MethodologistCareer() {
               Методология решает запросы:
             </p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {requests.map((item, index) => (
-                <motion.div
+              {requests.map((item) => (
+                <div
                   key={item}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
-                className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-              >
+                  className="rounded-2xl border-2 border-orange-1 bg-orange-1 p-4 shadow-sm"
+                >
                   <div className="flex items-start gap-3">
                     <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
                     <p className="text-body leading-relaxed text-white">{item}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

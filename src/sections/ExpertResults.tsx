@@ -4,12 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionBackground } from "@/components/SectionBackground";
 import { ArrowRight, CheckSquare2, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const requests = [
   "Не понимаю, как упаковать весь свой огромный опыт в простые и понятные уроки.",
@@ -30,14 +24,7 @@ export function ExpertResults() {
   return (
     <section id="expert-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
       <Container className="relative z-20 space-y-8 lg:space-y-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5 }}
-          className="relative overflow-hidden space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8"
-        >
+        <div className="relative overflow-hidden space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8">
           <SectionBackground
             src="/background/IMAGE 2026-05-05 01:30:38.jpg"
             variant="orange"
@@ -63,15 +50,10 @@ export function ExpertResults() {
                 Методология решает запросы:
               </p>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {requests.map((item, index) => (
-                  <motion.div
+                {requests.map((item) => (
+                  <div
                     key={item}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                    transition={{ duration: 0.45, delay: index * 0.05 }}
-                    className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                    className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm"
                   >
                     <div className="flex items-start gap-3">
                       <CheckSquare2 className="mt-1 h-5 w-5 flex-shrink-0 text-orange-1" />
@@ -79,7 +61,7 @@ export function ExpertResults() {
                         {item}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -88,37 +70,25 @@ export function ExpertResults() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-7 rounded-b-[28px] bg-[#C77E00]"
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto max-w-6xl space-y-5 rounded-[28px] bg-[#FFA700] p-5 shadow-card lg:p-6"
-        >
+        <div className="mx-auto max-w-6xl space-y-5 rounded-[28px] bg-[#FFA700] p-5 shadow-card lg:p-6">
           <div className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm lg:p-5">
             <p className="text-body italic leading-relaxed text-text-primary">
               Вы выходите с курса с готовым продуктом: курс / тренинг / мастермайнд / наставничество, который:
             </p>
 
             <div className="my-6 space-y-3 pl-2 lg:pl-6">
-              {outcomes.map((item, index) => (
-                <motion.div
+              {outcomes.map((item) => (
+                <div
                   key={item}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.4, delay: 0.2 + index * 0.06 }}
                   className="flex items-start gap-3"
                 >
                   <span className="mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-orange-1" />
                   <p className="text-body italic text-text-primary">
                     {item}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -143,7 +113,7 @@ export function ExpertResults() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

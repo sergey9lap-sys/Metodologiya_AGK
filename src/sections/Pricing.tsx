@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight, Check, Star, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { COURSE_START_DATE } from "@/lib/constants";
-import Script from "next/script";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -21,8 +20,7 @@ const tariffs = [
     format: "Стартовая сборка продукта с поддержкой",
     price: 69900,
     spotsLeft: null,
-    widgetId: "3ce73f3b7a660e27adc1381aeb873ea39d4063c0",
-    widgetSrc: "https://agkedu.getcourse.ru/pl/lite/widget/script?id=954167",
+    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=954167",
     features: [
       "Предобучение перед стартом курса",
       "Уроки в записи в рамках тарифа",
@@ -42,8 +40,7 @@ const tariffs = [
     format: "Больше практики и защита проекта",
     price: 124900,
     spotsLeft: null,
-    widgetId: "3268a5e2627f1039908b87f4dcfb87f3c6b262c0",
-    widgetSrc: "https://agkedu.getcourse.ru/pl/lite/widget/script?id=954169",
+    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=954169",
     features: [
       "Всё из базового тарифа",
       "5 практических Zoom-сессий с Александрой",
@@ -61,8 +58,7 @@ const tariffs = [
     format: "Стратегия линейки и разборы проекта",
     price: 194900,
     spotsLeft: 5,
-    widgetId: "f480d8f89e0eff6a05feb12d149bcf14bb7345fd",
-    widgetSrc: "https://agkedu.getcourse.ru/pl/lite/widget/script?id=954170",
+    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=954170",
     features: [
       "Всё из тарифа «Оптимальный»",
       "8 практических Zoom-сессий с Александрой",
@@ -81,8 +77,7 @@ const tariffs = [
     format: "Персональная стратегия с Александрой",
     price: 400000,
     spotsLeft: 3,
-    widgetId: "73913c3746e6db49287ba93ba8ded3b5284de1be",
-    widgetSrc: "https://agkedu.getcourse.ru/pl/lite/widget/script?id=1477920",
+    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=1477920",
     features: [
       "Всё из тарифа «Мастер»",
       "9 практических Zoom-сессий с Александрой",
@@ -99,9 +94,8 @@ const tariffs = [
 ];
 
 const TELEGRAM_MANAGER_URL = "https://agkedu.getcourse.ru/tg_subscribe";
-const PRODUCT_STRATEGY_WIDGET_ID = "d7af9504f428c8cbb9a0df1f3d5779968cf691d2";
-const PRODUCT_STRATEGY_WIDGET_SRC =
-  "https://agkedu.getcourse.ru/pl/lite/widget/script?id=1600692";
+const PRODUCT_STRATEGY_PAYMENT_URL =
+  "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=1600692";
 
 type PricingProps = {
   title?: string;
@@ -261,13 +255,15 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                       ))}
                     </div>
 
-                    <div className="getcourse-tariff-widget mt-auto block pt-5">
-                      <Script
-                        id={tariff.widgetId}
-                        src={tariff.widgetSrc}
-                        strategy="afterInteractive"
-                      />
-                    </div>
+                    <a href={tariff.paymentUrl} className="mt-auto block pt-5">
+                      <Button
+                        variant="primary"
+                        className="group w-full px-3 text-sm"
+                      >
+                        Оставить заявку
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </Card>
@@ -303,13 +299,15 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
               <div className="font-heading text-4xl font-black leading-none text-[#7D0000]">
                 18 000 ₽
               </div>
-              <div className="getcourse-product-strategy-widget w-full md:w-auto">
-                <Script
-                  id={PRODUCT_STRATEGY_WIDGET_ID}
-                  src={PRODUCT_STRATEGY_WIDGET_SRC}
-                  strategy="afterInteractive"
-                />
-              </div>
+              <a href={PRODUCT_STRATEGY_PAYMENT_URL} className="w-full md:w-auto">
+                <Button
+                  variant="primary"
+                  className="group w-full whitespace-nowrap px-6 text-sm md:w-auto"
+                >
+                  Оставить заявку
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
             </div>
           </div>
         </motion.div>

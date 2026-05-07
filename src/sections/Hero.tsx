@@ -141,7 +141,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="relative z-0 mx-auto w-full max-w-[460px] lg:ml-auto lg:mr-0 lg:translate-x-0 xl:max-w-[500px] 2xl:mr-[-72px] 2xl:translate-x-2"
+            className="relative z-0 mx-auto w-full max-w-[460px] lg:ml-auto lg:mr-[-96px] lg:translate-x-2 xl:max-w-[500px] xl:mr-[-136px] xl:translate-x-3"
           >
             <div className="relative overflow-visible rounded-[30px] border-2 border-orange-1 bg-white/90 p-3 shadow-card backdrop-blur-sm">
               <div className="relative min-h-[575px] rounded-[24px] bg-[#FFF6DF] shadow-sm xl:min-h-[600px]">

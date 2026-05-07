@@ -1,9 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Check, Star, Users } from "lucide-react";
+import { ArrowRight, Check, Star, Users, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { COURSE_START_DATE } from "@/lib/constants";
 
@@ -20,7 +21,7 @@ const tariffs = [
     format: "Стартовая сборка продукта с поддержкой",
     price: 69900,
     spotsLeft: null,
-    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=954167",
+    widgetId: "954167",
     features: [
       "Предобучение перед стартом курса",
       "Уроки в записи в рамках тарифа",
@@ -40,7 +41,7 @@ const tariffs = [
     format: "Больше практики и защита проекта",
     price: 124900,
     spotsLeft: null,
-    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=954169",
+    widgetId: "954169",
     features: [
       "Всё из базового тарифа",
       "5 практических Zoom-сессий с Александрой",
@@ -54,11 +55,11 @@ const tariffs = [
   {
     number: "3 тариф",
     name: "МАСТЕР",
-    duration: "8 недель",
+    duration: "2 месяца",
     format: "Стратегия линейки и разборы проекта",
     price: 194900,
     spotsLeft: 5,
-    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=954170",
+    widgetId: "954170",
     features: [
       "Всё из тарифа «Оптимальный»",
       "8 практических Zoom-сессий с Александрой",
@@ -73,11 +74,11 @@ const tariffs = [
   {
     number: "4 тариф",
     name: "ВИП",
-    duration: "10 недель",
+    duration: "3 месяца",
     format: "Персональная стратегия с Александрой",
     price: 400000,
     spotsLeft: 3,
-    paymentUrl: "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=1477920",
+    widgetId: "1477920",
     features: [
       "Всё из тарифа «Мастер»",
       "9 практических Zoom-сессий с Александрой",
@@ -94,8 +95,6 @@ const tariffs = [
 ];
 
 const TELEGRAM_MANAGER_URL = "https://agkedu.getcourse.ru/tg_subscribe";
-const PRODUCT_STRATEGY_PAYMENT_URL =
-  "https://agkedu.getcourse.ru/pl/lite/widget/widget?id=1600692";
 
 type PricingProps = {
   title?: string;
@@ -103,6 +102,44 @@ type PricingProps = {
 };
 
 export function Pricing({ title = "Тарифы", showStartDate = true }: PricingProps) {
+  const [activeWidget, setActiveWidget] = useState<{ id: string; title: string } | null>(null);
+  const [widgetHeight, setWidgetHeight] = useState(680);
+
+  const getWidgetUrl = (widgetId: string) => {
+    if (typeof window === "undefined") {
+      return `https://agkedu.getcourse.ru/pl/lite/widget/widget?id=${widgetId}`;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    params.set("id", widgetId);
+    params.set("ref", document.referrer);
+    params.set("loc", window.location.href);
+
+    return `https://agkedu.getcourse.ru/pl/lite/widget/widget?${params.toString()}`;
+  };
+
+  useEffect(() => {
+    if (!activeWidget) {
+      return;
+    }
+
+    setWidgetHeight(680);
+
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== "https://agkedu.getcourse.ru") {
+        return;
+      }
+
+      const height = Number(event.data?.height);
+      if (height > 0) {
+        setWidgetHeight(Math.max(height, 680));
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [activeWidget]);
+
   return (
     <section id="pricing" className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
       <Container className="relative z-20">
@@ -255,62 +292,28 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                       ))}
                     </div>
 
-                    <a href={tariff.paymentUrl} className="mt-auto block pt-5">
+                    <div className="mt-auto pt-5">
                       <Button
+                        type="button"
                         variant="primary"
                         className="group w-full px-3 text-sm"
+                        onClick={() =>
+                          setActiveWidget({
+                            id: tariff.widgetId,
+                            title: `Тариф «${tariff.name}»`,
+                          })
+                        }
                       >
                         Оставить заявку
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Card>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mt-8 max-w-6xl overflow-hidden rounded-[24px] border-2 border-[#7D0000]/18 bg-white/96 shadow-[0_16px_42px_rgba(40,25,10,0.12)]"
-        >
-          <div className="grid items-center gap-5 p-5 md:grid-cols-[1fr_auto] lg:p-7">
-            <div>
-              <p className="mb-3 inline-flex rounded-full bg-[#7D0000] px-4 py-1.5 text-xs font-black uppercase tracking-wide text-white">
-                Спец. предложение только сегодня
-              </p>
-              <h3 className="font-heading text-2xl font-black uppercase leading-tight text-text-primary lg:text-3xl">
-                Продуктовая стратегия 2026:
-                <br className="hidden sm:block" />
-                что и кому продавать
-              </h3>
-              <p className="mt-3 text-base font-semibold text-text-secondary">
-                Стратегическая сессия для тех, кто хочет быстро собрать ясность
-                по продукту, аудитории и следующим продажам.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-4 md:items-end">
-              <div className="font-heading text-4xl font-black leading-none text-[#7D0000]">
-                18 000 ₽
-              </div>
-              <a href={PRODUCT_STRATEGY_PAYMENT_URL} className="w-full md:w-auto">
-                <Button
-                  variant="primary"
-                  className="group w-full whitespace-nowrap px-6 text-sm md:w-auto"
-                >
-                  Оставить заявку
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           initial="hidden"
@@ -336,6 +339,45 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
           </div>
         </motion.div>
       </Container>
+
+      {activeWidget && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeWidget.title}
+          onClick={() => setActiveWidget(null)}
+        >
+          <div
+            className="relative h-[min(760px,92vh)] w-full max-w-[560px] overflow-hidden rounded-2xl bg-white shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-orange-1/20 px-4 py-3">
+              <p className="pr-4 text-sm font-bold uppercase tracking-wide text-text-primary">
+                {activeWidget.title}
+              </p>
+              <button
+                type="button"
+                aria-label="Закрыть"
+                onClick={() => setActiveWidget(null)}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7D0000] text-white transition-colors hover:bg-[#5E0000]"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="h-[calc(100%-65px)] overflow-y-auto">
+              <iframe
+                key={activeWidget.id}
+                src={getWidgetUrl(activeWidget.id)}
+                title={activeWidget.title}
+                className="w-full border-0"
+                style={{ height: `${widgetHeight}px` }}
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

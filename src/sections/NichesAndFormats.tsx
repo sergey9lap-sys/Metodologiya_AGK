@@ -297,16 +297,6 @@ export function NichesAndFormats() {
                   {node.label}
                 </motion.div>
               ))}
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.82 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, ease: "easeOut", delay: 1.72 }}
-                className="absolute bottom-8 left-1/2 z-20 flex min-h-[72px] w-[260px] -translate-x-1/2 items-center justify-center rounded-full border border-white/80 bg-[linear-gradient(135deg,#FFA700,#E58A00)] px-8 text-center font-heading text-2xl font-black leading-none text-white shadow-[0_0_58px_rgba(255,167,0,0.42)]"
-              >
-                Методология
-              </motion.div>
             </div>
           </motion.div>
 
@@ -366,9 +356,9 @@ export function NichesAndFormats() {
             >
               <a
                 href="#pricing"
-                className="inline-flex min-h-[60px] w-full max-w-[320px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto"
+                className="inline-flex min-h-[60px] w-full max-w-[390px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto"
               >
-                Оставить заявку
+                <span className="whitespace-nowrap">Мне нужна система</span>
                 <ArrowRight className="h-5 w-5 flex-shrink-0" />
               </a>
             </motion.div>

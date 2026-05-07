@@ -141,7 +141,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="relative z-0 mx-auto w-full max-w-[460px] lg:ml-auto lg:mr-[-96px] lg:translate-x-2 xl:max-w-[500px] xl:mr-[-136px] xl:translate-x-3"
+            className="relative z-0 mx-auto w-full max-w-[460px] lg:ml-auto lg:mr-0 lg:translate-x-0 xl:max-w-[500px] 2xl:mr-[-72px] 2xl:translate-x-2"
           >
             <div className="relative overflow-visible rounded-[30px] border-2 border-orange-1 bg-white/90 p-3 shadow-card backdrop-blur-sm">
               <div className="relative min-h-[575px] rounded-[24px] bg-[#FFF6DF] shadow-sm xl:min-h-[600px]">
@@ -152,14 +152,14 @@ export function Hero() {
                   className="rounded-[24px] object-cover object-top"
                   priority
                 />
-                <div className="absolute inset-x-0 bottom-0 rounded-b-[24px] bg-gradient-to-t from-black/78 via-black/34 to-transparent px-5 pb-5 pt-28 text-center">
-                  <h2 className="mx-auto max-w-[360px] font-heading text-xl font-bold leading-tight text-white xl:text-2xl">
+                <div className="absolute inset-x-0 bottom-0 rounded-b-[24px] bg-gradient-to-t from-black/78 via-black/34 to-transparent px-5 pb-5 pt-28 text-left">
+                  <h2 className="max-w-[340px] text-wrap font-heading text-[clamp(20px,1.7vw,24px)] font-bold leading-tight text-white">
                     Александра Горева-Куртышева
                   </h2>
-                  <p className="mx-auto mt-2 max-w-[270px] text-sm leading-relaxed text-white/86">
+                  <p className="mt-2 max-w-[270px] text-sm leading-relaxed text-white/86">
                     Автор курса и основатель Академии методологии
                   </p>
-                  <div className="relative mx-auto mt-4 max-w-[290px] rounded-2xl border-2 border-orange-1 bg-white text-left shadow-sm">
+                  <div className="relative mt-4 max-w-[290px] rounded-2xl border-2 border-orange-1 bg-white text-left shadow-sm">
                     <button
                       type="button"
                       onClick={() => setIsFactsOpen((prev) => !prev)}

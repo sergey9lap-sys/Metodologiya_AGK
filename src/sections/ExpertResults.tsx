@@ -100,7 +100,7 @@ export function ExpertResults() {
         >
           <div className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm lg:p-5">
             <p className="text-body italic leading-relaxed text-text-primary">
-              Вы выходите с курса с готовым продуктом: курс/тренинг/мастермайнд/наставничество, который:
+              Вы выходите с курса с готовым продуктом: курс / тренинг / мастермайнд / наставничество, который:
             </p>
 
             <div className="my-6 space-y-3 pl-2 lg:pl-6">

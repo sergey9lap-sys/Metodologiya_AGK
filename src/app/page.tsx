@@ -5,7 +5,7 @@ import { WhatIsMethodology } from "@/sections/WhatIsMethodology";
 import { HowItWorks } from "@/sections/HowItWorks";
 import { Problems } from "@/sections/Problems";
 import { Testimonials } from "@/sections/Testimonials";
-import { FamousAlumni } from "@/sections/FamousAlumni";
+import { AlumniEmployers, FamousAlumni } from "@/sections/FamousAlumni";
 import { Pricing } from "@/sections/Pricing";
 import { PaymentOptions } from "@/sections/PaymentOptions";
 import { FAQ } from "@/sections/FAQ";
@@ -22,11 +22,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Hero />
-      <Corporations />
       <WhatIsMethodology />
+      <Corporations />
       <ForWhom />
       <ExpertResults />
       <MethodologistCareer />
+      <AlumniEmployers />
       <EntrepreneurResults />
       <Myths />
       <NichesAndFormats />

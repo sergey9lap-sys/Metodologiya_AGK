@@ -90,6 +90,8 @@ const tariffs = [
   },
 ];
 
+const TELEGRAM_MANAGER_URL = "https://t.me/lp_sergey";
+
 export function Pricing() {
   return (
     <section id="pricing" className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
@@ -246,7 +248,7 @@ export function Pricing() {
                         variant="primary"
                         className="group w-full px-3 text-sm"
                       >
-                        Записаться
+                        Оставить заявку
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </a>
@@ -256,6 +258,71 @@ export function Pricing() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mx-auto mt-8 max-w-6xl overflow-hidden rounded-[24px] border-2 border-[#7D0000]/18 bg-white/96 shadow-[0_16px_42px_rgba(40,25,10,0.12)]"
+        >
+          <div className="grid items-center gap-5 p-5 md:grid-cols-[1fr_auto] lg:p-7">
+            <div>
+              <p className="mb-3 inline-flex rounded-full bg-[#7D0000] px-4 py-1.5 text-xs font-black uppercase tracking-wide text-white">
+                Спец. предложение только сегодня
+              </p>
+              <h3 className="font-heading text-2xl font-black uppercase leading-tight text-text-primary lg:text-3xl">
+                Продуктовая стратегия 2026:
+                <br className="hidden sm:block" />
+                что и кому продавать
+              </h3>
+              <p className="mt-3 text-base font-semibold text-text-secondary">
+                Стратегическая сессия для тех, кто хочет быстро собрать ясность
+                по продукту, аудитории и следующим продажам.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start gap-4 md:items-end">
+              <div className="font-heading text-4xl font-black leading-none text-[#7D0000]">
+                18 000 ₽
+              </div>
+              <a href="#contact" className="w-full md:w-auto">
+                <Button
+                  variant="primary"
+                  className="group w-full whitespace-nowrap px-6 text-sm md:w-auto"
+                >
+                  Оставить заявку
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.28 }}
+          className="mx-auto mt-4 max-w-6xl rounded-2xl border border-white/55 bg-white/82 p-4 shadow-[0_10px_28px_rgba(40,25,10,0.08)] backdrop-blur-sm"
+        >
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+            <p className="text-lg font-bold text-text-primary">
+              Остались вопросы по тарифам или формату обучения?
+            </p>
+            <a
+              href={TELEGRAM_MANAGER_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] bg-[#7D0000] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] md:w-auto"
+            >
+              Задать вопрос менеджеру
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </motion.div>
       </Container>
     </section>
   );

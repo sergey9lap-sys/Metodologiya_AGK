@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { SectionBackground } from "@/components/SectionBackground";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -186,61 +187,128 @@ const alumni = [
     photo:
       "https://optim.tildacdn.com/tild3664-6535-4366-b030-386139626362/-/resize/180x/-/format/webp/image_27_2.png.webp",
   },
+  {
+    initials: "МБ",
+    name: "Максим Батырев",
+    handle: "Instagram",
+    audience: "178 тыс. подписчиков",
+    photo: "/images/Максим Батырев.jpg",
+  },
 ];
+
+const additionalAlumni = [
+  {
+    initials: "МГ",
+    name: "Михаил Гребенюк",
+    handle: "Instagram",
+    audience: "683 тыс. подписчиков",
+    photo: "/images/Михаил Гребенюк.jpg",
+  },
+  {
+    initials: "АС",
+    name: "Артем Сенаторов",
+    handle: "Instagram",
+    audience: "1,4 млн подписчиков",
+    photo: "/images/Аретм Сенаторов.jpg",
+  },
+  {
+    initials: "ЕП",
+    name: "Егор Пыриков",
+    handle: "Instagram",
+    audience: "120 тыс. подписчиков",
+    photo: "/images/Егор Пыриков.jpg",
+  },
+  {
+    initials: "РГ",
+    name: "Радислав Гандапас",
+    handle: "Instagram",
+    audience: "775 тыс. подписчиков",
+    photo: "/images/Радсилав Гандапас.jpg",
+  },
+];
+
+function AlumniEmployersBlock() {
+  return (
+    <div className="relative overflow-hidden bg-black py-10 lg:py-12">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:29.jpg"
+        variant="orange"
+        position="object-bottom"
+      />
+      <Container className="relative z-20">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5 }}
+          className="mb-3 text-center font-heading text-3xl font-black uppercase text-white lg:text-4xl"
+        >
+          Выпускники-методологи Александры работают в:
+        </motion.h2>
+        <p className="mx-auto mb-8 max-w-3xl text-center text-base font-medium text-white/90 lg:mb-10 lg:text-lg">
+          Наши ученики применяют методологию в онлайн-школах, образовательных
+          платформах, продюсерских центрах и собственных проектах.
+        </p>
+      </Container>
+
+      <Container className="relative z-20">
+        <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+          {employers.map((employer) => (
+            <div
+              key={employer.name}
+              className="flex min-h-[128px] items-center justify-center px-3 py-3 text-base font-bold text-text-primary"
+            >
+              <div className="flex flex-col items-center gap-3">
+                <Image
+                  src={employer.logo}
+                  alt={employer.name}
+                  width={220}
+                  height={88}
+                  className={`object-contain drop-shadow-sm ${employer.logoClassName}`}
+                  loading="lazy"
+                />
+                <span className="max-w-[220px] text-center text-sm font-semibold leading-tight text-white/90">
+                  {employer.description}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-10 flex justify-center"
+        >
+          <a
+            href="#pricing"
+            className="inline-flex min-h-[60px] w-full max-w-[640px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-7 py-[18px] text-center text-base font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto sm:px-9 sm:text-lg"
+          >
+            🎯 Пройти курс и получить востребованную профессию
+            <ArrowRight className="h-5 w-5 flex-shrink-0" />
+          </a>
+        </motion.div>
+      </Container>
+    </div>
+  );
+}
+
+export function AlumniEmployers() {
+  return (
+    <section className="overflow-hidden bg-black">
+      <AlumniEmployersBlock />
+    </section>
+  );
+}
 
 export function FamousAlumni() {
   return (
     <section className="overflow-hidden bg-white py-12 lg:py-14">
-      <div className="relative overflow-hidden bg-black py-10 lg:py-12">
-        <SectionBackground
-          src="/background/IMAGE 2026-05-05 01:30:29.jpg"
-          variant="orange"
-          position="object-bottom"
-        />
-        <Container className="relative z-20">
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5 }}
-            className="mb-3 text-center font-heading text-3xl font-black uppercase text-white lg:text-4xl"
-          >
-            Выпускники-методологи Александры работают в:
-          </motion.h2>
-          <p className="mx-auto mb-8 max-w-3xl text-center text-base font-medium text-white/90 lg:mb-10 lg:text-lg">
-            Наши ученики применяют методологию в онлайн-школах, образовательных
-            платформах, продюсерских центрах и собственных проектах.
-          </p>
-        </Container>
-
-        <Container className="relative z-20">
-          <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
-            {employers.map((employer) => (
-              <div
-                key={employer.name}
-                className="flex min-h-[128px] items-center justify-center px-3 py-3 text-base font-bold text-text-primary"
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <Image
-                    src={employer.logo}
-                    alt={employer.name}
-                    width={220}
-                    height={88}
-                    className={`object-contain drop-shadow-sm ${employer.logoClassName}`}
-                    loading="lazy"
-                  />
-                  <span className="max-w-[220px] text-center text-sm font-semibold leading-tight text-white/90">
-                    {employer.description}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </div>
-
-      <Container className="pt-12 lg:pt-14">
+      <Container>
         <motion.h2
           initial="hidden"
           whileInView="visible"
@@ -278,6 +346,38 @@ export function FamousAlumni() {
                     {person.initials}
                   </span>
                 )}
+              </div>
+              <h3 className="text-sm font-bold leading-tight text-text-primary lg:text-base">
+                {person.name}
+              </h3>
+              <p className="mt-2 text-sm font-medium text-orange-1">{person.handle}</p>
+              <p className="mt-2 text-sm italic text-text-secondary">
+                {person.audience}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-9 grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-3 lg:grid-cols-5">
+          {additionalAlumni.map((person, index) => (
+            <motion.div
+              key={person.name}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="rounded-[22px] border border-orange-1/12 bg-white/86 px-3 py-5 text-center shadow-[0_12px_30px_rgba(40,25,10,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-card-hover"
+            >
+              <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-[#FFF9EF] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
+                <Image
+                  src={person.photo}
+                  alt={person.name}
+                  width={180}
+                  height={180}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <h3 className="text-sm font-bold leading-tight text-text-primary lg:text-base">
                 {person.name}

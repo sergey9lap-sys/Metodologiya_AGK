@@ -34,7 +34,7 @@ const corporations = [
   {
     name: "ВкусВилл",
     logo: "https://logo-teka.com/wp-content/uploads/2025/06/vkusvill-sign-logo.png",
-    logoClassName: "h-16 max-w-[180px]",
+    logoClassName: "h-11 max-w-[150px]",
   },
   {
     name: "Nestle",
@@ -59,12 +59,12 @@ const corporations = [
   {
     name: "Альфа-Банк",
     logo: "https://optim.tildacdn.com/tild6264-6338-4535-a461-663833343031/-/resize/192x/-/format/webp/og_og_16157248482433.png.webp",
-    logoClassName: "h-12 max-w-[190px]",
+    logoClassName: "h-16 max-w-[220px]",
   },
   {
     name: "ВТБ",
     logo: "https://optim.tildacdn.com/tild6666-3337-4261-b436-376565313964/-/resize/192x/-/format/webp/754598838847774untit.png.webp",
-    logoClassName: "h-11 max-w-[140px]",
+    logoClassName: "h-16 max-w-[190px]",
   },
   {
     name: "L'Oréal",

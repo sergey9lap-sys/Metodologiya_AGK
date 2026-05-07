@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionBackground } from "@/components/SectionBackground";
-import { ArrowRight, CheckSquare2, Quote, Sparkles } from "lucide-react";
+import { ArrowRight, CheckSquare2, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -134,18 +134,6 @@ export function ExpertResults() {
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm lg:p-5">
-              <div className="flex items-start gap-3">
-                <Quote className="mt-1 h-7 w-7 flex-shrink-0 text-orange-1" />
-                <div>
-                  <p className="text-body leading-relaxed text-text-primary">
-                    «Константин Воробьёв, основатель школы плавания: разработал
-                    онлайн-курс и заработал на нём около 2 000 000 рублей»
-                  </p>
-                </div>
-              </div>
-            </div>
-
             <div className="pt-1 text-center">
               <a href="#pricing">
                 <Button variant="primary" size="lg" className="min-w-[280px] max-w-full">

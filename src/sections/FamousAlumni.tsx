@@ -227,6 +227,8 @@ const additionalAlumni = [
   },
 ];
 
+const gandapas = additionalAlumni.find((person) => person.name === "Радислав Гандапас");
+
 function AlumniEmployersBlock() {
   return (
     <div className="relative overflow-hidden bg-black py-10 lg:py-12">
@@ -356,6 +358,34 @@ export function FamousAlumni() {
               </p>
             </motion.div>
           ))}
+          {gandapas && (
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="rounded-[22px] border border-orange-1/12 bg-white/86 px-3 py-5 text-center shadow-[0_12px_30px_rgba(40,25,10,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-card-hover lg:hidden"
+            >
+              <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-[#FFF9EF] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
+                <Image
+                  src={gandapas.photo}
+                  alt={gandapas.name}
+                  width={180}
+                  height={180}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="text-sm font-bold leading-tight text-text-primary lg:text-base">
+                {gandapas.name}
+              </h3>
+              <p className="mt-2 text-sm font-medium text-orange-1">{gandapas.handle}</p>
+              <p className="mt-2 text-sm italic text-text-secondary">
+                {gandapas.audience}
+              </p>
+            </motion.div>
+          )}
         </div>
 
         <div className="mt-9 grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-3 lg:grid-cols-5">
@@ -367,7 +397,9 @@ export function FamousAlumni() {
               viewport={{ once: true }}
               variants={fadeInUp}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="rounded-[22px] border border-orange-1/12 bg-white/86 px-3 py-5 text-center shadow-[0_12px_30px_rgba(40,25,10,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-card-hover"
+              className={`rounded-[22px] border border-orange-1/12 bg-white/86 px-3 py-5 text-center shadow-[0_12px_30px_rgba(40,25,10,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-card-hover ${
+                person.name === "Радислав Гандапас" ? "hidden lg:block" : ""
+              }`}
             >
               <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-[#FFF9EF] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
                 <Image

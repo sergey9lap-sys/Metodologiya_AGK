@@ -120,6 +120,7 @@ const challengeItems = [
 ];
 
 const TELEGRAM_MANAGER_URL = "https://agkedu.getcourse.ru/tg_subscribe";
+const CHALLENGE_WIDGET_ID = "1606344";
 
 type PricingProps = {
   title?: string;
@@ -478,15 +479,19 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                   19 900 ₽
                 </span>
               </div>
-              <a
-                href={TELEGRAM_MANAGER_URL}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                type="button"
                 className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#7D0000] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#FFF4D1]"
+                onClick={() =>
+                  setActiveWidget({
+                    id: CHALLENGE_WIDGET_ID,
+                    title: "Челлендж за 5 900 ₽",
+                  })
+                }
               >
                 Записаться на челлендж
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>

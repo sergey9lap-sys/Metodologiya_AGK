@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Check, Star, Users, X } from "lucide-react";
+import { ArrowRight, Check, Flame, Gift, Sparkles, Star, Users, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { COURSE_START_DATE } from "@/lib/constants";
 
@@ -13,14 +13,29 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const commonBonuses = [
+  "Гайд «Продающее резюме»",
+  "Воркбук «Как оформить в своей работе кейсы»",
+  "Мастер-класс «Как создать свой входной продукт: мастер-класс, марафон»",
+  "Метрики, которые методолог может использовать в своей работе",
+  "Пакет документов для подготовки и запуска программ ДО и ДПО",
+];
+
+const advancedBonuses = [
+  "Мастер-класс «Продающие консультации»",
+  "Мастер-класс «Pro мастермайнд»",
+  "Интенсив: продающие консультации",
+  "Онлайн-воркшоп: бизнес-разминки",
+];
+
 const tariffs = [
   {
     number: "1 тариф",
     name: "БАЗОВЫЙ",
     duration: "3 недели",
     format: "Стартовая сборка продукта с поддержкой",
-    price: 59900,
-    oldPrice: 69900,
+    price: 64900,
+    oldPrice: 74900,
     spotsLeft: null,
     widgetId: "954167",
     features: [
@@ -33,6 +48,8 @@ const tariffs = [
       "Защита проекта на живой сессии с наставниками",
       "Доступ к материалам курса 30 дней",
     ],
+    bonuses: commonBonuses,
+    expiringBonus: "Участие в челлендже",
     highlighted: false,
   },
   {
@@ -40,8 +57,8 @@ const tariffs = [
     name: "ОПТИМАЛЬНЫЙ",
     duration: "5 недель",
     format: "Больше практики и защита проекта",
-    price: 109900,
-    oldPrice: 124900,
+    price: 119900,
+    oldPrice: 134900,
     spotsLeft: null,
     widgetId: "954169",
     features: [
@@ -52,6 +69,8 @@ const tariffs = [
       "Защита проекта с наставником",
       "Доступ к материалам курса 60 дней",
     ],
+    bonuses: [...commonBonuses, ...advancedBonuses],
+    expiringBonus: "Участие в челлендже",
     highlighted: false,
   },
   {
@@ -59,8 +78,8 @@ const tariffs = [
     name: "МАСТЕР",
     duration: "2 месяца",
     format: "Стратегия линейки и разборы проекта",
-    price: 169900,
-    oldPrice: 194900,
+    price: 184900,
+    oldPrice: 209900,
     spotsLeft: 5,
     widgetId: "954170",
     features: [
@@ -72,6 +91,8 @@ const tariffs = [
       "Итоговая защита проекта и обратная связь лично от Александры",
       "Доступ к материалам курса 90 дней",
     ],
+    bonuses: [...commonBonuses, ...advancedBonuses],
+    expiringBonus: "Участие в челлендже",
     highlighted: true,
   },
   {
@@ -79,8 +100,8 @@ const tariffs = [
     name: "ВИП",
     duration: "3 месяца",
     format: "Персональная стратегия с Александрой",
-    price: 350000,
-    oldPrice: 400000,
+    price: 400000,
+    oldPrice: 450000,
     spotsLeft: 3,
     widgetId: "1477920",
     features: [
@@ -94,8 +115,16 @@ const tariffs = [
       "Личная рекомендация подрядчиков под задачи запуска",
       "Доступ к материалам курса 120 дней",
     ],
+    bonuses: [...commonBonuses, ...advancedBonuses],
+    expiringBonus: "Участие в челлендже",
     highlighted: false,
   },
+];
+
+const challengeItems = [
+  "Библиотека материалов",
+  "2 недели задания в чате участников",
+  "Комьюнити экспертов и предпринимателей",
 ];
 
 const TELEGRAM_MANAGER_URL = "https://agkedu.getcourse.ru/tg_subscribe";
@@ -303,6 +332,56 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                       ))}
                     </div>
 
+                    <div
+                      className={`mt-4 flex flex-col rounded-xl border p-3 lg:min-h-[600px] xl:min-h-[560px] ${
+                        tariff.highlighted
+                          ? "border-[#FFF4D1] bg-[#FFF7E6] shadow-[0_10px_28px_rgba(0,0,0,0.12)]"
+                          : "border-[#D63800]/25 bg-[#FFF4D1]"
+                      }`}
+                    >
+                      <div
+                        className={`mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-wide ${
+                          tariff.highlighted ? "text-[#7D0000]" : "text-[#D63800]"
+                        }`}
+                      >
+                        <Gift className="h-4 w-4" />
+                        Бонусы
+                      </div>
+                      <div className="space-y-2">
+                        {tariff.bonuses.map((bonus) => (
+                          <div key={bonus} className="flex items-start gap-2">
+                            <Sparkles
+                              className={`mt-0.5 h-3.5 w-3.5 flex-shrink-0 ${
+                                tariff.highlighted ? "text-[#D63800]" : "text-orange-1"
+                              }`}
+                            />
+                            <span
+                              className={`text-xs font-semibold leading-snug ${
+                                tariff.highlighted ? "text-text-primary" : "text-text-primary"
+                              }`}
+                            >
+                              {bonus}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                      <div
+                        className={`mt-auto flex items-start gap-2 rounded-lg px-2.5 py-2 ${
+                          tariff.highlighted
+                            ? "border border-[#D63800] bg-[#7D0000] text-white shadow-[0_10px_24px_rgba(125,0,0,0.28)]"
+                            : "bg-[#7D0000] text-white"
+                        }`}
+                      >
+                        <Flame className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-wide opacity-80">
+                            Сгорающий бонус
+                          </p>
+                          <p className="text-xs font-black leading-snug">{tariff.expiringBonus}</p>
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="mt-auto pt-5">
                       <Button
                         type="button"
@@ -325,6 +404,65 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.22 }}
+          className="mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border-2 border-[#7D0000]/35 bg-white shadow-[0_18px_46px_rgba(125,0,0,0.18)]"
+        >
+          <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="p-5 lg:p-7">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#7D0000] px-4 py-2 text-sm font-black uppercase tracking-wide text-white">
+                <Flame className="h-4 w-4" />
+                Челлендж
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {challengeItems.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-xl border border-orange-1/25 bg-[#FFF4D1] p-3"
+                  >
+                    <Check className="mb-2 h-4 w-4 text-[#D63800]" />
+                    <p className="text-sm font-bold leading-snug text-text-primary">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-5 text-xl font-black leading-tight text-text-primary lg:text-2xl">
+                Разработаете свою продуктовую линейку и распакуете свою экспертность
+              </p>
+              <div className="mt-4 flex items-start gap-3 rounded-xl border border-orange-1/30 bg-white p-4 shadow-[0_8px_24px_rgba(40,25,10,0.06)]">
+                <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-[#D63800]" />
+                <p className="text-sm font-bold leading-relaxed text-text-primary">
+                  Бонус на выбор: 1 месяц клуба или сессия с методологом команды/маркетологом
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center bg-[linear-gradient(145deg,#7D0000,#D63800)] p-5 text-white lg:p-7">
+              <p className="mb-2 text-sm font-black uppercase tracking-wide text-white/75">
+                Стоимость участия
+              </p>
+              <div className="flex flex-wrap items-end gap-x-4 gap-y-2">
+                <span className="font-heading text-4xl font-black leading-none">5 900 ₽</span>
+                <span className="text-xl font-bold leading-none text-white/58 line-through decoration-2">
+                  19 900 ₽
+                </span>
+              </div>
+              <a
+                href={TELEGRAM_MANAGER_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#7D0000] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#FFF4D1]"
+              >
+                Записаться на челлендж
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           initial="hidden"

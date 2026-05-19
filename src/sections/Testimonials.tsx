@@ -15,12 +15,29 @@ const fadeInUp = {
 
 const testimonials = [
   {
+    name: "Константин Воробьев",
+    role: "тренер по плаванию, основатель сети клубов по обучению взрослых плаванию",
+    image: "/images/konstantin-vorobev.jpg",
+    result:
+      "Создал онлайн-курс по обучению взрослых плаванию и запустил тестовую фокус-группу. Масштабировал свою авторскую методику «Путь Пловца» в онлайн-формат и вышел на новый уровень развития проекта.",
+    financialAmount: "1 990 000 ₽",
+  },
+  {
     name: "Диана Семенычева",
     role: "лингвокоуч, AI-архитектор обучения",
     image: "/images/diana-semenecheva.jpg",
     result:
       "Создала две новые продуктовые линейки, запустила продажи интенсивной программы, получила запросы на премиальную личную работу.",
     financialAmount: "550 000 ₽",
+  },
+  {
+    name: "Максим Шаргородский",
+    role: "эксперт по построению отделов продаж и увеличению прибыли",
+    image: "/images/maksim-shargorodskiy.jpg",
+    result:
+      "Запустил мастер-группу по увеличению прибыли, усилил вовлечённость аудитории и выстроил более сильную продуктовую систему внутри проекта.",
+    financialLabel: "Финансовый результат запуска",
+    financialAmount: "1 990 000 ₽",
   },
   {
     name: "Алиса Задорожная",
@@ -30,6 +47,13 @@ const testimonials = [
       "Методологически проработала курс «Навыкология», улучшила лекции, домашние задания, геймификацию и запустила второй поток.",
     financialPrefix: "45 человек на сумму",
     financialAmount: "1 500 000 ₽",
+  },
+  {
+    name: "Вадим Алиев",
+    role: "методолог, руководитель методического агентства «КурсМастер»",
+    image: "/images/vadim-aliev.jpg",
+    result:
+      "Разработал новую продуктовую систему и курс-наставничество для подготовки методологов с нуля. Внедрил автоматизацию процессов и усилил методическую команду новыми решениями.",
   },
   {
     name: "Дарья Кривоженко",
@@ -90,7 +114,7 @@ export function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {testimonials.map((item, index) => (
             <motion.div
               key={item.name}
@@ -116,7 +140,10 @@ export function Testimonials() {
                   </p>
                   {"financialAmount" in item && item.financialAmount && (
                     <p className="mt-2 text-body font-bold leading-relaxed text-text-primary">
-                      Финансовый результат —{" "}
+                      {"financialLabel" in item && item.financialLabel
+                        ? item.financialLabel
+                        : "Финансовый результат"}{" "}
+                      —{" "}
                       {"financialPrefix" in item && item.financialPrefix && (
                         <>
                           {item.financialPrefix}{" "}

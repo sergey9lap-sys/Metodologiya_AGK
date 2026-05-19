@@ -48,8 +48,6 @@ const tariffs = [
       "Защита проекта на живой сессии с наставниками",
       "Доступ к материалам курса 30 дней",
     ],
-    bonuses: commonBonuses,
-    expiringBonus: "Участие в челлендже",
     highlighted: false,
   },
   {
@@ -69,8 +67,6 @@ const tariffs = [
       "Защита проекта с наставником",
       "Доступ к материалам курса 60 дней",
     ],
-    bonuses: [...commonBonuses, ...advancedBonuses],
-    expiringBonus: "Участие в челлендже",
     highlighted: false,
   },
   {
@@ -91,8 +87,6 @@ const tariffs = [
       "Итоговая защита проекта и обратная связь лично от Александры",
       "Доступ к материалам курса 90 дней",
     ],
-    bonuses: [...commonBonuses, ...advancedBonuses],
-    expiringBonus: "Участие в челлендже",
     highlighted: true,
   },
   {
@@ -115,8 +109,6 @@ const tariffs = [
       "Личная рекомендация подрядчиков под задачи запуска",
       "Доступ к материалам курса 120 дней",
     ],
-    bonuses: [...commonBonuses, ...advancedBonuses],
-    expiringBonus: "Участие в челлендже",
     highlighted: false,
   },
 ];
@@ -332,56 +324,6 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                       ))}
                     </div>
 
-                    <div
-                      className={`mt-4 flex flex-col rounded-xl border p-3 lg:min-h-[600px] xl:min-h-[560px] ${
-                        tariff.highlighted
-                          ? "border-[#FFF4D1] bg-[#FFF7E6] shadow-[0_10px_28px_rgba(0,0,0,0.12)]"
-                          : "border-[#D63800]/25 bg-[#FFF4D1]"
-                      }`}
-                    >
-                      <div
-                        className={`mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-wide ${
-                          tariff.highlighted ? "text-[#7D0000]" : "text-[#D63800]"
-                        }`}
-                      >
-                        <Gift className="h-4 w-4" />
-                        Бонусы
-                      </div>
-                      <div className="space-y-2">
-                        {tariff.bonuses.map((bonus) => (
-                          <div key={bonus} className="flex items-start gap-2">
-                            <Sparkles
-                              className={`mt-0.5 h-3.5 w-3.5 flex-shrink-0 ${
-                                tariff.highlighted ? "text-[#D63800]" : "text-orange-1"
-                              }`}
-                            />
-                            <span
-                              className={`text-xs font-semibold leading-snug ${
-                                tariff.highlighted ? "text-text-primary" : "text-text-primary"
-                              }`}
-                            >
-                              {bonus}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                      <div
-                        className={`mt-auto flex items-start gap-2 rounded-lg px-2.5 py-2 ${
-                          tariff.highlighted
-                            ? "border border-[#D63800] bg-[#7D0000] text-white shadow-[0_10px_24px_rgba(125,0,0,0.28)]"
-                            : "bg-[#7D0000] text-white"
-                        }`}
-                      >
-                        <Flame className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                        <div>
-                          <p className="text-[10px] font-black uppercase tracking-wide opacity-80">
-                            Сгорающий бонус
-                          </p>
-                          <p className="text-xs font-black leading-snug">{tariff.expiringBonus}</p>
-                        </div>
-                      </div>
-                    </div>
-
                     <div className="mt-auto pt-5">
                       <Button
                         type="button"
@@ -404,6 +346,91 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.18 }}
+          className="mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border-2 border-white/70 bg-white shadow-[0_18px_46px_rgba(40,25,10,0.14)]"
+        >
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="flex flex-col justify-between bg-[linear-gradient(145deg,#7D0000,#D63800)] p-5 text-white lg:p-7">
+              <div>
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/16 ring-1 ring-white/25">
+                  <Gift className="h-6 w-6" />
+                </div>
+                <p className="mb-2 text-sm font-black uppercase tracking-[0.16em] text-white/72">
+                  Подарочный набор
+                </p>
+                <h3 className="font-heading text-3xl font-black uppercase leading-none lg:text-4xl">
+                  Бонусы к тарифам
+                </h3>
+              </div>
+              <div className="mt-6 rounded-xl bg-white px-4 py-3 text-[#7D0000]">
+                <div className="flex items-start gap-2">
+                  <Flame className="mt-0.5 h-5 w-5 flex-shrink-0" />
+                  <div>
+                    <p className="text-[11px] font-black uppercase tracking-wide opacity-70">
+                      Сгорающий бонус во всех тарифах
+                    </p>
+                    <p className="text-sm font-black leading-snug">Участие в челлендже</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-4 p-5 md:grid-cols-2 lg:p-7">
+              <div className="rounded-xl border border-orange-1/25 bg-[#FFF4D1] p-4">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <p className="text-xs font-black uppercase tracking-wide text-[#D63800]">
+                    1-4 тариф
+                  </p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-[#7D0000]">
+                    5 бонусов
+                  </span>
+                </div>
+                <div className="space-y-2.5">
+                  {commonBonuses.map((bonus) => (
+                    <div key={bonus} className="flex items-start gap-2">
+                      <Sparkles className="mt-0.5 h-4 w-4 flex-shrink-0 text-orange-1" />
+                      <p className="text-sm font-semibold leading-snug text-text-primary">
+                        {bonus}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-[#7D0000]/20 bg-[linear-gradient(145deg,#fff,#FFF7E6)] p-4">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <p className="text-xs font-black uppercase tracking-wide text-[#7D0000]">
+                    Только 2-4 тариф
+                  </p>
+                  <span className="rounded-full bg-[#7D0000] px-2.5 py-1 text-xs font-black text-white">
+                    +4 бонуса
+                  </span>
+                </div>
+                <div className="mb-3 rounded-lg border border-orange-1/25 bg-[#FFF4D1] px-3 py-2">
+                  <p className="text-xs font-black leading-snug text-[#7D0000]">
+                    Включает все 5 бонусов из блока 1-4 тарифов
+                  </p>
+                </div>
+                <div className="space-y-2.5">
+                  {advancedBonuses.map((bonus) => (
+                    <div key={bonus} className="flex items-start gap-2">
+                      <Sparkles className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#D63800]" />
+                      <p className="text-sm font-semibold leading-snug text-text-primary">
+                        {bonus}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           initial="hidden"

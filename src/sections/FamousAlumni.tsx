@@ -193,6 +193,7 @@ const alumni = [
     handle: "Instagram",
     audience: "178 тыс. подписчиков",
     photo: "/images/maksim-batyrev.jpg",
+    imageClassName: "scale-90 object-center",
   },
 ];
 
@@ -224,6 +225,7 @@ const additionalAlumni = [
     handle: "Instagram",
     audience: "775 тыс. подписчиков",
     photo: "/images/radislav-gandapas.jpg",
+    imageClassName: "scale-90 object-center",
   },
 ];
 
@@ -355,7 +357,9 @@ export function FamousAlumni() {
                     alt={person.name}
                     width={180}
                     height={180}
-                    className="h-full w-full object-cover"
+                    className={`h-full w-full object-cover ${
+                      "imageClassName" in person ? person.imageClassName : ""
+                    }`}
                     loading="lazy"
                   />
                 ) : (

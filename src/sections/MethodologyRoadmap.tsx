@@ -19,7 +19,7 @@ const roadmap = [
   },
   {
     period: "3 недели",
-    title: "Архитектура",
+    title: "Архитектура продукта",
     text: "Собран маршрут: тема, аудитория, формат, первый модуль и точка входа.",
   },
   {
@@ -65,11 +65,8 @@ export function MethodologyRoadmap() {
           className="max-w-4xl"
         >
           <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-orange-1">
-            Дорожная карта клиента
+            Дорожная карта эксперта
           </p>
-          <h2 className="font-heading text-3xl font-black uppercase leading-tight lg:text-5xl">
-            Опыт поднимается на уровень продукта, линейки и влияния
-          </h2>
         </motion.div>
 
         <div className="relative mt-10 lg:mt-24 lg:min-h-[500px]">

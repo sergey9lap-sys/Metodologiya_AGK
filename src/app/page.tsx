@@ -18,6 +18,7 @@ import { ExpertResults } from "@/sections/ExpertResults";
 import { MethodologistCareer } from "@/sections/MethodologistCareer";
 import { EntrepreneurResults } from "@/sections/EntrepreneurResults";
 import { Myths } from "@/sections/Myths";
+import { MethodologyRoadmap } from "@/sections/MethodologyRoadmap";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <Problems />
       <Testimonials />
       <HowItWorks />
+      <MethodologyRoadmap />
       <CourseSchedule />
       <Pricing />
       <PaymentOptions />

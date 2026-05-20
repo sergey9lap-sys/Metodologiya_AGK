@@ -83,6 +83,7 @@ const tariffs = [
       "8 практических Zoom-сессий с Александрой",
       "Стратегическое построение продуктовой линейки в подгруппах",
       "Разбор продающих элементов внутри образовательного процесса",
+      "Библиотека «готовых гипотез» по нишам",
       "Разборы и предзащита проектов с наставниками",
       "Итоговая защита проекта и обратная связь лично от Александры",
       "Бонус: стратегический разбор через год — 30-минутная личная встреча с Александрой о том, где вы сейчас, что построили и куда двигаться дальше",
@@ -369,6 +370,23 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                 <h3 className="font-heading text-3xl font-black uppercase leading-none lg:text-4xl">
                   Бонусы к тарифам
                 </h3>
+              </div>
+              <div className="mt-6 rounded-xl border border-white/24 bg-white/12 px-4 py-3">
+                <p className="text-sm font-black leading-snug text-white">
+                  Все бонусы стоимостью 59 000 ₽ — бесплатно
+                </p>
+                <div className="mt-2 flex flex-wrap items-end gap-x-2 gap-y-1">
+                  <span className="text-lg font-black leading-none text-white/62 line-through decoration-2">
+                    59 000 ₽
+                  </span>
+                  <span className="text-lg font-black leading-none text-white/75">→</span>
+                  <span className="font-heading text-3xl font-black leading-none text-white">
+                    0 ₽
+                  </span>
+                </div>
+                <p className="mt-2 text-xs font-bold uppercase tracking-wide text-white/72">
+                  при оплате в течение 48 часов
+                </p>
               </div>
               <div className="mt-6 rounded-xl bg-white px-4 py-3 text-[#7D0000]">
                 <div className="flex items-start gap-2">

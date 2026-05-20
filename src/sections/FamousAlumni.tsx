@@ -193,7 +193,7 @@ const alumni = [
     handle: "Instagram",
     audience: "178 тыс. подписчиков",
     photo: "/images/maksim-batyrev.jpg",
-    imageClassName: "scale-90 object-center",
+    imageClassName: "object-[50%_12%]",
   },
 ];
 
@@ -225,7 +225,7 @@ const additionalAlumni = [
     handle: "Instagram",
     audience: "775 тыс. подписчиков",
     photo: "/images/radislav-gandapas.jpg",
-    imageClassName: "scale-90 object-center",
+    imageClassName: "object-[50%_12%]",
   },
 ];
 

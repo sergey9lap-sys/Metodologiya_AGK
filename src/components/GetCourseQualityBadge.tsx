@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 const badgeMarkup = `
 <div class="gc-qualityreestr-school show">
   <style>
@@ -51,5 +55,11 @@ const badgeMarkup = `
 `;
 
 export function GetCourseQualityBadge() {
+  const pathname = usePathname();
+
+  if (pathname === "/challenge") {
+    return null;
+  }
+
   return <div dangerouslySetInnerHTML={{ __html: badgeMarkup }} />;
 }

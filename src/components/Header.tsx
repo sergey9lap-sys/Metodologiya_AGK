@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "О курсе", href: "#about" },
@@ -16,6 +17,7 @@ const navLinks = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -35,6 +37,10 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
+  if (pathname === "/challenge") {
+    return null;
+  }
 
   return (
     <header

@@ -2,12 +2,19 @@
 
 import { Button } from "@/components/ui/Button";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function StickyMobileCTA() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      if (pathname === "/challenge") {
+        setIsVisible(false);
+        return;
+      }
+
       // Show after scrolling past hero, hide when at pricing section
       const pricingSection = document.getElementById("pricing");
       const pricingTop = pricingSection?.getBoundingClientRect().top ?? Infinity;
@@ -17,7 +24,11 @@ export function StickyMobileCTA() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
+
+  if (pathname === "/challenge") {
+    return null;
+  }
 
   if (!isVisible) return null;
 

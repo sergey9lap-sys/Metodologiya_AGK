@@ -57,7 +57,7 @@ const badgeMarkup = `
 export function GetCourseQualityBadge() {
   const pathname = usePathname();
 
-  if (pathname === "/challenge") {
+  if (pathname === "/challenge" || pathname === "/design") {
     return null;
   }
 

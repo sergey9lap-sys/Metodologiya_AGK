@@ -10,7 +10,7 @@ export function StickyMobileCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname === "/challenge") {
+      if (pathname === "/challenge" || pathname === "/design") {
         setIsVisible(false);
         return;
       }
@@ -26,7 +26,7 @@ export function StickyMobileCTA() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  if (pathname === "/challenge") {
+  if (pathname === "/challenge" || pathname === "/design") {
     return null;
   }
 

@@ -184,3 +184,152 @@ section + section {
 .card-accent-top {
   border-top: 4px solid #FFA700;
 }
+
+/* Color-only previews for the existing Methodology blocks on /design. */
+.design-theme .design-theme-body > section:first-child {
+  background: linear-gradient(
+    180deg,
+    var(--design-wash) 0%,
+    var(--design-surface) 48%,
+    var(--design-accent) 100%
+  ) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) {
+  background-color: var(--design-wash) !important;
+}
+
+.design-theme .bg-orange-1 {
+  background-color: var(--design-accent-strong) !important;
+}
+
+.design-theme .text-orange-1 {
+  color: var(--design-accent-strong) !important;
+}
+
+.design-theme .border-orange-1 {
+  border-color: var(--design-accent-strong) !important;
+}
+
+.design-theme .from-orange-1 {
+  --tw-gradient-from: var(--design-accent-strong) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.design-theme .to-orange-1,
+.design-theme .to-orange-2,
+.design-theme .to-orange-3 {
+  --tw-gradient-to: var(--design-accent) var(--tw-gradient-to-position) !important;
+}
+
+.design-theme .text-gradient-orange {
+  background-image: linear-gradient(
+    90deg,
+    var(--design-accent-strong),
+    var(--design-accent)
+  ) !important;
+}
+
+.design-theme [class~="bg-[#7D0000]"] {
+  background-color: var(--design-button) !important;
+}
+
+.design-theme [class~="border-[#7D0000]"] {
+  border-color: var(--design-button) !important;
+}
+
+.design-theme [class~="text-[#7D0000]"] {
+  color: var(--design-button) !important;
+}
+
+.design-theme button[class~="bg-[#7D0000]"]:hover {
+  background-color: var(--design-button-hover) !important;
+}
+
+.design-theme .shadow-card,
+.design-theme .shadow-card-hover {
+  box-shadow: 0 14px 34px var(--design-card-shadow) !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:first-child {
+  background:
+    linear-gradient(90deg, transparent 0%, transparent 55%, rgba(35, 25, 25, 0.20) 100%),
+    linear-gradient(180deg, #FFF0D7 0%, #F4D9B5 48%, #EDC483 100%) !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:nth-child(2) {
+  background-color: #EDC483 !important;
+}
+
+.design-theme-warm-academy .bg-white,
+.design-theme-warm-academy [class*="bg-white/"] {
+  background-color: rgba(255, 248, 237, 0.94) !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:nth-child(2) .bg-orange-1 {
+  background-color: #231919 !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:nth-child(2) .border-orange-1 {
+  border-color: #231919 !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:nth-child(2) .text-orange-1 {
+  color: #231919 !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:first-child .bg-orange-1 {
+  background-color: #231919 !important;
+}
+
+.design-theme-warm-academy .design-theme-body > section:first-child [class~="bg-[#7D0000]"] {
+  background-color: #770523 !important;
+}
+
+.design-theme-warm-academy .group-icon {
+  background-color: #231919 !important;
+}
+
+.design-theme-warm-academy .group-icon .text-orange-1 {
+  color: #EDC483 !important;
+}
+
+.design-theme-black-gold-red .design-theme-body > section:first-child {
+  background: linear-gradient(
+    180deg,
+    #050403 0%,
+    #120D08 54%,
+    #21170A 100%
+  ) !important;
+}
+
+.design-theme-black-gold-red .design-theme-body > section:nth-child(2) {
+  background-color: #090705 !important;
+}
+
+.design-theme-black-gold-red .text-text-primary {
+  color: #F8ECD2 !important;
+}
+
+.design-theme-black-gold-red .text-text-secondary {
+  color: rgba(248, 236, 210, 0.78) !important;
+}
+
+.design-theme-black-gold-red .bg-white,
+.design-theme-black-gold-red [class*="bg-white/"] {
+  background-color: rgba(24, 18, 11, 0.92) !important;
+}
+
+.design-theme-black-gold-red .bg-\[\#FFF6DF\] {
+  background-color: #18120B !important;
+}
+
+.design-theme-black-gold-red .border-card-border {
+  border-color: rgba(216, 174, 84, 0.24) !important;
+}
+
+.design-theme-black-gold-red .group-icon {
+  background-color: #15100A !important;
+  border: 1px solid rgba(216, 174, 84, 0.36);
+}

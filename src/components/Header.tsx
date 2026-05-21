@@ -38,7 +38,7 @@ export function Header() {
     };
   }, [mobileOpen]);
 
-  if (pathname === "/challenge") {
+  if (pathname === "/challenge" || pathname === "/design") {
     return null;
   }
 

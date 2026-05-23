@@ -336,13 +336,34 @@ section + section {
   color: #080705 !important;
 }
 
-.design-theme-satin-noir .bg-white :is(h1, h2, h3, h4, p, span),
-.design-theme-satin-noir [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
-.design-theme-materialization-noir .bg-white :is(h1, h2, h3, h4, p, span),
-.design-theme-materialization-noir [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
-.design-theme-legal-gold .bg-white :is(h1, h2, h3, h4, p, span),
-.design-theme-legal-gold [class*="bg-white/"] :is(h1, h2, h3, h4, p, span) {
+.design-theme-satin-noir .design-theme-body > section:nth-child(2) .bg-white :is(h1, h2, h3, h4, p, span),
+.design-theme-satin-noir .design-theme-body > section:nth-child(2) [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
+.design-theme-materialization-noir .design-theme-body > section:nth-child(2) .bg-white :is(h1, h2, h3, h4, p, span),
+.design-theme-materialization-noir .design-theme-body > section:nth-child(2) [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
+.design-theme-legal-gold .design-theme-body > section:nth-child(2) .bg-white :is(h1, h2, h3, h4, p, span),
+.design-theme-legal-gold .design-theme-body > section:nth-child(2) [class*="bg-white/"] :is(h1, h2, h3, h4, p, span) {
   color: #080705 !important;
+}
+
+.design-theme .design-theme-body > section:first-child :is(.text-text-primary, .text-text-secondary, .text-text-muted),
+.design-theme .design-theme-body > section:first-child :is(.bg-white, [class*="bg-white/"], [class*="bg-\\[\\#FFF"]) :is(h1, h2, h3, h4, p, span, div) {
+  color: var(--design-ink) !important;
+}
+
+.design-theme .design-theme-body > section:first-child .text-white,
+.design-theme .design-theme-body > section:first-child .text-white\/86,
+.design-theme .design-theme-body > section:first-child .text-white\/90 {
+  color: var(--design-ink) !important;
+}
+
+.design-theme .design-theme-body > section:first-child .bg-orange-1 :is(span, p, div),
+.design-theme .design-theme-body > section:first-child [class~="bg-[#7D0000]"] :is(span, p, div) {
+  color: #080705 !important;
+}
+
+.design-theme .design-theme-body > section:first-child [class*="bg-black"] :is(h1, h2, h3, h4, p, span, div),
+.design-theme .design-theme-body > section:first-child [class*="from-black"] :is(h1, h2, h3, h4, p, span, div) {
+  color: var(--design-ink) !important;
 }
 
 .design-theme-materialization-noir .design-theme-body > section:first-child {

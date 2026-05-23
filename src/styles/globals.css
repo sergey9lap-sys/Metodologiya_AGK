@@ -322,6 +322,11 @@ section + section {
     linear-gradient(180deg, #EFC68D 0%, #D9AA67 22%, #050403 22%, #050403 100%) !important;
 }
 
+.design-theme-black-champagne .design-theme-body > section:nth-child(2) h2,
+.design-theme-black-champagne .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p {
+  color: #080705 !important;
+}
+
 .design-theme-materialization-noir .design-theme-body > section:first-child {
   background:
     radial-gradient(circle at 78% 20%, rgba(217, 180, 108, 0.18), transparent 26%),

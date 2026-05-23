@@ -327,6 +327,24 @@ section + section {
   color: #080705 !important;
 }
 
+.design-theme-satin-noir .design-theme-body > section:nth-child(2) h2,
+.design-theme-satin-noir .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p,
+.design-theme-materialization-noir .design-theme-body > section:nth-child(2) h2,
+.design-theme-materialization-noir .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p,
+.design-theme-legal-gold .design-theme-body > section:nth-child(2) h2,
+.design-theme-legal-gold .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p {
+  color: #080705 !important;
+}
+
+.design-theme-satin-noir .bg-white :is(h1, h2, h3, h4, p, span),
+.design-theme-satin-noir [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
+.design-theme-materialization-noir .bg-white :is(h1, h2, h3, h4, p, span),
+.design-theme-materialization-noir [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
+.design-theme-legal-gold .bg-white :is(h1, h2, h3, h4, p, span),
+.design-theme-legal-gold [class*="bg-white/"] :is(h1, h2, h3, h4, p, span) {
+  color: #080705 !important;
+}
+
 .design-theme-materialization-noir .design-theme-body > section:first-child {
   background:
     radial-gradient(circle at 78% 20%, rgba(217, 180, 108, 0.18), transparent 26%),

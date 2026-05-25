@@ -188,8 +188,9 @@ section + section {
 /* Color-only previews for the existing Methodology blocks on /design. */
 .design-theme .design-theme-body > section:first-child {
   background:
-    radial-gradient(circle at 78% 18%, rgba(216, 180, 108, 0.18), transparent 30%),
-    linear-gradient(115deg, var(--design-wash) 0%, var(--design-surface) 52%, #030303 100%) !important;
+    radial-gradient(circle at 80% 16%, color-mix(in srgb, var(--design-mix) 30%, transparent), transparent 28%),
+    radial-gradient(circle at 18% 86%, color-mix(in srgb, var(--design-accent) 18%, transparent), transparent 30%),
+    linear-gradient(118deg, var(--design-wash) 0%, var(--design-surface) 58%, #030302 100%) !important;
 }
 
 .design-theme .design-theme-body > section:first-child::before {
@@ -199,16 +200,15 @@ section + section {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 72% 78%, rgba(255, 255, 255, 0.08), transparent 24%),
-    linear-gradient(145deg, transparent 0%, transparent 38%, rgba(216, 180, 108, 0.12) 44%, rgba(0, 0, 0, 0.0) 54%),
-    linear-gradient(165deg, transparent 0%, rgba(255, 255, 255, 0.05) 48%, transparent 64%);
-  opacity: 0.9;
+    linear-gradient(142deg, transparent 0%, transparent 36%, color-mix(in srgb, var(--design-accent) 13%, transparent) 44%, transparent 58%),
+    linear-gradient(165deg, transparent 0%, rgba(255, 255, 255, 0.055) 46%, transparent 62%);
+  opacity: 0.95;
 }
 
 .design-theme .design-theme-body > section:nth-child(2) {
   background:
-    radial-gradient(circle at 50% 0%, rgba(216, 180, 108, 0.16), transparent 28%),
-    linear-gradient(180deg, var(--design-wash) 0%, #040404 100%) !important;
+    radial-gradient(circle at 48% 0%, color-mix(in srgb, var(--design-mix) 22%, transparent), transparent 28%),
+    linear-gradient(180deg, var(--design-wash) 0%, #030302 100%) !important;
 }
 
 .design-theme .bg-orange-1 {
@@ -246,8 +246,8 @@ section + section {
 
 .design-theme [class~="bg-[#7D0000]"] {
   background:
-    linear-gradient(95deg, #7B6129 0%, var(--design-button) 36%, var(--design-button-hover) 58%, #8A6C2E 100%) !important;
-  color: #080705 !important;
+    linear-gradient(95deg, var(--design-mix-strong) 0%, var(--design-button) 34%, var(--design-button-hover) 64%, var(--design-accent) 100%) !important;
+  color: #070604 !important;
 }
 
 .design-theme [class~="border-[#7D0000]"] {
@@ -260,7 +260,7 @@ section + section {
 
 .design-theme button[class~="bg-[#7D0000]"]:hover {
   background:
-    linear-gradient(95deg, #8A6C2E 0%, var(--design-button-hover) 46%, #F6E1A4 100%) !important;
+    linear-gradient(95deg, var(--design-button) 0%, var(--design-button-hover) 48%, var(--design-accent-strong) 100%) !important;
 }
 
 .design-theme .shadow-card,
@@ -274,116 +274,265 @@ section + section {
 
 .design-theme .text-text-secondary,
 .design-theme .text-text-muted {
-  color: rgba(246, 231, 200, 0.78) !important;
+  color: color-mix(in srgb, var(--design-ink) 78%, transparent) !important;
 }
 
 .design-theme .bg-white,
 .design-theme [class*="bg-white/"],
-.design-theme [class*="bg-\\[\\#FFF"] {
-  background-color: rgba(14, 12, 9, 0.88) !important;
+.design-theme [class*="bg-\\[\\#FFF"],
+.design-theme [class*="bg-\\[\\#F8"],
+.design-theme [class*="bg-\\[\\#FF"] {
+  background-color: rgba(8, 7, 5, 0.9) !important;
   color: var(--design-ink) !important;
-  border-color: rgba(216, 180, 108, 0.32) !important;
+  border-color: color-mix(in srgb, var(--design-accent) 34%, transparent) !important;
   backdrop-filter: blur(10px);
 }
 
-.design-theme .design-theme-body > section:nth-child(2) .bg-orange-1 {
-  background-color: rgba(10, 9, 7, 0.86) !important;
-  border: 1px solid rgba(216, 180, 108, 0.28);
-}
-
-.design-theme .design-theme-body > section:nth-child(2) .text-white,
-.design-theme .design-theme-body > section:nth-child(2) .text-white\/90 {
-  color: rgba(246, 231, 200, 0.88) !important;
-}
-
-.design-theme .group-icon {
-  background:
-    linear-gradient(135deg, var(--design-button), var(--design-button-hover)) !important;
-  border: 1px solid rgba(216, 174, 84, 0.36);
-}
-
-.design-theme .group-icon .text-orange-1 {
-  color: #080705 !important;
-}
-
-.design-theme .border-card-border {
-  border-color: rgba(216, 174, 84, 0.24) !important;
-}
-
-.design-theme-satin-noir .design-theme-body > section:first-child::before {
-  background:
-    radial-gradient(ellipse at 72% 78%, rgba(255, 255, 255, 0.10), transparent 22%),
-    linear-gradient(138deg, transparent 0%, transparent 35%, rgba(245, 218, 156, 0.16) 42%, rgba(0, 0, 0, 0) 54%),
-    linear-gradient(160deg, transparent 0%, rgba(255, 255, 255, 0.07) 45%, transparent 60%);
-}
-
-.design-theme-black-champagne .design-theme-body > section:nth-child(2) {
-  background:
-    linear-gradient(180deg, #EFC68D 0%, #D9AA67 22%, #050403 22%, #050403 100%) !important;
-}
-
-.design-theme-black-champagne .design-theme-body > section:nth-child(2) h2,
-.design-theme-black-champagne .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p {
-  color: #080705 !important;
-}
-
-.design-theme-satin-noir .design-theme-body > section:nth-child(2) h2,
-.design-theme-satin-noir .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p,
-.design-theme-materialization-noir .design-theme-body > section:nth-child(2) h2,
-.design-theme-materialization-noir .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p,
-.design-theme-legal-gold .design-theme-body > section:nth-child(2) h2,
-.design-theme-legal-gold .design-theme-body > section:nth-child(2) .mx-auto.mb-8 p {
-  color: #080705 !important;
-}
-
-.design-theme-satin-noir .design-theme-body > section:nth-child(2) .bg-white :is(h1, h2, h3, h4, p, span),
-.design-theme-satin-noir .design-theme-body > section:nth-child(2) [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
-.design-theme-materialization-noir .design-theme-body > section:nth-child(2) .bg-white :is(h1, h2, h3, h4, p, span),
-.design-theme-materialization-noir .design-theme-body > section:nth-child(2) [class*="bg-white/"] :is(h1, h2, h3, h4, p, span),
-.design-theme-legal-gold .design-theme-body > section:nth-child(2) .bg-white :is(h1, h2, h3, h4, p, span),
-.design-theme-legal-gold .design-theme-body > section:nth-child(2) [class*="bg-white/"] :is(h1, h2, h3, h4, p, span) {
-  color: #080705 !important;
-}
-
-.design-theme .design-theme-body > section:first-child :is(.text-text-primary, .text-text-secondary, .text-text-muted),
-.design-theme .design-theme-body > section:first-child :is(.bg-white, [class*="bg-white/"], [class*="bg-\\[\\#FFF"]) :is(h1, h2, h3, h4, p, span, div) {
+.design-theme :is(.bg-white, [class*="bg-white/"], [class*="bg-\\[\\#FFF"], [class*="bg-\\[\\#F8"], [class*="bg-\\[\\#FF"]) :is(h1, h2, h3, h4, p, span, div) {
   color: var(--design-ink) !important;
 }
 
-.design-theme .design-theme-body > section:first-child .text-white,
-.design-theme .design-theme-body > section:first-child .text-white\/86,
-.design-theme .design-theme-body > section:first-child .text-white\/90 {
-  color: var(--design-ink) !important;
+.design-theme .design-theme-body > section:nth-child(2) > .absolute {
+  opacity: 0.08 !important;
 }
 
-.design-theme .design-theme-body > section:first-child .bg-orange-1 :is(span, p, div),
-.design-theme .design-theme-body > section:first-child [class~="bg-[#7D0000]"] :is(span, p, div) {
-  color: #080705 !important;
+.design-theme .design-theme-body > section:nth-child(2) > div.absolute {
+  background: rgba(0, 0, 0, 0.74) !important;
 }
 
+.design-theme .design-theme-body > section:first-child :is(.text-white, .text-white\/86, .text-white\/90),
 .design-theme .design-theme-body > section:first-child [class*="bg-black"] :is(h1, h2, h3, h4, p, span, div),
 .design-theme .design-theme-body > section:first-child [class*="from-black"] :is(h1, h2, h3, h4, p, span, div) {
   color: var(--design-ink) !important;
 }
 
-.design-theme-materialization-noir .design-theme-body > section:first-child {
+.design-theme .design-theme-body > section:first-child .bg-orange-1 :is(span, p, div),
+.design-theme .design-theme-body > section:first-child [class~="bg-[#7D0000]"] :is(span, p, div) {
+  color: #070604 !important;
+}
+
+.design-theme .design-theme-body > section:first-child .inline-flex.border-2 {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 36%, #080705) !important;
+  border-color: var(--design-mix-strong) !important;
+  color: var(--design-ink) !important;
+}
+
+.design-theme .design-theme-body > section:first-child .inline-flex.border-2 svg,
+.design-theme .design-theme-body > section:first-child .inline-flex.border-2 span {
+  color: var(--design-ink) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) .bg-orange-1 {
+  background-color: rgba(10, 8, 6, 0.9) !important;
+  border: 1px solid color-mix(in srgb, var(--design-accent) 32%, transparent);
+}
+
+.design-theme .design-theme-body > section:nth-child(2) .text-white,
+.design-theme .design-theme-body > section:nth-child(2) .text-white\/90 {
+  color: color-mix(in srgb, var(--design-ink) 88%, transparent) !important;
+}
+
+.design-theme .group-icon {
   background:
-    radial-gradient(circle at 78% 20%, rgba(217, 180, 108, 0.18), transparent 26%),
-    radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.06), transparent 24%),
-    linear-gradient(180deg, #0A0908 0%, #030303 58%, #080706 100%) !important;
+    linear-gradient(135deg, var(--design-button), var(--design-button-hover)) !important;
+  border: 1px solid color-mix(in srgb, var(--design-accent) 42%, transparent);
 }
 
-.design-theme-materialization-noir .design-theme-body > section:nth-child(2) .rounded-2xl,
-.design-theme-materialization-noir .design-theme-body > section:nth-child(2) .rounded-card {
-  border-style: dashed !important;
+.design-theme .group-icon .text-orange-1 {
+  color: #070604 !important;
 }
 
-.design-theme-legal-gold .design-theme-body > section:first-child {
+.design-theme .border-card-border {
+  border-color: color-mix(in srgb, var(--design-accent) 24%, transparent) !important;
+}
+
+.design-theme-noir-rose-cream .design-theme-body > section:first-child {
   background:
-    linear-gradient(90deg, rgba(168, 138, 69, 0.14) 0%, transparent 22%, transparent 78%, rgba(168, 138, 69, 0.14) 100%),
-    #020202 !important;
+    radial-gradient(circle at 86% 20%, rgba(169, 78, 52, 0.22), transparent 25%),
+    linear-gradient(118deg, #070706 0%, #14100B 58%, #050403 100%) !important;
 }
 
-.design-theme-legal-gold .design-theme-body > section:nth-child(2) {
-  background-color: #020202 !important;
+.design-theme-noir-rose-cream .design-theme-body > section:nth-child(2) .bg-orange-1:nth-child(even) {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 46%, #080705) !important;
+}
+
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(2),
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(3) {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 34%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 64%, transparent) !important;
+}
+
+.design-theme-noir-rose-cream .design-theme-body > section:nth-child(2) .grid > div:nth-child(2),
+.design-theme-noir-rose-cream .design-theme-body > section:nth-child(2) .grid > div:nth-child(4) {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 44%, #080705) !important;
+}
+
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child {
+  background:
+    radial-gradient(circle at 76% 18%, rgba(228, 105, 28, 0.20), transparent 28%),
+    radial-gradient(circle at 18% 80%, rgba(135, 51, 15, 0.18), transparent 30%),
+    linear-gradient(118deg, #070706 0%, #24211D 58%, #090806 100%) !important;
+}
+
+.design-theme-charcoal-caramel-orange .design-theme-body > section:nth-child(2) .bg-orange-1:nth-child(odd) {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 48%, #080705) !important;
+}
+
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(1),
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(4) {
+  background-color: color-mix(in srgb, var(--design-mix) 46%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 66%, transparent) !important;
+}
+
+.design-theme-charcoal-caramel-orange .design-theme-body > section:nth-child(2) .grid > div:nth-child(1),
+.design-theme-charcoal-caramel-orange .design-theme-body > section:nth-child(2) .grid > div:nth-child(3) {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 46%, #080705) !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:first-child {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(52, 13, 26, 0.38), transparent 28%),
+    linear-gradient(118deg, #050404 0%, #15080D 58%, #050404 100%) !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) {
+  background:
+    radial-gradient(circle at 48% 0%, rgba(52, 13, 26, 0.42), transparent 30%),
+    linear-gradient(180deg, #050404 0%, #13060A 100%) !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 50%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 70%, transparent) !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .bg-orange-1 {
+  background:
+    linear-gradient(135deg, #E4C777 0%, #C79A4D 48%, #A77731 100%) !important;
+  border-color: rgba(228, 199, 119, 0.72) !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .bg-orange-1 :is(h3, p, span, div) {
+  color: #090604 !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .group-icon {
+  background: #340D1A !important;
+  border-color: rgba(52, 13, 26, 0.76) !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .group-icon svg {
+  color: #E4C777 !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) [class~="bg-[#7D0000]"] {
+  background: linear-gradient(95deg, #340D1A 0%, #6C1830 100%) !important;
+  color: #F3E4C9 !important;
+}
+
+.design-theme-merlot-gold .design-theme-body > section:nth-child(2) [class~="bg-[#7D0000]"] :is(span, p, div, svg) {
+  color: #F3E4C9 !important;
+}
+
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(93, 21, 16, 0.32), transparent 28%),
+    linear-gradient(118deg, #060403 0%, #160706 58%, #050303 100%) !important;
+}
+
+.design-theme-dark-sienna-gold .design-theme-body > section:nth-child(2) {
+  background:
+    radial-gradient(circle at 48% 0%, rgba(55, 5, 7, 0.42), transparent 30%),
+    linear-gradient(180deg, #060403 0%, #140504 100%) !important;
+}
+
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(1),
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(3),
+.design-theme-dark-sienna-gold .design-theme-body > section:nth-child(2) .grid > div:nth-child(1),
+.design-theme-dark-sienna-gold .design-theme-body > section:nth-child(2) .grid > div:nth-child(3) {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 50%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 70%, transparent) !important;
+}
+
+.design-theme .design-theme-body > section:first-child .grid.grid-cols-2 > div {
+  background-color: color-mix(in srgb, var(--design-mix-strong) 50%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 72%, transparent) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .bg-orange-1 {
+  background:
+    linear-gradient(135deg, var(--design-accent-strong) 0%, var(--design-accent) 48%, #A77731 100%) !important;
+  border-color: color-mix(in srgb, var(--design-accent-strong) 72%, transparent) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .bg-orange-1 :is(h3, p, span, div) {
+  color: #090604 !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .group-icon {
+  background: var(--design-mix-strong) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 76%, transparent) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) .grid.grid-cols-1 .group-icon svg {
+  color: var(--design-accent-strong) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) [class~="bg-[#7D0000]"] {
+  background: linear-gradient(95deg, var(--design-mix) 0%, var(--design-mix-strong) 100%) !important;
+  color: var(--design-ink) !important;
+}
+
+.design-theme .design-theme-body > section:nth-child(2) [class~="bg-[#7D0000]"] :is(span, p, div, svg) {
+  color: var(--design-ink) !important;
+}
+
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div,
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div,
+.design-theme-merlot-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div,
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div {
+  background: color-mix(in srgb, var(--design-mix-strong) 50%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 72%, transparent) !important;
+}
+
+.design-theme .design-theme-body [class~="bg-[#7D0000]"],
+.design-theme .design-theme-body [class~="bg-[#7D0000]"] :is(span, p, div, svg) {
+  color: #070604 !important;
+}
+
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(1),
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(2),
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(3),
+.design-theme-noir-rose-cream .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(4),
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(1),
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(2),
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(3),
+.design-theme-charcoal-caramel-orange .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(4),
+.design-theme-merlot-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(1),
+.design-theme-merlot-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(2),
+.design-theme-merlot-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(3),
+.design-theme-merlot-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(4),
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(1),
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(2),
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(3),
+.design-theme-dark-sienna-gold .design-theme-body > section:first-child .grid.grid-cols-2 > div:nth-child(4) {
+  background: color-mix(in srgb, var(--design-mix-strong) 50%, #080705) !important;
+  border-color: color-mix(in srgb, var(--design-mix-strong) 72%, transparent) !important;
+}
+
+.design-theme .design-theme-body a button[class~="bg-[#7D0000]"],
+.design-theme .design-theme-body button[class~="bg-[#7D0000]"],
+.design-theme .design-theme-body a button[class~="bg-[#7D0000]"].text-white,
+.design-theme .design-theme-body button[class~="bg-[#7D0000]"].text-white,
+.design-theme .design-theme-body a button[class~="bg-[#7D0000]"] *,
+.design-theme .design-theme-body button[class~="bg-[#7D0000]"] *,
+.design-theme .design-theme-body a button[class~="bg-[#7D0000]"] .text-white,
+.design-theme .design-theme-body button[class~="bg-[#7D0000]"] .text-white {
+  color: #070604 !important;
+}
+
+.design-theme .design-theme-body a button[class~="bg-[#7D0000]"] svg,
+.design-theme .design-theme-body button[class~="bg-[#7D0000]"] svg {
+  color: #070604 !important;
+  stroke: #070604 !important;
 }

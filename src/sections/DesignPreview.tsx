@@ -104,6 +104,30 @@ const palettes: Palette[] = [
       "--design-card-shadow": "rgba(0,0,0,0.58)",
     } as CSSProperties,
   },
+  {
+    id: "method-donat",
+    name: "Method Donat Smoke",
+    mood: "Темный сине-фиолетовый фон, бирюзовый дым, объемное золото и мягкие сливовые акценты.",
+    colors: [
+      { name: "Ink Navy", hex: "#11151D" },
+      { name: "Smoke Plum", hex: "#342638" },
+      { name: "Deep Teal", hex: "#0B666B" },
+      { name: "Soft Gold", hex: "#D5AF64" },
+      { name: "Champagne", hex: "#F4DE9D" },
+    ],
+    tokens: {
+      "--design-ink": "#F8E9C2",
+      "--design-accent": "#B8893E",
+      "--design-accent-strong": "#F4DE9D",
+      "--design-surface": "#121722",
+      "--design-wash": "#07080D",
+      "--design-button": "#C79A4A",
+      "--design-button-hover": "#F4DE9D",
+      "--design-mix": "#0B666B",
+      "--design-mix-strong": "#342638",
+      "--design-card-shadow": "rgba(0,0,0,0.62)",
+    } as CSSProperties,
+  },
 ];
 
 function PaletteLabel({ palette }: { palette: Palette }) {

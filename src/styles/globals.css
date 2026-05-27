@@ -730,13 +730,6 @@ section + section {
 
 @media (max-width: 1023px) {
   .design-theme-method-donat .design-theme-body > section:first-child::after {
-    background:
-      radial-gradient(ellipse at 7% 22%, #F7E2A6 0 9px, #B8893E 10px 15px, transparent 16px),
-      radial-gradient(ellipse at 86% 14%, transparent 0 10px, #F4DE9D 11px 14px, #B8893E 15px 19px, transparent 20px),
-      radial-gradient(ellipse at 92% 42%, #F4DE9D 0 10px, #B8893E 11px 17px, transparent 18px),
-      radial-gradient(ellipse at 10% 70%, transparent 0 12px, #F4DE9D 13px 16px, #B8893E 17px 22px, transparent 23px),
-      radial-gradient(ellipse at 82% 82%, #F7E2A6 0 12px, #B8893E 13px 20px, transparent 21px) !important;
-    filter: blur(0.1px) drop-shadow(0 8px 16px rgba(244, 222, 157, 0.18));
-    opacity: 0.48;
+    display: none;
   }
 }

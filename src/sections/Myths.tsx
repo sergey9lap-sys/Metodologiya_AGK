@@ -82,7 +82,7 @@ export function Myths() {
               variants={fadeInUp}
               transition={{ duration: 0.45, delay: index * 0.06 }}
             >
-              <div className="h-full rounded-2xl border border-orange-1/18 bg-[#FFF9EF] p-5 shadow-[0_14px_34px_rgba(40,25,10,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-[0_18px_42px_rgba(255,167,0,0.16)] lg:p-6">
+              <div className="h-full rounded-2xl border border-orange-1/18 bg-[#F6E8C8] p-5 shadow-[0_14px_34px_rgba(40,25,10,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-[0_18px_42px_rgba(85,11,24,0.16)] lg:p-6">
                 <div className="mb-5">
                   <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-neutral-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
                     <span aria-hidden="true">×</span>

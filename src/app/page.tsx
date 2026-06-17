@@ -20,9 +20,12 @@ import { EntrepreneurResults } from "@/sections/EntrepreneurResults";
 import { Myths } from "@/sections/Myths";
 import { MethodologyRoadmap } from "@/sections/MethodologyRoadmap";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-bg">
       <Hero />
       <WhatIsMethodology />
       <Corporations />

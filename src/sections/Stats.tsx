@@ -49,13 +49,13 @@ export function Stats() {
             return (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/92 px-3 py-3 text-center shadow-[0_10px_26px_rgba(126,74,0,0.12)] backdrop-blur-md lg:px-4 lg:py-4"
+                className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/92 px-3 py-3 text-center shadow-[0_10px_26px_rgba(85,11,24,0.12)] backdrop-blur-md lg:px-4 lg:py-4"
               >
                 <div
                   aria-hidden="true"
                   className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-gradient-to-r from-transparent via-orange-1 to-transparent"
                 />
-                <div className="relative mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-xl bg-orange-1 text-white shadow-[0_8px_18px_rgba(255,167,0,0.24)] lg:h-10 lg:w-10">
+                <div className="relative mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-xl bg-orange-1 text-white shadow-[0_8px_18px_rgba(85,11,24,0.24)] lg:h-10 lg:w-10">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="relative mb-1 font-heading text-3xl font-black leading-none text-text-primary lg:text-4xl">

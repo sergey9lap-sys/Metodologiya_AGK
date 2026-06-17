@@ -8,10 +8,10 @@ type SectionBackgroundProps = {
 };
 
 const overlays = {
-  dark: "bg-[linear-gradient(rgba(0,0,0,0.52),rgba(0,0,0,0.52))]",
+  dark: "bg-[linear-gradient(rgba(58,0,12,0.68),rgba(58,0,12,0.74))]",
   orange:
-    "bg-[linear-gradient(rgba(255,167,0,0.68),rgba(255,167,0,0.68)),linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50))]",
-  light: "bg-[rgba(255,255,255,0.76)]",
+    "bg-[linear-gradient(135deg,rgba(85,11,24,0.78),rgba(58,0,12,0.7)),linear-gradient(rgba(242,229,197,0.24),rgba(242,229,197,0.18))]",
+  light: "bg-[linear-gradient(rgba(242,229,197,0.82),rgba(247,235,207,0.78))]",
 };
 
 export function SectionBackground({

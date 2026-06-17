@@ -46,8 +46,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-xl border-b border-card-border shadow-lg"
-          : "bg-white"
+          ? "border-b border-orange-1/18 bg-[#F2E5C5]/92 shadow-[0_12px_34px_rgba(58,0,12,0.11)] backdrop-blur-xl"
+          : "bg-[#F2E5C5]/82 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-[72px]">
@@ -74,7 +74,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-text-secondary hover:text-orange-1 hover:-translate-y-0.5 transition-all text-sm font-semibold"
+              className="text-text-secondary transition-all hover:-translate-y-0.5 hover:text-orange-2 text-sm font-semibold"
             >
               {link.label}
             </a>
@@ -88,7 +88,7 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-text-primary p-2 -mr-2"
+          className="md:hidden -mr-2 rounded-full p-2 text-text-primary transition-colors hover:bg-orange-1/10"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"}
         >
@@ -108,14 +108,14 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-white border-b border-card-border"
+            className="md:hidden overflow-hidden border-b border-orange-1/18 bg-[#F2E5C5]/96 backdrop-blur-xl"
           >
             <nav className="flex flex-col items-center gap-6 py-8 px-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-text-secondary hover:text-orange-1 hover:scale-105 transition-all text-lg font-semibold"
+                  className="text-text-secondary transition-all hover:scale-105 hover:text-orange-2 text-lg font-semibold"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

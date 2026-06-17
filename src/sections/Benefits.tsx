@@ -37,7 +37,7 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:31:01.jpg"
         variant="light"
@@ -103,7 +103,7 @@ export function Benefits() {
               результата, а не терялись в хаосе материала.
             </p>
             <a href="#pricing" className="mt-5 inline-flex">
-              <Button variant="primary" size="lg">
+              <Button variant="cream" size="lg">
                 Смотреть тарифы
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

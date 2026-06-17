@@ -195,7 +195,7 @@ export function PaymentOptions() {
                   className="rounded-2xl border border-white/75 bg-white/94 p-4 shadow-sm"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 text-white shadow-[0_8px_18px_rgba(255,167,0,0.24)]">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 text-white shadow-[0_8px_18px_rgba(85,11,24,0.24)]">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -220,7 +220,7 @@ export function PaymentOptions() {
           <div className="mt-7 flex justify-center">
             <a
               href="#pricing"
-              className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto"
+              className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:w-auto"
             >
               Присоединиться к обучению
               <ArrowRight className="h-5 w-5 flex-shrink-0" />

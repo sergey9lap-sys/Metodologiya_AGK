@@ -70,7 +70,7 @@ const matrixPaths = [
 
 export function NichesAndFormats() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F5EF] py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:59.jpg"
         variant="light"
@@ -113,7 +113,7 @@ export function NichesAndFormats() {
                 whileInView={{ opacity: 1, scaleY: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.72, ease: "easeInOut", delay: 0.28 }}
-                className="absolute left-5 top-8 bottom-8 z-0 w-px origin-top bg-[rgba(191,129,35,0.34)]"
+                className="absolute left-5 top-8 bottom-8 z-0 w-px origin-top bg-[rgba(117,22,46,0.34)]"
               />
 
               <div className="relative z-10 space-y-4">
@@ -128,10 +128,10 @@ export function NichesAndFormats() {
                       ease: "easeOut",
                       delay: columnIndex * 0.08,
                     }}
-                    className="relative rounded-[22px] border border-[rgba(191,129,35,0.2)] bg-white/88 p-4 shadow-[0_14px_36px_rgba(40,25,10,0.08)] backdrop-blur-sm"
+                    className="relative rounded-[22px] border border-[rgba(117,22,46,0.2)] bg-white/88 p-4 shadow-[0_14px_36px_rgba(40,25,10,0.08)] backdrop-blur-sm"
                   >
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(255,167,0,0.24)]">
+                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(85,11,24,0.24)]">
                         {columnIndex + 1}
                       </span>
                       <h3 className="font-heading text-xl font-black uppercase leading-tight text-text-primary">
@@ -150,7 +150,7 @@ export function NichesAndFormats() {
                             ease: "easeOut",
                             delay: 0.16 + columnIndex * 0.1 + productIndex * 0.05,
                           }}
-                          className="flex min-h-[54px] items-center justify-center rounded-2xl border border-orange-1/18 bg-[#FFF9EF] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-sm"
+                          className="flex min-h-[54px] items-center justify-center rounded-2xl border border-orange-1/18 bg-[#F6E8C8] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-sm"
                         >
                           {product}
                         </motion.div>
@@ -171,7 +171,7 @@ export function NichesAndFormats() {
             <div className="relative mx-auto h-[520px] max-w-6xl overflow-hidden rounded-[30px] border border-white/70 bg-white/48 shadow-[0_20px_60px_rgba(40,25,10,0.08)] backdrop-blur-[2px]">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[360px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.18),transparent_68%)] blur-sm"
+                className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[360px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(85,11,24,0.18),transparent_68%)] blur-sm"
               />
               <svg
                 aria-hidden="true"
@@ -188,7 +188,7 @@ export function NichesAndFormats() {
                     markerHeight="8"
                     orient="auto-start-reverse"
                   >
-                    <path d="M 1 1 L 11 6 L 1 11 z" fill="#FFA700" />
+                    <path d="M 1 1 L 11 6 L 1 11 z" fill="#550B18" />
                   </marker>
                   <filter id="product-matrix-glow" x="-30%" y="-30%" width="160%" height="160%">
                     <feGaussianBlur stdDeviation="3" result="blur" />
@@ -206,7 +206,7 @@ export function NichesAndFormats() {
                     y1="76"
                     x2={x}
                     y2="372"
-                    stroke="rgba(191,129,35,0.18)"
+                    stroke="rgba(117,22,46,0.18)"
                     strokeDasharray="8 10"
                     strokeWidth="1"
                   />
@@ -218,7 +218,7 @@ export function NichesAndFormats() {
                     y1={y}
                     x2="928"
                     y2={y}
-                    stroke="rgba(191,129,35,0.12)"
+                    stroke="rgba(117,22,46,0.12)"
                     strokeDasharray="6 12"
                     strokeWidth="1"
                   />
@@ -229,7 +229,7 @@ export function NichesAndFormats() {
                     key={path}
                     d={path}
                     fill="none"
-                    stroke="rgba(255,167,0,0.88)"
+                    stroke="rgba(85,11,24,0.88)"
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     markerEnd="url(#product-matrix-arrow)"
@@ -260,7 +260,7 @@ export function NichesAndFormats() {
                   style={{ left: `${header.x / 10}%` }}
                   className="absolute top-9 z-20 flex w-[190px] -translate-x-1/2 flex-col items-center text-center"
                 >
-                  <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(255,167,0,0.26)]">
+                  <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(85,11,24,0.26)]">
                     {index + 1}
                   </span>
                   <h3 className="font-heading text-lg font-black uppercase leading-tight text-text-primary">
@@ -289,11 +289,11 @@ export function NichesAndFormats() {
                     left: `${node.x / 10}%`,
                     top: `${node.y / 4.2}%`,
                   }}
-                  className="group absolute z-10 flex min-h-[68px] w-[180px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center rounded-[20px] border border-orange-1/24 bg-[#FFF9EF] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/70 hover:shadow-[0_18px_48px_rgba(255,167,0,0.22)]"
+                  className="group absolute z-10 flex min-h-[68px] w-[180px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center rounded-[20px] border border-orange-1/24 bg-[#F6E8C8] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/70 hover:shadow-[0_18px_48px_rgba(85,11,24,0.22)]"
                 >
                   <span className="absolute left-1/2 top-0 h-1 w-12 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-20" />
-                  <span className="absolute -left-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.5)]" />
-                  <span className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(255,167,0,0.5)]" />
+                  <span className="absolute -left-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(85,11,24,0.5)]" />
+                  <span className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(85,11,24,0.5)]" />
                   {node.label}
                 </motion.div>
               ))}
@@ -335,9 +335,9 @@ export function NichesAndFormats() {
                     whileHover={{
                       y: -4,
                       scale: 1.02,
-                      boxShadow: "0 18px 48px rgba(255, 167, 0, 0.20)",
+                      boxShadow: "0 18px 48px rgba(85, 11, 24, 0.18)",
                     }}
-                    className="group relative flex min-h-[76px] items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(191,129,35,0.22)] bg-[#FFF9EF] px-5 py-4 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)] transition-colors duration-300 hover:border-orange-1/70 lg:text-base"
+                    className="group relative flex min-h-[76px] items-center justify-center overflow-hidden rounded-[22px] border border-[rgba(117,22,46,0.22)] bg-[#F6E8C8] px-5 py-4 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.07)] transition-colors duration-300 hover:border-orange-1/70 lg:text-base"
                   >
                     <span className="absolute left-1/2 top-0 h-1.5 w-14 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-24" />
                     {item}
@@ -356,7 +356,7 @@ export function NichesAndFormats() {
             >
               <a
                 href="#pricing"
-                className="inline-flex min-h-[60px] w-full max-w-[390px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto"
+                className="inline-flex min-h-[60px] w-full max-w-[390px] items-center justify-center gap-3 rounded-[12px] bg-[#550B18] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(85,11,24,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3A000C] hover:shadow-[0_8px_24px_rgba(85,11,24,0.32)] sm:w-auto"
               >
                 <span className="whitespace-nowrap">Мне нужна система</span>
                 <ArrowRight className="h-5 w-5 flex-shrink-0" />

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen bg-[#FFA700]">
+    <main className="min-h-screen bg-[#550B18]">
       <Pricing title="Методология 16.0" showStartDate={false} />
     </main>
   );

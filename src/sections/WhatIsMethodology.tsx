@@ -68,16 +68,24 @@ export function WhatIsMethodology() {
                 variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full">
+                <Card
+                  className={`h-full ${
+                    index === 0
+                      ? "lg:col-span-1 bg-[#F7EBCF]/96"
+                      : index === 1
+                        ? "bg-[#3A000C] text-[#F7EBCF]"
+                        : "bg-[#F2E5C5]/96"
+                  }`}
+                >
                   <div className="mb-4 flex items-center gap-4">
-                    <div className="group-icon rounded-xl bg-orange-1 p-3 shadow-md">
-                      <Icon className="h-6 w-6 text-white" />
+                    <div className={`group-icon rounded-xl p-3 shadow-md ${index === 1 ? "bg-[#F7EBCF]" : "bg-orange-1"}`}>
+                      <Icon className={`h-6 w-6 ${index === 1 ? "text-orange-1" : "text-white"}`} />
                     </div>
-                    <h3 className="font-heading text-xl font-bold text-text-primary">
+                    <h3 className={`font-heading text-xl font-bold ${index === 1 ? "text-[#F7EBCF]" : "text-text-primary"}`}>
                       {card.title}
                     </h3>
                   </div>
-                  <p className="text-body text-text-secondary">{card.text}</p>
+                  <p className={`text-body ${index === 1 ? "text-[#F7EBCF]/84" : "text-text-secondary"}`}>{card.text}</p>
                 </Card>
               </motion.div>
             );
@@ -94,7 +102,7 @@ export function WhatIsMethodology() {
         >
           <a
             href="#pricing"
-            className="inline-flex min-h-[60px] w-full max-w-[340px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto"
+            className="inline-flex min-h-[60px] w-full max-w-[340px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:w-auto"
           >
             Забронировать место
             <ArrowRight className="h-5 w-5 flex-shrink-0" />

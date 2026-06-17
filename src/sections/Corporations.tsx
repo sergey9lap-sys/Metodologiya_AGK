@@ -75,7 +75,7 @@ const corporations = [
 
 export function Corporations() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
+    <section className="relative overflow-hidden bg-[#F2E5C5] py-10 lg:py-12">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:31:18.jpg"
         variant="light"
@@ -83,7 +83,7 @@ export function Corporations() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 z-20 h-[360px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,167,0,0.18),transparent_68%)] blur-sm"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-20 h-[360px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(85,11,24,0.18),transparent_68%)] blur-sm"
       />
       <Container className="relative z-20">
         <motion.div

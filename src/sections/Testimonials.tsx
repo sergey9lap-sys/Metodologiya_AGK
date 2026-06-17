@@ -118,8 +118,8 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Card className="h-full border-2 border-orange-1">
-                <div className="flex h-full flex-col">
-                  <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-orange-1 shadow-soft transition-transform duration-300 group-hover:scale-110">
+                <div className="grid h-[520px] grid-rows-[64px_minmax(0,1fr)_112px_92px]">
+                  <div className="relative h-16 w-16 flex-none overflow-hidden rounded-full border-2 border-orange-1 shadow-soft transition-transform duration-300 group-hover:scale-110">
                     <Image
                       src={item.image}
                       alt={item.name}
@@ -131,21 +131,23 @@ export function Testimonials() {
                   <p className="mt-4 text-body font-semibold leading-relaxed text-text-primary">
                     {item.result}
                   </p>
-                  {"financialAmount" in item && item.financialAmount && (
-                    <p className="mt-2 text-body font-bold leading-relaxed text-text-primary">
-                      {"financialLabel" in item && item.financialLabel
-                        ? item.financialLabel
-                        : "Финансовый результат"}{" "}
-                      —{" "}
-                      {"financialPrefix" in item && item.financialPrefix && (
-                        <>
-                          {item.financialPrefix}{" "}
-                        </>
-                      )}
-                      <span className="whitespace-nowrap">{item.financialAmount}</span>
-                    </p>
-                  )}
-                  <div className="mt-auto min-h-[76px] border-t-2 border-orange-1 pt-3">
+                  <div className="flex items-start border-b-2 border-orange-1 pb-4 pt-4">
+                    {"financialAmount" in item && item.financialAmount && (
+                      <p className="text-body font-bold leading-relaxed text-text-primary">
+                        {"financialLabel" in item && item.financialLabel
+                          ? item.financialLabel
+                          : "Финансовый результат"}{" "}
+                        —{" "}
+                        {"financialPrefix" in item && item.financialPrefix && (
+                          <>
+                            {item.financialPrefix}{" "}
+                          </>
+                        )}
+                        <span className="whitespace-nowrap">{item.financialAmount}</span>
+                      </p>
+                    )}
+                  </div>
+                  <div className="pt-3">
                     <p className="font-bold text-text-primary">{item.name}</p>
                     <p className="text-sm font-medium text-orange-1">{item.role}</p>
                   </div>

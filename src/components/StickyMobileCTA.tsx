@@ -33,7 +33,7 @@ export function StickyMobileCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 pb-safe bg-white/95 backdrop-blur-xl border-t-2 border-orange-1 lg:hidden z-40 motion-safe:animate-slide-up shadow-xl">
+    <div className="fixed bottom-0 left-0 right-0 z-40 border-t-2 border-orange-1/35 bg-[#F2E5C5]/95 p-4 pb-safe shadow-[0_-14px_34px_rgba(58,0,12,0.12)] backdrop-blur-xl motion-safe:animate-slide-up lg:hidden">
       <div>
         <a href="#pricing" className="block w-full">
           <Button variant="primary" className="w-full">

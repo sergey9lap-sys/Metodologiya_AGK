@@ -21,7 +21,7 @@ const employers = [
 
 export function Employers() {
   return (
-    <section className="bg-[#FFA700] py-10 lg:py-12">
+    <section className="bg-[#550B18] py-10 lg:py-12">
       <Container>
         <motion.h3
           initial="hidden"
@@ -29,7 +29,7 @@ export function Employers() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="mb-6 text-center font-heading text-2xl font-bold uppercase text-text-primary lg:text-3xl"
+          className="mb-6 text-center font-heading text-2xl font-bold uppercase text-[#F7EBCF] lg:text-3xl"
         >
           Наши выпускники работают и внедряют методологию в:
         </motion.h3>
@@ -45,7 +45,7 @@ export function Employers() {
           {employers.map((name) => (
             <div
               key={name}
-              className="rounded-xl border-2 border-orange-1 bg-white px-6 py-3 text-base font-bold text-text-primary shadow-md transition-all hover:-translate-y-1 hover:scale-[1.03] hover:shadow-lg lg:text-lg"
+              className="rounded-xl border border-[#F2E5C5]/35 bg-[#F7EBCF] px-6 py-3 text-base font-bold text-text-primary shadow-md transition-all hover:-translate-y-1 hover:border-[#F2E5C5]/70 hover:shadow-lg lg:text-lg"
             >
               {name}
             </div>

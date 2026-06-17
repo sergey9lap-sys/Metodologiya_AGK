@@ -169,7 +169,10 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
   }, [activeWidget]);
 
   return (
-    <section id="pricing" className="relative overflow-hidden bg-[#FFA700] py-12 lg:py-16">
+    <section id="pricing" className="relative overflow-hidden bg-[#550B18] py-12 lg:py-16">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#F2E5C5]/38" />
+      <div aria-hidden="true" className="pointer-events-none absolute left-[8%] top-0 hidden h-full w-px bg-[#F2E5C5]/10 lg:block" />
+      <div aria-hidden="true" className="pointer-events-none absolute right-[12%] top-0 hidden h-full w-px bg-[#F2E5C5]/10 lg:block" />
       <Container className="relative z-20">
         <motion.div
           initial="hidden"
@@ -179,11 +182,11 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
           transition={{ duration: 0.5 }}
           className="mb-8 text-center lg:mb-10"
         >
-          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
+          <h2 className="mb-4 font-heading text-3xl font-black uppercase text-[#F7EBCF] lg:text-4xl">
             {title}
           </h2>
           {showStartDate && (
-            <p className="text-lg font-medium text-text-primary">Старт: {COURSE_START_DATE}</p>
+            <p className="text-lg font-medium text-[#F7EBCF]/86">Старт: {COURSE_START_DATE}</p>
           )}
         </motion.div>
 
@@ -201,22 +204,13 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                 variant="default"
                 className={`relative h-full overflow-hidden p-0 ${
                   tariff.highlighted
-                    ? "scale-[1.03] border-2 border-[#D63800] bg-[linear-gradient(145deg,rgba(214,56,0,0.92),rgba(214,56,0,0.82)_58%,rgba(255,158,15,0.68))] text-white shadow-[0_18px_46px_rgba(0,0,0,0.14)] backdrop-blur-sm hover:border-[#D63800] hover:shadow-[0_18px_46px_rgba(0,0,0,0.14)]"
-                    : "border-white/80 bg-white/96"
+                    ? "scale-[1.03] border-2 border-[#F2E5C5]/55 bg-[linear-gradient(145deg,rgba(117,22,46,0.96),rgba(85,11,24,0.92)_58%,rgba(58,0,12,0.86))] text-white shadow-[0_18px_46px_rgba(0,0,0,0.18)] backdrop-blur-sm hover:border-[#F2E5C5]/75 hover:shadow-[0_18px_46px_rgba(0,0,0,0.18)]"
+                    : "border-[#F2E5C5]/70 bg-[#F7EBCF]/96"
                 }`}
               >
-                <div
-                  aria-hidden="true"
-                  className={`pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full blur-2xl ${
-                    tariff.highlighted ? "bg-white/12" : "bg-orange-1/12"
-                  }`}
-                />
+                <div aria-hidden="true" className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#F2E5C5]/44 to-transparent" />
                 {tariff.highlighted && (
                   <>
-                    <div
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -left-14 top-24 h-40 w-40 rounded-full bg-white/14 blur-3xl"
-                    />
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.20)_34%,transparent_58%)]"
@@ -224,8 +218,8 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                   </>
                 )}
                 {tariff.highlighted && (
-                  <div className="absolute right-2 top-2 z-10 flex items-center gap-1.5 rounded-full border border-white/50 bg-[#7D0000] px-2.5 py-1.5 pl-1.5 text-[10px] font-black uppercase tracking-wide text-white shadow-[0_10px_24px_rgba(125,0,0,0.38)] ring-2 ring-[#FFF7E6]/75">
-                    <span className="relative flex h-5.5 w-5.5 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_25%,#FFFFFF_0%,#FFE7A8_32%,#FF9E0F_72%,#D63800_100%)] shadow-[0_0_18px_rgba(255,231,168,0.9)]">
+                  <div className="absolute right-2 top-2 z-10 flex items-center gap-1.5 rounded-full border border-white/50 bg-[#550B18] px-2.5 py-1.5 pl-1.5 text-[10px] font-black uppercase tracking-wide text-white shadow-[0_10px_24px_rgba(85,11,24,0.38)] ring-2 ring-[#F7EBCF]/75">
+                    <span className="relative flex h-5.5 w-5.5 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_25%,#FFFFFF_0%,#F7EBCF_32%,#F2E5C5_72%,#75162E_100%)] shadow-[0_0_18px_rgba(247,235,207,0.72)]">
                       <span className="absolute inset-0 rounded-full bg-white/30 blur-[1px]" />
                       <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
                       <Star className="relative h-3 w-3 fill-white text-white drop-shadow-sm" />
@@ -239,7 +233,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                     className={`border-b px-4 py-4 ${
                       tariff.highlighted
                         ? "border-white/18 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,247,230,0.04))]"
-                        : "border-orange-1/20 bg-[linear-gradient(135deg,#fff,#FFF4D1)]"
+                        : "border-orange-1/20 bg-[linear-gradient(135deg,#fff,#F2E5C5)]"
                     }`}
                   >
                     <p
@@ -251,7 +245,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                     </p>
                     <h3
                       className={`font-heading text-2xl font-black leading-none ${
-                        tariff.highlighted ? "text-[#FFF7E6]" : "text-text-primary"
+                        tariff.highlighted ? "text-[#F7EBCF]" : "text-text-primary"
                       }`}
                     >
                       {tariff.name}
@@ -307,12 +301,12 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                         <div key={feature} className="flex items-start gap-2.5">
                           <div
                             className={`mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ${
-                              tariff.highlighted ? "bg-[#FFF7E6]" : "bg-orange-1"
+                              tariff.highlighted ? "bg-[#F7EBCF]" : "bg-orange-1"
                             }`}
                           >
                             <Check
                               className={`h-2.5 w-2.5 ${
-                                tariff.highlighted ? "text-[#D63800]" : "text-white"
+                                tariff.highlighted ? "text-[#75162E]" : "text-white"
                               }`}
                             />
                           </div>
@@ -330,7 +324,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                     <div className="mt-auto pt-5">
                       <Button
                         type="button"
-                        variant="primary"
+                        variant={tariff.highlighted ? "cream" : "primary"}
                         className="group w-full px-3 text-sm"
                         onClick={() =>
                           setActiveWidget({
@@ -359,7 +353,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
           className="mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border-2 border-white/70 bg-white shadow-[0_18px_46px_rgba(40,25,10,0.14)]"
         >
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="flex flex-col justify-between bg-[linear-gradient(145deg,#7D0000,#D63800)] p-5 text-white lg:p-7">
+            <div className="flex flex-col justify-between bg-[linear-gradient(145deg,#550B18,#75162E)] p-5 text-white lg:p-7">
               <div>
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/16 ring-1 ring-white/25">
                   <Gift className="h-6 w-6" />
@@ -388,7 +382,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                   при оплате в течение 48 часов
                 </p>
               </div>
-              <div className="mt-6 rounded-xl bg-white px-4 py-3 text-[#7D0000]">
+              <div className="mt-6 rounded-xl bg-white px-4 py-3 text-[#550B18]">
                 <div className="flex items-start gap-2">
                   <Flame className="mt-0.5 h-5 w-5 flex-shrink-0" />
                   <div>
@@ -402,12 +396,12 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
             </div>
 
             <div className="grid gap-4 p-5 md:grid-cols-2 lg:p-7">
-              <div className="rounded-xl border border-orange-1/25 bg-[#FFF4D1] p-4">
+              <div className="rounded-xl border border-orange-1/25 bg-[#F2E5C5] p-4">
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <p className="text-xs font-black uppercase tracking-wide text-[#D63800]">
+                  <p className="text-xs font-black uppercase tracking-wide text-[#75162E]">
                     1-4 тариф
                   </p>
-                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-[#7D0000]">
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-[#550B18]">
                     5 бонусов
                   </span>
                 </div>
@@ -423,24 +417,24 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#7D0000]/20 bg-[linear-gradient(145deg,#fff,#FFF7E6)] p-4">
+              <div className="rounded-xl border border-[#550B18]/20 bg-[linear-gradient(145deg,#fff,#F7EBCF)] p-4">
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <p className="text-xs font-black uppercase tracking-wide text-[#7D0000]">
+                  <p className="text-xs font-black uppercase tracking-wide text-[#550B18]">
                     Только 2-4 тариф
                   </p>
-                  <span className="rounded-full bg-[#7D0000] px-2.5 py-1 text-xs font-black text-white">
+                  <span className="rounded-full bg-[#550B18] px-2.5 py-1 text-xs font-black text-white">
                     +4 бонуса
                   </span>
                 </div>
-                <div className="mb-3 rounded-lg border border-orange-1/25 bg-[#FFF4D1] px-3 py-2">
-                  <p className="text-xs font-black leading-snug text-[#7D0000]">
+                <div className="mb-3 rounded-lg border border-orange-1/25 bg-[#F2E5C5] px-3 py-2">
+                  <p className="text-xs font-black leading-snug text-[#550B18]">
                     Включает все 5 бонусов из блока 1-4 тарифов
                   </p>
                 </div>
                 <div className="space-y-2.5">
                   {advancedBonuses.map((bonus) => (
                     <div key={bonus} className="flex items-start gap-2">
-                      <Sparkles className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#D63800]" />
+                      <Sparkles className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#75162E]" />
                       <p className="text-sm font-semibold leading-snug text-text-primary">
                         {bonus}
                       </p>
@@ -458,11 +452,11 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.22 }}
-          className="mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border-2 border-[#7D0000]/35 bg-white shadow-[0_18px_46px_rgba(125,0,0,0.18)]"
+          className="mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border-2 border-[#550B18]/35 bg-white shadow-[0_18px_46px_rgba(85,11,24,0.18)]"
         >
           <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="p-5 lg:p-7">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#7D0000] px-4 py-2 text-sm font-black uppercase tracking-wide text-white">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#550B18] px-4 py-2 text-sm font-black uppercase tracking-wide text-white">
                 <Flame className="h-4 w-4" />
                 Челлендж
               </div>
@@ -470,9 +464,9 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                 {challengeItems.map((item) => (
                   <div
                     key={item}
-                    className="rounded-xl border border-orange-1/25 bg-[#FFF4D1] p-3"
+                    className="rounded-xl border border-orange-1/25 bg-[#F2E5C5] p-3"
                   >
-                    <Check className="mb-2 h-4 w-4 text-[#D63800]" />
+                    <Check className="mb-2 h-4 w-4 text-[#75162E]" />
                     <p className="text-sm font-bold leading-snug text-text-primary">{item}</p>
                   </div>
                 ))}
@@ -481,14 +475,14 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                 Разработаете свою продуктовую линейку и распакуете свою экспертность
               </p>
               <div className="mt-4 flex items-start gap-3 rounded-xl border border-orange-1/30 bg-white p-4 shadow-[0_8px_24px_rgba(40,25,10,0.06)]">
-                <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-[#D63800]" />
+                <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-[#75162E]" />
                 <p className="text-sm font-bold leading-relaxed text-text-primary">
                   Бонус на выбор: 1 месяц клуба или сессия с методологом команды/маркетологом
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col justify-center bg-[linear-gradient(145deg,#7D0000,#D63800)] p-5 text-white lg:p-7">
+            <div className="flex flex-col justify-center bg-[linear-gradient(145deg,#550B18,#75162E)] p-5 text-white lg:p-7">
               <p className="mb-2 text-sm font-black uppercase tracking-wide text-white/75">
                 Стоимость участия
               </p>
@@ -500,7 +494,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
               </div>
               <button
                 type="button"
-                className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#7D0000] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#FFF4D1]"
+                className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#550B18] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E5C5]"
                 onClick={() =>
                   setActiveWidget({
                     id: CHALLENGE_WIDGET_ID,
@@ -531,7 +525,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
               href={TELEGRAM_MANAGER_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] bg-[#7D0000] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] md:w-auto"
+              className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] md:w-auto"
             >
               Задать вопрос менеджеру
               <ArrowRight className="h-4 w-4" />
@@ -560,7 +554,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                 type="button"
                 aria-label="Закрыть"
                 onClick={() => setActiveWidget(null)}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7D0000] text-white transition-colors hover:bg-[#5E0000]"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#550B18] text-white transition-colors hover:bg-[#3A000C]"
               >
                 <X className="h-5 w-5" />
               </button>

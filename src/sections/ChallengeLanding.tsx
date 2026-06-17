@@ -51,11 +51,11 @@ export function ChallengeLanding() {
   }, [isWidgetOpen]);
 
   return (
-    <main className="min-h-screen bg-[#FFA700] px-4 py-8 text-text-primary sm:px-6 lg:flex lg:items-center lg:py-12">
-      <section className="mx-auto w-full max-w-6xl overflow-hidden rounded-2xl border-2 border-[#7D0000]/35 bg-white shadow-[0_18px_46px_rgba(125,0,0,0.18)]">
+    <main className="min-h-screen bg-[#550B18] px-4 py-8 text-text-primary sm:px-6 lg:flex lg:items-center lg:py-12">
+      <section className="mx-auto w-full max-w-6xl overflow-hidden rounded-2xl border-2 border-[#550B18]/35 bg-white shadow-[0_18px_46px_rgba(85,11,24,0.18)]">
         <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="p-5 sm:p-7 lg:p-9">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#7D0000] px-4 py-2 text-sm font-black uppercase tracking-wide text-white">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#550B18] px-4 py-2 text-sm font-black uppercase tracking-wide text-white">
               <Flame className="h-4 w-4" />
               Челлендж
             </div>
@@ -64,9 +64,9 @@ export function ChallengeLanding() {
               {challengeItems.map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl border border-orange-1/25 bg-[#FFF4D1] p-3 sm:p-4"
+                  className="rounded-xl border border-orange-1/25 bg-[#F2E5C5] p-3 sm:p-4"
                 >
-                  <Check className="mb-2 h-4 w-4 text-[#D63800]" />
+                  <Check className="mb-2 h-4 w-4 text-[#75162E]" />
                   <p className="text-sm font-bold leading-snug text-text-primary sm:text-base">
                     {item}
                   </p>
@@ -79,14 +79,14 @@ export function ChallengeLanding() {
             </p>
 
             <div className="mt-5 flex items-start gap-3 rounded-xl border border-orange-1/30 bg-white p-4 shadow-[0_8px_24px_rgba(40,25,10,0.06)]">
-              <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-[#D63800]" />
+              <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-[#75162E]" />
               <p className="text-sm font-bold leading-relaxed text-text-primary sm:text-base">
                 Бонус на выбор: 1 месяц клуба или сессия с методологом команды/маркетологом
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col justify-center bg-[linear-gradient(145deg,#7D0000,#D63800)] p-5 text-white sm:p-7 lg:p-9">
+          <div className="flex flex-col justify-center bg-[linear-gradient(145deg,#550B18,#75162E)] p-5 text-white sm:p-7 lg:p-9">
             <p className="mb-2 text-sm font-black uppercase tracking-wide text-white/75">
               Стоимость участия
             </p>
@@ -100,7 +100,7 @@ export function ChallengeLanding() {
             </div>
             <button
               type="button"
-              className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#7D0000] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#FFF4D1]"
+              className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#550B18] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E5C5]"
               onClick={() => setIsWidgetOpen(true)}
             >
               Записаться на челлендж
@@ -130,7 +130,7 @@ export function ChallengeLanding() {
                 type="button"
                 aria-label="Закрыть"
                 onClick={() => setIsWidgetOpen(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7D0000] text-white transition-colors hover:bg-[#5E0000]"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#550B18] text-white transition-colors hover:bg-[#3A000C]"
               >
                 <X className="h-5 w-5" />
               </button>

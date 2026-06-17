@@ -305,7 +305,7 @@ function AlumniEmployersBlock() {
         >
           <a
             href="#pricing"
-            className="inline-flex min-h-[60px] w-full max-w-[640px] items-center justify-center gap-3 rounded-[12px] bg-[#7D0000] px-7 py-[18px] text-center text-base font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(125,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5E0000] hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] sm:w-auto sm:px-9 sm:text-lg"
+            className="inline-flex min-h-[60px] w-full max-w-[640px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-7 py-[18px] text-center text-base font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:w-auto sm:px-9 sm:text-lg"
           >
             🎯 Пройти курс и получить востребованную профессию
             <ArrowRight className="h-5 w-5 flex-shrink-0" />
@@ -350,7 +350,7 @@ export function FamousAlumni() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="rounded-[22px] border border-orange-1/12 bg-white/86 px-3 py-5 text-center shadow-[0_12px_30px_rgba(40,25,10,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-1/45 hover:shadow-card-hover"
             >
-              <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-[#FFF9EF] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
+              <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-dashed border-orange-1 bg-[#F6E8C8] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-card-hover lg:h-32 lg:w-32">
                 {person.photo ? (
                   <Image
                     src={person.photo}

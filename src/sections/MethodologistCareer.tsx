@@ -36,7 +36,7 @@ const requests = [
 
 export function MethodologistCareer() {
   return (
-    <section id="methodologist-career" className="relative overflow-hidden bg-[#FFA700] py-10 lg:py-12">
+    <section id="methodologist-career" className="relative overflow-hidden bg-[#550B18] py-10 lg:py-12">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:31.jpg"
         variant="orange"

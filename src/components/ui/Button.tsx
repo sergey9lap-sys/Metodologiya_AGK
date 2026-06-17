@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "cream" | "secondary" | "ghost";
 type ButtonSize = "default" | "lg" | "sm";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,23 +11,31 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: cn(
-    "bg-[#7D0000]",
-    "text-white font-semibold uppercase",
-    "shadow-[0_6px_20px_rgba(125,0,0,0.25)]",
-    "motion-safe:hover:bg-[#5E0000] motion-safe:hover:shadow-[0_8px_24px_rgba(125,0,0,0.32)] motion-safe:hover:-translate-y-0.5",
+    "bg-[linear-gradient(135deg,#75162E_0%,#550B18_52%,#3A000C_100%)]",
+    "text-[#F7EBCF] font-semibold uppercase",
+    "shadow-button",
+    "motion-safe:hover:shadow-button-hover motion-safe:hover:-translate-y-0.5",
+    "motion-safe:active:translate-y-0 motion-safe:active:scale-100",
+    "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
+  ),
+  cream: cn(
+    "border border-[#F2E5C5]/70",
+    "bg-[#F2E5C5] text-[#550B18] font-semibold uppercase",
+    "shadow-[0_14px_34px_rgba(0,0,0,0.18)]",
+    "motion-safe:hover:bg-[#F7EBCF] motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)]",
     "motion-safe:active:translate-y-0 motion-safe:active:scale-100",
     "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),
   secondary: cn(
-    "border-2 border-[#7D0000]",
-    "bg-white text-[#7D0000] font-semibold uppercase",
-    "motion-safe:hover:bg-[#7D0000] motion-safe:hover:text-white motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_6px_20px_rgba(125,0,0,0.25)]",
+    "border-2 border-[#550B18]",
+    "bg-[#F7EBCF] text-[#550B18] font-semibold uppercase",
+    "motion-safe:hover:bg-[#550B18] motion-safe:hover:text-[#F7EBCF] motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-button",
     "motion-safe:active:translate-y-0",
     "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),
   ghost: cn(
     "text-text-secondary font-semibold",
-    "motion-safe:hover:text-orange-1",
+    "motion-safe:hover:text-orange-2",
     "motion-safe:transition-colors motion-safe:duration-200"
   ),
 };
@@ -45,7 +53,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           "inline-flex items-center justify-center",
-          "rounded-[12px] font-semibold tracking-wide",
+          "rounded-[12px] font-semibold tracking-wide cursor-pointer",
           "focus-ring",
           variantStyles[variant],
           sizeStyles[size],

@@ -16,7 +16,7 @@ const items = [
 
 export function EntrepreneurResults() {
   return (
-    <section id="entrepreneur-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
+    <section id="entrepreneur-results" className="relative overflow-hidden bg-[#F2E5C5] py-10 lg:py-12">
       <Container className="relative z-20 space-y-6 lg:space-y-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="mb-4 font-heading text-3xl font-black leading-tight text-text-primary lg:text-4xl">
@@ -28,7 +28,7 @@ export function EntrepreneurResults() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:p-8">
+        <div className="relative overflow-hidden rounded-[28px] bg-[#550B18] p-6 shadow-card lg:p-8">
           <SectionBackground
             src="/background/IMAGE 2026-05-05 01:30:40.jpg"
             variant="orange"
@@ -75,7 +75,7 @@ export function EntrepreneurResults() {
 
             <div className="pt-1 text-center">
               <a href="#pricing">
-                <Button variant="primary" size="lg" className="min-w-[280px] max-w-full">
+                <Button variant="cream" size="lg" className="min-w-[280px] max-w-full">
                   Пройти курс и создать систему обучения
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

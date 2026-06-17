@@ -22,9 +22,9 @@ const outcomes = [
 
 export function ExpertResults() {
   return (
-    <section id="expert-results" className="relative overflow-hidden bg-[#F8F5EF] py-10 lg:py-12">
+    <section id="expert-results" className="relative overflow-hidden bg-[#F2E5C5] py-10 lg:py-12">
       <Container className="relative z-20 space-y-8 lg:space-y-10">
-        <div className="relative overflow-hidden space-y-6 rounded-[28px] bg-[#FFA700] p-6 shadow-card lg:space-y-7 lg:p-8">
+        <div className="relative overflow-hidden space-y-6 rounded-[28px] bg-[#550B18] p-6 shadow-card lg:space-y-7 lg:p-8">
           <SectionBackground
             src="/background/IMAGE 2026-05-05 01:30:38.jpg"
             variant="orange"
@@ -32,7 +32,7 @@ export function ExpertResults() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-[#C77E00] via-[#C77E00] to-[#C77E00]/0"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-[#3A000C] via-[#3A000C] to-[#3A000C]/0"
           />
           <div className="relative z-20 space-y-6 lg:space-y-7">
             <div className="mx-auto max-w-5xl text-center">
@@ -68,11 +68,11 @@ export function ExpertResults() {
           </div>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-7 rounded-b-[28px] bg-[#C77E00]"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-7 rounded-b-[28px] bg-[#3A000C]"
           />
         </div>
 
-        <div className="mx-auto max-w-6xl space-y-5 rounded-[28px] bg-[#FFA700] p-5 shadow-card lg:p-6">
+        <div className="mx-auto max-w-6xl space-y-5 rounded-[28px] bg-[#550B18] p-5 shadow-card lg:p-6">
           <div className="rounded-2xl border-2 border-white bg-white p-4 shadow-sm lg:p-5">
             <p className="text-body italic leading-relaxed text-text-primary">
               Вы выходите с курса с готовым продуктом: курс / тренинг / мастермайнд / наставничество, который:
@@ -106,7 +106,7 @@ export function ExpertResults() {
           <div className="space-y-4">
             <div className="pt-1 text-center">
               <a href="#pricing">
-                <Button variant="primary" size="lg" className="min-w-[280px] max-w-full">
+                <Button variant="cream" size="lg" className="min-w-[280px] max-w-full">
                   Пройти курс и создать свой продукт
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

@@ -13,7 +13,7 @@ const fadeInUp = {
 const corporations = [
   {
     name: "СБЕР",
-    logo: "https://optim.tildacdn.com/tild3031-3333‑4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
+    logo: "https://optim.tildacdn.com/tild3031-3333-4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
     logoClassName: "h-14 max-w-[190px]",
   },
   {

@@ -45,19 +45,19 @@ const employers = [
   },
   {
     name: "Нетология",
-    logo: "https://static.tildacdn.com/tild6230-3633‑4137-a566-653531656136/image_19.svg",
+    logo: "https://static.tildacdn.com/tild6230-3633-4137-a566-653531656136/image_19.svg",
     logoClassName: "h-10 max-w-[190px]",
     description: "Образовательная платформа",
   },
   {
     name: "Академия переговоров Игоря Рызова",
-    logo: "https://static.tildacdn.com/tild3338-3363‑4339-b362-343265616431/image_19_2.svg",
+    logo: "https://static.tildacdn.com/tild3338-3363-4339-b362-343265616431/image_19_2.svg",
     logoClassName: "h-14 max-w-[190px]",
     description: "Академия переговоров",
   },
   {
     name: "MIRA SCHOOL",
-    logo: "https://optim.tildacdn.com/tild6138-6533‑4562-a565-636130656563/-/resize/111x/-/format/webp/744650.png.webp",
+    logo: "https://optim.tildacdn.com/tild6138-6533-4562-a565-636130656563/-/resize/111x/-/format/webp/744650.png.webp",
     logoClassName: "h-14 max-w-[110px]",
     description: "Онлайн-школа маркетинга",
   },
@@ -69,7 +69,7 @@ const employers = [
   },
   {
     name: "Сбер",
-    logo: "https://optim.tildacdn.com/tild3031-3333‑4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
+    logo: "https://optim.tildacdn.com/tild3031-3333-4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
     logoClassName: "h-12 max-w-[170px]",
     description: "Корпоративное обучение",
   },
@@ -132,7 +132,7 @@ const alumni = [
     handle: "@leyli_yalunina",
     audience: "131 тыс. подписчиков",
     photo:
-      "https://optim.tildacdn.com/tild6632-3633‑4366-a439-356432323432/-/resize/180x/-/format/webp/image_21.png.webp",
+      "https://optim.tildacdn.com/tild6632-3633-4366-a439-356432323432/-/resize/180x/-/format/webp/image_21.png.webp",
   },
   {
     initials: "НГ",
@@ -204,7 +204,7 @@ const alumni = [
     handle: "@galya.melnikova",
     audience: "155 тыс. подписчиков",
     photo:
-      "https://optim.tildacdn.com/tild6365-3063‑4666-a230-343239373539/-/resize/180x/-/format/webp/image_27_3.png.webp",
+      "https://optim.tildacdn.com/tild6365-3063-4666-a230-343239373539/-/resize/180x/-/format/webp/image_27_3.png.webp",
   },
   {
     initials: "ИН",

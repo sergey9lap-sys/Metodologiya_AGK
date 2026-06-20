@@ -27,6 +27,8 @@ const chapters = [
     title: "Эксперт",
     heading:
       "Вы — эксперт. Ваши знания стоят миллионы. Но без методологии они так и останутся в вашей голове",
+    mobileRole: "Вы эксперт",
+    mobileCard: "/academy/mobile-cards/expert-card.png",
     subtitle:
       "Курс «Методология» превращает хаос вашей экспертизы в продукт, который ученики проходят до конца и приводят друзей.",
     image: "/эксперт.png",
@@ -55,6 +57,8 @@ const chapters = [
     roman: "Глава II",
     title: "Методолог",
     heading: "Методолог — профессия № 1 в EdTech 2026",
+    mobileRole: "Вы методолог",
+    mobileCard: "/academy/mobile-cards/methodologist-card.png",
     subtitle:
       "Вы научитесь проектировать образовательные продукты для экспертов и бизнеса. Старт в профессии — с первого месяца после обучения.",
     image: "/будущий методолог.png",
@@ -93,6 +97,8 @@ const chapters = [
     roman: "Глава III",
     title: "Предприниматель",
     heading: "Предприниматель без методологии — как генерал без карты",
+    mobileRole: "Вы предприниматель",
+    mobileCard: "/academy/mobile-cards/entrepreneur-card.png",
     subtitle:
       "Методология — прокачка системного мышления. Наводит порядок в процессах, команде и продуктах.",
     image: "/предприниматель.png",
@@ -455,106 +461,182 @@ function ChapterResult({ chapter }: { chapter: Chapter }) {
   );
 }
 
-function MobileLibraryScene() {
+function MobileRoleCard({
+  chapter,
+  index,
+  isActive,
+  isResultOpen,
+  onOpen,
+  onToggleResult,
+}: {
+  chapter: Chapter;
+  index: number;
+  isActive: boolean;
+  isResultOpen: boolean;
+  onOpen: () => void;
+  onToggleResult: () => void;
+}) {
   return (
-    <div className="relative z-20 md:hidden">
-      {chapters.map((chapter, index) => (
-        <section key={chapter.key} className="academy-mobile-chapter relative min-h-[165vh]">
-          <SectionBackground
-            src="/background/IMAGE 2026-05-05 01:30:33.jpg"
-            variant="orange"
-            position="object-center"
-            className="opacity-60 saturate-[0.75]"
-          />
-          <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(31,0,7,0.88),rgba(85,11,24,0.66)_48%,rgba(20,0,5,0.9))]" />
-
-          <div className="sticky top-0 z-20 flex min-h-screen flex-col justify-center px-4 py-8">
-            <motion.div
-              initial={{ opacity: 0, y: 24, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.55, ease: "easeOut" }}
-              className="relative mx-auto h-[210px] w-full max-w-[260px]"
-            >
-              <Image
-                src={chapter.image}
-                alt={chapter.title}
-                fill
-                sizes="260px"
-                priority={index === 0}
-                className="object-contain object-bottom drop-shadow-[0_18px_28px_rgba(0,0,0,0.36)]"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.45, ease: "easeOut", delay: 0.08 }}
-              className="mb-4 text-center"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D6AB57]">
-                Библиотека Академии
+    <motion.div
+      initial={{ opacity: 0, y: 34, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.08 + index * 0.1 }}
+      className="relative"
+    >
+      <div className="[perspective:1400px]">
+        <motion.div
+          animate={{ rotateY: isActive ? 180 : 0 }}
+          transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+          className={`relative transition-[min-height] duration-500 [transform-style:preserve-3d] ${
+            isActive ? "min-h-[820px]" : "min-h-[560px]"
+          }`}
+        >
+          <button
+            type="button"
+            onClick={onOpen}
+            aria-expanded={isActive}
+            className="absolute inset-0 block w-full overflow-hidden rounded-[28px] border border-[#D6AB57]/56 bg-[#210007] text-left shadow-[0_24px_58px_rgba(0,0,0,0.34),inset_0_0_0_1px_rgba(247,235,207,0.12)] [backface-visibility:hidden]"
+          >
+            <Image
+              src={chapter.mobileCard}
+              alt={chapter.title}
+              fill
+              sizes="(max-width: 767px) 92vw, 360px"
+              className="object-cover"
+              priority={index === 0}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,0,7,0.08)_0%,rgba(32,0,7,0.05)_48%,rgba(32,0,7,0.82)_100%)]" />
+            <div className="absolute inset-x-5 bottom-5 rounded-[22px] border border-[#D6AB57]/54 bg-[#210007]/78 p-4 text-center shadow-[0_12px_28px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-sm">
+              <p className="font-heading text-2xl font-black uppercase leading-none text-[#F7EBCF]">
+                {chapter.title}
               </p>
-              <h2 className="mt-1 font-heading text-2xl font-black uppercase leading-tight text-[#F7EBCF]">
-                {chapter.roman} — {chapter.title}
-              </h2>
-            </motion.div>
+              <p className="mt-2 text-xs font-black uppercase tracking-[0.13em] text-[#D6AB57]">
+                Нажмите, чтобы увидеть запросы
+              </p>
+            </div>
+          </button>
 
-            <motion.div
-              initial={{ opacity: 0, y: 26 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.22 }}
-              transition={{ duration: 0.55, ease: "easeOut", delay: 0.16 }}
-              className="academy-mobile-page mx-auto w-full max-w-[430px]"
-            >
-              <div className="academy-mobile-page-flip" />
-              <motion.div
-                initial={{ clipPath: "inset(0 0 100% 0)", scaleY: 0.12 }}
-                whileInView={{ clipPath: "inset(0 0 0% 0)", scaleY: 1 }}
-                viewport={{ once: true, amount: 0.28 }}
-                transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
-                className="origin-top"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.28 }}
-                  transition={{ duration: 0.38, ease: "easeOut", delay: 0.72 }}
-                >
-                  <p className="font-heading text-xl font-black text-[#550B18]">
-                    Методология решает запросы:
-                  </p>
-                  <div className="mt-4 space-y-2">
-                    {chapter.requests.map((item, itemIndex) => (
-                      <motion.div
-                        key={item}
-                        initial={{ opacity: 0, y: 8 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.4 }}
-                        transition={{ duration: 0.28, delay: 0.78 + itemIndex * 0.035 }}
-                        className="academy-ink-row text-sm"
-                      >
-                        <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
-                        <p>{formatTypography(item)}</p>
-                      </motion.div>
-                    ))}
+          <div className="absolute inset-0 overflow-hidden rounded-[28px] border border-[#D6AB57]/54 bg-[#F5DEAB] p-5 text-[#3A000C] shadow-[0_24px_58px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.64)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_9%,rgba(255,255,255,0.5),transparent_12rem),radial-gradient(circle_at_82%_82%,rgba(117,22,46,0.08),transparent_13rem),repeating-linear-gradient(105deg,rgba(85,11,24,0.026)_0_1px,transparent_1px_10px)]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-3 rounded-[22px] border border-[#75162E]/18"
+            />
+            <div className="relative z-10">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B98534]">
+                {chapter.roman}
+              </p>
+              <h3 className="mt-1 font-heading text-3xl font-black uppercase leading-tight text-[#550B18]">
+                {chapter.mobileRole}
+              </h3>
+              <p className="mt-4 font-heading text-xl font-black leading-tight text-[#550B18]">
+                Методология решает запросы
+              </p>
+              <div className="mt-4 space-y-2.5">
+                {chapter.requests.map((item) => (
+                  <div key={item} className="academy-ink-row text-[14px] leading-snug">
+                    <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
+                    <p>{formatTypography(item)}</p>
                   </div>
+                ))}
+              </div>
 
-                  <div className="academy-page-divider" />
-                  <p className="font-heading text-xl font-black text-[#550B18]">
-                    <ChapterHeading chapter={chapter} />
-                  </p>
-                  <p className="mt-2 text-sm italic leading-relaxed text-[#5A2730]">
-                    {formatTypography(chapter.subtitle)}
-                  </p>
-                  <ChapterResult chapter={chapter} />
-                </motion.div>
-              </motion.div>
-            </motion.div>
+              <Button
+                type="button"
+                variant="secondary"
+                size="sm"
+                className="mt-5 w-full"
+                onClick={onToggleResult}
+              >
+                Показать, что изменится
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
-        </section>
-      ))}
-    </div>
+        </motion.div>
+      </div>
+
+      <AnimatePresence>
+        {isResultOpen ? (
+          <motion.div
+            initial={{ opacity: 0, height: 0, y: -10 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -10 }}
+            transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="mt-4 rounded-[24px] border border-[#D6AB57]/46 bg-[#F8EBCB] p-5 text-[#3A000C] shadow-[0_18px_42px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.62)]">
+              <p className="font-heading text-xl font-black leading-tight text-[#550B18]">
+                <ChapterHeading chapter={chapter} />
+              </p>
+              <p className="mt-3 text-sm italic leading-relaxed text-[#5A2730]">
+                {formatTypography(chapter.subtitle)}
+              </p>
+              <ChapterResult chapter={chapter} />
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+function MobileLibraryScene() {
+  const [activeKey, setActiveKey] = useState<string | null>(null);
+  const [resultKey, setResultKey] = useState<string | null>(null);
+
+  const openCard = (key: string) => {
+    setActiveKey((current) => {
+      if (current === key) return current;
+      setResultKey(null);
+      return key;
+    });
+  };
+
+  return (
+    <section className="relative z-20 overflow-hidden bg-[#210007] px-4 py-12 md:hidden">
+      <SectionBackground
+        src="/background/IMAGE 2026-05-05 01:30:33.jpg"
+        variant="orange"
+        position="object-center"
+        className="opacity-58 saturate-[0.78]"
+      />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_28%_12%,rgba(214,171,87,0.18),transparent_16rem),linear-gradient(180deg,rgba(31,0,7,0.88),rgba(85,11,24,0.7)_46%,rgba(20,0,5,0.92))]" />
+
+      <div className="relative z-20 mx-auto max-w-[430px]">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.48, ease: "easeOut" }}
+          className="mb-7 text-center"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D6AB57]">
+            Библиотека Академии
+          </p>
+          <h2 className="mt-2 font-heading text-3xl font-black uppercase leading-tight text-[#F7EBCF]">
+            Кто вы сейчас?
+          </h2>
+        </motion.div>
+
+        <div className="space-y-6">
+          {chapters.map((chapter, index) => (
+            <MobileRoleCard
+              key={chapter.key}
+              chapter={chapter}
+              index={index}
+              isActive={activeKey === chapter.key}
+              isResultOpen={resultKey === chapter.key}
+              onOpen={() => openCard(chapter.key)}
+              onToggleResult={() => setResultKey((current) => (current === chapter.key ? null : chapter.key))}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -68,7 +68,12 @@ function MythTablet({
   const [isOpening, setIsOpening] = useState(false);
 
   const revealTablet = useCallback(() => {
-    if (revealed || isOpening) return;
+    if (isOpening) return;
+
+    if (revealed) {
+      setRevealed(false);
+      return;
+    }
 
     if (shouldReduceMotion) {
       setRevealed(true);
@@ -129,6 +134,9 @@ function MythTablet({
           Правда
         </div>
         <p className="academy-truth-text">{formatTypography(truth)}</p>
+        <span className="academy-myth-verdict">
+          Вернуться к мифу →
+        </span>
       </div>
     </motion.button>
   );

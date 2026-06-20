@@ -202,10 +202,13 @@ export function Hero() {
                 </motion.div>
               </div>
 
+              <h1 className="font-heading text-[clamp(31px,8.4vw,36px)] font-black leading-[0.92] tracking-normal text-text-primary uppercase sm:text-6xl md:text-7xl lg:hidden">
+                МЕТОДОЛОГИЯ
+              </h1>
               <h1
                 ref={titleRef}
                 style={{ visibility: titleReady ? "visible" : "hidden" }}
-                className="hero-title whitespace-nowrap font-heading text-[clamp(36px,10.4vw,42px)] font-black leading-[0.9] tracking-normal text-text-primary uppercase sm:text-6xl md:text-7xl lg:text-[86px] xl:text-[98px]"
+                className="hero-title hidden whitespace-nowrap font-heading font-black leading-[0.9] tracking-normal text-text-primary uppercase lg:block lg:text-[86px] xl:text-[98px]"
               >
                 МЕТОД
                 <span className="text-gradient-orange">ОЛОГИЯ</span>

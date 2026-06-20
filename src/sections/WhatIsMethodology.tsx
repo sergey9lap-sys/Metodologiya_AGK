@@ -109,10 +109,9 @@ export function WhatIsMethodology() {
           gsap.set(threadRef.current, { scaleY: 0, transformOrigin: "top center" });
           gsap.set(buttonRef.current, { opacity: 0, y: 14 });
           gsap.set(scrolls, {
-            opacity: 0.96,
-            scaleY: 0.12,
-            transformOrigin: "top center",
-            filter: "blur(3px)",
+            scaleX: 0.09,
+            opacity: 0.88,
+            transformOrigin: "50% 50%",
           });
           gsap.set(titles, { opacity: 0, y: 8, filter: "blur(4px)" });
           gsap.set(descriptionWords, { opacity: 0, y: 6, filter: "blur(3px)" });
@@ -136,7 +135,7 @@ export function WhatIsMethodology() {
             timeline
               .to(
                 scroll,
-                { opacity: 1, scaleY: 1, filter: "blur(0px)", duration: 0.54 },
+                { opacity: 1, scaleX: 1, duration: 0.58 },
                 index === 0 ? "-=0.28" : "-=0.05"
               )
               .to(titles[index], { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22 }, "-=0.05")

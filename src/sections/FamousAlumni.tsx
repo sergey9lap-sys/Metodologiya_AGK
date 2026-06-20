@@ -75,6 +75,40 @@ const employers = [
   },
 ];
 
+function EmployerLogo({
+  employer,
+}: {
+  employer: {
+    name: string;
+    logo: string;
+    logoClassName: string;
+    description: string;
+  };
+}) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div className="flex min-h-[58px] w-full max-w-[190px] items-center justify-center rounded-[14px] border border-[#75162E]/22 bg-[#F7EBCF]/74 px-4 py-3 text-center font-heading text-lg font-black leading-tight text-[#75162E] shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_8px_20px_rgba(85,11,24,0.08)]">
+        {employer.name}
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={employer.logo}
+      alt={employer.name}
+      width={220}
+      height={88}
+      className={`object-contain drop-shadow-sm ${employer.logoClassName}`}
+      loading="lazy"
+      unoptimized={employer.logo.startsWith("http")}
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 const alumni = [
   {
     initials: "ИА",
@@ -287,14 +321,7 @@ function AlumniEmployersBlock() {
               className="flex min-h-[128px] items-center justify-center px-3 py-3 text-base font-bold text-text-primary"
             >
               <div className="flex flex-col items-center gap-3">
-                <Image
-                  src={employer.logo}
-                  alt={employer.name}
-                  width={220}
-                  height={88}
-                  className={`object-contain drop-shadow-sm ${employer.logoClassName}`}
-                  loading="lazy"
-                />
+                <EmployerLogo employer={employer} />
                 <span className="max-w-[220px] text-center text-sm font-semibold leading-tight text-text-secondary">
                   {employer.description}
                 </span>

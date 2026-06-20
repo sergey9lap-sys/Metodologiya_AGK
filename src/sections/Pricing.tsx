@@ -248,7 +248,7 @@ export function Pricing({ title = "Тарифы", showStartDate = true }: Pricin
                   </>
                 )}
                 {tariff.highlighted && (
-                  <div className="absolute -top-5 right-3 z-30 flex items-center gap-1.5 rounded-full border border-[#E0BE65]/80 bg-[#550B18] px-3 py-2 pl-2 text-[11px] font-black uppercase tracking-wide text-[#F7EBCF] shadow-[0_12px_30px_rgba(85,11,24,0.44),0_0_18px_rgba(224,190,101,0.22)] ring-2 ring-[#F7EBCF]/75">
+                  <div className="absolute right-3 top-3 z-30 flex items-center gap-1.5 rounded-full border border-[#E0BE65]/80 bg-[#550B18] px-3 py-2 pl-2 text-[11px] font-black uppercase tracking-wide text-[#F7EBCF] shadow-[0_12px_30px_rgba(85,11,24,0.44),0_0_18px_rgba(224,190,101,0.22)] ring-2 ring-[#F7EBCF]/75 lg:-top-5">
                     <span className="relative flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_25%,#FFFFFF_0%,#F7EBCF_32%,#F2E5C5_72%,#75162E_100%)] shadow-[0_0_18px_rgba(247,235,207,0.72)]">
                       <span className="absolute inset-0 rounded-full bg-white/30 blur-[1px]" />
                       <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />

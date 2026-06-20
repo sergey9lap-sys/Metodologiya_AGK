@@ -509,33 +509,48 @@ function MobileLibraryScene() {
               className="academy-mobile-page mx-auto w-full max-w-[430px]"
             >
               <div className="academy-mobile-page-flip" />
-              <p className="font-heading text-xl font-black text-[#550B18]">
-                Методология решает запросы:
-              </p>
-              <div className="mt-4 space-y-2">
-                {chapter.requests.map((item, itemIndex) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, y: 8 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.28, delay: itemIndex * 0.035 }}
-                    className="academy-ink-row text-sm"
-                  >
-                    <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
-                    <p>{formatTypography(item)}</p>
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div
+                initial={{ clipPath: "inset(0 0 100% 0)", scaleY: 0.12 }}
+                whileInView={{ clipPath: "inset(0 0 0% 0)", scaleY: 1 }}
+                viewport={{ once: true, amount: 0.28 }}
+                transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+                className="origin-top"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.28 }}
+                  transition={{ duration: 0.38, ease: "easeOut", delay: 0.72 }}
+                >
+                  <p className="font-heading text-xl font-black text-[#550B18]">
+                    Методология решает запросы:
+                  </p>
+                  <div className="mt-4 space-y-2">
+                    {chapter.requests.map((item, itemIndex) => (
+                      <motion.div
+                        key={item}
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                        transition={{ duration: 0.28, delay: 0.78 + itemIndex * 0.035 }}
+                        className="academy-ink-row text-sm"
+                      >
+                        <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
+                        <p>{formatTypography(item)}</p>
+                      </motion.div>
+                    ))}
+                  </div>
 
-              <div className="academy-page-divider" />
-              <p className="font-heading text-xl font-black text-[#550B18]">
-                <ChapterHeading chapter={chapter} />
-              </p>
-              <p className="mt-2 text-sm italic leading-relaxed text-[#5A2730]">
-                {formatTypography(chapter.subtitle)}
-              </p>
-              <ChapterResult chapter={chapter} />
+                  <div className="academy-page-divider" />
+                  <p className="font-heading text-xl font-black text-[#550B18]">
+                    <ChapterHeading chapter={chapter} />
+                  </p>
+                  <p className="mt-2 text-sm italic leading-relaxed text-[#5A2730]">
+                    {formatTypography(chapter.subtitle)}
+                  </p>
+                  <ChapterResult chapter={chapter} />
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
         </section>

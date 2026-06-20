@@ -153,8 +153,8 @@ export function CourseSchedule() {
           {schedule.map((tariff, index) => (
             <motion.div
               key={tariff.title}
-              initial={{ opacity: 0, y: 28, scaleY: 0.86 }}
-              whileInView={{ opacity: 1, y: 0, scaleY: 1 }}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.18 }}
               transition={{
                 duration: 0.62,
@@ -172,14 +172,27 @@ export function CourseSchedule() {
                 className="absolute bottom-2 left-1 right-1 z-20 h-9 rounded-full border border-[#7C4B20]/24 bg-[linear-gradient(180deg,#B98534,#F2D18B_38%,#8F5D24_72%,#D6AB57)] shadow-[0_10px_20px_rgba(58,0,12,0.18),inset_0_1px_0_rgba(255,255,255,0.32)]"
               />
 
-              <div className={scrollBodyClassName}>
-                <div className="relative z-10 mb-6 flex justify-center">
+              <motion.div
+                initial={{ clipPath: "inset(0 0 100% 0)", scaleY: 0.22 }}
+                whileInView={{ clipPath: "inset(0 0 0% 0)", scaleY: 1 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1], delay: 0.28 + index * 0.14 }}
+                className={`${scrollBodyClassName} origin-top`}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.18 }}
+                  transition={{ duration: 0.35, ease: "easeOut", delay: 0.74 + index * 0.14 }}
+                  className="relative z-10"
+                >
+                <div className="mb-6 flex justify-center">
                   <div className="inline-flex rounded-[14px] border border-[#D6AB57]/40 bg-[radial-gradient(circle_at_32%_22%,rgba(255,255,255,0.2),transparent_30%),linear-gradient(145deg,#75162E,#550B18_54%,#3A000C)] px-4 py-2 text-center text-sm font-black uppercase leading-tight text-[#F7E7B8] shadow-[0_10px_22px_rgba(85,11,24,0.2),inset_0_1px_0_rgba(255,255,255,0.18)]">
                     {tariff.title}
                   </div>
                 </div>
 
-                <div className="relative z-10">
+                <div>
                   <span
                     aria-hidden="true"
                     className="absolute bottom-2 left-[9px] top-2 w-px bg-[linear-gradient(180deg,rgba(117,22,46,0),rgba(117,22,46,0.42),rgba(214,171,87,0.38),rgba(117,22,46,0))]"
@@ -221,7 +234,8 @@ export function CourseSchedule() {
                     ))}
                   </div>
                 </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

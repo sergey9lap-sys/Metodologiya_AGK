@@ -225,6 +225,24 @@ export function Hero() {
             </div>
 
             <motion.div
+              initial={{ opacity: 0, y: 18, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.58, ease: "easeOut", delay: 0.24 }}
+              className="relative mx-auto my-4 h-[250px] w-full max-w-[360px] overflow-hidden rounded-[22px] border border-[#D6AB57]/42 bg-[#F7EBCF]/62 shadow-[0_18px_42px_rgba(85,11,24,0.16),inset_0_1px_0_rgba(255,255,255,0.62)] sm:h-[290px] lg:hidden"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,236,181,0.45),transparent_15rem),linear-gradient(180deg,rgba(242,229,197,0.08),rgba(85,11,24,0.12))]" />
+              <Image
+                src="/images/blok-1.jpg"
+                alt="Александра Горева-Куртышева"
+                fill
+                priority
+                sizes="(max-width: 640px) 360px, 46vw"
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_62%,rgba(242,229,197,0.92)_100%)]" />
+            </motion.div>
+
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.34 }}

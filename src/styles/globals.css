@@ -621,14 +621,15 @@
     position: relative;
     overflow: hidden;
     border-radius: 22px;
-    padding: 24px 22px;
+    padding: 28px 22px 24px;
     background:
       radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.48), transparent 12rem),
-      linear-gradient(100deg, #E8C98B 0%, #F8E6BA 7%, #F5DEAB 52%, #FBECC8 94%, #D2A150 100%);
+      linear-gradient(90deg, #D2A150 0%, #F8E6BA 7%, #F5DEAB 47%, #7E4A1D 49%, #2E160A 50%, #7E4A1D 51%, #FBECC8 54%, #F8E6BA 94%, #D2A150 100%);
     box-shadow:
       0 26px 58px rgba(0, 0, 0, 0.3),
       inset 0 0 0 1px rgba(85, 11, 24, 0.15);
     clip-path: polygon(1.5% 2%, 18% 0%, 38% 2%, 58% 0.6%, 82% 2%, 98.5% 1%, 99% 98%, 76% 96%, 52% 99%, 28% 96%, 1% 98%);
+    transform-origin: top center;
   }
 
   .academy-mobile-page::before {
@@ -638,8 +639,8 @@
     pointer-events: none;
     background:
       repeating-linear-gradient(0deg, rgba(85, 11, 24, 0.035) 0 1px, transparent 1px 8px),
-      linear-gradient(90deg, transparent 48%, rgba(85, 11, 24, 0.13) 50%, transparent 52%);
-    opacity: 0.56;
+      linear-gradient(90deg, rgba(85, 11, 24, 0.08), transparent 12%, transparent 45%, rgba(85, 11, 24, 0.3) 50%, transparent 55%, transparent 88%, rgba(85, 11, 24, 0.08));
+    opacity: 0.64;
   }
 
   .academy-mobile-page > * {

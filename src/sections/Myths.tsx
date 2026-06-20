@@ -62,7 +62,7 @@ function MythTablet({
   index: number;
 }) {
   const ref = useRef<HTMLButtonElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.48 });
+  const isInView = useInView(ref, { once: true, amount: 0.18 });
   const shouldReduceMotion = useReducedMotion();
   const [revealed, setRevealed] = useState(false);
   const [isOpening, setIsOpening] = useState(false);
@@ -78,10 +78,10 @@ function MythTablet({
     setIsOpening(true);
     window.setTimeout(() => {
       setRevealed(true);
-    }, 150);
+    }, 90);
     window.setTimeout(() => {
       setIsOpening(false);
-    }, 560);
+    }, 380);
   }, [isOpening, revealed, shouldReduceMotion]);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ function MythTablet({
       return;
     }
 
-    const timer = window.setTimeout(revealTablet, 900);
+    const timer = window.setTimeout(revealTablet, 260);
     return () => window.clearTimeout(timer);
   }, [index, isInView, isOpening, revealTablet, revealed, shouldReduceMotion]);
 
@@ -105,8 +105,8 @@ function MythTablet({
       initial={{ opacity: 0, y: 18, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-      viewport={{ once: true, amount: 0.28 }}
-      transition={{ duration: 0.42, ease: "easeOut", delay: index * 0.035 }}
+      viewport={{ once: true, amount: 0.16 }}
+      transition={{ duration: 0.36, ease: "easeOut", delay: index * 0.02 }}
       className="academy-myth-tablet"
       data-revealed={revealed ? "true" : "false"}
       data-opening={isOpening ? "true" : "false"}

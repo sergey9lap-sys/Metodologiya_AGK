@@ -43,22 +43,22 @@ const roadmap = [
 const romanNumerals = ["I", "II", "III", "IV", "V"];
 
 const desktopPositions = [
-  { x: "1%", y: "66%", rotate: "-3deg" },
-  { x: "22%", y: "55%", rotate: "2deg" },
-  { x: "41%", y: "43%", rotate: "-2deg" },
-  { x: "60%", y: "31%", rotate: "2deg" },
-  { x: "77%", y: "18%", rotate: "-2deg" },
+  { x: "0%", y: "70%", rotate: "-3deg" },
+  { x: "23%", y: "58%", rotate: "2deg" },
+  { x: "45%", y: "45%", rotate: "-2deg" },
+  { x: "66%", y: "30%", rotate: "2deg" },
+  { x: "82%", y: "14%", rotate: "-2deg" },
 ];
 
 const pathSegments = [
-  { x: "17%", y: "67%", width: "17%", rotate: "-18deg" },
-  { x: "37%", y: "55%", width: "16%", rotate: "-20deg" },
-  { x: "56%", y: "43%", width: "16%", rotate: "-21deg" },
-  { x: "73%", y: "31%", width: "15%", rotate: "-23deg" },
+  { x: "18%", y: "70%", width: "18%", rotate: "-18deg" },
+  { x: "40%", y: "58%", width: "18%", rotate: "-20deg" },
+  { x: "61%", y: "45%", width: "18%", rotate: "-21deg" },
+  { x: "78%", y: "30%", width: "14%", rotate: "-23deg" },
 ];
 
 const plaqueClassName =
-  "roadmap-plaque group relative isolate overflow-hidden border border-[#D6AB57]/46 bg-[#B98534] p-4 text-[#2D0B0F] opacity-0 shadow-[0_18px_38px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-16px_30px_rgba(58,0,12,0.16)] transition-all duration-300 [clip-path:polygon(3%_9%,13%_4%,30%_6%,46%_3%,64%_6%,85%_4%,98%_9%,99%_89%,87%_96%,69%_93%,51%_97%,32%_93%,14%_97%,1%_89%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.22),transparent_28%),radial-gradient(circle_at_82%_82%,rgba(85,11,24,0.22),transparent_30%),repeating-linear-gradient(105deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_10px),linear-gradient(135deg,#8F5D24,#D6AB57_32%,#A66B2C_64%,#E0BE65)] after:absolute after:inset-[7px] after:-z-10 after:border after:border-[#75162E]/22 after:[clip-path:polygon(3%_10%,14%_6%,31%_8%,47%_5%,64%_8%,84%_6%,97%_10%,98%_88%,86%_94%,69%_91%,51%_95%,33%_91%,15%_95%,2%_88%)] hover:-translate-y-1 hover:border-[#F0CB74]/70 hover:shadow-[0_24px_54px_rgba(85,11,24,0.34),inset_0_1px_0_rgba(255,255,255,0.34),inset_0_-12px_24px_rgba(58,0,12,0.12)]";
+  "roadmap-plaque group relative isolate overflow-hidden border border-[#D6AB57]/46 border-l-4 border-l-[#D6AB57] bg-[#B98534] p-4 pl-5 text-[#2D0B0F] opacity-0 shadow-[0_18px_38px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-16px_30px_rgba(58,0,12,0.16)] transition-all duration-300 [clip-path:polygon(0_0,92%_0,100%_50%,92%_100%,0_100%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.22),transparent_28%),radial-gradient(circle_at_82%_82%,rgba(85,11,24,0.22),transparent_30%),repeating-linear-gradient(105deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_10px),linear-gradient(135deg,#8F5D24,#D6AB57_32%,#A66B2C_64%,#E0BE65)] after:absolute after:inset-[7px] after:-z-10 after:border after:border-[#75162E]/22 after:[clip-path:polygon(0_0,92%_0,99%_50%,92%_100%,0_100%)] hover:-translate-y-1 hover:border-[#F0CB74]/70 hover:shadow-[0_24px_54px_rgba(85,11,24,0.34),inset_0_1px_0_rgba(255,255,255,0.34),inset_0_-12px_24px_rgba(58,0,12,0.12)] lg:border-l lg:p-4 lg:[clip-path:polygon(3%_9%,13%_4%,30%_6%,46%_3%,64%_6%,85%_4%,98%_9%,99%_89%,87%_96%,69%_93%,51%_97%,32%_93%,14%_97%,1%_89%)] lg:after:[clip-path:polygon(3%_10%,14%_6%,31%_8%,47%_5%,64%_8%,84%_6%,97%_10%,98%_88%,86%_94%,69%_91%,51%_95%,33%_91%,15%_95%,2%_88%)]";
 
 export function MethodologyRoadmap() {
   const roadmapRef = useRef<HTMLDivElement | null>(null);
@@ -161,7 +161,7 @@ export function MethodologyRoadmap() {
           </h2>
         </motion.div>
 
-        <div ref={roadmapRef} className="relative mt-10 lg:mt-12 lg:min-h-[620px]">
+        <div ref={roadmapRef} className="relative mt-10 lg:mt-12 lg:min-h-[680px]">
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
             {roadmap.map((_, index) => (
               <span
@@ -199,11 +199,11 @@ export function MethodologyRoadmap() {
             ))}
           </div>
 
-          <div className="relative z-10 lg:min-h-[620px]">
+          <div className="relative z-10 lg:min-h-[680px]">
             {roadmap.map((step, index) => (
               <div
                 key={step.title}
-                className="relative lg:absolute lg:left-[var(--roadmap-x)] lg:top-[var(--roadmap-y)] lg:w-[250px] lg:rotate-[var(--roadmap-rotate)]"
+                className="relative lg:absolute lg:left-[var(--roadmap-x)] lg:top-[var(--roadmap-y)] lg:w-[235px] lg:rotate-[var(--roadmap-rotate)] xl:w-[250px]"
                 style={
                   {
                     "--roadmap-x": desktopPositions[index].x,
@@ -215,7 +215,7 @@ export function MethodologyRoadmap() {
                 <div data-roadmap-step={index} className={plaqueClassName}>
                   <span className="pointer-events-none absolute -left-10 top-8 hidden h-px w-24 rotate-[-18deg] bg-[linear-gradient(90deg,transparent,rgba(247,235,207,0.6),transparent)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:block" />
                   <div className="mb-4 flex items-start justify-between gap-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-[14px] border border-[#E0BE65]/48 bg-[radial-gradient(circle_at_32%_22%,rgba(255,255,255,0.18),transparent_30%),linear-gradient(145deg,#75162E,#550B18_52%,#3A000C)] font-heading text-2xl font-black text-[#F7E7B8] shadow-[0_10px_22px_rgba(58,0,12,0.26),inset_0_1px_0_rgba(255,255,255,0.2)]">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-[10px] border border-[#E0BE65]/48 bg-[radial-gradient(circle_at_32%_22%,rgba(255,255,255,0.18),transparent_30%),linear-gradient(145deg,#75162E,#550B18_52%,#3A000C)] font-heading text-2xl font-black text-[#F7E7B8] shadow-[0_10px_22px_rgba(58,0,12,0.26),inset_0_1px_0_rgba(255,255,255,0.2)] lg:rounded-[14px]">
                       {romanNumerals[index]}
                     </span>
                     <span className="rounded-full border border-[#75162E]/20 bg-[#F7EBCF]/22 px-3 py-1 text-xs font-black uppercase tracking-wide text-[#3A000C] shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">

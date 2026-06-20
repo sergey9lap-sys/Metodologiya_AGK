@@ -112,33 +112,33 @@ export function NichesAndFormats() {
                 initial={{ opacity: 0, scaleY: 0 }}
                 whileInView={{ opacity: 1, scaleY: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.72, ease: "easeInOut", delay: 0.28 }}
-                className="absolute left-5 top-8 bottom-8 z-0 w-px origin-top bg-[rgba(117,22,46,0.34)]"
+                transition={{ duration: 1.25, ease: "easeInOut", delay: 0.18 }}
+                className="absolute bottom-10 left-6 top-6 z-0 w-[3px] origin-top rounded-full bg-[linear-gradient(180deg,#75162E,#D6AB57,#75162E)] shadow-[0_0_18px_rgba(214,171,87,0.38)]"
               />
 
-              <div className="relative z-10 space-y-4">
+              <div className="relative z-10 space-y-5">
                 {productColumns.map((column, columnIndex) => (
                   <motion.div
                     key={column.title}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -18, y: 16 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                      duration: 0.48,
+                      duration: 0.5,
                       ease: "easeOut",
-                      delay: columnIndex * 0.08,
+                      delay: 0.1 + columnIndex * 0.12,
                     }}
-                    className="relative rounded-[22px] border border-[rgba(117,22,46,0.2)] bg-white/88 p-4 shadow-[0_14px_36px_rgba(40,25,10,0.08)] backdrop-blur-sm"
+                    className="relative ml-12 overflow-hidden border border-[#B8843C]/36 bg-[#F8EBCB]/94 p-4 shadow-[0_16px_36px_rgba(40,25,10,0.1),inset_0_1px_0_rgba(255,255,255,0.58)] backdrop-blur-sm [clip-path:polygon(2%_5%,16%_2%,33%_4%,51%_2%,70%_4%,87%_2%,98%_6%,99%_92%,86%_98%,68%_95%,50%_98%,31%_95%,14%_98%,1%_92%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.46),transparent_35%),radial-gradient(circle_at_86%_86%,rgba(117,22,46,0.06),transparent_28%),repeating-linear-gradient(105deg,rgba(85,11,24,0.02)_0_1px,transparent_1px_9px)]"
                   >
-                    <div className="mb-3 flex items-center gap-3">
-                      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 font-heading text-lg font-black text-white shadow-[0_10px_24px_rgba(85,11,24,0.24)]">
-                        {columnIndex + 1}
-                      </span>
+                    <span className="absolute left-3 top-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#F8EBCB] bg-[#75162E] font-heading text-lg font-black text-[#F7E7B8] shadow-[0_0_18px_rgba(214,171,87,0.42)]">
+                      {columnIndex + 1}
+                    </span>
+                    <div className="mb-3 flex min-h-12 items-center gap-3 pl-14">
                       <h3 className="font-heading text-xl font-black uppercase leading-tight text-text-primary">
                         {column.title}
                       </h3>
                     </div>
-                    <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-2.5">
                       {column.products.map((product, productIndex) => (
                         <motion.div
                           key={product}
@@ -150,7 +150,7 @@ export function NichesAndFormats() {
                             ease: "easeOut",
                             delay: 0.16 + columnIndex * 0.1 + productIndex * 0.05,
                           }}
-                          className="flex min-h-[54px] items-center justify-center rounded-2xl border border-orange-1/18 bg-[#F6E8C8] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-sm"
+                          className="relative flex min-h-[54px] items-center justify-center border border-[#B8843C]/34 bg-[#F7E7BE] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_8px_18px_rgba(40,25,10,0.08),inset_0_1px_0_rgba(255,255,255,0.52)] [clip-path:polygon(3%_12%,15%_5%,32%_8%,50%_4%,68%_8%,86%_5%,98%_12%,98%_88%,86%_95%,68%_92%,50%_96%,32%_92%,14%_95%,2%_88%)]"
                         >
                           {product}
                         </motion.div>

@@ -461,6 +461,56 @@ function ChapterResult({ chapter, hideCta = false }: { chapter: Chapter; hideCta
   );
 }
 
+function renderMobileRequestText(chapter: Chapter, item: string, index: number) {
+  if (chapter.key === "expert" && index === 2) {
+    return (
+      <>
+        Я развиваюсь в двух разных нишах.{" "}
+        <span className="whitespace-nowrap">Не понимаю,</span>
+        <br />
+        как определить
+        <br />
+        своё позиционирование и какой продукт создать.
+      </>
+    );
+  }
+
+  if (chapter.key === "expert" && index === 3) {
+    return (
+      <>
+        Я уже пробовал запускать курс,
+        <br />
+        <span className="whitespace-nowrap">но никто не купил,</span>{" "}
+        думаю, что большие курсы не для меня.
+      </>
+    );
+  }
+
+  if (chapter.key === "methodologist" && index === 2) {
+    return (
+      <>
+        Зависаю в операционке
+        <br />
+        <span className="whitespace-nowrap">и не расту</span> как специалист.
+      </>
+    );
+  }
+
+  if (chapter.key === "entrepreneur" && index === 5) {
+    return (
+      <>
+        Планёрки длятся в 3‑4 раза дольше,
+        <br />
+        чем нужно: разговоров много, результата
+        <br />
+        и плана действий нет.
+      </>
+    );
+  }
+
+  return formatTypography(item);
+}
+
 function MobileRoleCard({
   chapter,
   index,
@@ -576,10 +626,10 @@ function MobileRoleCard({
                     Методология решает запросы:
                   </h3>
                   <div className="mt-5 space-y-2.5">
-                    {chapter.requests.map((item) => (
+                    {chapter.requests.map((item, requestIndex) => (
                       <div key={item} className="academy-ink-row text-[14px] leading-snug">
                         <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
-                        <p>{formatTypography(item)}</p>
+                        <p>{renderMobileRequestText(chapter, item, requestIndex)}</p>
                       </div>
                     ))}
                   </div>

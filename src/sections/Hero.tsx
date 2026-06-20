@@ -205,7 +205,7 @@ export function Hero() {
               <h1
                 ref={titleRef}
                 style={{ visibility: titleReady ? "visible" : "hidden" }}
-                className="hero-title whitespace-nowrap font-heading text-[44px] font-black leading-[0.9] tracking-normal text-text-primary uppercase sm:text-6xl md:text-7xl lg:text-[86px] xl:text-[98px]"
+                className="hero-title whitespace-nowrap font-heading text-[clamp(36px,10.4vw,42px)] font-black leading-[0.9] tracking-normal text-text-primary uppercase sm:text-6xl md:text-7xl lg:text-[86px] xl:text-[98px]"
               >
                 МЕТОД
                 <span className="text-gradient-orange">ОЛОГИЯ</span>

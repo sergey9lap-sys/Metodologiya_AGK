@@ -108,9 +108,14 @@ export function WhatIsMethodology() {
           gsap.set(headerRef.current, { opacity: 0, y: 16 });
           gsap.set(threadRef.current, { scaleY: 0, transformOrigin: "top center" });
           gsap.set(buttonRef.current, { opacity: 0, y: 14 });
-          gsap.set(scrolls, { opacity: 0, y: 18, scale: 0.97 });
-          gsap.set(titles, { opacity: 0, y: 8 });
-          gsap.set(descriptionWords, { opacity: 0 });
+          gsap.set(scrolls, {
+            opacity: 0.96,
+            scaleY: 0.12,
+            transformOrigin: "top center",
+            filter: "blur(3px)",
+          });
+          gsap.set(titles, { opacity: 0, y: 8, filter: "blur(4px)" });
+          gsap.set(descriptionWords, { opacity: 0, y: 6, filter: "blur(3px)" });
 
           const timeline = gsap.timeline({
             scrollTrigger: {
@@ -129,9 +134,13 @@ export function WhatIsMethodology() {
             const words = Array.from(descriptions[index].querySelectorAll<HTMLElement>(".scroll-ink-word"));
 
             timeline
-              .to(scroll, { opacity: 1, y: 0, scale: 1, duration: 0.44 }, index === 0 ? "-=0.34" : "-=0.08")
-              .to(titles[index], { opacity: 1, y: 0, duration: 0.24 }, "-=0.16")
-              .to(words, { opacity: 1, duration: 0.18, stagger: 0.01 }, "-=0.06");
+              .to(
+                scroll,
+                { opacity: 1, scaleY: 1, filter: "blur(0px)", duration: 0.54 },
+                index === 0 ? "-=0.28" : "-=0.05"
+              )
+              .to(titles[index], { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22 }, "-=0.05")
+              .to(words, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.2, stagger: 0.01 }, "-=0.02");
           });
 
           timeline.to(buttonRef.current, { opacity: 1, y: 0, duration: 0.36 }, "-=0.02");
@@ -161,7 +170,7 @@ export function WhatIsMethodology() {
     ));
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-black py-12 lg:py-16">
+    <section ref={sectionRef} className="methodology-scroll-section relative overflow-hidden bg-black py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:27.jpg"
         variant="orange"

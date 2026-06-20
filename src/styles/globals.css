@@ -624,7 +624,7 @@
     padding: 28px 22px 24px;
     background:
       radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.48), transparent 12rem),
-      linear-gradient(90deg, #D2A150 0%, #F8E6BA 7%, #F5DEAB 47%, #7E4A1D 49%, #2E160A 50%, #7E4A1D 51%, #FBECC8 54%, #F8E6BA 94%, #D2A150 100%);
+      linear-gradient(105deg, #D2A150 0%, #F8E6BA 7%, #F5DEAB 46%, #FBECC8 78%, #D6AB57 100%);
     box-shadow:
       0 26px 58px rgba(0, 0, 0, 0.3),
       inset 0 0 0 1px rgba(85, 11, 24, 0.15);
@@ -639,8 +639,9 @@
     pointer-events: none;
     background:
       repeating-linear-gradient(0deg, rgba(85, 11, 24, 0.035) 0 1px, transparent 1px 8px),
-      linear-gradient(90deg, rgba(85, 11, 24, 0.08), transparent 12%, transparent 45%, rgba(85, 11, 24, 0.3) 50%, transparent 55%, transparent 88%, rgba(85, 11, 24, 0.08));
-    opacity: 0.64;
+      radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.28), transparent 9rem),
+      linear-gradient(90deg, rgba(85, 11, 24, 0.08), transparent 16%, transparent 84%, rgba(85, 11, 24, 0.08));
+    opacity: 0.58;
   }
 
   .academy-mobile-page > * {
@@ -653,7 +654,7 @@
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.32), rgba(85, 11, 24, 0.1), transparent);
+    background: linear-gradient(0deg, rgba(85, 11, 24, 0.12), rgba(255, 255, 255, 0.42) 42%, transparent 78%);
     animation: academy-mobile-flip 4.8s ease-in-out infinite;
   }
 
@@ -1037,7 +1038,7 @@
   0%,
   46% {
     opacity: 0;
-    transform: translateX(-100%) skewX(-12deg);
+    transform: translateY(100%) skewY(-2deg);
   }
   56% {
     opacity: 0.46;
@@ -1045,7 +1046,7 @@
   72%,
   100% {
     opacity: 0;
-    transform: translateX(100%) skewX(-12deg);
+    transform: translateY(-100%) skewY(-2deg);
   }
 }
 
@@ -1153,6 +1154,10 @@
     min-height: auto;
     border-radius: 6px 14px 14px 6px;
     clip-path: polygon(1.5% 4%, 13% 2%, 24% 4%, 40% 2%, 56% 4%, 72% 2.4%, 88% 4%, 98.5% 3%, 99% 96%, 86% 98%, 68% 95.5%, 52% 98%, 35% 95.5%, 18% 98%, 1.5% 96%);
+  }
+
+  .methodology-scroll-section .method-scroll {
+    transform-origin: top center;
   }
 
   .method-scroll::before,

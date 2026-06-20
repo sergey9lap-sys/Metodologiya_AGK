@@ -56,10 +56,10 @@ function AntiqueColumn({
   return (
     <motion.div
       aria-hidden="true"
-      className="relative mx-auto h-[385px] w-full max-w-[340px] sm:h-[420px] lg:h-[455px]"
+      className="relative mx-auto h-[260px] w-full max-w-[260px] sm:h-[320px] sm:max-w-[300px] lg:h-[455px] lg:max-w-[340px]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.36 }}
+      viewport={{ once: true, amount: 0.18 }}
       transition={{
         duration: 0.74,
         ease: [0.22, 1, 0.36, 1],
@@ -131,11 +131,11 @@ export function Problems() {
           тех, кто пока не выстроил методологию продукта и обучения
         </motion.p>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-7">
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-3 lg:gap-7">
           {problemGroups.map((group, groupIndex) => (
             <motion.div
               key={group.title}
-              className="relative flex min-h-[calc(100vh-112px)] flex-col justify-center py-7 lg:min-h-0 lg:justify-start lg:py-0"
+              className="relative flex min-h-0 flex-col justify-start py-3 lg:min-h-0 lg:py-0"
             >
               <motion.h3
                 initial={{ opacity: 0, y: 16 }}
@@ -144,7 +144,7 @@ export function Problems() {
                 transition={{
                   duration: 0.5,
                   ease: [0.22, 1, 0.36, 1],
-                  delay: groupIndex * 0.74,
+                  delay: groupIndex * 0.08,
                 }}
                 className="text-center font-heading text-2xl font-black uppercase text-[#F7EBCF] drop-shadow-[0_4px_16px_rgba(58,0,12,0.45)] lg:text-3xl"
               >
@@ -152,7 +152,7 @@ export function Problems() {
               </motion.h3>
 
               <div className="relative mt-2">
-                <AntiqueColumn index={groupIndex} baseDelay={0.16 + groupIndex * 0.74} />
+                <AntiqueColumn index={groupIndex} baseDelay={0.08 + groupIndex * 0.08} />
               </div>
 
               <ul className="mx-auto mt-2 max-w-[420px] space-y-3 text-left lg:mt-4">
@@ -161,11 +161,11 @@ export function Problems() {
                     key={item}
                     initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    viewport={{ once: true, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.18 }}
                     transition={{
                       duration: 0.44,
                       ease: [0.22, 1, 0.36, 1],
-                      delay: 1.06 + groupIndex * 0.74 + itemIndex * 0.08,
+                      delay: 0.2 + groupIndex * 0.08 + itemIndex * 0.045,
                     }}
                     className="flex items-start gap-3 text-base font-medium leading-snug text-[#F7EBCF] drop-shadow-[0_2px_9px_rgba(58,0,12,0.5)]"
                   >

@@ -150,7 +150,7 @@ export function NichesAndFormats() {
                             ease: "easeOut",
                             delay: 0.16 + columnIndex * 0.1 + productIndex * 0.05,
                           }}
-                          className="relative flex min-h-[54px] items-center justify-center border border-[#B8843C]/34 bg-[#F7E7BE] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_8px_18px_rgba(40,25,10,0.08),inset_0_1px_0_rgba(255,255,255,0.52)] [clip-path:polygon(3%_12%,15%_5%,32%_8%,50%_4%,68%_8%,86%_5%,98%_12%,98%_88%,86%_95%,68%_92%,50%_96%,32%_92%,14%_95%,2%_88%)]"
+                          className="relative flex min-h-[54px] items-center justify-center border border-[#75162E]/42 bg-[#F1D58F] px-4 py-3 text-center text-sm font-black leading-snug text-[#3A000C] shadow-[0_12px_24px_rgba(85,11,24,0.18),inset_0_1px_0_rgba(255,255,255,0.58),inset_0_-10px_20px_rgba(117,22,46,0.07)] [clip-path:polygon(3%_12%,15%_5%,32%_8%,50%_4%,68%_8%,86%_5%,98%_12%,98%_88%,86%_95%,68%_92%,50%_96%,32%_92%,14%_95%,2%_88%)]"
                         >
                           {product}
                         </motion.div>

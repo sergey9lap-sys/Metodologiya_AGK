@@ -395,7 +395,7 @@ function ChapterHeading({ chapter }: { chapter: Chapter }) {
   return <>{formatTypography(chapter.heading)}</>;
 }
 
-function ChapterResult({ chapter }: { chapter: Chapter }) {
+function ChapterResult({ chapter, hideCta = false }: { chapter: Chapter; hideCta?: boolean }) {
   return (
     <div className="mt-3 flex flex-1 flex-col">
       {"salaryItems" in chapter && chapter.salaryItems ? (
@@ -447,7 +447,7 @@ function ChapterResult({ chapter }: { chapter: Chapter }) {
         </div>
       ) : null}
 
-      {"cta" in chapter && chapter.cta ? (
+      {!hideCta && "cta" in chapter && chapter.cta ? (
         <div className="mt-auto pt-3">
           <a href="#pricing">
             <Button variant="secondary" size="sm" className="w-full">
@@ -465,17 +465,19 @@ function MobileRoleCard({
   chapter,
   index,
   isActive,
-  isResultOpen,
+  isRequestsOpen,
   onOpen,
-  onToggleResult,
+  onOpenRequests,
 }: {
   chapter: Chapter;
   index: number;
   isActive: boolean;
-  isResultOpen: boolean;
+  isRequestsOpen: boolean;
   onOpen: () => void;
-  onToggleResult: () => void;
+  onOpenRequests: () => void;
 }) {
+  const cardMinHeight = !isActive ? "min-h-[560px]" : isRequestsOpen ? "min-h-[740px]" : "min-h-[680px]";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 34, scale: 0.96 }}
@@ -488,9 +490,7 @@ function MobileRoleCard({
         <motion.div
           animate={{ rotateY: isActive ? 180 : 0 }}
           transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
-          className={`relative transition-[min-height] duration-500 [transform-style:preserve-3d] ${
-            isActive ? "min-h-[820px]" : "min-h-[560px]"
-          }`}
+          className={`relative transition-[min-height] duration-500 [transform-style:preserve-3d] ${cardMinHeight}`}
         >
           <button
             type="button"
@@ -526,73 +526,81 @@ function MobileRoleCard({
               aria-hidden="true"
               className="pointer-events-none absolute inset-3 rounded-[22px] border border-[#75162E]/18"
             />
-            <div className="relative z-10">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B98534]">
-                {chapter.roman}
-              </p>
-              <h3 className="mt-1 font-heading text-3xl font-black uppercase leading-tight text-[#550B18]">
-                {chapter.mobileRole}
-              </h3>
-              <p className="mt-4 font-heading text-xl font-black leading-tight text-[#550B18]">
-                Методология решает запросы
-              </p>
-              <div className="mt-4 space-y-2.5">
-                {chapter.requests.map((item) => (
-                  <div key={item} className="academy-ink-row text-[14px] leading-snug">
-                    <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
-                    <p>{formatTypography(item)}</p>
+            <AnimatePresence mode="wait">
+              {!isRequestsOpen ? (
+                <motion.div
+                  key={`${chapter.key}-mobile-result`}
+                  initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+                  transition={{ duration: 0.32, ease: "easeOut" }}
+                  className="relative z-10 flex min-h-full flex-col"
+                >
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B98534]">
+                    {chapter.roman}
+                  </p>
+                  <h3 className="mt-1 font-heading text-3xl font-black uppercase leading-tight text-[#550B18]">
+                    {chapter.mobileRole}
+                  </h3>
+                  <p className="mt-4 font-heading text-xl font-black leading-tight text-[#550B18]">
+                    <ChapterHeading chapter={chapter} />
+                  </p>
+                  <p className="mt-3 text-sm italic leading-relaxed text-[#5A2730]">
+                    {formatTypography(chapter.subtitle)}
+                  </p>
+                  <ChapterResult chapter={chapter} hideCta />
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    size="sm"
+                    className="mt-auto w-full"
+                    onClick={onOpenRequests}
+                  >
+                    Какие задачи решает методология
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={`${chapter.key}-mobile-requests`}
+                  initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+                  transition={{ duration: 0.32, ease: "easeOut" }}
+                  className="relative z-10"
+                >
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B98534]">
+                    {chapter.mobileRole}
+                  </p>
+                  <h3 className="mt-2 font-heading text-2xl font-black leading-tight text-[#550B18]">
+                    Методология решает запросы:
+                  </h3>
+                  <div className="mt-5 space-y-2.5">
+                    {chapter.requests.map((item) => (
+                      <div key={item} className="academy-ink-row text-[14px] leading-snug">
+                        <CheckSquare2 className="mt-0.5 h-4 w-4 flex-none text-[#75162E]" />
+                        <p>{formatTypography(item)}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-
-              <Button
-                type="button"
-                variant="secondary"
-                size="sm"
-                className="mt-5 w-full"
-                onClick={onToggleResult}
-              >
-                Показать, что изменится
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
       </div>
-
-      <AnimatePresence>
-        {isResultOpen ? (
-          <motion.div
-            initial={{ opacity: 0, height: 0, y: -10 }}
-            animate={{ opacity: 1, height: "auto", y: 0 }}
-            exit={{ opacity: 0, height: 0, y: -10 }}
-            transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden"
-          >
-            <div className="mt-4 rounded-[24px] border border-[#D6AB57]/46 bg-[#F8EBCB] p-5 text-[#3A000C] shadow-[0_18px_42px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.62)]">
-              <p className="font-heading text-xl font-black leading-tight text-[#550B18]">
-                <ChapterHeading chapter={chapter} />
-              </p>
-              <p className="mt-3 text-sm italic leading-relaxed text-[#5A2730]">
-                {formatTypography(chapter.subtitle)}
-              </p>
-              <ChapterResult chapter={chapter} />
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </motion.div>
   );
 }
 
 function MobileLibraryScene() {
   const [activeKey, setActiveKey] = useState<string | null>(null);
-  const [resultKey, setResultKey] = useState<string | null>(null);
+  const [requestsKey, setRequestsKey] = useState<string | null>(null);
 
   const openCard = (key: string) => {
     setActiveKey((current) => {
       if (current === key) return current;
-      setResultKey(null);
+      setRequestsKey(null);
       return key;
     });
   };
@@ -630,9 +638,9 @@ function MobileLibraryScene() {
               chapter={chapter}
               index={index}
               isActive={activeKey === chapter.key}
-              isResultOpen={resultKey === chapter.key}
+              isRequestsOpen={requestsKey === chapter.key}
               onOpen={() => openCard(chapter.key)}
-              onToggleResult={() => setResultKey((current) => (current === chapter.key ? null : chapter.key))}
+              onOpenRequests={() => setRequestsKey(chapter.key)}
             />
           ))}
         </div>

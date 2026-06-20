@@ -13,29 +13,29 @@ const fadeInUp = {
 
 const faqItems: { question: string; answer: ReactNode }[] = [
   {
-    question: "Для кого подходит этот курс?",
+    question: "Для кого подходит этот курс?",
     answer:
-      "Курс подойдёт экспертам, предпринимателям, наставникам и тем, кто создаёт или усиливает образовательные продукты и хочет выстроить понятную, сильную методологию.",
+      "Курс подойдёт экспертам, предпринимателям, наставникам и тем, кто создаёт или усиливает образовательные продукты и хочет выстроить понятную, сильную методологию.",
   },
   {
-    question: "Нужен ли опыт в методологии?",
+    question: "Нужен ли опыт в методологии?",
     answer:
-      "Нет, специальный опыт не обязателен. Мы идём от базы к системе: вы разберётесь в логике методологии и сможете применять её в своём продукте шаг за шагом.",
+      "Нет, специальный опыт не обязателен. Мы идём от базы к системе: вы разберётесь в логике методологии и сможете применять её в своём продукте шаг за шагом.",
   },
   {
     question: "Какой формат обучения?",
     answer:
-      "Обучение проходит онлайн. Вас ждут видеоуроки, живые встречи с Александрой и домашние задания с обратной связью от наставников Академии.",
+      "Обучение проходит онлайн. Вас ждут видеоуроки, живые встречи с Александрой и домашние задания с обратной связью от наставников Академии.",
   },
   {
     question: "Сколько длится курс?",
     answer:
-      "Продолжительность зависит от выбранного тарифа и вашего темпа. Материалы вы проходите в удобном ритме, а практика и сопровождение помогают не просто посмотреть уроки, а внедрить их в работу.",
+      "Продолжительность зависит от выбранного тарифа и вашего темпа. Материалы вы проходите в удобном ритме, а практика и сопровождение помогают не просто посмотреть уроки, а внедрить их в работу.",
   },
   {
     question: "Будет ли обратная связь?",
     answer:
-      "Да. На курсе предусмотрена обратная связь по домашним заданиям и поддержка от наставников Академии, чтобы вы не оставались один на один с вопросами.",
+      "Да. На курсе предусмотрена обратная связь по домашним заданиям и поддержка от наставников Академии, чтобы вы не оставались один на один с вопросами.",
   },
   {
     question: "Выдаётся ли сертификат?",
@@ -43,25 +43,25 @@ const faqItems: { question: string; answer: ReactNode }[] = [
       "Да. После прохождения курса выдаётся сертификат Академии методологии.",
   },
   {
-    question: "У меня нет команды. Я смогу внедрить это один?",
+    question: "У меня нет команды. Я смогу внедрить это один?",
     answer:
-      "Да. Методология нужна не только большим школам и командам. Вы сможете собрать сильную основу продукта самостоятельно, а уже потом масштабировать её вместе с командой.",
+      "Да. Методология нужна не только большим школам и командам. Вы сможете собрать сильную основу продукта самостоятельно, а уже потом масштабировать её вместе с командой.",
   },
   {
     question:
-      "У меня уже есть курс или, наоборот, ещё нет флагмана. Мне это подходит?",
+      "У меня уже есть курс или, наоборот, ещё нет флагмана. Мне это подходит?",
     answer:
-      "Да. Курс подходит и тем, у кого уже есть продукт и его нужно усилить, и тем, кто только собирает флагман. В первом случае вы пересоберёте структуру, путь ученика и логику результата, во втором создадите крепкую основу для продукта с самого начала.",
+      "Да. Курс подходит и тем, у кого уже есть продукт и его нужно усилить, и тем, кто только собирает флагман. В первом случае вы пересоберёте структуру, путь ученика и логику результата, во втором создадите крепкую основу для продукта с самого начала.",
   },
   {
-    question: "Сколько времени нужно на прохождение?",
+    question: "Сколько времени нужно на прохождение?",
     answer:
-      "Это зависит от тарифа и вашей скорости внедрения. Базовый путь можно пройти быстрее, а старшие тарифы дают больше сопровождения, практики и глубины.",
+      "Это зависит от тарифа и вашей скорости внедрения. Базовый путь можно пройти быстрее, а старшие тарифы дают больше сопровождения, практики и глубины.",
   },
   {
     question: "Есть ли рассрочка?",
     answer:
-      "Да, для тарифов предусмотрены варианты оплаты в рассрочку. Точную схему поможет подобрать служба заботы.",
+      "Да, для тарифов предусмотрены варианты оплаты в рассрочку. Точную схему поможет подобрать служба заботы.",
   },
   {
     question: "Можно ли сделать возврат, если мне не подойдёт?",
@@ -81,6 +81,8 @@ const faqItems: { question: string; answer: ReactNode }[] = [
   },
 ];
 
+const romanFaqNumbers = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"];
+
 function FAQItem({
   item,
   index,
@@ -97,21 +99,24 @@ function FAQItem({
       viewport={{ once: true }}
       variants={fadeInUp}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="overflow-hidden rounded-2xl border-2 border-orange-1 bg-orange-1 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+      className="relative isolate overflow-hidden rounded-[18px] border border-[#D6AB57]/42 bg-[#F8EBCB] shadow-[0_16px_34px_rgba(58,0,12,0.12),inset_0_1px_0_rgba(255,255,255,0.62)] transition-all duration-300 before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.44),transparent_30%),radial-gradient(circle_at_86%_84%,rgba(117,22,46,0.07),transparent_28%),repeating-linear-gradient(105deg,rgba(85,11,24,0.022)_0_1px,transparent_1px_10px)] hover:-translate-y-0.5 hover:border-[#75162E]/42 hover:shadow-[0_20px_42px_rgba(85,11,24,0.16),inset_0_1px_0_rgba(255,255,255,0.68)]"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left"
         aria-expanded={isOpen}
       >
-        <div className="flex items-center justify-between p-4 lg:p-5">
-          <span className="pr-4 text-body font-bold text-white lg:text-lg">
+        <div className="flex items-center justify-between gap-4 p-4 lg:p-5">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[#D6AB57]/50 bg-[#550B18] font-heading text-sm font-black text-[#F7EBCF] shadow-[0_10px_20px_rgba(85,11,24,0.18)]">
+            {romanFaqNumbers[index]}
+          </span>
+          <span className="flex-1 pr-2 text-body font-bold text-[#3A000C] lg:text-lg">
             {item.question}
           </span>
           <div
-            className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-[#D6AB57]/40 bg-[#FFF6DC] text-[#550B18] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
           >
-            <ChevronDown className="h-5 w-5 text-orange-1" />
+            <ChevronDown className="h-5 w-5" />
           </div>
         </div>
       </button>
@@ -121,11 +126,11 @@ function FAQItem({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="mx-3 mb-3 rounded-xl bg-white px-4 py-4 lg:mx-4 lg:mb-4 lg:px-5 lg:py-5">
-              <p className="text-body text-text-secondary">{item.answer}</p>
+            <div className="mx-4 mb-4 border-t border-[#75162E]/16 px-4 pb-1 pt-4 lg:mx-5 lg:px-5 lg:pt-5">
+              <p className="text-body leading-relaxed text-[#5A2730]">{item.answer}</p>
             </div>
           </motion.div>
         )}
@@ -136,11 +141,19 @@ function FAQItem({
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <section id="faq" className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:31:18.jpg"
         variant="light"
         position="object-center"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.56),transparent_24rem),linear-gradient(180deg,rgba(247,235,207,0.72),rgba(242,229,197,0.78))]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 opacity-24 [background-image:radial-gradient(circle,rgba(214,171,87,0.34)_0_1px,transparent_1.6px),radial-gradient(circle,rgba(117,22,46,0.12)_0_1px,transparent_1.7px)] [background-position:12%_18%,72%_30%] [background-size:190px_170px,270px_240px]"
       />
       <Container className="relative z-20">
         <motion.h2
@@ -151,7 +164,7 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           className="mb-8 text-center font-heading text-3xl font-black uppercase text-text-primary lg:mb-10 lg:text-4xl"
         >
-          Ответы на вопросы, которые вы нам точно зададите
+          Ответы на вопросы, которые вы нам точно зададите
         </motion.h2>
 
         <div className="mx-auto max-w-3xl space-y-4">
@@ -172,7 +185,7 @@ export function FAQ() {
             href="#pricing"
             className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] bg-[#550B18] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(85,11,24,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3A000C] hover:shadow-[0_8px_24px_rgba(85,11,24,0.32)] sm:w-auto"
           >
-            Присоединиться к обучению
+            Присоединиться к обучению
             <ArrowRight className="h-5 w-5 flex-shrink-0" />
           </a>
         </motion.div>

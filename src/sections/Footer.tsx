@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { MessageCircle, MessagesSquare, Phone, Send } from "lucide-react";
 
 const footerLinks = [
-  { label: "О курсе", href: "#about" },
+  { label: "О курсе", href: "#about" },
   { label: "Программа", href: "#program" },
   { label: "Тарифы", href: "#pricing" },
   { label: "Вопросы", href: "#faq" },
@@ -60,8 +60,8 @@ export function Footer() {
               МЕТОДОЛОГИЯ
             </a>
             <p className="text-white/70 text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
-              Академия Методологии. Обучение, поддержка и сопровождение экспертов
-              и предпринимателей в сфере образовательных продуктов.
+              Академия Методологии. Обучение, поддержка и сопровождение экспертов
+              и предпринимателей в сфере образовательных продуктов.
             </p>
             <div className="text-white/70 text-sm leading-relaxed space-y-1">
               <p>Индивидуальный предприниматель</p>
@@ -126,7 +126,7 @@ export function Footer() {
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col lg:flex-row items-center justify-between gap-4">
           <p className="text-white/50 text-sm text-center lg:text-left">
-            &copy; 2026 Академия Методологии. Все права защищены.
+            &copy; 2026 Академия Методологии. Все права защищены.
           </p>
           <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
             <a

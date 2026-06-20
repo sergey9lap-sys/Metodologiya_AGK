@@ -31,7 +31,7 @@ export function Employers() {
           transition={{ duration: 0.5 }}
           className="mb-6 text-center font-heading text-2xl font-bold uppercase text-[#F7EBCF] lg:text-3xl"
         >
-          Наши выпускники работают и внедряют методологию в:
+          Наши выпускники работают и внедряют методологию в:
         </motion.h3>
 
         <motion.div

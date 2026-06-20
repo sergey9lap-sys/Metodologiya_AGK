@@ -7,8 +7,8 @@ const CHALLENGE_WIDGET_ID = "1606344";
 
 const challengeItems = [
   "Библиотека материалов",
-  "2 недели задания в чате участников",
-  "Комьюнити экспертов и предпринимателей",
+  "2 недели задания в чате участников",
+  "Комьюнити экспертов и предпринимателей",
 ];
 
 export function ChallengeLanding() {
@@ -41,7 +41,7 @@ export function ChallengeLanding() {
       }
 
       const height = Number(event.data?.height);
-      if (height > 0) {
+      if (height > 0) {
         setWidgetHeight(Math.max(height, 680));
       }
     };
@@ -75,13 +75,13 @@ export function ChallengeLanding() {
             </div>
 
             <p className="mt-5 text-2xl font-black leading-tight text-text-primary lg:text-3xl">
-              Разработаете свою продуктовую линейку и распакуете свою экспертность
+              Разработаете свою продуктовую линейку и распакуете свою экспертность
             </p>
 
             <div className="mt-5 flex items-start gap-3 rounded-xl border border-orange-1/30 bg-white p-4 shadow-[0_8px_24px_rgba(40,25,10,0.06)]">
               <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-[#75162E]" />
               <p className="text-sm font-bold leading-relaxed text-text-primary sm:text-base">
-                Бонус на выбор: 1 месяц клуба или сессия с методологом команды/маркетологом
+                Бонус на выбор: 1 месяц клуба или сессия с методологом команды/маркетологом
               </p>
             </div>
           </div>
@@ -92,10 +92,10 @@ export function ChallengeLanding() {
             </p>
             <div className="flex flex-wrap items-end gap-x-4 gap-y-2">
               <span className="font-heading text-4xl font-black leading-none lg:text-5xl">
-                5 900 ₽
+                5 900 ₽
               </span>
               <span className="text-xl font-bold leading-none text-white/58 line-through decoration-2">
-                19 900 ₽
+                19 900 ₽
               </span>
             </div>
             <button
@@ -103,7 +103,7 @@ export function ChallengeLanding() {
               className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#550B18] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E5C5]"
               onClick={() => setIsWidgetOpen(true)}
             >
-              Записаться на челлендж
+              Записаться на челлендж
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
@@ -115,7 +115,7 @@ export function ChallengeLanding() {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
-          aria-label="Челлендж за 5 900 ₽"
+          aria-label="Челлендж за 5 900 ₽"
           onClick={() => setIsWidgetOpen(false)}
         >
           <div
@@ -124,7 +124,7 @@ export function ChallengeLanding() {
           >
             <div className="flex items-center justify-between border-b border-orange-1/20 px-4 py-3">
               <p className="pr-4 text-sm font-bold uppercase tracking-wide text-text-primary">
-                Челлендж за 5 900 ₽
+                Челлендж за 5 900 ₽
               </p>
               <button
                 type="button"
@@ -138,7 +138,7 @@ export function ChallengeLanding() {
             <div className="h-[calc(100%-65px)] overflow-y-auto">
               <iframe
                 src={getWidgetUrl()}
-                title="Челлендж за 5 900 ₽"
+                title="Челлендж за 5 900 ₽"
                 className="w-full border-0"
                 style={{ height: `${widgetHeight}px` }}
                 allowFullScreen

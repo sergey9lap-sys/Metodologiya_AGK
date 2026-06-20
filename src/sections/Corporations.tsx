@@ -13,7 +13,7 @@ const fadeInUp = {
 const corporations = [
   {
     name: "СБЕР",
-    logo: "https://optim.tildacdn.com/tild3031-3333-4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
+    logo: "https://optim.tildacdn.com/tild3031-3333‑4330-b764-623863636162/-/resize/192x/-/format/webp/image_3.png.webp",
     logoClassName: "h-14 max-w-[190px]",
   },
   {
@@ -95,8 +95,8 @@ export function Corporations() {
           className="relative z-10 text-center"
         >
           <p className="mx-auto mb-8 max-w-4xl text-xl font-bold leading-snug text-text-primary lg:mb-10 lg:text-2xl">
-            Методология Александры выросла из практики с экспертами,
-            предпринимателями и крупнейшими компаниями рынка.
+            Методология Александры выросла из практики с экспертами,
+            предпринимателями и крупнейшими компаниями рынка.
           </p>
         </motion.div>
 

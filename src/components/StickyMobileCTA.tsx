@@ -10,7 +10,7 @@ export function StickyMobileCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname === "/challenge" || pathname === "/design") {
+      if (pathname === "/challenge") {
         setIsVisible(false);
         return;
       }
@@ -19,14 +19,14 @@ export function StickyMobileCTA() {
       const pricingSection = document.getElementById("pricing");
       const pricingTop = pricingSection?.getBoundingClientRect().top ?? Infinity;
       
-      setIsVisible(window.scrollY > 500 && pricingTop > 100);
+      setIsVisible(window.scrollY > 500 && pricingTop > 100);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  if (pathname === "/challenge" || pathname === "/design") {
+  if (pathname === "/challenge") {
     return null;
   }
 

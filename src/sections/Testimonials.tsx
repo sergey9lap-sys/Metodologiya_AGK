@@ -1,12 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { SectionBackground } from "@/components/SectionBackground";
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -16,78 +17,225 @@ const fadeInUp = {
 const testimonials = [
   {
     name: "Константин Воробьев",
-    role: "тренер по плаванию, основатель сети клубов по обучению взрослых плаванию",
+    role: "тренер по плаванию, основатель сети клубов по обучению взрослых плаванию",
     image: "/images/konstantin-vorobev.jpg",
     result:
-      "Создал онлайн-курс по обучению взрослых плаванию и запустил тестовую фокус-группу. Масштабировал свою авторскую методику «Путь Пловца» в онлайн-формат и вышел на новый уровень развития проекта.",
-    financialAmount: "1 990 000 ₽",
+      "Создал онлайн‑курс по обучению взрослых плаванию и запустил тестовую фокус‑группу. Масштабировал свою авторскую методику «Путь Пловца» в онлайн‑формат и вышел на новый уровень развития проекта.",
+    financialAmount: "1 990 000 ₽",
   },
   {
     name: "Диана Семенычева",
-    role: "лингвокоуч, AI-архитектор обучения",
+    role: "лингвокоуч, AI‑архитектор обучения",
     image: "/images/diana-semenecheva.jpg",
     result:
-      "Создала две новые продуктовые линейки, запустила продажи интенсивной программы, получила запросы на премиальную личную работу.",
-    financialAmount: "550 000 ₽",
+      "Создала две новые продуктовые линейки, запустила продажи интенсивной программы, получила запросы на премиальную личную работу.",
+    financialAmount: "550 000 ₽",
   },
   {
     name: "Максим Шаргородский",
-    role: "эксперт по построению отделов продаж и увеличению прибыли",
+    role: "эксперт по построению отделов продаж и увеличению прибыли",
     image: "/images/maksim-shargorodskiy.jpg",
     result:
-      "Запустил мастер-группу по увеличению прибыли, усилил вовлечённость аудитории и выстроил более сильную продуктовую систему внутри проекта.",
+      "Запустил мастер‑группу по увеличению прибыли, усилил вовлечённость аудитории и выстроил более сильную продуктовую систему внутри проекта.",
     financialLabel: "Финансовый результат запуска",
-    financialAmount: "1 990 000 ₽",
+    financialAmount: "1 990 000 ₽",
   },
   {
     name: "Алиса Задорожная",
-    role: "фасилитатор, экс-маркетинг директор Яндекс Дзена",
+    role: "фасилитатор, экс‑маркетинг директор Яндекс Дзена",
     image: "/images/alisa-zadorozhnaya.jpg",
     result:
-      "Методологически проработала курс «Навыкология», улучшила лекции, домашние задания, геймификацию и запустила второй поток.",
-    financialPrefix: "45 человек на сумму",
-    financialAmount: "1 500 000 ₽",
+      "Методологически проработала курс «Навыкология», улучшила лекции, домашние задания, геймификацию и запустила второй поток.",
+    financialPrefix: "45 человек на сумму",
+    financialAmount: "1 500 000 ₽",
   },
   {
     name: "Вадим Алиев",
     role: "методолог, руководитель методического агентства «КурсМастер»",
     image: "/images/vadim-aliev.jpg",
     result:
-      "Разработал новую продуктовую систему и курс-наставничество для подготовки методологов с нуля. Внедрил автоматизацию процессов и усилил методическую команду новыми решениями.",
+      "Разработал новую продуктовую систему и курс‑наставничество для подготовки методологов с нуля. Внедрил автоматизацию процессов и усилил методическую команду новыми решениями.",
   },
   {
     name: "Дарья Кривоженко",
-    role: "директор по продуктам, методолог",
+    role: "директор по продуктам, методолог",
     image: "/images/darya-krivozhenko.jpg",
     result:
-      "Выстроила продуктовую линейку, усилила курс Нейросети 2.0, запустила марафон, упаковала мастер-класс, прогрев и допродажи.",
-    financialAmount: "2 765 348 ₽",
+      "Выстроила продуктовую линейку, усилила курс Нейросети 2.0, запустила марафон, упаковала мастер‑класс, прогрев и допродажи.",
+    financialAmount: "2 765 348 ₽",
   },
   {
     name: "Екатерина Заушицына",
     role: "методолог, кандидат тех. наук",
     image: "/images/ekaterina-zaushitsyna.jpg",
     result:
-      "Разобралась в форматах продуктов и выстроила продуктовую воронку. Собрала собственный продукт, к которому не могла приступить 3 года.",
-    financialAmount: "451 000 ₽",
+      "Разобралась в форматах продуктов и выстроила продуктовую воронку. Собрала собственный продукт, к которому не могла приступить 3 года.",
+    financialAmount: "451 000 ₽",
   },
   {
     name: "Надежда Логинова",
     role: "автор программы «Геном успеха», наставник",
     image: "/images/nadezhda-loginova.jpg",
     result:
-      "Пришла с запросом доработать программу и выйти в масштаб. После курса — 100% учеников дошли до конца, все вышли с результатами и оставили отзывы.",
-    financialAmount: "205 000 ₽",
+      "Пришла с запросом доработать программу и выйти в масштаб. После курса — 100% учеников дошли до конца, все вышли с результатами и оставили отзывы.",
+    financialAmount: "205 000 ₽",
   },
 ];
 
-export function Testimonials() {
+function keepShortWords(text: string) {
+  return text
+    .replace(/\s([а-яА-ЯёЁ]{1,2})\s/g, " $1\u00A0")
+    .replace(/\s(и|а|в|к|с|у|о|по|на|за|из|от|до)\s/gi, " $1\u00A0");
+}
+
+function getAmountValue(amount?: string) {
+  if (!amount) return null;
+
+  const value = Number(amount.replace(/[^\d]/g, ""));
+  return Number.isFinite(value) && value > 0 ? value : null;
+}
+
+function AchievementPlate({
+  item,
+  index,
+  isOpen,
+  onToggle,
+}: {
+  item: (typeof testimonials)[number];
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const financialAmount =
+    "financialAmount" in item && item.financialAmount ? item.financialAmount : null;
+  const amountValue = getAmountValue(financialAmount ?? undefined);
+  const resultLead = keepShortWords(item.result.split(".")[0] || item.result);
+  const fullFinancialText =
+    financialAmount
+      ? `${"financialLabel" in item && item.financialLabel ? item.financialLabel : "Финансовый результат"} — ${
+          "financialPrefix" in item && item.financialPrefix ? `${item.financialPrefix} ` : ""
+        }${financialAmount}`
+      : null;
+
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 28, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{
+        layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+        opacity: { duration: 0.5, delay: index * 0.06 },
+        y: { duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] },
+        scale: { duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] },
+      }}
+      className="relative isolate overflow-hidden border border-[#B98534]/48 bg-[#E5C17D] shadow-[0_18px_38px_rgba(58,0,12,0.14),inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-18px_32px_rgba(85,11,24,0.12)] [clip-path:polygon(2%_6%,13%_2%,28%_4%,45%_2%,61%_4%,80%_2%,98%_7%,99%_91%,86%_98%,69%_95%,51%_98%,31%_95%,14%_98%,1%_91%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.32),transparent_28%),radial-gradient(circle_at_82%_82%,rgba(85,11,24,0.18),transparent_34%),repeating-linear-gradient(102deg,rgba(255,255,255,0.08)_0_1px,transparent_1px_10px),linear-gradient(135deg,#C99B4A,#F5DEAB_34%,#B98534_68%,#E7C884)] after:absolute after:inset-[7px] after:-z-10 after:border after:border-[#75162E]/18 after:[clip-path:polygon(2%_7%,14%_4%,29%_6%,45%_4%,62%_6%,80%_4%,98%_8%,98%_90%,85%_96%,68%_93%,51%_96%,31%_93%,15%_96%,2%_90%)]"
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        className="group block w-full cursor-pointer px-4 pb-4 pt-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#75162E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2E5C5]"
+      >
+        <div className="grid grid-cols-[74px_minmax(0,1fr)] gap-3">
+          <div className="relative h-[74px] w-[74px] overflow-hidden border border-[#75162E]/32 bg-[#F8EBCB] shadow-[0_10px_20px_rgba(58,0,12,0.2)] [clip-path:polygon(8%_3%,92%_3%,98%_13%,98%_88%,88%_98%,12%_98%,2%_88%,2%_12%)]">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              sizes="74px"
+              className="object-cover grayscale-[18%] contrast-[1.04] saturate-[0.92]"
+            />
+          </div>
+
+          <div className="min-w-0">
+            <p className="font-heading text-xl font-black leading-tight text-[#3A000C]">
+              {keepShortWords(item.name)}
+            </p>
+            <p className="mt-1 line-clamp-3 text-sm font-semibold leading-snug text-[#5A2730]">
+              {resultLead}
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 border-y border-[#75162E]/18 py-3">
+          {amountValue ? (
+            <p className="whitespace-nowrap font-heading text-[28px] font-black leading-none text-[#550B18]">
+              <AnimatedCounter end={amountValue} duration={1500} suffix=" ₽" />
+            </p>
+          ) : (
+            <p className="font-heading text-[26px] font-black leading-none text-[#550B18]">
+              Новая система
+            </p>
+          )}
+        </div>
+
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <span className="text-sm font-black uppercase tracking-[0.03em] text-[#550B18]">
+            {isOpen ? "Свернуть ↑" : "Читать кейс ↓"}
+          </span>
+          <motion.span
+            aria-hidden="true"
+            animate={{ y: isOpen ? 0 : [0, 3, 0], rotate: isOpen ? 180 : 0 }}
+            transition={{
+              y: { duration: 1.2, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 0.25 },
+            }}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-[#75162E]/22 bg-[#F8EBCB]/54 text-[#550B18] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]"
+          >
+            <ChevronDown className="h-4 w-4" />
+          </motion.span>
+        </div>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="details"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="mx-4 mb-4 border-t border-[#75162E]/18 pt-4">
+              <p className="text-sm font-bold leading-relaxed text-[#3A000C]">
+                {keepShortWords(item.result)}
+              </p>
+              {fullFinancialText && (
+                <p className="mt-3 text-sm font-black leading-relaxed text-[#550B18]">
+                  {keepShortWords(fullFinancialText).replace(financialAmount ?? "", "")}
+                  <span className="whitespace-nowrap">{financialAmount}</span>
+                </p>
+              )}
+              <p className="mt-3 text-sm font-semibold leading-relaxed text-[#5A2730]">
+                {keepShortWords(item.role)}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.article>
+  );
+}
+
+export function Testimonials() {
+  const [openCase, setOpenCase] = useState<string | null>(null);
+
+  return (
+    <section className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:47.jpg"
         variant="light"
         position="object-center"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.5),transparent_24rem),linear-gradient(180deg,rgba(242,229,197,0.08),rgba(242,229,197,0.42))]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[58%] opacity-25 [background-image:linear-gradient(90deg,rgba(85,11,24,0.18)_0_1px,transparent_1px_9.09%),linear-gradient(0deg,rgba(85,11,24,0.12)_0_1px,transparent_1px_18.18%)] [background-size:11%_100%,100%_72px]"
       />
       <Container className="relative z-20">
         <motion.div
@@ -99,61 +247,23 @@ export function Testimonials() {
           className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
           <h2 className="mb-4 font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
-            Выпускники выходят не с теорией, а с результатом
+            Выпускники выходят не&nbsp;с&nbsp;теорией, а&nbsp;с&nbsp;результатом
           </h2>
           <p className="text-body text-text-secondary">
-            На курсе рождаются не абстрактные знания, а реальные продукты,
-            решения, новые запуски и сильные кейсы.
+            На&nbsp;курсе рождаются не&nbsp;абстрактные знания, а&nbsp;реальные продукты,
+            решения, новые запуски и&nbsp;сильные кейсы.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {testimonials.map((item, index) => (
-            <motion.div
+            <AchievementPlate
               key={item.name}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-            >
-              <Card className="h-full border-2 border-orange-1">
-                <div className="grid h-[520px] grid-rows-[64px_minmax(0,1fr)_112px_92px]">
-                  <div className="relative h-16 w-16 flex-none overflow-hidden rounded-full border-2 border-orange-1 shadow-soft transition-transform duration-300 group-hover:scale-110">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <p className="mt-4 text-body font-semibold leading-relaxed text-text-primary">
-                    {item.result}
-                  </p>
-                  <div className="flex items-start border-b-2 border-orange-1 pb-4 pt-4">
-                    {"financialAmount" in item && item.financialAmount && (
-                      <p className="text-body font-bold leading-relaxed text-text-primary">
-                        {"financialLabel" in item && item.financialLabel
-                          ? item.financialLabel
-                          : "Финансовый результат"}{" "}
-                        —{" "}
-                        {"financialPrefix" in item && item.financialPrefix && (
-                          <>
-                            {item.financialPrefix}{" "}
-                          </>
-                        )}
-                        <span className="whitespace-nowrap">{item.financialAmount}</span>
-                      </p>
-                    )}
-                  </div>
-                  <div className="pt-3">
-                    <p className="font-bold text-text-primary">{item.name}</p>
-                    <p className="text-sm font-medium text-orange-1">{item.role}</p>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
+              item={item}
+              index={index}
+              isOpen={openCase === item.name}
+              onToggle={() => setOpenCase(openCase === item.name ? null : item.name)}
+            />
           ))}
         </div>
 

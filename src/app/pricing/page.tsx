@@ -3,13 +3,13 @@ import { Pricing } from "@/sections/Pricing";
 
 export const metadata: Metadata = {
   title: "Методология 16.0 — тарифы",
-  description: "Тарифы курса Методология 16.0, продуктовая стратегия и связь с менеджером.",
+  description: "Тарифы курса Методология 16.0, продуктовая стратегия и связь с менеджером.",
   alternates: {
     canonical: "/pricing",
   },
   openGraph: {
     title: "Методология 16.0 — тарифы",
-    description: "Тарифы курса Методология 16.0, продуктовая стратегия и связь с менеджером.",
+    description: "Тарифы курса Методология 16.0, продуктовая стратегия и связь с менеджером.",
     url: "/pricing",
     type: "website",
     locale: "ru_RU",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Методология 16.0 — тарифы",
-    description: "Тарифы курса Методология 16.0, продуктовая стратегия и связь с менеджером.",
+    description: "Тарифы курса Методология 16.0, продуктовая стратегия и связь с менеджером.",
     images: ["/images/blok-1.jpg"],
   },
 };

@@ -29,7 +29,7 @@ const instantPayments = [
   },
   {
     name: "AlphaPay",
-    label: "оплата через Альфа-Банк",
+    label: "оплата через Альфа-Банк",
     logo: "https://agkedu.getcourse.ru/img/payments/new_alpha_logo.png?v=1",
   },
 ];
@@ -43,27 +43,27 @@ const installmentOptions = [
   {
     name: "Всегда.Да",
     logo: "https://agkedu.getcourse.ru/saas/images/vsegdada.png?v=1",
-    text: "Рассрочка на 6, 10, 12, 18 или 24 месяца.",
+    text: "Рассрочка на 6, 10, 12, 18 или 24 месяца.",
   },
   {
     name: "Т-Банк",
     logo: "https://logo-teka.com/wp-content/uploads/2025/06/t-bank-logo-en.png",
-    text: "Рассрочка на 3, 4, 6, 10 или 12 месяцев.",
+    text: "Рассрочка на 3, 4, 6, 10 или 12 месяцев.",
   },
   {
     name: "POSCREDIT",
     logo: "https://agkedu.getcourse.ru/img/payments/poscredit_payform.png",
-    text: "Беспроцентная рассрочка на 6, 10 или 12 месяцев.",
+    text: "Беспроцентная рассрочка на 6, 10 или 12 месяцев.",
   },
   {
     name: "Сбер Банк",
     logo: "https://agkedu.getcourse.ru/img/payments/sber_pokupay.png",
-    text: "Для клиентов банка: варианты до 24 месяцев.",
+    text: "Для клиентов банка: варианты до 24 месяцев.",
   },
   {
     name: "Внутренняя рассрочка",
     logo: "",
-    text: "Индивидуальный график через службу заботы Академии.",
+    text: "Индивидуальный график через службу заботы Академии.",
   },
 ];
 
@@ -71,17 +71,17 @@ const paymentFeatures = [
   {
     icon: CreditCard,
     title: "Оплата картой",
-    text: "Можно оплатить обучение банковской картой онлайн через защищенную платежную страницу.",
+    text: "Можно оплатить обучение банковской картой онлайн через защищенную платежную страницу.",
   },
   {
     icon: WalletCards,
     title: "Платежные сервисы",
-    text: "Доступны Яндекс Сплит, Всегда.Да, Т-Банк, POSCREDIT и Сбер Банк.",
+    text: "Доступны Яндекс Сплит, Всегда.Да, Т-Банк, POSCREDIT и Сбер Банк.",
   },
   {
     icon: Landmark,
-    title: "Рассрочка до 24 месяцев",
-    text: "Можно подобрать комфортный ежемесячный платеж: обычно доступны сроки до 12 или до 24 месяцев.",
+    title: "Рассрочка до 24 месяцев",
+    text: "Можно подобрать комфортный ежемесячный платеж: обычно доступны сроки до 12 или до 24 месяцев.",
   },
   {
     icon: ShieldCheck,
@@ -92,11 +92,20 @@ const paymentFeatures = [
 
 export function PaymentOptions() {
   return (
-    <section className="relative overflow-hidden bg-black py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#140B0D] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:31:10.jpg"
         variant="orange"
         position="object-center"
+        className="opacity-45 saturate-[0.7]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_12%,rgba(214,171,87,0.16),transparent_25rem),linear-gradient(180deg,rgba(20,11,13,0.72),rgba(42,13,20,0.82)_48%,rgba(18,8,10,0.88))]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 opacity-22 [background-image:repeating-linear-gradient(90deg,transparent_0_42px,rgba(247,235,207,0.08)_42px_43px,transparent_43px_86px),repeating-linear-gradient(0deg,rgba(214,171,87,0.035)_0_1px,transparent_1px_26px)]"
       />
       <Container className="relative z-20">
         <motion.div
@@ -105,15 +114,15 @@ export function PaymentOptions() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-5xl rounded-[28px] border-2 border-white/70 bg-white/18 p-5 shadow-card backdrop-blur-sm lg:p-8"
+          className="mx-auto max-w-5xl rounded-[28px] border border-[#D6AB57]/42 bg-[#F8EBCB]/12 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-sm lg:p-8"
         >
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-heading text-3xl font-black uppercase leading-tight text-white lg:text-4xl">
               Доступны разные способы оплаты
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-white/90 lg:text-lg">
-              Вы можете оплатить обучение сразу или выбрать рассрочку. Доступны
-              банковские карты, быстрые платежи, платежные сервисы и внутренняя
+              Вы можете оплатить обучение сразу или выбрать рассрочку. Доступны
+              банковские карты, быстрые платежи, платежные сервисы и внутренняя
               рассрочка Академии.
             </p>
           </div>
@@ -126,7 +135,7 @@ export function PaymentOptions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.42, delay: 0.14 + index * 0.06 }}
-                className="flex min-h-[112px] flex-col items-center justify-center rounded-2xl border border-white/80 bg-white px-3 py-4 text-center shadow-[0_12px_30px_rgba(40,25,10,0.12)]"
+                className="flex min-h-[112px] flex-col items-center justify-center rounded-[18px] border border-[#D6AB57]/38 bg-[#F8EBCB] px-3 py-4 text-center shadow-[0_14px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.62)]"
               >
                 <div className="mb-3 flex h-12 items-center justify-center">
                   <Image
@@ -156,7 +165,7 @@ export function PaymentOptions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.42, delay: 0.18 + index * 0.06 }}
-                className="flex min-h-[132px] flex-col justify-between rounded-2xl border border-white/80 bg-white px-4 py-4 shadow-[0_12px_30px_rgba(40,25,10,0.12)]"
+                className="flex min-h-[132px] flex-col justify-between rounded-[18px] border border-[#D6AB57]/38 bg-[linear-gradient(145deg,#FFF6DC,#F2E5C5)] px-4 py-4 shadow-[0_14px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.62)]"
               >
                 <div className="flex min-h-[42px] items-center">
                   {option.logo ? (
@@ -169,7 +178,7 @@ export function PaymentOptions() {
                       loading="lazy"
                     />
                   ) : (
-                    <span className="rounded-xl bg-orange-1 px-3 py-2 text-sm font-black text-white">
+                    <span className="rounded-xl border border-[#D6AB57]/42 bg-[#550B18] px-3 py-2 text-sm font-black text-[#F7EBCF]">
                       {option.name}
                     </span>
                   )}
@@ -192,10 +201,10 @@ export function PaymentOptions() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: 0.24 + index * 0.07 }}
-                  className="rounded-2xl border border-white/75 bg-white/94 p-4 shadow-sm"
+                  className="rounded-[18px] border border-[#D6AB57]/34 bg-[#F8EBCB]/96 p-4 shadow-[0_12px_28px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.58)]"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-orange-1 text-white shadow-[0_8px_18px_rgba(85,11,24,0.24)]">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-[#D6AB57]/46 bg-[#550B18] text-[#F7EBCF] shadow-[0_8px_18px_rgba(85,11,24,0.24)]">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -213,7 +222,7 @@ export function PaymentOptions() {
           </div>
 
           <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-semibold leading-relaxed text-white/88">
-            Точные условия зависят от выбранного тарифа и платежного партнера.
+            Точные условия зависят от выбранного тарифа и платежного партнера.
             Служба заботы подскажет доступные варианты перед оформлением.
           </p>
 
@@ -222,7 +231,7 @@ export function PaymentOptions() {
               href="#pricing"
               className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:w-auto"
             >
-              Присоединиться к обучению
+              Присоединиться к обучению
               <ArrowRight className="h-5 w-5 flex-shrink-0" />
             </a>
           </div>

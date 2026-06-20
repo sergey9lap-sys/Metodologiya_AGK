@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface TimeLeft {
   days: number;
@@ -16,6 +16,7 @@ interface CountdownTimerProps {
 }
 
 export function CountdownTimer({ targetDate, compact = false }: CountdownTimerProps) {
+  const shouldReduceMotion = useReducedMotion();
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -30,7 +31,7 @@ export function CountdownTimer({ targetDate, compact = false }: CountdownTimerPr
     const calculateTimeLeft = () => {
       const difference = new Date(targetDate).getTime() - new Date().getTime();
       
-      if (difference > 0) {
+      if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
@@ -72,9 +73,15 @@ export function CountdownTimer({ targetDate, compact = false }: CountdownTimerPr
               compact ? "h-10 w-10 sm:h-11 sm:w-11" : "h-14 w-14 sm:h-16 sm:w-16"
             }`}
           >
-            <span className={`font-heading font-black text-white ${compact ? "text-base sm:text-lg" : "text-xl sm:text-2xl"}`}>
+            <motion.span
+              key={unit.value}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 4, filter: "blur(3px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              className={`font-heading font-black text-white ${compact ? "text-base sm:text-lg" : "text-xl sm:text-2xl"}`}
+            >
               {unit.value.toString().padStart(2, "0")}
-            </span>
+            </motion.span>
           </div>
           <span className={`${compact ? "mt-0.5 text-[10px] sm:text-xs" : "mt-1 text-xs sm:text-sm"} font-medium text-text-muted`}>
             {unit.label}

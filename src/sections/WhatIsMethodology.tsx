@@ -1,105 +1,243 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { SectionBackground } from "@/components/SectionBackground";
 import { ArrowRight, Compass, Puzzle, Route } from "lucide-react";
-import { motion } from "framer-motion";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+import { useEffect, useRef } from "react";
 
 const cards = [
   {
     icon: Puzzle,
     title: "Методология = конструктор",
-    text: "Вы берёте свои знания, опыт и сильные смыслы и собираете из них цельную пошаговую систему обучения.",
+    text: "Вы берёте свои знания, опыт и сильные смыслы и собираете из них цельную пошаговую систему обучения.",
+    breakBefore: ["обучения."],
   },
   {
     icon: Route,
     title: "Методология = навигатор",
-    text: "Каждый шаг в продукте становится понятным: что идёт за чем, почему это работает и куда ведёт ученика.",
+    text: "Каждый шаг в продукте становится понятным: что идёт за чем, почему это работает и куда ведёт ученика.",
+    breakBefore: ["куда"],
   },
   {
     icon: Compass,
     title: "Методология = система решений",
-    text: "Она помогает строить продукты, домашние задания, практику и логику обучения так, чтобы ученики доходили до результата.",
+    text: "Она помогает строить продукты, домашние задания, практику и логику обучения так, чтобы ученики доходили до результата.",
+    breakBefore: ["чтобы"],
   },
 ];
 
 export function WhatIsMethodology() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const threadRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const scrollRefs = useRef<HTMLDivElement[]>([]);
+  const titleRefs = useRef<HTMLHeadingElement[]>([]);
+  const textRefs = useRef<HTMLParagraphElement[]>([]);
+
+  useEffect(() => {
+    let cleanup = () => {};
+
+    const setupAnimation = async () => {
+      if (!sectionRef.current) return;
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+      ]);
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const context = gsap.context(() => {
+        const scrolls = scrollRefs.current;
+        const titles = titleRefs.current;
+        const descriptions = textRefs.current;
+        const descriptionWords = descriptions.flatMap((item) =>
+          Array.from(item.querySelectorAll<HTMLElement>(".scroll-ink-word"))
+        );
+
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+          gsap.set(headerRef.current, { opacity: 0, y: 22, filter: "blur(8px)" });
+          gsap.set(threadRef.current, { scaleY: 0, transformOrigin: "top center" });
+          gsap.set(buttonRef.current, { opacity: 0, y: 18 });
+          gsap.set(scrolls, { scaleX: 0.09, opacity: 0.88, transformOrigin: "50% 50%" });
+          gsap.set(titles, { opacity: 0, y: 10, filter: "blur(5px)" });
+          gsap.set(descriptionWords, { opacity: 0, y: 8, filter: "blur(4px)" });
+
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 72%",
+              once: true,
+            },
+            defaults: { ease: "power3.out" },
+          });
+
+          timeline
+            .to(headerRef.current, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.72 })
+            .to(threadRef.current, { scaleY: 1, duration: 1.1 }, "-=0.26");
+
+          scrolls.forEach((scroll, index) => {
+            const words = Array.from(descriptions[index].querySelectorAll<HTMLElement>(".scroll-ink-word"));
+
+            timeline
+              .to(scroll, { scaleX: 1, opacity: 1, duration: 0.78 }, index === 0 ? "-=0.54" : "-=0.18")
+              .to(titles[index], { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.34 }, "-=0.22")
+              .to(
+                words,
+                {
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  duration: 0.28,
+                  stagger: 0.018,
+                },
+                "-=0.08"
+              );
+          });
+
+          timeline.to(buttonRef.current, { opacity: 1, y: 0, duration: 0.48 }, "-=0.04");
+        });
+
+        mm.add("(max-width: 767px)", () => {
+          gsap.set(headerRef.current, { opacity: 0, y: 16 });
+          gsap.set(threadRef.current, { scaleY: 0, transformOrigin: "top center" });
+          gsap.set(buttonRef.current, { opacity: 0, y: 14 });
+          gsap.set(scrolls, { opacity: 0, y: 18, scale: 0.97 });
+          gsap.set(titles, { opacity: 0, y: 8 });
+          gsap.set(descriptionWords, { opacity: 0 });
+
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 76%",
+              once: true,
+            },
+            defaults: { ease: "power2.out" },
+          });
+
+          timeline
+            .to(headerRef.current, { opacity: 1, y: 0, duration: 0.52 })
+            .to(threadRef.current, { scaleY: 1, duration: 0.7 }, "-=0.18");
+
+          scrolls.forEach((scroll, index) => {
+            const words = Array.from(descriptions[index].querySelectorAll<HTMLElement>(".scroll-ink-word"));
+
+            timeline
+              .to(scroll, { opacity: 1, y: 0, scale: 1, duration: 0.44 }, index === 0 ? "-=0.34" : "-=0.08")
+              .to(titles[index], { opacity: 1, y: 0, duration: 0.24 }, "-=0.16")
+              .to(words, { opacity: 1, duration: 0.18, stagger: 0.01 }, "-=0.06");
+          });
+
+          timeline.to(buttonRef.current, { opacity: 1, y: 0, duration: 0.36 }, "-=0.02");
+        });
+
+        cleanup = () => {
+          mm.revert();
+          context.revert();
+        };
+      }, sectionRef);
+    };
+
+    setupAnimation();
+
+    return () => cleanup();
+  }, []);
+
+  const renderInkText = (text: string, breakBefore: string[] = []) =>
+    text.split(" ").map((word, index, words) => (
+      <span key={`${word}-${index}`}>
+        {breakBefore.includes(word) ? <br /> : null}
+        <span className="scroll-ink-word inline-block">
+          {word}
+          {index < words.length - 1 ? "\u00A0" : ""}
+        </span>
+      </span>
+    ));
+
   return (
-    <section className="relative overflow-hidden bg-black py-12 lg:py-16">
+    <section ref={sectionRef} className="relative overflow-hidden bg-black py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:27.jpg"
         variant="orange"
         position="object-bottom"
+        className="opacity-70 saturate-[0.82]"
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_26%_22%,rgba(242,229,197,0.11),transparent_18rem),linear-gradient(110deg,rgba(58,0,12,0.76),rgba(28,0,6,0.72)_52%,rgba(85,11,24,0.82))]"
+      />
+      <div aria-hidden="true" className="scroll-section-dust pointer-events-none absolute inset-0 z-10" />
+
       <Container className="relative z-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5 }}
-          className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
-        >
+        <div ref={headerRef} className="mx-auto mb-8 max-w-4xl text-center lg:mb-10">
           <h2 className="mb-4 font-heading text-3xl font-black uppercase text-white lg:text-4xl">
-            Что такое методология
+            Что такое методология
           </h2>
           <p className="text-lg text-white/92 lg:text-xl">
-            Это не теория ради теории, а рабочая система создания образовательных
-            продуктов, которую можно сразу внедрять в курс, продуктовую линейку и
+            Это не теория ради теории, а рабочая система создания образовательных
+            продуктов, которую можно сразу внедрять в курс, продуктовую линейку и
             команду.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="relative mx-auto flex max-w-5xl flex-col gap-5 pl-5 sm:pl-8 lg:gap-6">
+          <div
+            ref={threadRef}
+            aria-hidden="true"
+            className="absolute left-1 top-2 h-[calc(100%-1rem)] w-px origin-top bg-[linear-gradient(180deg,transparent,rgba(214,171,87,0.86)_10%,rgba(242,229,197,0.56)_52%,rgba(214,171,87,0.74)_90%,transparent)] shadow-[0_0_18px_rgba(214,171,87,0.34)] sm:left-3"
+          />
+
           {cards.map((card, index) => {
             const Icon = card.icon;
             return (
-              <motion.div
+              <div
                 key={card.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                ref={(node) => {
+                  if (node) scrollRefs.current[index] = node;
+                }}
+                className={`method-scroll relative min-h-[174px] w-full overflow-visible px-7 py-6 sm:px-10 lg:min-h-[158px] lg:px-14 ${
+                  index === 1
+                    ? "method-scroll--wine lg:ml-10 lg:w-[calc(100%-2.5rem)]"
+                    : index === 2
+                      ? "lg:ml-4 lg:w-[calc(100%-1rem)]"
+                      : "lg:w-[calc(100%-2rem)]"
+                }`}
               >
-                <Card
-                  className={`h-full ${
-                    index === 0
-                      ? "lg:col-span-1 bg-[#F7EBCF]/96"
-                      : index === 1
-                        ? "bg-[#3A000C] text-[#F7EBCF]"
-                        : "bg-[#F2E5C5]/96"
-                  }`}
-                >
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className={`group-icon rounded-xl p-3 shadow-md ${index === 1 ? "bg-[#F7EBCF]" : "bg-orange-1"}`}>
-                      <Icon className={`h-6 w-6 ${index === 1 ? "text-orange-1" : "text-white"}`} />
-                    </div>
-                    <h3 className={`font-heading text-xl font-bold ${index === 1 ? "text-[#F7EBCF]" : "text-text-primary"}`}>
+                <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start">
+                  <div className={`method-scroll-seal flex h-12 w-12 flex-none items-center justify-center rounded-full ${index === 1 ? "method-scroll-seal--light" : ""}`}>
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3
+                      ref={(node) => {
+                        if (node) titleRefs.current[index] = node;
+                      }}
+                      className={`font-heading text-xl font-bold ${index === 1 ? "text-[#F7EBCF]" : "text-text-primary"}`}
+                    >
                       {card.title}
                     </h3>
+                    <p
+                      ref={(node) => {
+                        if (node) textRefs.current[index] = node;
+                      }}
+                      className={`mt-2 text-body ${index === 1 ? "text-[#F7EBCF]/88" : "text-text-secondary"}`}
+                    >
+                      {renderInkText(card.text, card.breakBefore)}
+                    </p>
                   </div>
-                  <p className={`text-body ${index === 1 ? "text-[#F7EBCF]/84" : "text-text-secondary"}`}>{card.text}</p>
-                </Card>
-              </motion.div>
+                </div>
+              </div>
             );
           })}
         </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="mt-8 flex justify-center"
-        >
+        <div ref={buttonRef} className="mt-8 flex justify-center">
           <a
             href="#pricing"
             className="inline-flex min-h-[60px] w-full max-w-[340px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:w-auto"
@@ -107,7 +245,7 @@ export function WhatIsMethodology() {
             Забронировать место
             <ArrowRight className="h-5 w-5 flex-shrink-0" />
           </a>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

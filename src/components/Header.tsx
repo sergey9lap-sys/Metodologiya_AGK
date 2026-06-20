@@ -8,9 +8,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "О курсе", href: "#about" },
+  { label: "О курсе", href: "#about" },
   { label: "Автор программы", href: "#author" },
-  { label: "Для кого", href: "#about" },
+  { label: "Для кого", href: "#about" },
   { label: "Программа", href: "#program" },
   { label: "Тарифы", href: "#pricing" },
   { label: "Вопросы", href: "#faq" },
@@ -22,7 +22,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,7 +38,7 @@ export function Header() {
     };
   }, [mobileOpen]);
 
-  if (pathname === "/challenge" || pathname === "/design") {
+  if (pathname === "/challenge") {
     return null;
   }
 
@@ -123,7 +123,7 @@ export function Header() {
               ))}
               <a href="#pricing" onClick={() => setMobileOpen(false)}>
                 <Button variant="primary" size="lg">
-                  Иду на курс
+                  Иду на курс
                 </Button>
               </a>
             </nav>

@@ -90,7 +90,7 @@ export function NichesAndFormats() {
             transition={{ duration: 0.5 }}
             className="font-heading text-3xl font-black uppercase leading-tight text-text-primary lg:text-4xl"
           >
-            Методология усиливает не один продукт, а всю систему
+            Методология усиливает не один продукт, а всю систему
           </motion.h2>
           <motion.p
             initial="hidden"
@@ -100,7 +100,7 @@ export function NichesAndFormats() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mx-auto mt-4 max-w-3xl text-lg font-semibold text-text-secondary lg:text-xl"
           >
-            Разрозненные форматы собираются в понятную продуктовую линейку
+            Разрозненные форматы собираются в понятную продуктовую линейку
           </motion.p>
         </div>
 
@@ -176,7 +176,7 @@ export function NichesAndFormats() {
               <svg
                 aria-hidden="true"
                 viewBox="0 0 1000 420"
-                className="pointer-events-none absolute inset-0 z-0 h-full w-full overflow-visible"
+                className="pointer-events-none absolute inset-0 z-30 h-full w-full overflow-visible"
               >
                 <defs>
                   <marker
@@ -289,7 +289,7 @@ export function NichesAndFormats() {
                     left: `${node.x / 10}%`,
                     top: `${node.y / 4.2}%`,
                   }}
-                  className="group absolute z-10 flex min-h-[68px] w-[180px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center rounded-[20px] border border-orange-1/24 bg-[#F6E8C8] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.08)] transition-colors duration-300 hover:border-orange-1/70 hover:shadow-[0_18px_48px_rgba(85,11,24,0.22)]"
+                  className="group absolute z-10 flex min-h-[68px] w-[180px] -translate-x-1/2 -translate-y-1/2 cursor-default items-center justify-center overflow-hidden rounded-[20px] border border-[#B8843C]/32 bg-[#F7E7BE]/78 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.42),transparent_32%),radial-gradient(circle_at_84%_80%,rgba(117,22,46,0.052),transparent_28%),repeating-linear-gradient(105deg,rgba(85,11,24,0.018)_0_1px,transparent_1px_9px)] px-4 py-3 text-center text-sm font-bold leading-snug text-text-primary shadow-[0_12px_30px_rgba(40,25,10,0.09),inset_0_1px_0_rgba(255,255,255,0.56)] backdrop-blur-[1px] transition-colors duration-300 hover:border-orange-1/70 hover:shadow-[0_18px_48px_rgba(85,11,24,0.18)]"
                 >
                   <span className="absolute left-1/2 top-0 h-1 w-12 -translate-x-1/2 rounded-b-full bg-orange-1/70 transition-all duration-300 group-hover:w-20" />
                   <span className="absolute -left-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-white bg-orange-1 shadow-[0_0_18px_rgba(85,11,24,0.5)]" />
@@ -309,7 +309,7 @@ export function NichesAndFormats() {
               transition={{ duration: 0.5, delay: 1.26 }}
               className="mb-5 text-center font-heading text-xl font-black text-text-primary lg:mb-7 lg:text-2xl"
             >
-              И во что это вырастает
+              И во что это вырастает
             </motion.p>
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">

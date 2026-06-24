@@ -28,7 +28,7 @@ export function SectionBackground({
         aria-hidden="true"
         fill
         sizes="100vw"
-        className={`pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover ${position} ${className}`}
+        className={`pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.01] select-none object-cover blur-[2px] saturate-[0.78] ${position} ${className}`}
       />
       <div
         aria-hidden="true"

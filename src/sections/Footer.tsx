@@ -55,7 +55,7 @@ export function Footer() {
           <div className="space-y-4 text-center lg:text-left">
             <a
               href="#"
-              className="inline-block font-sans font-black text-2xl text-orange-1 uppercase tracking-tight"
+              className="inline-block font-sans font-black text-2xl text-[#F7EBCF] uppercase tracking-tight"
             >
               МЕТОДОЛОГИЯ
             </a>

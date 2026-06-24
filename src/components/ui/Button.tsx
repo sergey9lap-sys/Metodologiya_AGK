@@ -11,10 +11,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: cn(
-    "bg-[linear-gradient(135deg,#75162E_0%,#550B18_52%,#3A000C_100%)]",
-    "text-[#F7EBCF] font-semibold uppercase",
-    "shadow-button",
-    "motion-safe:hover:shadow-button-hover motion-safe:hover:-translate-y-0.5",
+    "bg-[#D96A32]",
+    "text-white font-semibold uppercase",
+    "shadow-[0_14px_32px_rgba(217,106,50,0.28)]",
+    "motion-safe:hover:bg-[#C45A29] motion-safe:hover:shadow-[0_18px_42px_rgba(217,106,50,0.34)] motion-safe:hover:-translate-y-0.5",
     "motion-safe:active:translate-y-0 motion-safe:active:scale-100",
     "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),
@@ -27,9 +27,9 @@ const variantStyles: Record<ButtonVariant, string> = {
     "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),
   secondary: cn(
-    "border-2 border-[#550B18]",
-    "bg-[#F7EBCF] text-[#550B18] font-semibold uppercase",
-    "motion-safe:hover:bg-[#550B18] motion-safe:hover:text-[#F7EBCF] motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-button",
+    "border-2 border-[#D96A32]",
+    "bg-[#F7EBCF] text-[#D96A32] font-semibold uppercase",
+    "motion-safe:hover:bg-[#D96A32] motion-safe:hover:text-white motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_14px_32px_rgba(217,106,50,0.28)]",
     "motion-safe:active:translate-y-0",
     "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
   ),

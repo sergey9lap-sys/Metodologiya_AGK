@@ -129,16 +129,16 @@ function AchievementPlate({
         y: { duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] },
         scale: { duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] },
       }}
-      className="relative isolate overflow-hidden border border-[#B98534]/48 bg-[#E5C17D] shadow-[0_18px_38px_rgba(58,0,12,0.14),inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-18px_32px_rgba(85,11,24,0.12)] [clip-path:polygon(2%_6%,13%_2%,28%_4%,45%_2%,61%_4%,80%_2%,98%_7%,99%_91%,86%_98%,69%_95%,51%_98%,31%_95%,14%_98%,1%_91%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.32),transparent_28%),radial-gradient(circle_at_82%_82%,rgba(85,11,24,0.18),transparent_34%),repeating-linear-gradient(102deg,rgba(255,255,255,0.08)_0_1px,transparent_1px_10px),linear-gradient(135deg,#C99B4A,#F5DEAB_34%,#B98534_68%,#E7C884)] after:absolute after:inset-[7px] after:-z-10 after:border after:border-[#75162E]/18 after:[clip-path:polygon(2%_7%,14%_4%,29%_6%,45%_4%,62%_6%,80%_4%,98%_8%,98%_90%,85%_96%,68%_93%,51%_96%,31%_93%,15%_96%,2%_90%)]"
+      className="relative isolate flex min-h-[260px] flex-col overflow-hidden rounded-[18px] border border-[#F2E5C5]/18 bg-[#550B18] text-[#F7EBCF] shadow-[0_18px_38px_rgba(58,0,12,0.16),inset_0_1px_0_rgba(255,255,255,0.10)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.10),transparent_28%),linear-gradient(135deg,#550B18,#3A000C)]"
     >
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="group block w-full cursor-pointer px-4 pb-4 pt-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#75162E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2E5C5]"
+        className="group flex w-full flex-1 cursor-pointer flex-col px-4 pb-4 pt-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#75162E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2E5C5]"
       >
         <div className="grid grid-cols-[74px_minmax(0,1fr)] gap-3">
-          <div className="relative h-[74px] w-[74px] overflow-hidden border border-[#75162E]/32 bg-[#F8EBCB] shadow-[0_10px_20px_rgba(58,0,12,0.2)] [clip-path:polygon(8%_3%,92%_3%,98%_13%,98%_88%,88%_98%,12%_98%,2%_88%,2%_12%)]">
+          <div className="relative h-[74px] w-[74px] overflow-hidden rounded-[14px] border border-[#75162E]/22 bg-[#F8EBCB] shadow-[0_10px_20px_rgba(58,0,12,0.16)]">
             <Image
               src={item.image}
               alt={item.name}
@@ -149,29 +149,29 @@ function AchievementPlate({
           </div>
 
           <div className="min-w-0">
-            <p className="font-heading text-xl font-black leading-tight text-[#3A000C]">
+            <p className="font-heading text-xl font-black leading-tight text-[#F7EBCF]">
               {keepShortWords(item.name)}
             </p>
-            <p className="mt-1 line-clamp-3 text-sm font-semibold leading-snug text-[#5A2730]">
+            <p className="mt-1 line-clamp-3 text-sm font-semibold leading-snug text-[#F7EBCF]/78">
               {resultLead}
             </p>
           </div>
         </div>
 
-        <div className="mt-4 border-y border-[#75162E]/18 py-3">
+        <div className="mt-auto border-y border-[#F2E5C5]/16 py-3">
           {amountValue ? (
-            <p className="whitespace-nowrap font-heading text-[28px] font-black leading-none text-[#550B18]">
+            <p className="whitespace-nowrap font-heading text-[28px] font-black leading-none text-[#F2E5C5]">
               <AnimatedCounter end={amountValue} duration={1500} suffix=" ₽" />
             </p>
           ) : (
-            <p className="font-heading text-[26px] font-black leading-none text-[#550B18]">
+            <p className="font-heading text-[26px] font-black leading-none text-[#F2E5C5]">
               Новая система
             </p>
           )}
         </div>
 
         <div className="mt-3 flex items-center justify-between gap-3">
-          <span className="text-sm font-black uppercase tracking-[0.03em] text-[#550B18]">
+          <span className="text-sm font-black uppercase tracking-[0.03em] text-[#F2E5C5]">
             {isOpen ? "Свернуть ↑" : "Читать кейс ↓"}
           </span>
           <motion.span
@@ -181,7 +181,7 @@ function AchievementPlate({
               y: { duration: 1.2, repeat: Infinity, ease: "easeInOut" },
               rotate: { duration: 0.25 },
             }}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-[#75162E]/22 bg-[#F8EBCB]/54 text-[#550B18] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-[#F2E5C5]/22 bg-[#F8EBCB]/12 text-[#F2E5C5] shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]"
           >
             <ChevronDown className="h-4 w-4" />
           </motion.span>
@@ -198,17 +198,17 @@ function AchievementPlate({
             transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="mx-4 mb-4 border-t border-[#75162E]/18 pt-4">
-              <p className="text-sm font-bold leading-relaxed text-[#3A000C]">
+            <div className="mx-4 mb-4 border-t border-[#F2E5C5]/18 pt-4">
+              <p className="text-sm font-bold leading-relaxed text-[#F7EBCF]">
                 {keepShortWords(item.result)}
               </p>
               {fullFinancialText && (
-                <p className="mt-3 text-sm font-black leading-relaxed text-[#550B18]">
+                <p className="mt-3 text-sm font-black leading-relaxed text-[#F2E5C5]">
                   {keepShortWords(fullFinancialText).replace(financialAmount ?? "", "")}
                   <span className="whitespace-nowrap">{financialAmount}</span>
                 </p>
               )}
-              <p className="mt-3 text-sm font-semibold leading-relaxed text-[#5A2730]">
+              <p className="mt-3 text-sm font-semibold leading-relaxed text-[#F7EBCF]/78">
                 {keepShortWords(item.role)}
               </p>
             </div>

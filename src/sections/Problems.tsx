@@ -3,7 +3,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionBackground } from "@/components/SectionBackground";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -40,57 +39,30 @@ const problemGroups = [
   },
 ];
 
-const columnImages = [
-  "/column-expert.png",
-  "/column-methodologist.png",
-  "/column-entrepreneur.png",
-];
+const problemNumerals = ["I", "II", "III"];
 
-function AntiqueColumn({
-  index,
-  baseDelay,
-}: {
-  index: number;
-  baseDelay: number;
-}) {
-  return (
-    <motion.div
-      aria-hidden="true"
-      className="relative mx-auto h-[260px] w-full max-w-[260px] sm:h-[320px] sm:max-w-[300px] lg:h-[455px] lg:max-w-[340px]"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{
-        duration: 0.74,
-        ease: [0.22, 1, 0.36, 1],
-        delay: baseDelay,
-      }}
-    >
-      <div
-        aria-hidden="true"
-        className="absolute bottom-4 left-1/2 h-16 w-[76%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,245,220,0.15),transparent_68%)] blur-xl"
-      />
-      <motion.div
-        className="relative h-full w-full"
-        animate={{ y: [0, -4, 0] }}
-        transition={{
-          duration: 6.8 + index * 0.6,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: baseDelay + 0.8,
-        }}
-      >
-        <Image
-          src={columnImages[index]}
-          alt=""
-          fill
-          sizes="(max-width: 768px) 88vw, 340px"
-          className="object-contain mix-blend-screen drop-shadow-[0_12px_24px_rgba(0,0,0,0.25)]"
-          priority={index === 0}
-        />
-      </motion.div>
-    </motion.div>
-  );
+function renderProblemItem(item: string) {
+  if (item === "Решают задачи “по наитию”, а не через систему проектирования продукта.") {
+    return (
+      <>
+        Решают задачи “по&nbsp;наитию”, а&nbsp;не
+        <br />
+        через систему проектирования продукта.
+      </>
+    );
+  }
+
+  if (item === "Продают продукт, который не доводит учеников до результата.") {
+    return (
+      <>
+        Продают продукт, который не&nbsp;доводит
+        <br />
+        учеников до&nbsp;результата.
+      </>
+    );
+  }
+
+  return item;
 }
 
 export function Problems() {
@@ -107,7 +79,7 @@ export function Problems() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 opacity-30 [background-image:radial-gradient(circle,rgba(214,171,87,0.32)_0_1px,transparent_1.6px),radial-gradient(circle,rgba(247,235,207,0.36)_0_1px,transparent_1.7px)] [background-position:14%_18%,76%_34%] [background-size:190px_170px,270px_240px]"
+        className="pointer-events-none absolute inset-0 z-10 opacity-[0.18] [background-image:linear-gradient(rgba(247,235,207,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(247,235,207,0.10)_1px,transparent_1px)] [background-size:72px_72px]"
       />
       <Container className="relative z-20">
         <motion.h2
@@ -131,31 +103,30 @@ export function Problems() {
           тех, кто пока не выстроил методологию продукта и обучения
         </motion.p>
 
-        <div className="grid grid-cols-1 gap-7 lg:grid-cols-3 lg:gap-7">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
           {problemGroups.map((group, groupIndex) => (
             <motion.div
               key={group.title}
-              className="relative flex min-h-0 flex-col justify-start py-3 lg:min-h-0 lg:py-0"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.48,
+                ease: [0.22, 1, 0.36, 1],
+                delay: groupIndex * 0.08,
+              }}
+              className="relative flex min-h-[430px] flex-col rounded-[20px] border border-[#F2E5C5]/42 bg-[#F7EBCF] p-6 text-[#3A000C] shadow-[0_20px_54px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.62)]"
             >
-              <motion.h3
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: groupIndex * 0.08,
-                }}
-                className="text-center font-heading text-2xl font-black uppercase text-[#F7EBCF] drop-shadow-[0_4px_16px_rgba(58,0,12,0.45)] lg:text-3xl"
-              >
-                {group.title}
-              </motion.h3>
-
-              <div className="relative mt-2">
-                <AntiqueColumn index={groupIndex} baseDelay={0.08 + groupIndex * 0.08} />
+              <div className="relative mb-6 min-h-12">
+                <h3 className="min-w-0 pr-24 font-heading text-[23px] font-black uppercase leading-tight text-[#550B18] xl:text-[24px]">
+                  {group.title}
+                </h3>
+                <span className="absolute right-0 top-0 flex h-11 min-w-11 items-center justify-center rounded-[14px] border border-[#F2E5C5] bg-[#550B18] px-3 font-heading text-base font-black uppercase tracking-wide text-[#F7EBCF] shadow-[0_10px_20px_rgba(85,11,24,0.18)]">
+                  {problemNumerals[groupIndex]}
+                </span>
               </div>
 
-              <ul className="mx-auto mt-2 max-w-[420px] space-y-3 text-left lg:mt-4">
+              <ul className="mt-auto space-y-3 text-left">
                 {group.items.map((item, itemIndex) => (
                   <motion.li
                     key={item}
@@ -167,10 +138,10 @@ export function Problems() {
                       ease: [0.22, 1, 0.36, 1],
                       delay: 0.2 + groupIndex * 0.08 + itemIndex * 0.045,
                     }}
-                    className="flex items-start gap-3 text-base font-medium leading-snug text-[#F7EBCF] drop-shadow-[0_2px_9px_rgba(58,0,12,0.5)]"
+                    className="flex items-start gap-3 rounded-[14px] border border-[#550B18]/10 bg-[#F2E5C5] p-3 text-base font-semibold leading-snug text-[#3A000C]"
                   >
-                    <span className="mt-[0.45rem] h-2 w-2 flex-shrink-0 rotate-45 border border-[#E0BE65]/80 bg-[#75162E]/80 shadow-[0_0_12px_rgba(224,190,101,0.26)]" />
-                    <span>{item}</span>
+                    <span className="mt-[0.45rem] h-2 w-2 flex-shrink-0 rotate-45 bg-[#D96A32] shadow-[0_0_12px_rgba(217,106,50,0.38)]" />
+                    <span>{renderProblemItem(item)}</span>
                   </motion.li>
                 ))}
               </ul>

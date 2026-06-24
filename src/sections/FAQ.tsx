@@ -107,7 +107,7 @@ function FAQItem({
         aria-expanded={isOpen}
       >
         <div className="flex items-center justify-between gap-4 p-4 lg:p-5">
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[#D6AB57]/50 bg-[#550B18] font-heading text-sm font-black text-[#F7EBCF] shadow-[0_10px_20px_rgba(85,11,24,0.18)]">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[#F2E5C5]/50 bg-[#D96A32] font-heading text-sm font-black text-white shadow-[0_10px_20px_rgba(217,106,50,0.20)]">
             {romanFaqNumbers[index]}
           </span>
           <span className="flex-1 pr-2 text-body font-bold text-[#3A000C] lg:text-lg">
@@ -183,7 +183,7 @@ export function FAQ() {
         >
           <a
             href="#pricing"
-            className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] bg-[#550B18] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_6px_20px_rgba(85,11,24,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3A000C] hover:shadow-[0_8px_24px_rgba(85,11,24,0.32)] sm:w-auto"
+            className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] bg-[#D96A32] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_14px_32px_rgba(217,106,50,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C45A29] hover:shadow-[0_18px_42px_rgba(217,106,50,0.34)] sm:w-auto"
           >
             Присоединиться к обучению
             <ArrowRight className="h-5 w-5 flex-shrink-0" />

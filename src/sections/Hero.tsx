@@ -19,7 +19,7 @@ import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 
 const heroStats = [
-  { value: "15", label: "потоков курса", icon: BookOpen },
+  { value: "16", label: "потоков курса", icon: BookOpen },
   { value: "> 40 000", label: "выпускников из 50 стран", icon: Globe },
   { value: "98-100%", label: "учеников с результатом", icon: Target },
   { value: "5", label: "премий за вклад в образование", icon: Award },
@@ -111,7 +111,7 @@ export function Hero() {
   };
 
   const renderStatValue = (value: string) => {
-    if (value === "15") return <AnimatedCounter end={15} duration={1400} />;
+    if (value === "16") return <AnimatedCounter end={16} duration={1400} />;
     if (value === "> 40 000") return <AnimatedCounter end={40000} duration={1800} prefix=">" />;
     if (value === "98-100%") {
       return (
@@ -130,59 +130,77 @@ export function Hero() {
     <section
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative z-20 overflow-hidden bg-[#F2E5C5] py-8 lg:py-10"
+      className="relative z-20 overflow-hidden bg-[#F2E5C5] py-8 lg:py-12"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_18%_18%,rgba(117,22,46,0.10),transparent_24rem),radial-gradient(circle_at_74%_28%,rgba(247,235,207,0.72),transparent_26rem),linear-gradient(180deg,rgba(247,235,207,0.72),rgba(242,229,197,0.96))]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[2] opacity-70 [background-image:linear-gradient(rgba(85,11,24,0.105)_1px,transparent_1px),linear-gradient(90deg,rgba(85,11,24,0.105)_1px,transparent_1px)] [background-size:72px_72px]"
+      />
       <motion.div
         style={{
           y: shouldReduceMotion ? 0 : imageScrollY,
           x: shouldReduceMotion ? 0 : photoX,
           scale: shouldReduceMotion ? 1 : imageScrollScale,
         }}
-        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[46vw] lg:block"
+        className="pointer-events-none absolute inset-y-0 right-0 z-[4] hidden w-[51vw] lg:block"
       >
-        <div className="absolute -inset-x-16 -inset-y-10 z-0 bg-[radial-gradient(circle_at_48%_40%,rgba(255,236,181,0.36),transparent_34rem),radial-gradient(circle_at_66%_54%,rgba(117,22,46,0.18),transparent_28rem)] blur-3xl" />
+        <div className="absolute right-[8%] top-[18%] z-20 h-40 w-40 rounded-full border border-[#F2E5C5]/52 shadow-[inset_0_0_0_1px_rgba(85,11,24,0.20)]">
+          <motion.span
+            aria-hidden="true"
+            animate={shouldReduceMotion ? undefined : { rotate: 360 }}
+            transition={{ duration: 18, ease: "linear", repeat: Infinity }}
+            className="absolute inset-0 rounded-full"
+          >
+            <span className="absolute -right-1 top-8 h-3 w-3 rounded-full bg-[#B8843C]" />
+            <span className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#F7EBCF] shadow-[0_0_0_4px_rgba(85,11,24,0.10)]" />
+            <span className="absolute bottom-2 left-12 h-2.5 w-2.5 rounded-full bg-[#550B18]" />
+          </motion.span>
+        </div>
         <Image
           src="/images/blok-1.jpg"
           alt=""
           aria-hidden="true"
           fill
           priority
-          sizes="46vw"
+          sizes="51vw"
           className="object-cover object-top"
           style={{
             WebkitMaskImage:
-              "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.12) 8%, rgba(0,0,0,0.72) 20%, #000 34%)",
+              "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.08) 8%, rgba(0,0,0,0.62) 24%, #000 42%)",
             maskImage:
-              "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.12) 8%, rgba(0,0,0,0.72) 20%, #000 34%)",
+              "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.08) 8%, rgba(0,0,0,0.62) 24%, #000 42%)",
           }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,229,197,0.62)_0%,rgba(242,229,197,0.08)_34%,rgba(58,0,12,0.14)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,229,197,0.86)_0%,rgba(242,229,197,0.38)_18%,rgba(242,229,197,0.06)_42%,rgba(85,11,24,0.08)_100%)]" />
       </motion.div>
 
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(90deg,#F2E5C5_0%,#F2E5C5_55%,rgba(242,229,197,0.42)_70%,rgba(242,229,197,0.03)_100%)]" />
       <motion.div
         aria-hidden="true"
         style={{ y: shouldReduceMotion ? 0 : backgroundScrollY, x: shouldReduceMotion ? 0 : lightX }}
-        className="hero-light-rays pointer-events-none absolute inset-0 z-0"
+        className="hero-light-rays pointer-events-none absolute inset-0 z-[1]"
       />
       <motion.div
         aria-hidden="true"
         style={{ x: shouldReduceMotion ? 0 : dustX, y: shouldReduceMotion ? 0 : dustY }}
-        className="hero-gold-dust pointer-events-none absolute inset-0 z-0"
+        className="hero-gold-dust pointer-events-none absolute inset-0 z-[1] opacity-20"
       />
       <motion.div
         aria-hidden="true"
         style={{ x: shouldReduceMotion ? 0 : lightX, y: shouldReduceMotion ? 0 : lightY }}
-        className="hero-antique-columns pointer-events-none absolute inset-y-0 right-[25vw] z-0 hidden w-[42vw] lg:block"
+        className="hero-antique-columns pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[24vw] lg:block"
       />
 
       <Container className="px-4 sm:px-6 lg:px-8">
-        <div className="relative z-10 lg:min-h-[640px]">
+        <div className="relative z-10 lg:min-h-[650px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="max-w-[780px] space-y-4 text-left lg:space-y-5"
+            className="max-w-[780px] space-y-4 text-left lg:max-w-[640px] lg:space-y-5"
           >
             <div className="space-y-3 lg:space-y-4">
               <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -198,7 +216,7 @@ export function Hero() {
                   className="inline-flex max-w-full items-center gap-3 rounded-xl border border-[#F2E5C5]/28 bg-orange-1 px-5 py-2.5 font-bold leading-snug text-[#F7EBCF] shadow-md transition-all hover:-translate-y-0.5 hover:bg-orange-2 hover:shadow-lg"
                 >
                   <Calendar className="h-5 w-5 flex-shrink-0 text-white" />
-                  <span className="min-w-0 break-words">Старт 16-го потока: {COURSE_START_DATE}</span>
+                  <span className="min-w-0 break-words">Старт 17-го потока: {COURSE_START_DATE}</span>
                 </motion.div>
               </div>
 
@@ -208,20 +226,21 @@ export function Hero() {
               <h1
                 ref={titleRef}
                 style={{ visibility: titleReady ? "visible" : "hidden" }}
-                className="hero-title hidden whitespace-nowrap font-heading font-black leading-[0.9] tracking-normal text-text-primary uppercase lg:block lg:text-[86px] xl:text-[98px]"
+                className="hero-title hidden w-max max-w-none pr-8 font-heading font-black leading-[0.9] tracking-normal text-text-primary uppercase lg:block lg:text-[66px] xl:text-[72px]"
               >
-                МЕТОД
-                <span className="text-gradient-orange">ОЛОГИЯ</span>
+                МЕТОДОЛОГИЯ
               </h1>
 
               <p className="max-w-[760px] text-xl font-bold text-text-primary lg:text-[23px] xl:text-2xl">
                 <span className="lg:hidden">
-                  Пошаговая система создания онлайн‑курсов и продуктовых линеек для экспертов и предпринимателей
+                  Пошаговая система создания онлайн‑курсов
+                  <br />
+                  и продуктовых линеек для экспертов и предпринимателей
                 </span>
                 <span className="hidden lg:inline">
-                  Пошаговая система создания онлайн‑курсов и
+                  Пошаговая система создания онлайн‑курсов
                   <br />
-                  <span className="whitespace-nowrap">продуктовых линеек для экспертов и предпринимателей</span>
+                  <span className="whitespace-nowrap">и продуктовых линеек для экспертов и предпринимателей</span>
                 </span>
               </p>
 
@@ -249,7 +268,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.34 }}
-              className="flex w-full flex-col items-start gap-4 pt-1 lg:max-w-none lg:flex-row lg:items-center"
+              className="flex w-full max-w-[620px] flex-col items-start gap-4 pt-1 lg:flex-row lg:items-center"
             >
               <a href="#program" className="w-full lg:flex-[1_1_430px]">
                 <Button variant="primary" size="lg" className="min-h-[68px] w-full px-8 text-lg lg:text-xl">
@@ -282,7 +301,7 @@ export function Hero() {
                   },
                 },
               }}
-              className="grid grid-cols-2 gap-3 pt-2 lg:max-w-none lg:grid-cols-4 lg:gap-4"
+              className="grid max-w-[620px] grid-cols-2 gap-3 pt-2 lg:grid-cols-4 lg:gap-4"
             >
               {heroStats.map((stat) => {
                 const Icon = stat.icon;

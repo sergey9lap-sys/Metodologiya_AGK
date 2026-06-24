@@ -92,16 +92,16 @@ const paymentFeatures = [
 
 export function PaymentOptions() {
   return (
-    <section className="relative overflow-hidden bg-[#140B0D] py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:31:10.jpg"
-        variant="orange"
+        variant="light"
         position="object-center"
-        className="opacity-45 saturate-[0.7]"
+        className="opacity-18 saturate-[0.65]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_12%,rgba(214,171,87,0.16),transparent_25rem),linear-gradient(180deg,rgba(20,11,13,0.72),rgba(42,13,20,0.82)_48%,rgba(18,8,10,0.88))]"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_12%,rgba(217,106,50,0.10),transparent_25rem),linear-gradient(180deg,rgba(247,235,207,0.78),rgba(242,229,197,0.88))]"
       />
       <div
         aria-hidden="true"
@@ -114,13 +114,13 @@ export function PaymentOptions() {
           viewport={{ once: true }}
           variants={fadeInUp}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-5xl rounded-[28px] border border-[#D6AB57]/42 bg-[#F8EBCB]/12 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-sm lg:p-8"
+          className="mx-auto max-w-5xl rounded-[28px] border border-[#550B18]/14 bg-[#F8EBCB]/82 p-5 shadow-[0_24px_70px_rgba(85,11,24,0.12)] backdrop-blur-sm lg:p-8"
         >
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-heading text-3xl font-black uppercase leading-tight text-white lg:text-4xl">
+            <h2 className="font-heading text-3xl font-black uppercase leading-tight text-[#550B18] lg:text-4xl">
               Доступны разные способы оплаты
             </h2>
-            <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-white/90 lg:text-lg">
+            <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-[#5A2730] lg:text-lg">
               Вы можете оплатить обучение сразу или выбрать рассрочку. Доступны
               банковские карты, быстрые платежи, платежные сервисы и внутренняя
               рассрочка Академии.
@@ -221,7 +221,7 @@ export function PaymentOptions() {
             })}
           </div>
 
-          <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-semibold leading-relaxed text-white/88">
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-semibold leading-relaxed text-[#5A2730]">
             Точные условия зависят от выбранного тарифа и платежного партнера.
             Служба заботы подскажет доступные варианты перед оформлением.
           </p>
@@ -229,7 +229,7 @@ export function PaymentOptions() {
           <div className="mt-7 flex justify-center">
             <a
               href="#pricing"
-              className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/70 bg-[#F2E5C5] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-[#550B18] shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7EBCF] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:w-auto"
+              className="inline-flex min-h-[60px] w-full max-w-[380px] items-center justify-center gap-3 rounded-[12px] bg-[#D96A32] px-9 py-[18px] text-center text-lg font-semibold uppercase tracking-wide text-white shadow-[0_14px_32px_rgba(217,106,50,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C45A29] hover:shadow-[0_18px_42px_rgba(217,106,50,0.34)] sm:w-auto"
             >
               Присоединиться к обучению
               <ArrowRight className="h-5 w-5 flex-shrink-0" />

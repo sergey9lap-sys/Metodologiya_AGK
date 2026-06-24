@@ -100,7 +100,7 @@ export function ChallengeLanding() {
             </div>
             <button
               type="button"
-              className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-[#550B18] shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E5C5]"
+              className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[12px] bg-[#D96A32] px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-white shadow-[0_14px_32px_rgba(217,106,50,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C45A29] hover:shadow-[0_18px_42px_rgba(217,106,50,0.34)]"
               onClick={() => setIsWidgetOpen(true)}
             >
               Записаться на челлендж
@@ -130,7 +130,7 @@ export function ChallengeLanding() {
                 type="button"
                 aria-label="Закрыть"
                 onClick={() => setIsWidgetOpen(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#550B18] text-white transition-colors hover:bg-[#3A000C]"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D96A32] text-white transition-colors hover:bg-[#C45A29]"
               >
                 <X className="h-5 w-5" />
               </button>

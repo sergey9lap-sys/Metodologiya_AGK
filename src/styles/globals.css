@@ -165,33 +165,19 @@
 
   .method-scroll {
     isolation: isolate;
-    border-radius: 7px 18px 16px 7px;
+    border-radius: 18px;
     background:
       radial-gradient(circle at 16% 10%, rgba(255, 255, 255, 0.58), transparent 12rem),
-      radial-gradient(circle at 88% 78%, rgba(214, 171, 87, 0.18), transparent 10rem),
-      linear-gradient(98deg, #E3C98F 0%, #F8E9C4 8%, #F4DFAD 50%, #F9EBCB 92%, #D6AB57 100%);
+      linear-gradient(135deg, #F7EBCF 0%, #F2E5C5 100%);
     box-shadow:
-      0 24px 48px rgba(0, 0, 0, 0.22),
+      0 18px 42px rgba(0, 0, 0, 0.16),
       inset 0 0 0 1px rgba(85, 11, 24, 0.13),
-      inset 0 12px 30px rgba(255, 255, 255, 0.32);
-    clip-path: polygon(1.1% 5%, 9% 1.5%, 18% 4.5%, 31% 2%, 44% 4%, 57% 1.5%, 72% 4.5%, 87% 2%, 98.8% 5.5%, 99.4% 94%, 91% 98%, 77% 95.5%, 63% 98%, 49% 95.5%, 34% 98.5%, 18% 95%, 2% 97%);
+      inset 0 1px 0 rgba(255, 255, 255, 0.56);
   }
 
   .method-scroll::before,
   .method-scroll::after {
-    content: "";
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    z-index: 0;
-    width: 34px;
-    border-radius: 999px;
-    background:
-      linear-gradient(90deg, rgba(85, 11, 24, 0.22), transparent 34%, rgba(255, 255, 255, 0.34) 55%, rgba(85, 11, 24, 0.16)),
-      linear-gradient(180deg, #C99B4A, #F4DEAD 28%, #B98534 52%, #F7E5B8 74%, #A97831);
-    box-shadow:
-      inset 0 0 0 1px rgba(85, 11, 24, 0.18),
-      0 10px 24px rgba(0, 0, 0, 0.22);
+    content: none;
   }
 
   .method-scroll::before {
@@ -204,13 +190,12 @@
 
   .method-scroll--wine {
     background:
-      radial-gradient(circle at 16% 8%, rgba(247, 235, 207, 0.16), transparent 12rem),
-      radial-gradient(circle at 90% 70%, rgba(214, 171, 87, 0.22), transparent 12rem),
-      linear-gradient(98deg, #5C1825 0%, #3A000C 9%, #651A2A 52%, #3A000C 92%, #7C4B20 100%);
+      radial-gradient(circle at 16% 8%, rgba(247, 235, 207, 0.12), transparent 12rem),
+      linear-gradient(135deg, #550B18 0%, #3A000C 100%);
     box-shadow:
-      0 28px 56px rgba(0, 0, 0, 0.28),
+      0 24px 52px rgba(0, 0, 0, 0.24),
       inset 0 0 0 1px rgba(247, 235, 207, 0.18),
-      inset 0 18px 36px rgba(247, 235, 207, 0.05);
+      inset 0 1px 0 rgba(247, 235, 207, 0.12);
   }
 
   .method-scroll--wine::before,
@@ -1152,8 +1137,7 @@
 
   .method-scroll {
     min-height: auto;
-    border-radius: 6px 14px 14px 6px;
-    clip-path: polygon(1.5% 4%, 13% 2%, 24% 4%, 40% 2%, 56% 4%, 72% 2.4%, 88% 4%, 98.5% 3%, 99% 96%, 86% 98%, 68% 95.5%, 52% 98%, 35% 95.5%, 18% 98%, 1.5% 96%);
+    border-radius: 18px;
   }
 
   .methodology-scroll-section .method-scroll {

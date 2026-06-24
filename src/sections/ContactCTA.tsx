@@ -25,20 +25,20 @@ const receptionMessages = [
 ];
 
 const contactTabletClassName =
-  "group inline-flex min-h-[58px] w-full items-center justify-center gap-2 rounded-[14px] border border-[#D6AB57]/58 bg-[#550B18] px-4 py-3 text-sm font-black uppercase text-[#F7EBCF] shadow-[0_16px_30px_rgba(85,11,24,0.24),inset_0_1px_0_rgba(255,255,255,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#E0BE65]/80 hover:bg-[#75162E] hover:shadow-[0_20px_40px_rgba(85,11,24,0.3),0_0_20px_rgba(224,190,101,0.16)]";
+  "group inline-flex min-h-[58px] w-full items-center justify-center gap-2 rounded-[14px] border border-[#F2E5C5]/46 bg-[#D96A32] px-4 py-3 text-sm font-black uppercase text-white shadow-[0_16px_30px_rgba(217,106,50,0.24),inset_0_1px_0_rgba(255,255,255,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F2E5C5]/80 hover:bg-[#C45A29] hover:shadow-[0_20px_40px_rgba(217,106,50,0.30)]";
 
 export function ContactCTA() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-16">
+    <section id="contact" className="relative overflow-hidden bg-[#210007] py-12 lg:py-16">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:42.jpg"
-        variant="light"
+        variant="orange"
         position="object-bottom"
-        className="opacity-55 saturate-[0.76]"
+        className="opacity-22 saturate-[0.70]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.64),transparent_24rem),linear-gradient(180deg,rgba(247,235,207,0.82),rgba(242,229,197,0.7))]"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_18%,rgba(242,229,197,0.10),transparent_24rem),linear-gradient(180deg,rgba(33,0,7,0.86),rgba(85,11,24,0.76))]"
       />
       <div
         aria-hidden="true"
@@ -53,7 +53,7 @@ export function ContactCTA() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-5xl"
         >
-          <div className="relative isolate overflow-hidden border border-[#D6AB57]/42 bg-[#F8EBCB]/82 p-5 shadow-[0_26px_70px_rgba(58,0,12,0.16),inset_0_1px_0_rgba(255,255,255,0.62),inset_0_-22px_42px_rgba(85,11,24,0.055)] backdrop-blur-[2px] [clip-path:polygon(1%_3%,10%_1%,22%_2.2%,37%_0.8%,52%_2.1%,68%_0.8%,83%_2%,99%_3.2%,99.4%_96%,88%_99%,72%_97.2%,56%_99%,39%_97.2%,22%_99%,1%_96%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.5),transparent_28%),radial-gradient(circle_at_84%_82%,rgba(117,22,46,0.08),transparent_28%),repeating-linear-gradient(105deg,rgba(85,11,24,0.022)_0_1px,transparent_1px_10px)] lg:p-8">
+          <div className="relative isolate overflow-hidden rounded-[22px] border border-[#F2E5C5]/18 bg-[#F2E5C5]/8 p-5 shadow-[0_26px_70px_rgba(0,0,0,0.20),inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur-[2px] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.08),transparent_28%)] lg:p-8">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute left-6 right-6 top-5 h-px bg-[linear-gradient(90deg,transparent,rgba(214,171,87,0.56),transparent)]"
@@ -68,25 +68,18 @@ export function ContactCTA() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                className="relative mx-auto min-h-[440px] w-full max-w-[390px] overflow-hidden lg:min-h-[560px]"
+                className="relative mx-auto min-h-[440px] w-full max-w-[390px] overflow-visible lg:min-h-[560px]"
               >
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-8 bottom-10 top-12 rounded-[36px] border border-[#D6AB57]/28 bg-[linear-gradient(180deg,rgba(247,235,207,0.48),rgba(214,171,87,0.12))] shadow-[inset_0_1px_0_rgba(255,255,255,0.46),0_18px_42px_rgba(85,11,24,0.12)]"
-                />
-                <div
-                  aria-hidden="true"
                   className="absolute left-1/2 top-[18%] h-[58%] w-[58%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(214,171,87,0.34),transparent_68%)] blur-xl"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute left-1/2 top-[20%] h-[42%] w-[44%] -translate-x-1/2 rounded-[34px] bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.42),transparent_34%),linear-gradient(180deg,rgba(117,22,46,0.18),transparent)] opacity-70 blur-[1px]"
                 />
                 <Image
                   src="/images/botagkclub-portrait.png"
                   alt="Служба заботы Академии"
                   fill
                   className="relative z-10 object-contain drop-shadow-[0_22px_34px_rgba(58,0,12,0.22)]"
+                  sizes="(max-width: 1024px) 390px, 420px"
                 />
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-20">
                   {receptionMessages.map((message, index) => (
@@ -123,7 +116,7 @@ export function ContactCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.24 }}
-                className="inline-flex items-center gap-3 border border-[#D6AB57]/42 bg-[#F8EBCB] px-4 py-2 font-semibold text-[#550B18] shadow-[0_10px_22px_rgba(58,0,12,0.1),inset_0_1px_0_rgba(255,255,255,0.56)] [clip-path:polygon(4%_14%,16%_4%,84%_4%,96%_14%,96%_86%,84%_96%,16%_96%,4%_86%)]"
+                className="inline-flex items-center gap-3 rounded-[12px] border border-[#F2E5C5]/18 bg-[#F2E5C5]/10 px-4 py-2 font-semibold text-[#F7EBCF] shadow-[0_10px_22px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.10)]"
               >
                 <MessageCircle className="h-5 w-5" />
                 <span>Служба заботы</span>
@@ -134,7 +127,7 @@ export function ContactCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.54, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
-                className="font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl"
+                className="font-heading text-3xl font-black uppercase text-[#F7EBCF] lg:text-4xl"
               >
                 Приёмная Академии
               </motion.h2>
@@ -144,7 +137,7 @@ export function ContactCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.54, ease: [0.22, 1, 0.36, 1], delay: 0.38 }}
-                className="mx-auto max-w-2xl text-lg text-text-primary lg:mx-0 lg:text-xl"
+                className="mx-auto max-w-2xl text-lg text-[#F7EBCF]/86 lg:mx-0 lg:text-xl"
               >
                 Поможем выбрать тариф, ответим на вопросы по обучению и подскажем,
                 какой формат подойдёт именно вам.
@@ -196,17 +189,17 @@ export function ContactCTA() {
                 href="https://islod.obrnadzor.gov.ru/rlic/details/6009a6d6-0d6f-7d9f-197f-9f9286292347/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block border border-[#D6AB57]/38 bg-[#F8EBCB] p-4 text-left shadow-[0_14px_28px_rgba(58,0,12,0.11),inset_0_1px_0_rgba(255,255,255,0.58),inset_0_-12px_22px_rgba(85,11,24,0.045)] transition-all hover:-translate-y-0.5 hover:border-[#75162E]/40 hover:shadow-[0_18px_36px_rgba(85,11,24,0.16)] [clip-path:polygon(2%_9%,13%_3%,32%_6%,50%_3%,69%_6%,87%_3%,98%_9%,98%_89%,87%_96%,69%_93%,51%_97%,32%_93%,14%_96%,2%_89%)]"
+                className="block rounded-[16px] border border-[#F2E5C5]/14 bg-[#F2E5C5]/10 p-4 text-left shadow-[0_14px_28px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.10)] transition-all hover:-translate-y-0.5 hover:border-[#F2E5C5]/32 hover:shadow-[0_18px_36px_rgba(0,0,0,0.18)]"
               >
                 <div className="mb-2 flex items-center gap-2">
                   <FileText className="h-5 w-5 text-orange-1" />
-                  <p className="font-bold text-text-primary">Лицензия и документы</p>
+                  <p className="font-bold text-[#F7EBCF]">Лицензия и документы</p>
                 </div>
-                <p className="text-sm text-text-secondary">
+                <p className="text-sm text-[#F7EBCF]/76">
                   Внизу страницы доступны оферта, политика конфиденциальности и
                   основные данные Академии.
                 </p>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-orange-1 transition-colors">
+                <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-[#F7EBCF] transition-colors">
                   Проверить лицензию в реестре
                   <ExternalLink className="h-4 w-4" />
                 </span>
@@ -217,7 +210,7 @@ export function ContactCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.66 }}
-                className="text-sm text-text-primary/80 lg:text-base"
+                className="text-sm text-[#F7EBCF]/78 lg:text-base"
               >
                 Обычно отвечаем быстро в рабочее время и помогаем довести вопрос до результата.
               </motion.p>

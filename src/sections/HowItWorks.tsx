@@ -30,7 +30,7 @@ const modules = [
 const romanNumerals = ["I", "II", "III"];
 
 const marblePlateClassName =
-  "program-plate group relative isolate mx-auto flex min-h-[230px] w-full max-w-[390px] flex-col items-center justify-start overflow-hidden border border-[#D6AB57]/42 bg-[#F8EBCB] px-6 pb-7 pt-9 text-center opacity-0 shadow-[0_18px_42px_rgba(40,25,10,0.16),inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-18px_30px_rgba(85,11,24,0.055)] transition-all duration-300 [clip-path:polygon(2%_8%,13%_3%,29%_5%,46%_2%,64%_5%,84%_3%,98%_9%,99%_90%,87%_97%,69%_94%,51%_98%,32%_94%,14%_97%,1%_90%)] before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.62),transparent_30%),radial-gradient(circle_at_84%_78%,rgba(117,22,46,0.08),transparent_28%),repeating-linear-gradient(112deg,rgba(85,11,24,0.026)_0_1px,transparent_1px_9px),linear-gradient(135deg,#F9ECCD,#E7D7B6_48%,#F8EBCB)] after:absolute after:inset-[8px] after:-z-10 after:border after:border-[#75162E]/13 after:[clip-path:polygon(2%_8%,14%_5%,30%_7%,47%_4%,64%_7%,84%_5%,98%_9%,98%_89%,86%_95%,69%_92%,51%_96%,33%_92%,15%_95%,2%_89%)] hover:-translate-y-1.5 hover:border-[#D6AB57]/70 hover:bg-[#FFF2D4] hover:shadow-[0_24px_54px_rgba(85,11,24,0.2),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-14px_26px_rgba(85,11,24,0.045)]";
+  "program-plate group relative isolate mx-auto flex min-h-[230px] w-full max-w-[390px] flex-col items-center justify-start overflow-hidden rounded-[18px] border border-[#F2E5C5]/32 bg-[#F7EBCF] px-6 pb-7 pt-9 text-center opacity-0 shadow-[0_18px_42px_rgba(40,25,10,0.16),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-300 before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.58),transparent_30%),linear-gradient(135deg,#F7EBCF,#F2E5C5)] hover:-translate-y-1.5 hover:border-[#F2E5C5]/70 hover:bg-[#F2E5C5] hover:shadow-[0_24px_54px_rgba(85,11,24,0.18),inset_0_1px_0_rgba(255,255,255,0.78)]";
 
 export function HowItWorks() {
   const routeRef = useRef<HTMLDivElement | null>(null);
@@ -69,6 +69,7 @@ export function HowItWorks() {
         src="/background/IMAGE 2026-05-05 01:30:27.jpg"
         variant="orange"
         position="object-bottom"
+        className="opacity-38 blur-[3px] scale-[1.02] saturate-[0.72]"
       />
       <div
         aria-hidden="true"

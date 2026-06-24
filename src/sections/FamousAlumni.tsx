@@ -340,7 +340,7 @@ function AlumniEmployersBlock() {
         >
           <a
             href="#pricing"
-            className="inline-flex min-h-[60px] w-full max-w-[640px] items-center justify-center gap-3 rounded-[12px] border border-[#75162E]/30 bg-[#550B18] px-7 py-[18px] text-center text-base font-semibold uppercase tracking-wide text-[#F7EBCF] shadow-[0_14px_34px_rgba(85,11,24,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#75162E] hover:shadow-[0_18px_42px_rgba(85,11,24,0.34)] sm:w-auto sm:px-9 sm:text-lg"
+            className="inline-flex min-h-[60px] w-full max-w-[640px] items-center justify-center gap-3 rounded-[12px] border border-[#F2E5C5]/30 bg-[#D96A32] px-7 py-[18px] text-center text-base font-semibold uppercase tracking-wide text-white shadow-[0_14px_32px_rgba(217,106,50,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C45A29] hover:shadow-[0_18px_42px_rgba(217,106,50,0.34)] sm:w-auto sm:px-9 sm:text-lg"
           >
             🎯 Пройти курс и получить востребованную профессию
             <ArrowRight className="h-5 w-5 flex-shrink-0" />
@@ -368,16 +368,16 @@ export function FamousAlumni() {
   const hiddenCount = sortedAlumni.length - initialVisibleAlumni;
 
   return (
-    <section className="relative overflow-hidden bg-[#F2E5C5] py-12 lg:py-14">
+    <section className="relative overflow-hidden bg-[#210007] py-12 lg:py-14">
       <SectionBackground
         src="/background/IMAGE 2026-05-05 01:30:29.jpg"
-        variant="light"
+        variant="orange"
         position="object-center"
-        className="opacity-45 saturate-[0.72]"
+        className="opacity-20 saturate-[0.70]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_16%,rgba(255,255,255,0.66),transparent_24rem),linear-gradient(180deg,rgba(247,235,207,0.86),rgba(242,229,197,0.74))]"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_16%,rgba(242,229,197,0.12),transparent_24rem),linear-gradient(180deg,rgba(33,0,7,0.88),rgba(85,11,24,0.78))]"
       />
       <div
         aria-hidden="true"
@@ -393,7 +393,7 @@ export function FamousAlumni() {
       </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 opacity-30 [background-image:radial-gradient(circle,rgba(214,171,87,0.34)_0_1px,transparent_1.6px),radial-gradient(circle,rgba(255,249,226,0.54)_0_1px,transparent_1.7px)] [background-position:12%_18%,72%_28%] [background-size:190px_170px,270px_240px]"
+        className="pointer-events-none absolute inset-0 z-10 opacity-18 [background-image:linear-gradient(rgba(247,235,207,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(247,235,207,0.10)_1px,transparent_1px)] [background-size:72px_72px]"
       />
 
       <Container className="relative z-20">
@@ -405,10 +405,10 @@ export function FamousAlumni() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-8 max-w-4xl text-center lg:mb-10"
         >
-          <h2 className="font-heading text-3xl font-black uppercase text-text-primary lg:text-4xl">
+          <h2 className="font-heading text-3xl font-black uppercase text-[#F7EBCF] lg:text-4xl">
             Александра работала с
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-text-secondary lg:text-lg">
+          <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-[#F7EBCF]/80 lg:text-lg">
             Эксперты, предприниматели и лидеры рынка, с которыми были
             реализованы образовательные проекты.
           </p>
@@ -471,7 +471,7 @@ export function FamousAlumni() {
                         </div>
                         <span className="pointer-events-none absolute left-5 top-4 h-8 w-12 rotate-[-22deg] rounded-full bg-white/20 blur-[3px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       </div>
-                      <h3 className="mx-auto mt-3 max-w-[150px] text-sm font-bold leading-tight text-text-primary lg:text-[15px]">
+                      <h3 className="mx-auto mt-3 max-w-[150px] text-sm font-bold leading-tight text-[#F7EBCF] lg:text-[15px]">
                         {person.name}
                       </h3>
                     </button>
@@ -483,7 +483,7 @@ export function FamousAlumni() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 8, scale: 0.96 }}
                           transition={{ duration: 0.22, ease: "easeOut" }}
-                          className="absolute left-1/2 top-[150px] z-40 w-[210px] -translate-x-1/2 border border-[#D6AB57]/44 bg-[#F8EBCB] p-3 text-left shadow-[0_18px_34px_rgba(58,0,12,0.2),inset_0_1px_0_rgba(255,255,255,0.62)] [clip-path:polygon(3%_8%,15%_3%,33%_6%,52%_3%,70%_6%,86%_3%,98%_9%,98%_90%,86%_97%,68%_94%,51%_98%,32%_94%,14%_97%,2%_90%)] lg:top-[164px]"
+                          className="absolute left-1/2 top-[150px] z-40 w-[210px] -translate-x-1/2 rounded-[16px] border border-[#550B18]/14 bg-[#F8EBCB] p-3 text-left shadow-[0_18px_34px_rgba(58,0,12,0.16),inset_0_1px_0_rgba(255,255,255,0.62)] lg:top-[164px]"
                         >
                           <div className="grid grid-cols-[52px_minmax(0,1fr)] gap-3">
                             <div className="relative h-[52px] w-[52px] overflow-hidden rounded-full border border-[#75162E]/24 bg-[#F2E5C5]">
@@ -538,7 +538,7 @@ export function FamousAlumni() {
               <button
                 type="button"
                 onClick={() => setShowAll((value) => !value)}
-                className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[12px] border border-[#75162E]/24 bg-[#550B18] px-6 py-3 text-sm font-black uppercase tracking-wide text-[#F7EBCF] shadow-[0_12px_28px_rgba(85,11,24,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#75162E] hover:shadow-[0_18px_36px_rgba(85,11,24,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#75162E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2E5C5]"
+                className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[12px] border border-[#F2E5C5]/30 bg-[#D96A32] px-6 py-3 text-sm font-black uppercase tracking-wide text-white shadow-[0_12px_28px_rgba(217,106,50,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C45A29] hover:shadow-[0_18px_36px_rgba(217,106,50,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D96A32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2E5C5]"
               >
                 {showAll
                   ? "Скрыть экспертов"

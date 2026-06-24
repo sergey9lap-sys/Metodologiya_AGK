@@ -1,10 +1,8 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { SectionBackground } from "@/components/SectionBackground";
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { Check, X } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 18 },
@@ -52,7 +50,21 @@ const shortWords = /(^|\s)(и|в|на|по|от|до|для|из|к|с|со|на
 
 const formatTypography = (text: string) => text.replace(shortWords, "$1$2\u00A0");
 
-function MythTablet({
+function renderMythText(text: string) {
+  if (text === "Если бы знали — уже сделали. Проблема не в знаниях, а в отсутствии системы") {
+    return (
+      <>
+        Если бы знали — уже сделали.{" "}
+        <span className="whitespace-nowrap">Проблема не&nbsp;в&nbsp;знаниях,</span>{" "}
+        а&nbsp;в&nbsp;отсутствии системы
+      </>
+    );
+  }
+
+  return formatTypography(text);
+}
+
+function BeforeAfterRow({
   myth,
   truth,
   index,
@@ -61,101 +73,72 @@ function MythTablet({
   truth: string;
   index: number;
 }) {
-  const ref = useRef<HTMLButtonElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.18 });
-  const shouldReduceMotion = useReducedMotion();
-  const [revealed, setRevealed] = useState(false);
-  const [isOpening, setIsOpening] = useState(false);
-
-  const revealTablet = useCallback(() => {
-    if (isOpening) return;
-
-    if (revealed) {
-      setRevealed(false);
-      return;
-    }
-
-    if (shouldReduceMotion) {
-      setRevealed(true);
-      return;
-    }
-
-    setIsOpening(true);
-    window.setTimeout(() => {
-      setRevealed(true);
-    }, 90);
-    window.setTimeout(() => {
-      setIsOpening(false);
-    }, 380);
-  }, [isOpening, revealed, shouldReduceMotion]);
-
-  useEffect(() => {
-    if (!isInView || index !== 0 || revealed || isOpening) return;
-
-    if (shouldReduceMotion) {
-      setRevealed(true);
-      return;
-    }
-
-    const timer = window.setTimeout(revealTablet, 260);
-    return () => window.clearTimeout(timer);
-  }, [index, isInView, isOpening, revealTablet, revealed, shouldReduceMotion]);
+  const baseDelay = index * 0.26;
 
   return (
-    <motion.button
-      ref={ref}
-      type="button"
-      aria-expanded={revealed}
-      onClick={revealTablet}
-      initial={{ opacity: 0, y: 18, scale: 0.96 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.16 }}
-      transition={{ duration: 0.36, ease: "easeOut", delay: index * 0.02 }}
-      className="academy-myth-tablet"
-      data-revealed={revealed ? "true" : "false"}
-      data-opening={isOpening ? "true" : "false"}
+      transition={{ duration: 0.28, ease: "easeOut", delay: baseDelay }}
+      className="grid gap-3 rounded-[18px] border border-[#F2E5C5]/18 bg-[#F2E5C5]/8 p-3 shadow-[0_18px_48px_rgba(0,0,0,0.14)] backdrop-blur-md lg:grid-cols-[1fr_auto_1.1fr] lg:items-stretch lg:gap-4"
     >
-      <div className="academy-myth-crack" aria-hidden="true" />
-      <div className="academy-myth-face academy-myth-face--myth">
-        <div className="academy-myth-kicker">
-          <X className="h-3.5 w-3.5" />
-          Миф
-        </div>
-        <p className="academy-myth-text">{formatTypography(myth)}</p>
-        <span className="academy-myth-verdict">
-          Открыть вердикт Академии →
-        </span>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, x: -22, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.16 }}
+        transition={{ duration: 0.38, ease: "easeOut", delay: baseDelay + 0.04 }}
+        className="rounded-[14px] border border-[#F2E5C5]/14 bg-[#3A000C]/30 p-4 text-[#F7EBCF]"
+      >
+        <p className="mb-2 text-xs font-black uppercase tracking-[0.14em] text-[#D6AB57]">
+          Было
+        </p>
+        <p className="text-base font-semibold leading-snug text-[#F7EBCF]/78 lg:text-lg">
+          {formatTypography(myth)}
+        </p>
+      </motion.div>
 
-      <div className="academy-myth-face academy-myth-face--truth">
-        <div className="academy-myth-kicker academy-myth-kicker--truth">
-          <Check className="h-3.5 w-3.5" />
-          Правда
-        </div>
-        <p className="academy-truth-text">{formatTypography(truth)}</p>
-        <span className="academy-myth-verdict">
-          Вернуться к мифу →
+      <motion.div
+        initial={{ opacity: 0, scale: 0.72, rotate: -8 }}
+        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+        viewport={{ once: true, amount: 0.16 }}
+        transition={{ duration: 0.34, ease: "easeOut", delay: baseDelay + 0.18 }}
+        className="flex items-center justify-center"
+      >
+        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#F2E5C5]/38 bg-[#C45A32] text-white shadow-[0_14px_34px_rgba(196,90,50,0.30)]">
+          <ArrowRight className="h-5 w-5" />
         </span>
-      </div>
-    </motion.button>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 22, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.16 }}
+        transition={{ duration: 0.38, ease: "easeOut", delay: baseDelay + 0.3 }}
+        className="rounded-[14px] border border-[#F2E5C5]/70 bg-[#F7EBCF] p-4 text-[#3A000C] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]"
+      >
+        <p className="mb-2 text-xs font-black uppercase tracking-[0.14em] text-[#75162E]">
+          Стало
+        </p>
+        <p className="text-lg font-semibold leading-snug text-[#3A000C] lg:text-xl">
+          {renderMythText(truth)}
+        </p>
+      </motion.div>
+    </motion.div>
   );
 }
 
 export function Myths() {
   return (
-    <section className="relative overflow-hidden bg-black py-10 lg:py-12">
-      <SectionBackground
-        src="/background/IMAGE 2026-05-05 01:30:33.jpg"
-        variant="orange"
-        position="object-bottom"
-        className="opacity-70 saturate-[0.8]"
+    <section className="relative overflow-hidden bg-[#210007] py-10 lg:py-14">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_16%_14%,rgba(242,229,197,0.10),transparent_18rem),radial-gradient(circle_at_80%_28%,rgba(214,171,87,0.08),transparent_22rem),linear-gradient(180deg,#210007,#550B18_52%,#210007)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_16%_14%,rgba(242,229,197,0.12),transparent_18rem),radial-gradient(circle_at_80%_28%,rgba(214,171,87,0.08),transparent_22rem),linear-gradient(180deg,rgba(58,0,12,0.84),rgba(32,0,7,0.9))]"
+        className="pointer-events-none absolute inset-0 z-10 opacity-20 [background-image:linear-gradient(rgba(247,235,207,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(247,235,207,0.10)_1px,transparent_1px)] [background-size:56px_56px]"
       />
-      <div aria-hidden="true" className="academy-myths-dust pointer-events-none absolute inset-0 z-10" />
 
       <Container className="relative z-20">
         <motion.div
@@ -175,9 +158,9 @@ export function Myths() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4">
+        <div className="mx-auto max-w-6xl space-y-4">
           {myths.map((item, index) => (
-            <MythTablet
+            <BeforeAfterRow
               key={item.myth}
               myth={item.myth}
               truth={item.truth}

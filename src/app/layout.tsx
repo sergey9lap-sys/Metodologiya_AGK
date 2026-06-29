@@ -5,6 +5,7 @@ import { GetCourseQualityBadge } from "@/components/GetCourseQualityBadge";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { Header } from "@/components/Header";
 import { SiteMotion } from "@/components/SiteMotion";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -65,6 +66,7 @@ export default function RootLayout({
         {children}
         <GetCourseQualityBadge />
         <StickyMobileCTA />
+        <CookieConsent />
       </body>
     </html>
   );
